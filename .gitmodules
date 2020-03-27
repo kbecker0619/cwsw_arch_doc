@@ -1,0 +1,3 @@
+[submodule "cwsw_eventqueue"]
+	path = cwsw_eventqueue
+	url = git@github.com:kbecker0619/cwsw_eventqueue.git
