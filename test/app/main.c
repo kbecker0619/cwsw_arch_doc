@@ -244,7 +244,7 @@ main(void)
 		total += countbins[idx];
 	}
 
-	printf("\n\nActual 32-ms running avg:\t%li\nrunning avg:\t%i\n", total / TABLE_SIZE(countbins), countavg);
+	printf("\n\nActual 32-ms running avg:\t%li\nrunning avg:\t\t\t%i\n", total / TABLE_SIZE(countbins), countavg);
 	printf("Task Chunkiness: %li\n", Cwsw_ClockSvc__GetMaxMissedTics());
 	printf("\nProgress Bar: %s\n", progressbar);
 	printf("\nDuration: %li ms\n", Cwsw_ClockSvc__TimerTic() - starttic);

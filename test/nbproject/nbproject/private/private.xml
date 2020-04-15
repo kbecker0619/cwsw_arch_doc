@@ -7,14 +7,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/_Projects/cwsw_evqueue_test/test/app/cwsw_lib_prj/CritSect.c</file>
-            <file>file:/C:/_Projects/cwsw_evqueue_test/cwsw_eventqueue/cwsw_evqueue/src/cwsw_evqueue.c</file>
-            <file>file:/C:/_Projects/cwsw_evqueue_test/test/libs/cwsw_lib/inc/cwsw_lib.h</file>
-            <file>file:/C:/_Projects/cwsw_evqueue_test/component/cwsw_clock/src/cwsw_clock_svc.c</file>
             <file>file:/C:/_Projects/cwsw_evqueue_test/test/app/main.c</file>
-            <file>file:/C:/_Projects/cwsw_evqueue_test/cwsw_eventqueue/cwsw_evqueue_ex/src/cwsw_evqueue_ex.c</file>
-            <file>file:/C:/_Projects/cwsw_evqueue_test/test/libs/cwsw_lib/src/cwsw_lib.c</file>
-            <file>file:/C:/_Projects/cwsw_evqueue_test/cwsw_eventqueue/cwsw_event/src/cwsw_eventtable.c</file>
         </group>
     </open-files>
 </project-private>
