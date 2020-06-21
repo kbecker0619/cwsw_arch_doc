@@ -1,0 +1,13 @@
+@INCLUDE			 = cwsw_lib.doxyfile
+
+# on windows, i don't always use the default install location. in my case, i need 
+#	a symlink at this location that points to the real installation
+PLANTUML_JAR_PATH	 = c:/_Programs/plantuml
+
+# in order for Doxy to generate graphs in multiple host environments, we expect it
+#	to be in the apps path, and we no longer specify it here.
+# DOT_PATH			 = "C:/Program Files (x86)/Graphviz2.38/bin"
+
+# disable cleanup & generate XML 'cuz i'm experimenting with something.
+DOT_CLEANUP      	 = NO
+GENERATE_XML		 = YES
