@@ -1,5 +1,5 @@
 [submodule "cwsw_eventqueue"]
-	path = cwsw_eventqueue
+	path = test/libs/cwsw_eventqueue
 	url = git@github.com:kbecker0619/cwsw_eventqueue.git
 [submodule "test/libs/cwsw_lib"]
 	path = test/libs/cwsw_lib
