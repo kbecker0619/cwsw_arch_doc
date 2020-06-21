@@ -22,6 +22,7 @@ extern "C" {
 // ----	System Headers --------------------------
 
 // ----	Project Headers -------------------------
+#include "cwsw_swtimer.h"
 
 // ----	Module Headers --------------------------
 
@@ -29,20 +30,6 @@ extern "C" {
 // ============================================================================
 // ----	Constants -------------------------------------------------------------
 // ============================================================================
-
-// list of alarms managed by the OS timer tic task
-// must be of type `tCwswSwAlarm`
-// name must be this
-// must not touch 1st or last lines
-// order listed here, is the order in which they will be processed. this allows a manner of
-//	assigning priority, by placing more important alarms higher in the list. PLEASE RESPECT RMS
-//	SCHEDULING (fastest repetition rate == highest priority). single-shot alarms should (generally)
-//	be at the end of the list.
-#define ListOfManagedAlarms		{	\
-	  &tmrOs10ms	\
-	, &tmrOs1000ms	\
-}
-
 
 // ============================================================================
 // ----	Type Definitions ------------------------------------------------------
@@ -55,6 +42,29 @@ extern "C" {
 // ============================================================================
 // ----	Public API ------------------------------------------------------------
 // ============================================================================
+
+extern tCwswSwAlarm	tmrOs10ms;
+extern tCwswSwAlarm	tmrOs1000ms;
+
+
+/**	List of alarms managed by the OS timer tic task.
+ *
+ * 	All alarms listed here, must be of type `tCwswSwAlarm`.
+ *	The order in which alarm names are listed here, is the order in which they will be processed.
+ *	This allows a manner of assigning priority, by placing more important alarms higher in the list.
+ *	PLEASE RESPECT RMS SCHEDULING (fastest repetition rate == highest priority).
+ *	Single-shot alarms should (generally) be at the end of the list.
+ *
+ *	Reminder: This list is not a "closed" list, meaning that this list is not all-inclusive of all
+ *	alarms to be found in the system. This list only identifies the alarms that are managed by the
+ *	default timer tic callback.
+ */
+#define ListOfManagedAlarms		\
+	/* **** DO NOT EDIT THIS DEFINITION ABOVE THIS LINE **** */	\
+	  &tmrOs10ms	\
+	, &tmrOs1000ms	\
+	/* **** DO NOT EDIT THIS DEFINITION BELOW THIS LINE **** */	\
+	/* end of list */
 
 
 #ifdef	__cplusplus

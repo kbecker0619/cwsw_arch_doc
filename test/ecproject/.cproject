@@ -72,8 +72,11 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.mingw.exe.debug.1736302436.1368717382" name="tedlos.c" rcbsApplicability="disable" resourcePath="app/tedlos.c" toolsToInvoke="cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.debug.1489450762.1536253058">
+						<tool id="cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.debug.1489450762.1536253058" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.debug.1489450762"/>
+					</fileInfo>
 					<sourceEntries>
-						<entry excluding="libs/cwsw_eventqueue/test|component/cwsw_event/test|libs/cwsw_arch/test|bsw/svc/cwsw_event/test/ecproject|bsw/svc/cwsw_swtimer/src/cwsw_swtimer.c|libs/cwsw_arch_old|component/cwsw_event/test/cwsw_lib/test|bsw/svc/cwsw_event/test/cwsw_lib/test/ut|bsw/svc/cwsw_clock/src/cwsw_clock_svc.c|src|bsw/ecu/cwsw_arch/test|libs/cwsw_clock|bsw/svc/cwsw_event/test|libs/cwsw_swtimer|bsw/svc/cwsw_evq/test|libs/cwsw_lib/test|bsw/svc/cwsw_event/test/nbproject|bsw/evq/src/cwsw_evhandler.c|app/tedlos.c|bsw/svc/cwsw_event/test/app|bsw/svc/cwsw_event/test/vsproject|bsw/svc/cwsw_lib/test|libs/cwsw_board_old|component/test" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="libs/cwsw_eventqueue/test|component/cwsw_event/test|libs/cwsw_arch/test|bsw/svc/cwsw_event/test/ecproject|bsw/svc/cwsw_swtimer/src/cwsw_swtimer.c|libs/cwsw_arch_old|component/cwsw_event/test/cwsw_lib/test|bsw/svc/cwsw_event/test/cwsw_lib/test/ut|bsw/svc/cwsw_clock/src/cwsw_clock_svc.c|src|bsw/ecu/cwsw_arch/test|libs/cwsw_clock|bsw/svc/cwsw_event/test|libs/cwsw_swtimer|bsw/svc/cwsw_evq/test|libs/cwsw_lib/test|bsw/svc/cwsw_event/test/nbproject|bsw/evq/src/cwsw_evhandler.c|bsw/svc/cwsw_event/test/app|bsw/svc/cwsw_event/test/vsproject|bsw/svc/cwsw_lib/test|libs/cwsw_board_old|component/test" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
