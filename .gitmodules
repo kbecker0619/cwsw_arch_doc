@@ -2,7 +2,7 @@
 	path = test/libs/cwsw_lib
 	url = git@github.com:kbecker0619/cwsw_lib.git
 [submodule "component"]
-	path = component
+	path = test/libs/cwsw_clock_services
 	url = git@github.com:kbecker0619/cwsw_clock_services.git
 [submodule "test/libs/cwsw_eventqueue"]
 	path = test/libs/cwsw_eventqueue
