@@ -4,3 +4,6 @@
 [submodule "component"]
 	path = component
 	url = git@github.com:kbecker0619/cwsw_clock_services.git
+[submodule "test/libs/cwsw_eventqueue"]
+	path = test/libs/cwsw_eventqueue
+	url = git@github.com:kbecker0619/cwsw_eventqueue.git
