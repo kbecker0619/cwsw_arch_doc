@@ -1,3 +1,0 @@
--IC:\_Projects\cwsw_eventqueue\test\clproject
--target
-i686-pc-windows-gnu

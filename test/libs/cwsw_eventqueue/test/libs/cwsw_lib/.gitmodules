@@ -1,7 +1,0 @@
-[submodule "doc"]
-	path = doc/doc_lib
-	url = git@github.com:kbecker0619/cwsw_lib_doc.git
-[submodule "doc/doc_core"]
-	path = doc/doc_core
-	url = git@github.com:kbecker0619/cwsw_doc_core.git
-	branch = development
