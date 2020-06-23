@@ -15,13 +15,9 @@
 
 // ----	System Headers --------------------------
 #include <stdbool.h>		/* true */
-
-// ----	Project Headers -------------------------
-
-// ----	Module Headers --------------------------
+#include <tedlos_events_prm.h>
+#include <tedlos_managedalarms_prm.h>
 #include "tedlos.h"
-#include "ManagedAlarms.h"
-#include "tedlosevents.h"
 
 
 // ============================================================================

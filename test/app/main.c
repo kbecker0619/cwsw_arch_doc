@@ -20,9 +20,10 @@
 #include "ptypes.h"
 #include "cwsw_evqueue_ex.h"
 #include "cwsw_swtimer.h"
+#include "tedlos.h"			/* events and initializer for managed alarms array, indirectly */
 
 // ----	Module Headers --------------------------
-#include "tedlos.h"			/* events and initializer for managed alarms array, indirectly */
+#include "cwsw_sm_engine.h"
 
 
 // ============================================================================
@@ -118,6 +119,71 @@ tTedlosTaskDescriptor tblInitTasks[] = {
 // ----	Public Functions ------------------------------------------------------
 // ============================================================================
 
+enum { evStateTransition1, evStateTransition2, evStateTransition3 };
+enum { state1, state2 };
+
+bool Transition1Guard(void) {
+
+}
+
+void TransitionState1_State2(void) {
+	/*  */
+}
+
+void TransitionState2_State1(void) {
+
+}
+
+
+/* event table for the one state of my little two-state SM */
+sme_state_event_t tblState1[] = {
+	/* TransitionEvent			Guard				TransitionAction		NewState */
+	{ evStateTransition1,	Transition1Guard,	TransitionState1_State2,	state2	},
+	{ evStateTransition2,	 	NULL,					NULL,				state2	},
+	{ evStateTransition3,		NULL,					NULL,				state1	}
+};
+
+/* state function for my little two-state SM */
+bool state1_handler(sme_event_t ev)
+{
+	UNUSED(ev);
+	return false;
+}
+
+sme_state_table_t stbl_test = {
+	.Name = 1,						/* State name - should be an enum */
+	.StateHandler = state1_handler,	/* Handler function. Note an internal reaction can provoke a state change. */
+	.Events = tblState1				/**< Reference to an array of events for this state. */
+};
+
+
+/* event buffer for my little two-state SM */
+tEvQ_Event evbuf_sm1[5] = {0};
+
+/* event table for my little two-state SM */
+tEvQ_EvTable evtbl_sm1 = {
+	.pEvBuffer = evbuf_sm1,
+	.szEvTbl = TABLE_SIZE(evbuf_sm1),
+	.validity = kCT_TBL_VALID
+};
+
+/* event queue for my little two-state SM */
+tEvQ_QueueCtrl ev1_sm1 = {
+	.pEventTable = &evtbl_sm1,
+	.Queue_Count = 0,
+	.idxWrite = 0,
+	.idxRead = 0
+};
+
+sme_sm_descriptor_t	sm_test[] = {
+	.pStateTable = stbl_test,		/**< Reference to this SM's state table. */
+	.stPrevious = 0,				/**< Previous state. This is not used by the SM Engine itself, but can be very useful when debugging, to answer the question, "How did I get here?" */
+	.stCurrent = 0,					/**< Current state. */
+	.pEventQueue = ev1_sm1,
+	.evPrevious = 0
+};
+
+
 int
 main(void)
 {
@@ -127,6 +193,9 @@ main(void)
 
 	(void)Init(Cwsw_Lib);
 	(void)Init(Cwsw_EvQ);
+
+
+
 
 	(void)Init(tedlos);
 	tedlos__InitTaskList(tblInitTasks);

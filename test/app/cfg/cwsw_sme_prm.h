@@ -1,15 +1,15 @@
-/** @file ManagedAlarms.h
- *	@brief	Project-specific configuration to specify which alarms will be managed by TEDLOS.
+/** @file
+ *	@brief	Project-level parameters for the CWSW State Machine Engine.
  *
  *	Copyright (c) 2020 Kevin L. Becker. All rights reserved.
  *
  *	Original:
- *	Created on: Apr 14, 2020
+ *	Created on: Jun 22, 2020
  *	Author: kevin
  */
 
-#ifndef APP_CFG_MANAGEDALARMS_H_
-#define APP_CFG_MANAGEDALARMS_H_
+#ifndef CWSW_SME_PRM_H
+#define CWSW_SME_PRM_H
 
 #ifdef	__cplusplus
 extern "C" {
@@ -20,9 +20,10 @@ extern "C" {
 // ============================================================================
 
 // ----	System Headers --------------------------
+#include <stdint.h>			/* uint8_t */
+#include <stdbool.h>		/* bool */
 
 // ----	Project Headers -------------------------
-#include "cwsw_swtimer.h"
 
 // ----	Module Headers --------------------------
 
@@ -35,6 +36,22 @@ extern "C" {
 // ----	Type Definitions ------------------------------------------------------
 // ============================================================================
 
+/** State type.
+ * 	In this implementation of the SM Engine, each state has an ID that must be
+ * 	unique within the context in which that SM is used. We think that most
+ * 	systems will have fewer than 255 individual states that are visible to each
+ * 	other within the same context, but this is in the parameter file because it
+ * 	could change for a specific project.
+ *
+ *	Note the generic type is owned by the SM Engine; however, the actual states
+ *	are in the context of the project-level SM. The Engine's idea of a "state"
+ *	must by definition (in 'C', anyway) be generic, and the SM's definition
+ *	of its member states must be compatible with the generic type used
+ *	here.
+ */
+typedef uint8_t sme_smstate_t;
+
+
 // ============================================================================
 // ----	Public Variables ------------------------------------------------------
 // ============================================================================
@@ -43,32 +60,9 @@ extern "C" {
 // ----	Public API ------------------------------------------------------------
 // ============================================================================
 
-extern tCwswSwAlarm	tmrOs10ms;
-extern tCwswSwAlarm	tmrOs1000ms;
-
-
-/**	List of alarms managed by the OS timer tic task.
- *
- * 	All alarms listed here, must be of type `tCwswSwAlarm`.
- *	The order in which alarm names are listed here, is the order in which they will be processed.
- *	This allows a manner of assigning priority, by placing more important alarms higher in the list.
- *	PLEASE RESPECT RMS SCHEDULING (fastest repetition rate == highest priority).
- *	Single-shot alarms should (generally) be at the end of the list.
- *
- *	Reminder: This list is not a "closed" list, meaning that this list is not all-inclusive of all
- *	alarms to be found in the system. This list only identifies the alarms that are managed by the
- *	default timer tic callback.
- */
-#define ListOfManagedAlarms		\
-	/* **** DO NOT EDIT THIS DEFINITION ABOVE THIS LINE **** */	\
-	  &tmrOs10ms	\
-	, &tmrOs1000ms	\
-	/* **** DO NOT EDIT THIS DEFINITION BELOW THIS LINE **** */	\
-	/* end of list */
-
 
 #ifdef	__cplusplus
 }
 #endif
 
-#endif /* APP_CFG_MANAGEDALARMS_H_ */
+#endif /* CWSW_SME_PRM_H */

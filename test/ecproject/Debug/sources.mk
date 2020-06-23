@@ -25,10 +25,12 @@ C_DEPS :=
 SUBDIRS := \
 app/cwsw_lib_prj \
 app \
-component/cwsw_clock/src \
-component/cwsw_swtimer/src \
+component/cwsw_sme/src \
+libs/cwsw_clock_services/cwsw_clock/src \
+libs/cwsw_clock_services/cwsw_swtimer/src \
 libs/cwsw_eventqueue/cwsw_event/src \
 libs/cwsw_eventqueue/cwsw_evqueue/src \
 libs/cwsw_eventqueue/cwsw_evqueue_ex/src \
 libs/cwsw_lib/src \
+libs/tedlos \
 

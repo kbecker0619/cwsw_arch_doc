@@ -22,8 +22,8 @@
 #include "cwsw_evqueue_ex.h"	/* ptEvQ_QueueCtrlEx */
 
 // ----	Module Headers --------------------------
-#include "tedlosevents.h"
 #include "tedlos_scheduler.h"	/* OsTimerTic */
+#include "../../app/cfg/tedlos_events_prm.h"
 
 
 #ifdef	__cplusplus
