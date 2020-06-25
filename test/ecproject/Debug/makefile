@@ -12,8 +12,9 @@ RM := rm -rf
 -include libs/cwsw_eventqueue/cwsw_evqueue_ex/src/subdir.mk
 -include libs/cwsw_eventqueue/cwsw_evqueue/src/subdir.mk
 -include libs/cwsw_eventqueue/cwsw_event/src/subdir.mk
--include component/cwsw_swtimer/src/subdir.mk
--include component/cwsw_clock/src/subdir.mk
+-include libs/cwsw_clock_services/cwsw_swtimer/src/subdir.mk
+-include libs/cwsw_clock_services/cwsw_clock/src/subdir.mk
+-include component/cwsw_sme/src/subdir.mk
 -include app/cwsw_lib_prj/subdir.mk
 -include app/subdir.mk
 -include subdir.mk

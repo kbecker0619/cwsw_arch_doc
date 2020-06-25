@@ -23,6 +23,8 @@
 
 // ----	Module Headers --------------------------
 #include "tedlos.h"			/* events and initializer for managed alarms array, indirectly */
+#include "sme.h"			/* stoplight demo of SME */
+#include "console_keyin.h"	/* DI task */
 
 
 // ============================================================================
@@ -50,8 +52,8 @@ tCwswSwAlarm	tmrOs10ms = {
 	/* .tm			= */tmr10ms,
 	/* .reloadtm	= */tmr10ms,
 	/* .pEvQX		= */&tedlos_evqx,
-	/* .evid		= */evOs_Tmr10msTask,
-	/* .tmrstate	= */kSwTimerEnabled
+	/* .evid		= */evOs_Task10ms,
+	/* .tmrstate	= */kTmrState_Enabled
 };
 
 
@@ -59,8 +61,8 @@ tCwswSwAlarm	tmrOs1000ms = {
 	/* .tm			= */tmr1000ms,
 	/* .reloadtm	= */0,
 	/* .pEvQX		= */&tedlos_evqx,
-	/* .evid		= */evOs_Tmr1000msTask,
-	/* .tmrstate	= */kSwTimerEnabled
+	/* .evid		= */evOs_Task1000ms,
+	/* .tmrstate	= */kTmrState_Enabled
 };
 
 
@@ -76,7 +78,7 @@ taskOs10ms(tEvQ_Event ev, tU32 extra)
 {
 	UNUSED(ev);
 	UNUSED(extra);
-	progressbar[ct10ms++] = '+';
+//	progressbar[ct10ms++] = '+';
 }
 
 
@@ -86,9 +88,23 @@ taskOs1000ms(tEvQ_Event ev, tU32 extra)
 	static tU32 ctActivations = 0;
 	UNUSED(ev);
 	UNUSED(extra);
-	if(++ctActivations > 5)
+	switch(++ctActivations)
 	{
+	case 1:
+		Cwsw_EvQX__PostEventId(&tedlos_evqx, evStopLite_Reenter);
+		break;
+	case 2:
+		Cwsw_EvQX__PostEventId(&tedlos_evqx, evStoplite_ForceYellow);
+		break;
+	case 55:
+		Cwsw_EvQX__PostEventId(&tedlos_evqx, evStoplite_StopEngine);
+		break;
+	case 60:
 		(void)Cwsw_EvQX__PostEventId(&tedlos_evqx, evOs_QuitRqst);
+		break;
+	default:
+		printf("Time: %i\n", ctActivations);
+		break;
 	}
 }
 
@@ -108,8 +124,24 @@ tTedlosTaskDescriptor tblInitTasks[] = {
 	//	timer			init	  reload		evq				evid				evcb
 	/// the quit event is special, doesn't have an alarm, but the message pump specifically looks for it and terminates itself if seen
 	{	 NULL,			  0,	    0,		&tedlos_evqx,	evOs_QuitRqst,	    OsTimerTic	},
-	{  &tmrOs10ms,	   tmr10ms,	  tmr10ms,	&tedlos_evqx,	evOs_Tmr10msTask,   taskOs10ms	},
-	{ &tmrOs1000ms,	  tmr1000ms, tmr1000ms,	&tedlos_evqx,  evOs_Tmr1000msTask, taskOs1000ms	},
+
+	// the following couple of functions are do-nothings for testing purposes
+	{  &tmrOs10ms,	   tmr10ms,	  tmr10ms,	&tedlos_evqx,	evOs_Task10ms,   taskOs10ms	},
+	{ &tmrOs1000ms,	  tmr1000ms, tmr1000ms,	&tedlos_evqx,  evOs_Task1000ms, taskOs1000ms	},
+
+	// stoplight task
+	//	Note: the stoplight lines have null parameters for the alarm, because we are doing compile-
+	//	time initialization within the SME module itself, but the alarm doesn't have an event
+	//	callback field, so we still need to associate the event and the event handler.
+	{	NULL, 		      0,		0,  	&tedlos_evqx,	evStoplite_Task,		  Stoplite_tsk_StopliteSme	},
+	{	NULL, 		      0,		0,  	&tedlos_evqx,	evStoplite_ForceYellow,	  Stoplite_tsk_StopliteSme	},
+	{	NULL, 		      0,		0,  	&tedlos_evqx,	evStopLite_Reenter,		  Stoplite_tsk_StopliteSme	},
+	{	NULL, 		      0,		0,  	&tedlos_evqx,	evStoplite_StopEngine,	  Stoplite_tsk_StopliteSme	},
+
+	// DI task
+	{	NULL, 		      0,		0,  	&tedlos_evqx,	evButton_Task,			  Btn_tsk_ButtonRead		},
+
+	// End of Table
 	{0}	/* termination row */
 };
 
@@ -136,7 +168,7 @@ main(void)
 	tedlos_get_idle_stats(&counted_avg, &running_avg);
 
 	printf("\n\nActual 32-ms avg idleness:\t%li\nrunning avg idleness:\t\t%i\n", counted_avg, running_avg);
-	printf("Task Chunkiness: %li\n", Cwsw_ClockSvc__GetMaxMissedTics());
+	printf("Max missed tics:\t\t%li\n", Cwsw_ClockSvc__GetMaxMissedTics());
 	printf("\nProgress Bar: %s\n", progressbar);
 	printf("\nDuration: %li ms\n", Cwsw_ClockSvc__TimerTic() - starttic);
 	puts("\nGoodbye\n");

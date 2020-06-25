@@ -40,20 +40,31 @@ enum { kTedlos_EvQueueSize = 16 };
  *	Note that this implementation assumes a contiguous list with no gaps in numeric values. This
  *	implementation uses the event value as an index into a table, and sizes all tables according to
  *	the value of kNumOsEvqEvents.
+ *
+ *	There is no priority or ranking associated with the order of symbols listed here.
+ *	Event priorities are not a concern of this version of TEDLOS; what priorities there are, are
+ *	done in alarms, in the order of alarms listed in the ManageAlarms define elsewhere.
  */
 enum eOsEvqEvents {
 	evOsNullEvent = kEvQ_Ev_None,	/**< RESERVED NAME AND VALUE, used for initialization */
 	evOs_NotInit,					/**< By CWSW convention, 1 is always "component not initialized" */
 	evOs_AlreadyInit,				/**< BY CWSW convention, 2 is "already initialized" */
-	evOs_TmrHeartbeat,
-	evOs_Tmr10msTaskInit,
-	evOs_Tmr10msTask,
-	evOs_Tmr100msTask,
-	evOs_Tmr1000msTask,
-	evGarbageEvent4,
-	evGarbageEvent5,
-	evGarbageEvent6,
 	evOs_QuitRqst,					/**< reserved name, used by scheduler to terminate its scheduling loop */
+
+	evOs_TmrHeartbeat,
+	evOs_Task10ms,
+	evOs_Task100ms,
+	evOs_Task1000ms,
+
+	evStoplite_ForceYellow,
+	evStopLite_Reenter,
+	evStoplite_StopEngine,
+	evStoplite_Task,
+
+	evButton_Task,
+	evButton_BtnPressed,			//!< button pressed. event data says which button.
+	evButton_BtnReleased,			//!< button released. Event datt says which button.
+
 	kNumOsEvqEvents					/**< RESERVED NAME, must be last name in list of events */
 };
 

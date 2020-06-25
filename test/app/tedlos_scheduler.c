@@ -1,7 +1,5 @@
-/** @file tedlos_scheduler.c
- *	@brief	One-sentence short description of file.
- *
- *	Description:
+/** @file
+ *	@brief	Implementation of a very simple event dispatcher.
  *
  *	Copyright (c) 2020 Kevin L. Becker. All rights reserved.
  *

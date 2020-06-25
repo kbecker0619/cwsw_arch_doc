@@ -25,6 +25,8 @@ extern "C" {
 #include "cwsw_swtimer.h"
 
 // ----	Module Headers --------------------------
+#include "sme.h"			/* StopLite_tmr_SME */
+#include "console_keyin.h"	/* Btn_tmr_ButtonRead */
 
 
 // ============================================================================
@@ -62,6 +64,9 @@ extern tCwswSwAlarm	tmrOs1000ms;
 #define ListOfManagedAlarms		\
 	/* **** DO NOT EDIT THIS DEFINITION ABOVE THIS LINE **** */	\
 	  &tmrOs10ms	\
+	, &Btn_tmr_ButtonRead	\
+	/* in keeping with RMS methodology, put the 20ms task as a higher priority than the 1000ms task */	\
+	, &StopLite_tmr_SME		\
 	, &tmrOs1000ms	\
 	/* **** DO NOT EDIT THIS DEFINITION BELOW THIS LINE **** */	\
 	/* end of list */

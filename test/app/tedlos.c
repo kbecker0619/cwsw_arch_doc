@@ -141,7 +141,7 @@ tedlos__InitTaskList(ptTedlosTaskDescriptor tasktable)	/* note this is a pointer
 		(void)Cwsw_EvQX__SetEvHandler( tasktable[tblidx].pEvqxCtrl,
 									   (tEvQ_EventID)tasktable[tblidx].evid,
 									   tasktable[tblidx].pf );
-		Cwsw_SwAlarm__SetState(tasktable[tblidx].pAlarm, kSwTimerEnabled);
+		Cwsw_SwAlarm__SetState(tasktable[tblidx].pAlarm, kTmrState_Enabled);
 		++tblidx;
 	}
 }
