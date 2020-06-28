@@ -63,9 +63,10 @@
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs/cwsw_eventqueue/cwsw_evqueue_ex/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs/cwsw_clock_services/cwsw_clock/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs/cwsw_clock_services/cwsw_swtimer/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs/cwsw_board/none&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../component/board/bd_gtk&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../component/cwsw_sme/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../app&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../component/board/bd_gtk&quot;"/>
 									<listOptionValue builtIn="false" value="D:/_Programs/git-sdk-64/mingw64/include/gtk-3.0"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.preprocessor.def.symbols.841831710" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
@@ -83,7 +84,7 @@
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.mingw.exe.debug.1268148108" name="MinGW C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.mingw.exe.debug"/>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.mingw.exe.debug.1051958027" name="MinGW C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.mingw.exe.debug">
 								<option id="gnu.cpp.link.option.flags.2007219169" name="Linker flags" superClass="gnu.cpp.link.option.flags" useByScannerDiscovery="false" value="`pkg-config --libs gtk+-3.0`" valueType="string"/>
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.libs.1884585035" superClass="gnu.cpp.link.option.libs" useByScannerDiscovery="false" valueType="libs">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.libs.1884585035" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" useByScannerDiscovery="false" valueType="libs">
 									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="gtk-3"/>
 									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="gdk-3"/>
 									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="z"/>
@@ -239,6 +240,7 @@
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../app&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../component/board/bd_gtk&quot;"/>
 									<listOptionValue builtIn="false" value="D:/_Programs/git-sdk-64/mingw64/include/gtk-3.0"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs/cwsw_board/none&quot;"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.preprocessor.def.symbols.1305110222" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="&quot;XPRJ_Win_MinGW_${ConfigName}=1&quot;"/>
