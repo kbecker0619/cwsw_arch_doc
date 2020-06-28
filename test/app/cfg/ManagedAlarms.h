@@ -26,7 +26,7 @@ extern "C" {
 
 // ----	Module Headers --------------------------
 #include "sme.h"			/* StopLite_tmr_SME */
-#include "console_keyin.h"	/* Btn_tmr_ButtonRead */
+#include "bd_gtk.h"			/* Btn_tmr_ButtonRead */
 
 
 // ============================================================================
@@ -45,8 +45,8 @@ extern "C" {
 // ----	Public API ------------------------------------------------------------
 // ============================================================================
 
-extern tCwswSwAlarm	tmrOs10ms;
-extern tCwswSwAlarm	tmrOs1000ms;
+extern tCwswSwAlarm	Os_tmr_10ms;
+extern tCwswSwAlarm	Os_tmr_1000ms;
 
 
 /**	List of alarms managed by the OS timer tic task.
@@ -61,13 +61,13 @@ extern tCwswSwAlarm	tmrOs1000ms;
  *	alarms to be found in the system. This list only identifies the alarms that are managed by the
  *	default timer tic callback.
  */
-#define ListOfManagedAlarms		\
+#define ListOfManagedAlarms	\
 	/* **** DO NOT EDIT THIS DEFINITION ABOVE THIS LINE **** */	\
-	  &tmrOs10ms	\
+	  &Os_tmr_10ms			\
 	, &Btn_tmr_ButtonRead	\
 	/* in keeping with RMS methodology, put the 20ms task as a higher priority than the 1000ms task */	\
 	, &StopLite_tmr_SME		\
-	, &tmrOs1000ms	\
+	, &Os_tmr_1000ms		\
 	/* **** DO NOT EDIT THIS DEFINITION BELOW THIS LINE **** */	\
 	/* end of list */
 

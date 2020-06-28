@@ -66,7 +66,7 @@ static bool quit_requested = false;
 // ----	Private Functions -----------------------------------------------------
 // ============================================================================
 
-static void
+void
 tedlos_idle(void)
 {
 	++idlecounts;
@@ -107,44 +107,51 @@ tedlos__Init(void)
 void
 tedlos__do(ptEvQ_QueueCtrlEx tedlos_evqx)
 {
-	tErrorCodes_EvQ rc;
-	// this loop is executed as quickly as possible
-	do {
-		/* posting vs dispatching:
-		 * the clock service task will post (at most) one event each time called.
-		 * this will cause the OS' tic handler to be called; inside that function, there will be an
-		 * event posted for each timer that matures, and possibly some other postings as well.
-		 *
-		 * because i envision this function as the main "scheduler", i kinda-sorta want all events
-		 * to be dispatched from here. we'll see how this scales, it might not scale well (written
-		 * 14-apr-2020, at the very beginning of "playing" with tedlos).
-		 *
-		 * in one of my previous jobs, we had a message pump that limited itself to no more than <x>
-		 * calls to the event dispatcher (i think in that context <x> was 5).
-		 */
-		Task(Cwsw_ClockSvc);
+	if(1)
+	{
+		gtk_main();
+	}
+	else
+	{
+		tErrorCodes_EvQ rc;
+		// this loop is executed as quickly as possible
 		do {
-			/* WARNING ABOUT TASKS:
-			 * because this is a COOPERATIVE tasking system, it is IMPERATIVE that everything that
-			 * is done in any particular time slot, must be completed with a bit of headroom to
-			 * spare. for that reason, the following points:
-			 * - generally, we recommend that each task should have its own alarm and should not
-			 *   spawn sub-tasks; however, of course, there's a balance with the number of events
-			 *   defined in the system, and it may make sense for the slower tasks to spawn their
-			 *   own sub-tasks.
-			 * - it is important to monitor the idle time and load balance if the idle time drops
-			 *   too low. at the time of this writing, i would say there is no or little harm in
-			 *   having one or two "loops" where there's no idle time but it will highly depend on
-			 *   the specific application. for really important systems, it might be safest to
-			 *   never get lower than some safety margin.
+			/* posting vs dispatching:
+			 * the clock service task will post (at most) one event each time called.
+			 * this will cause the OS' tic handler to be called; inside that function, there will be an
+			 * event posted for each timer that matures, and possibly some other postings as well.
+			 *
+			 * because i envision this function as the main "scheduler", i kinda-sorta want all events
+			 * to be dispatched from here. we'll see how this scales, it might not scale well (written
+			 * 14-apr-2020, at the very beginning of "playing" with tedlos).
+			 *
+			 * in one of my previous jobs, we had a message pump that limited itself to no more than <x>
+			 * calls to the event dispatcher (i think in that context <x> was 5).
 			 */
-			rc = Cwsw_EvQX__HandleNextEvent(tedlos_evqx, 0);
-		} while(0 != tedlos_evqx->EvQ_Ctrl.Queue_Count);
-		if( (rc == kErr_EvQ_NoAssociation) || (rc == kErr_EvQ_QueueEmpty) )
-		{
-			tedlos_idle();
-		}
-	} while(!quit_requested);
+			Task(Cwsw_ClockSvc);
+			do {
+				/* WARNING ABOUT TASKS:
+				 * because this is a COOPERATIVE tasking system, it is IMPERATIVE that everything that
+				 * is done in any particular time slot, must be completed with a bit of headroom to
+				 * spare. for that reason, the following points:
+				 * - generally, we recommend that each task should have its own alarm and should not
+				 *   spawn sub-tasks; however, of course, there's a balance with the number of events
+				 *   defined in the system, and it may make sense for the slower tasks to spawn their
+				 *   own sub-tasks.
+				 * - it is important to monitor the idle time and load balance if the idle time drops
+				 *   too low. at the time of this writing, i would say there is no or little harm in
+				 *   having one or two "loops" where there's no idle time but it will highly depend on
+				 *   the specific application. for really important systems, it might be safest to
+				 *   never get lower than some safety margin.
+				 */
+				rc = Cwsw_EvQX__HandleNextEvent(tedlos_evqx, 0);
+			} while(0 != tedlos_evqx->EvQ_Ctrl.Queue_Count);
+			if( (rc == kErr_EvQ_NoAssociation) || (rc == kErr_EvQ_QueueEmpty) )
+			{
+				tedlos_idle();
+			}
+		} while(!quit_requested);
+	}
 }
 
 

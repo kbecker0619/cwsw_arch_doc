@@ -25,6 +25,7 @@ C_DEPS :=
 SUBDIRS := \
 app \
 app/cwsw_lib_prj \
+component/board/bd_gtk \
 component/cwsw_sme/src \
 libs/cwsw_clock_services/cwsw_clock/src \
 libs/cwsw_clock_services/cwsw_swtimer/src \

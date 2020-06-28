@@ -25,6 +25,7 @@
 #include "tedlos.h"			/* events and initializer for managed alarms array, indirectly */
 #include "sme.h"			/* stoplight demo of SME */
 #include "console_keyin.h"	/* DI task */
+#include "bd_gtk.h"
 
 
 // ============================================================================
@@ -48,7 +49,7 @@
 //! 	created but the initialization is "wiped out" by the initialization done in InitTaskList().
 //! Note this sort of compile-time initialization is still suitable for situations where you want
 //! 	the timer definitions to be in ROM.
-tCwswSwAlarm	tmrOs10ms = {
+tCwswSwAlarm	Os_tmr_10ms = {
 	/* .tm			= */tmr10ms,
 	/* .reloadtm	= */tmr10ms,
 	/* .pEvQX		= */&tedlos_evqx,
@@ -57,7 +58,7 @@ tCwswSwAlarm	tmrOs10ms = {
 };
 
 
-tCwswSwAlarm	tmrOs1000ms = {
+tCwswSwAlarm	Os_tmr_1000ms = {
 	/* .tm			= */tmr1000ms,
 	/* .reloadtm	= */0,
 	/* .pEvQX		= */&tedlos_evqx,
@@ -71,7 +72,7 @@ tCwswSwAlarm	tmrOs1000ms = {
 // ============================================================================
 
 //! tedlos 10-ms task, launched not via TASK() API, but by maturation of 10-ms timer
-static tU32 ct10ms = 0;					// counts ("ct") the number of activations of the task
+//static tU32 ct10ms = 0;					// counts ("ct") the number of activations of the task
 static char progressbar[1024] = {0};
 static void
 taskOs10ms(tEvQ_Event ev, tU32 extra)
@@ -126,8 +127,8 @@ tTedlosTaskDescriptor tblInitTasks[] = {
 	{	 NULL,			  0,	    0,		&tedlos_evqx,	evOs_QuitRqst,	    OsTimerTic	},
 
 	// the following couple of functions are do-nothings for testing purposes
-	{  &tmrOs10ms,	   tmr10ms,	  tmr10ms,	&tedlos_evqx,	evOs_Task10ms,   taskOs10ms	},
-	{ &tmrOs1000ms,	  tmr1000ms, tmr1000ms,	&tedlos_evqx,  evOs_Task1000ms, taskOs1000ms	},
+	{  &Os_tmr_10ms,	   tmr10ms,	  tmr10ms,	&tedlos_evqx,	evOs_Task10ms,   taskOs10ms	},
+	{ &Os_tmr_1000ms,	  tmr1000ms, tmr1000ms,	&tedlos_evqx,  evOs_Task1000ms, taskOs1000ms	},
 
 	// stoplight task
 	//	Note: the stoplight lines have null parameters for the alarm, because we are doing compile-
@@ -139,7 +140,7 @@ tTedlosTaskDescriptor tblInitTasks[] = {
 	{	NULL, 		      0,		0,  	&tedlos_evqx,	evStoplite_StopEngine,	  Stoplite_tsk_StopliteSme	},
 
 	// DI task
-	{	NULL, 		      0,		0,  	&tedlos_evqx,	evButton_Task,			  Btn_tsk_ButtonRead		},
+	{	NULL, 		      0,		0,  	&tedlos_evqx,	evButton_Task,			  BdGtk_tsk_ReadButtons		},
 
 	// End of Table
 	{0}	/* termination row */
@@ -159,18 +160,22 @@ main(void)
 
 	(void)Init(Cwsw_Lib);
 	(void)Init(Cwsw_EvQ);
-
 	(void)Init(tedlos);
+
 	tedlos__InitTaskList(tblInitTasks);
-	starttic = Cwsw_ClockSvc__TimerTic();
-	tedlos__do(&tedlos_evqx);
+	starttic = Get(Cwsw_ClockSvc, CurrentTime);
+	if(!Init(bd_gtk))
+	{
+		tedlos__do(&tedlos_evqx);
 
-	tedlos_get_idle_stats(&counted_avg, &running_avg);
+		tedlos_get_idle_stats(&counted_avg, &running_avg);
 
-	printf("\n\nActual 32-ms avg idleness:\t%li\nrunning avg idleness:\t\t%i\n", counted_avg, running_avg);
-	printf("Max missed tics:\t\t%li\n", Cwsw_ClockSvc__GetMaxMissedTics());
-	printf("\nProgress Bar: %s\n", progressbar);
-	printf("\nDuration: %li ms\n", Cwsw_ClockSvc__TimerTic() - starttic);
+		printf("\n\nActual 32-ms avg idleness:\t%i\nrunning avg idleness:\t\t%i\n", counted_avg, running_avg);
+		printf("Max missed tics:\t\t%li\n", Cwsw_ClockSvc__GetMaxMissedTics());
+		printf("\nProgress Bar: %s\n", progressbar);
+		printf("\nDuration: %li ms\n", Get(Cwsw_ClockSvc, CurrentTime) - starttic);
+	}
+
 	puts("\nGoodbye\n");
 
     return (EXIT_SUCCESS);
