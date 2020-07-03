@@ -18,7 +18,7 @@
 #include "tedlos.h"				/* event queue used by this SME */
 
 // ----	Module Headers --------------------------
-#include "sme.h"
+#include "cwsw_sme.h"
 
 
 // ============================================================================
@@ -50,9 +50,13 @@ tCwswSwAlarm	StopLite_tmr_SME = {
 };
 
 
+
 // ============================================================================
 // ----	Module-level Variables ------------------------------------------------
 // ============================================================================
+
+// this next variable is a standard part of the template. update it to point to your state timer.
+static ptCwswSwAlarm const pMyTimer = &StopLite_tmr_SME;
 
 
 // ============================================================================
@@ -269,24 +273,6 @@ template_StateHandler(ptEvQ_Event pev, uint32_t *pextra)
 
 	switch(statephase)
 	{
-	case kStateNormal:
-		// it is normal for the default action to inspect the event passed to this function.
-		//	in this template, we'll just ignore them.
-		UNUSED(pev);
-		UNUSED(pextra);
-
-		// normal state behavior here, including handling in-state reactions to events
-		//	if there is a guard condition, evaluate that here.
-
-		// if your state doesn't have a timer, you can eliminate this if() clause.
-		if( Cwsw_GetTimeLeft(tmrMyStateTimer) <= 0 )
-		{
-			++statephase;	// if the timer's expired, execute the exit action the next time we're called.
-		}
-		// add here, any other exit reasons not covered by in-state reactions above.
-		//	be sure to increment statephase.
-		break;
-
 	case kStateUninit:	/* on 1st entry, execute on-entry action */
 	case kStateAbort:	/* upon return to this state after previous normal exit, execute on-entry action */
 	default:			/* for any unexpected value, restart this state. */
@@ -294,28 +280,54 @@ template_StateHandler(ptEvQ_Event pev, uint32_t *pextra)
 		 * - a separate function, or as we've done here,
 		 * - a list of actions within the case.
 		 */
-		/* the on-entry behavior does not care about what event was passed to this function. */
-		/* start my state timer.
-		 * for this implementation, i'm choosing to poll a simple timer in the operational phase.
-		 * we could, if we wanted, let an alarm post an event at maturation.
+		/* the on-entry behavior does not care about what event was passed to this function. while
+		 * nothing prevents you from inspecting the incoming data, i believe this would deviate from
+		 * standard UML state machine behavior. and having just said that, we're saving the incoming
+		 * event ID as the default for exit reason 1.
 		 */
-		/* note: the period of the state alarm, must be larger than the periodicity of the SM engine;
+		evId = pev->evId;	// save exit Reason1
+		/* start my state timer. if your state doesn't need a timeout exit, you can kill this line.
+		 * note: the period of the state alarm, must be larger than the periodicity of the SM engine;
 		 * if the timeout of the state alarm is less than the rate at which the SME is called, it
 		 * will always mature with every call to the SME.
 		 */
-		evId = pev->evId;	// save exit Reason1
 		Set(Cwsw_Clock, tmrMyStateTimer, tmr1000ms);
+
+		/* advance to the next phase, now that the on-entry action is complete. */
 		++statephase;
+		break;
+
+	case kStateNormal:
+		// it is normal for the default action to inspect the event passed to this function.
+		//	in this template, we'll just ignore them.
+		UNUSED(pev);
+		UNUSED(pextra);
+
+		/* normal state behavior here, including handling in-state reactions to events
+		 *	if there is a guard condition, evaluate that here.
+		 */
+
+		// add here, any other exit reasons not covered by in-state reactions above.
+		// 	IF you need to override the default event that provokes the exit from this state, update
+		//	`evId` here.
+		//	be sure to increment statephase so as to execute the exit action.
+
+		// if your state doesn't have a timer, you can eliminate this if() clause.
+		if( Cwsw_GetTimeLeft(tmrMyStateTimer) <= 0 )
+		{
+			++statephase;	// if the timer's expired, execute the exit action the next time we're called.
+		}
 		break;
 
 	case kStateExit:
 		// for this edition of this state, no state-specific exit action is required.
 		//	let the caller (normally the SME) know what event and what guard provoked the change.
-		UNUSED(pev);
-		pev->evId = evId;
-		pev->evData = 0;
-		*pextra = 0;
-		statephase = kStateUninit;
+		pev->evId = evId;	// save exit reason 1 (event that provoked the exit)
+		pev->evData = 0;	// save exit reason 2 (no assigned purpose, use for your own purposes)
+		*pextra = 0;		// save exit reason 3 (no assigned purpose, use for your own purposes)
+//		++statephase;		// normally, the caller should know that a return code of kStateExit denotes the normal
+							//	completion of this state. if you invalidate statephase, the caller should interpret
+							//	that as a non-normal exit.
 		break;
 	}
 
@@ -369,7 +381,7 @@ TransitionLampOff(tEvQ_Event ev, uint32_t extra)
 }
 
 
-tTransitionTable tblTransitions[] = {
+static tTransitionTable tblTransitions[] = {
 	/* note: as this table is laid out, it seems that Reason3 is totally redundant, as the scheduler
 	 * can fully decide the next state and even the transition given only the current state and
 	 * Reason1. however, remember, the scheduler passes all 3 reasons to the transition function,
@@ -392,9 +404,9 @@ tTransitionTable tblTransitions[] = {
 	{ StateYellow,	evStoplite_ForceYellow,	0,	kStateYellow,	StateYellow,	TransitionLampOff	},	// commanded override
 
 	// e-stop transitions
-	{ StateRed,		evStoplite_StopEngine,	0,	kStateRed,		NULL,			TransitionLampOff	},
-	{ StateGreen,	evStoplite_StopEngine,	0,	kStateGreen,	NULL,			TransitionLampOff	},
-	{ StateYellow,	evStoplite_StopEngine,	0,	kStateYellow,	NULL,			TransitionLampOff	},
+	{ StateRed,		evStoplite_StopTask,	0,	kStateRed,		NULL,			TransitionLampOff	},
+	{ StateGreen,	evStoplite_StopTask,	0,	kStateGreen,	NULL,			TransitionLampOff	},
+	{ StateYellow,	evStoplite_StopTask,	0,	kStateYellow,	NULL,			TransitionLampOff	},
 };
 
 /** Search for the next state.
@@ -445,7 +457,7 @@ Stoplite_tsk_StopliteSme(tEvQ_Event ev, uint32_t extra)
 	static pfStateHandler currentstate = NULL, nextstate = NULL;
 	tStateReturnCodes rc = kStateUninit;
 
-	if(!currentstate)	{ currentstate = StateRed; }
+	if(!currentstate)	{ currentstate = 0; }
 	if(currentstate) 	{ rc = currentstate(&ev, &extra); }
 
 	/* the SME needs to know which state to advance to, given the current state.
@@ -464,7 +476,7 @@ Stoplite_tsk_StopliteSme(tEvQ_Event ev, uint32_t extra)
 			// disable alarm that launches this SME via its event.
 			//	if restarted, we'll resume in the current state
 			//	need a way to restart w/ the init state.
-			StopLite_tmr_SME.tmrstate = kTmrState_Disabled;
+			pMyTimer->tmrstate = kTmrState_Disabled;
 		}
 	}
 

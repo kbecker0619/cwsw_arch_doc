@@ -49,8 +49,9 @@ extern "C" {
 // ============================================================================
 
 extern void OsTimerTic(tEvQ_Event ev, uint32_t extra);
-extern void
-tedlos_idle(void);
+extern void tedlos_idle(void);
+extern void tedlos_schedule(ptEvQ_QueueCtrlEx tedlos_evqx);
+
 
 #ifdef	__cplusplus
 }

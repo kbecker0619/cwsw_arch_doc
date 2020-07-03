@@ -56,12 +56,13 @@ enum eOsEvqEvents {
 	evOs_Task100ms,
 	evOs_Task1000ms,
 
+	evStoplite_Task,
+	evStoplite_StopTask,
 	evStoplite_ForceYellow,
 	evStopLite_Reenter,
-	evStoplite_StopEngine,
-	evStoplite_Task,
 
 	evButton_Task,
+	evButton_StopTask,
 	evButton_BtnPressed,			//!< button pressed. event data says which button.
 	evButton_BtnReleased,			//!< button released. Event datt says which button.
 

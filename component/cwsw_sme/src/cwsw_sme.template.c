@@ -20,10 +20,9 @@
 #include "tedlos.h"		/* Event queue this SME uses. In the Template, this is TEDLOS, but this is not intended in any way to bias the implementation in your project. */
 
 // ----	Module Headers --------------------------
-#include "sme.h"
+#include "cwsw_sme.h"
 
 
 // ============================================================================
 // ----	Constants -------------------------------------------------------------
 // ============================================================================
-

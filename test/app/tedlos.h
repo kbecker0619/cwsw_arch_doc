@@ -24,7 +24,7 @@
 // ----	Module Headers --------------------------
 #include "tedlosevents.h"
 #include "tedlos_scheduler.h"	/* OsTimerTic */
-
+#include "tedlos_cfg.h"			/* interrupt drive? */
 
 #ifdef	__cplusplus
 extern "C" {

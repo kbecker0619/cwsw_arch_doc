@@ -25,8 +25,8 @@ extern "C" {
 #include "cwsw_swtimer.h"
 
 // ----	Module Headers --------------------------
-#include "sme.h"			/* StopLite_tmr_SME */
-#include "bd_gtk.h"			/* Btn_tmr_ButtonRead */
+#include "cwsw_sme.h"		/* StopLite_tmr_SME */
+#include "cwsw_board.h"		/* Btn_tmr_ButtonRead */
 
 
 // ============================================================================
@@ -65,7 +65,6 @@ extern tCwswSwAlarm	Os_tmr_1000ms;
 	/* **** DO NOT EDIT THIS DEFINITION ABOVE THIS LINE **** */	\
 	  &Os_tmr_10ms			\
 	, &Btn_tmr_ButtonRead	\
-	/* in keeping with RMS methodology, put the 20ms task as a higher priority than the 1000ms task */	\
 	, &StopLite_tmr_SME		\
 	, &Os_tmr_1000ms		\
 	/* **** DO NOT EDIT THIS DEFINITION BELOW THIS LINE **** */	\
