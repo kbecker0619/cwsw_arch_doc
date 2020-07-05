@@ -120,14 +120,22 @@ AppButtonPress(tEvQ_Event ev, uint32_t extra)
 	//	probably be an app-level stuck-button timeout that is situation-specific, and an
 	//	accompanying reaction (which should include notifying the BSP, via an event, that we want to
 	//	invoke stuck-button behavior).
-	UNUSED(ev);
-	UNUSED(extra);
+	(void)printf("Button Pressed: Event: %i, Button: %i, Extra: %i\n", ev.evId, ev.evData, extra);
+}
+void
+AppButtonCommit(tEvQ_Event ev, uint32_t extra)
+{
+	(void)printf("Button Commit: Event: %i, Button: %i, Extra: %i\n", ev.evId, ev.evData, extra);
 }
 void
 AppButtonStuck(tEvQ_Event ev, uint32_t extra)
 {
-	UNUSED(ev);
-	UNUSED(extra);
+	(void)printf("BUTTON STUCK: Event: %i, Button: %i, Extra: %i\n", ev.evId, ev.evData, extra);
+}
+void
+AppButtonUnstuck(tEvQ_Event ev, uint32_t extra)
+{
+	(void)printf("Button Unstuck: Event: %i, Button: %i, Extra: %i\n", ev.evId, ev.evData, extra);
 }
 
 
@@ -165,8 +173,9 @@ tTedlosTaskDescriptor tblInitTasks[] = {
 	{	NULL, 		    	0,			0,			&tedlos_evqx,	evButton_Task,			Btn_tsk_ButtonRead		},
 	//	for the following DI entries, i'm using the convenience of this table to do the event-to-event-handler association. there are no alarms involved.
 	{	NULL,				0,			0,			&tedlos_evqx,	evButton_BtnPressed,	AppButtonPress			},
+	{	NULL,				0,			0,			&tedlos_evqx,	evButton_BtnReleased,	AppButtonCommit			},
 	{	NULL,				0,			0,			&tedlos_evqx,	evButton_BtnStuck,		AppButtonStuck			},
-	//evButton_BtnReleased
+	{	NULL,				0,			0,			&tedlos_evqx,	evButton_BtnUnstuck,	AppButtonUnstuck		},
 	//evButton_StopTask
 
 	// End of Table

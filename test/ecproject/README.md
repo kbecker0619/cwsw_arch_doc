@@ -72,11 +72,11 @@ stDebouncePress -> stButtonReleased: TM(debounce_time)
 stDebouncePress -> stButtonReleased: [button released]
 
 stButtonPressed -> stButtonStuck: TM(stuck_time)
+stButtonStuck -> stButtonReleased: [button released]
 
 @enduml
 
 ```
 
-stButtonStuck -> stButtonReleased: [button released]
 stDebounceRelease -d-> stButtonPressed: [button pressed]
 stDebounceRelease -> stButtonStuck: TM(debounce_time)
