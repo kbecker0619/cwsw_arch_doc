@@ -110,6 +110,27 @@ taskOs1000ms(tEvQ_Event ev, uint32_t extra)
 	}
 }
 
+// NON-TASK EVENT HANDLERS
+//	THIS SECTION COULD (SHOULD) BE MOVED TO APPLICATION-LAYER "SENSOR" COMPONENT
+void
+AppButtonPress(tEvQ_Event ev, uint32_t extra)
+{
+	// in this app, we take no real action on a button press.
+	//	while there is a configurable BSP-level configuration for stuck hardware, there should
+	//	probably be an app-level stuck-button timeout that is situation-specific, and an
+	//	accompanying reaction (which should include notifying the BSP, via an event, that we want to
+	//	invoke stuck-button behavior).
+	UNUSED(ev);
+	UNUSED(extra);
+}
+void
+AppButtonStuck(tEvQ_Event ev, uint32_t extra)
+{
+	UNUSED(ev);
+	UNUSED(extra);
+}
+
+
 /** Task initialization table.
  *	We have 2 basic approaches: either, we can have
  *	- one universal set of tasks, where each task is aware of the current ECU state and reacts
@@ -125,7 +146,7 @@ taskOs1000ms(tEvQ_Event ev, uint32_t extra)
 tTedlosTaskDescriptor tblInitTasks[] = {
 	//	timer			init	  	reload			evq				evid				evcb
 	/// the quit event is special, doesn't have an alarm, but the message pump specifically looks for it and terminates itself if seen
-	{	 NULL,			0,	    0,					&tedlos_evqx,	evOs_QuitRqst,			OsTimerTic	},
+	{	 NULL,				0,		    0,			&tedlos_evqx,	evOs_QuitRqst,			OsTimerTic	},
 
 	// the following couple of functions are do-nothings for testing purposes
 	{  &Os_tmr_10ms,	tmr10ms,	tmr10ms,		&tedlos_evqx,	evOs_Task10ms,			taskOs10ms	},
@@ -135,13 +156,18 @@ tTedlosTaskDescriptor tblInitTasks[] = {
 	//	Note: the stoplight lines have null parameters for the alarm, because we are doing compile-
 	//	time initialization within the SME module itself, but the alarm doesn't have an event
 	//	callback field, so we still need to associate the event and the event handler.
-	{	NULL, 		    0,		0,					&tedlos_evqx,	evStoplite_Task,		Stoplite_tsk_StopliteSme	},
-	{	NULL, 		    0,		0,					&tedlos_evqx,	evStoplite_ForceYellow,	Stoplite_tsk_StopliteSme	},
-	{	NULL, 		    0,		0,					&tedlos_evqx,	evStopLite_Reenter,		Stoplite_tsk_StopliteSme	},
-	{	NULL, 		    0,		0,					&tedlos_evqx,	evStoplite_StopTask,	Stoplite_tsk_StopliteSme	},
+	{	NULL, 		    	0,			0,			&tedlos_evqx,	evStoplite_Task,		Stoplite_tsk_StopliteSme	},
+	{	NULL, 		   		0,			0,			&tedlos_evqx,	evStoplite_ForceYellow,	Stoplite_tsk_StopliteSme	},
+	{	NULL, 		    	0,			0,			&tedlos_evqx,	evStopLite_Reenter,		Stoplite_tsk_StopliteSme	},
+	{	NULL, 		    	0,			0,			&tedlos_evqx,	evStoplite_StopTask,	Stoplite_tsk_StopliteSme	},
 
 	// DI task
-	{	NULL, 		    0,		0,					&tedlos_evqx,	evButton_Task,			Btn_tsk_ButtonRead		},
+	{	NULL, 		    	0,			0,			&tedlos_evqx,	evButton_Task,			Btn_tsk_ButtonRead		},
+	//	for the following DI entries, i'm using the convenience of this table to do the event-to-event-handler association. there are no alarms involved.
+	{	NULL,				0,			0,			&tedlos_evqx,	evButton_BtnPressed,	AppButtonPress			},
+	{	NULL,				0,			0,			&tedlos_evqx,	evButton_BtnStuck,		AppButtonStuck			},
+	//evButton_BtnReleased
+	//evButton_StopTask
 
 	// End of Table
 	{0}	/* termination row */

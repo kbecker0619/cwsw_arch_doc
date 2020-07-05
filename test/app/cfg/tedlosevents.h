@@ -63,8 +63,10 @@ enum eOsEvqEvents {
 
 	evButton_Task,
 	evButton_StopTask,
-	evButton_BtnPressed,			//!< button pressed. event data says which button.
-	evButton_BtnReleased,			//!< button released. Event datt says which button.
+	evButton_BtnPressed,			//!< Button pressed. Event data says which button.
+	evButton_BtnReleased,			//!< Button released. Event data says which button.
+	evButton_BtnStuck,				//!< Button stuck "on". Event data says which button.
+	evButton_BtnUnstuck,
 
 	kNumOsEvqEvents					/**< RESERVED NAME, must be last name in list of events */
 };
