@@ -65,7 +65,7 @@ Cwsw_Sme_FindNextState(
 		{
 			if(pTblTransition[tblidx].reason1 == ev.evId)
 			{
-				if(pTblTransition[tblidx].reason2 == ev.evData)
+//				if(pTblTransition[tblidx].reason2 == ev.evData)
 				{
 					if(pTblTransition[tblidx].reason3 == extra)
 					{
@@ -75,9 +75,9 @@ Cwsw_Sme_FindNextState(
 							pTblTransition[tblidx].pfTransition(ev, extra);
 						}
 						break;
-					}
-				}
-			}
+					}	// reason3
+				}		// reason2 - ignored since reason2 now carries the button
+			}			// reason1
 		}
 	}
 

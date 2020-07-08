@@ -41,7 +41,7 @@ extern "C" {
  */
 typedef enum eStateReturnCodes {
 	kStateUninit,	//!< initialization phase for each state. It is an error if the state function returns this value.
-	kStateNormal, 	//!< the lion's portion of the time, this is the expected return value from each state.
+	kStateOperational, 	//!< the lion's portion of the time, this is the expected return value from each state.
 	kStateExit,		//!< the state has executed its exit action and has relinquished "current state" status.
 	kStateAbort		//!< abnormal exit
 } tStateReturnCodes;

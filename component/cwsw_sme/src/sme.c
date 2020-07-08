@@ -91,7 +91,7 @@ StateRed(ptEvQ_Event pev, uint32_t *pextra)
 	 */
 	switch(statephase++)
 	{
-	case kStateNormal:
+	case kStateOperational:
 		if(pev->evId != evStoplite_Task)
 		{
 			// event only, no guard, for this transition.
@@ -110,7 +110,7 @@ StateRed(ptEvQ_Event pev, uint32_t *pextra)
 	case kStateAbort:	/* upon return to this state after previous normal exit, execute on-entry action */
 	default:			/* for any unexpected value, restart this state. */
 		// unilaterally set statephase to normal. this is a nop for the premiere run, but necessary all other use cases
-		statephase = kStateNormal;
+		statephase = kStateOperational;
 		/* the on-entry action could be
 		 * - a separate function, or as we've done here,
 		 * - a list of actions within the case.
@@ -161,7 +161,7 @@ StateGreen(ptEvQ_Event pev, uint32_t *pextra)
 
 	switch(statephase++)
 	{
-	case kStateNormal:
+	case kStateOperational:
 		if(pev->evId != evStoplite_Task)
 		{
 			// event only, no guard, for this transition.
@@ -178,7 +178,7 @@ StateGreen(ptEvQ_Event pev, uint32_t *pextra)
 	case kStateAbort:	/* upon return to this state after previous normal exit, execute on-entry action */
 	default:			/* for any unexpected value, restart this state. */
 		// generic state management, common to all states
-		statephase = kStateNormal;
+		statephase = kStateOperational;
 		evId = pev->evId;
 		Set(Cwsw_Clock, tmrGreenState, tmr1000ms);
 
@@ -210,7 +210,7 @@ StateYellow(ptEvQ_Event pev, uint32_t *pextra)
 
 	switch(statephase++)
 	{
-	case kStateNormal:
+	case kStateOperational:
 		if(pev->evId != evStoplite_Task)
 		{
 			// event only, no guard, for this transition.
@@ -227,7 +227,7 @@ StateYellow(ptEvQ_Event pev, uint32_t *pextra)
 	case kStateAbort:	/* upon return to this state after previous normal exit, execute on-entry action */
 	default:			/* for any unexpected value, restart this state. */
 		// generic state management, common to all states
-		statephase = kStateNormal;
+		statephase = kStateOperational;
 		evId = pev->evId;
 		Set(Cwsw_Clock, tmrStateOn, tmr100ms + tmr100ms);
 
@@ -297,7 +297,7 @@ template_StateHandler(ptEvQ_Event pev, uint32_t *pextra)
 		++statephase;
 		break;
 
-	case kStateNormal:
+	case kStateOperational:
 		// it is normal for the default action to inspect the event passed to this function.
 		//	in this template, we'll just ignore them.
 		UNUSED(pev);
