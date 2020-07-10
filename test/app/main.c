@@ -27,6 +27,7 @@
 #include "tedlos.h"			/* events and initializer for managed alarms array, indirectly */
 #include "cwsw_sme.h"		/* stoplight demo of SME */
 #include "console_keyin.h"	/* DI task */
+#include "app-di-buttons.h"
 
 
 // ============================================================================
@@ -110,38 +111,6 @@ taskOs1000ms(tEvQ_Event ev, uint32_t extra)
 	}
 }
 
-// NON-TASK EVENT HANDLERS
-//	THIS SECTION COULD (SHOULD) BE MOVED TO APPLICATION-LAYER "SENSOR" COMPONENT
-void
-AppButtonPress(tEvQ_Event ev, uint32_t extra)
-{
-	// in this app, we take no real action on a button press.
-	//	while there is a configurable BSP-level configuration for stuck hardware, there should
-	//	probably be an app-level stuck-button timeout that is situation-specific, and an
-	//	accompanying reaction (which should include notifying the BSP, via an event, that we want to
-	//	invoke stuck-button behavior).
-	(void)printf("Button Pressed: Event: %i, Button: %i, Extra: %i\n", ev.evId, ev.evData, extra);
-}
-void
-AppButtonCommit(tEvQ_Event ev, uint32_t extra)
-{
-	(void)printf("Button Commit: Event: %i, Button: %i, Extra: %i\n", ev.evId, ev.evData, extra);
-	if(ev.evData == kBoardButton3)
-	{
-		Cwsw_EvQX__PostEventId(&tedlos_evqx, evStoplite_ForceYellow);	// todo: move this to app-level swc
-	}
-}
-void
-AppButtonStuck(tEvQ_Event ev, uint32_t extra)
-{
-	(void)printf("BUTTON STUCK: Event: %i, Button: %i, Extra: %i\n", ev.evId, ev.evData, extra);
-}
-void
-AppButtonUnstuck(tEvQ_Event ev, uint32_t extra)
-{
-	(void)printf("Button Unstuck: Event: %i, Button: %i, Extra: %i\n", ev.evId, ev.evData, extra);
-}
-
 
 /** Task initialization table.
  *	We have 2 basic approaches: either, we can have
@@ -175,11 +144,6 @@ tTedlosTaskDescriptor tblInitTasks[] = {
 
 	// DI task
 	{	NULL, 		    	0,			0,			&tedlos_evqx,	evButton_Task,			Btn_tsk_ButtonRead			},
-	//	for the following DI entries, i'm using the convenience of this table to do the event-to-event-handler association. there are no alarms involved.
-	{	NULL,				0,			0,			&tedlos_evqx,	evButton_BtnPressed,	AppButtonPress				},
-	{	NULL,				0,			0,			&tedlos_evqx,	evButton_BtnReleased,	AppButtonCommit				},
-	{	NULL,				0,			0,			&tedlos_evqx,	evButton_BtnStuck,		AppButtonStuck				},
-	{	NULL,				0,			0,			&tedlos_evqx,	evButton_BtnUnstuck,	AppButtonUnstuck			},
 	//evButton_StopTask
 
 	// End of Table
@@ -202,6 +166,7 @@ main(void)
 	(void)Init(Cwsw_EvQ);
 	(void)Init(tedlos);
 	(void)Init(Cwsw_Arch);		// Cwsw_Arch__Init()
+	(void)Init(buttons);		// buttons__Init()
 	if(!Init(Cwsw_Board))		// Cwsw_Board__Init()
 	{
 		tedlos__InitTaskList(tblInitTasks);
