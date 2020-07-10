@@ -126,6 +126,10 @@ void
 AppButtonCommit(tEvQ_Event ev, uint32_t extra)
 {
 	(void)printf("Button Commit: Event: %i, Button: %i, Extra: %i\n", ev.evId, ev.evData, extra);
+	if(ev.evData == kBoardButton3)
+	{
+		Cwsw_EvQX__PostEventId(&tedlos_evqx, evStoplite_ForceYellow);	// todo: move this to app-level swc
+	}
 }
 void
 AppButtonStuck(tEvQ_Event ev, uint32_t extra)
@@ -152,13 +156,13 @@ AppButtonUnstuck(tEvQ_Event ev, uint32_t extra)
  *	@note This table must be terminated by a row of all 0 or NULL values.
  */
 tTedlosTaskDescriptor tblInitTasks[] = {
-	//	timer			init	  	reload			evq				evid				evcb
+	//	timer			init	  	reload				evq				evid					evcb
 	/// the quit event is special, doesn't have an alarm, but the message pump specifically looks for it and terminates itself if seen
-	{	 NULL,				0,		    0,			&tedlos_evqx,	evOs_QuitRqst,			OsTimerTic	},
+	{	 NULL,				0,		    0,			&tedlos_evqx,	evOs_QuitRqst,			OsTimerTic					},
 
 	// the following couple of functions are do-nothings for testing purposes
-	{  &Os_tmr_10ms,	tmr10ms,	tmr10ms,		&tedlos_evqx,	evOs_Task10ms,			taskOs10ms	},
-	{ &Os_tmr_1000ms,	tmr1000ms,	tmr1000ms,		&tedlos_evqx,	evOs_Task1000ms, 		taskOs1000ms	},
+	{  &Os_tmr_10ms,	tmr10ms,	tmr10ms,		&tedlos_evqx,	evOs_Task10ms,			taskOs10ms					},
+	{ &Os_tmr_1000ms,	tmr1000ms,	tmr1000ms,		&tedlos_evqx,	evOs_Task1000ms, 		taskOs1000ms				},
 
 	// stoplight task
 	//	Note: the stoplight lines have null parameters for the alarm, because we are doing compile-
@@ -170,12 +174,12 @@ tTedlosTaskDescriptor tblInitTasks[] = {
 	{	NULL, 		    	0,			0,			&tedlos_evqx,	evStoplite_StopTask,	Stoplite_tsk_StopliteSme	},
 
 	// DI task
-	{	NULL, 		    	0,			0,			&tedlos_evqx,	evButton_Task,			Btn_tsk_ButtonRead		},
+	{	NULL, 		    	0,			0,			&tedlos_evqx,	evButton_Task,			Btn_tsk_ButtonRead			},
 	//	for the following DI entries, i'm using the convenience of this table to do the event-to-event-handler association. there are no alarms involved.
-	{	NULL,				0,			0,			&tedlos_evqx,	evButton_BtnPressed,	AppButtonPress			},
-	{	NULL,				0,			0,			&tedlos_evqx,	evButton_BtnReleased,	AppButtonCommit			},
-	{	NULL,				0,			0,			&tedlos_evqx,	evButton_BtnStuck,		AppButtonStuck			},
-	{	NULL,				0,			0,			&tedlos_evqx,	evButton_BtnUnstuck,	AppButtonUnstuck		},
+	{	NULL,				0,			0,			&tedlos_evqx,	evButton_BtnPressed,	AppButtonPress				},
+	{	NULL,				0,			0,			&tedlos_evqx,	evButton_BtnReleased,	AppButtonCommit				},
+	{	NULL,				0,			0,			&tedlos_evqx,	evButton_BtnStuck,		AppButtonStuck				},
+	{	NULL,				0,			0,			&tedlos_evqx,	evButton_BtnUnstuck,	AppButtonUnstuck			},
 	//evButton_StopTask
 
 	// End of Table
