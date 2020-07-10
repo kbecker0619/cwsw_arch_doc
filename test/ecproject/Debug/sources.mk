@@ -26,6 +26,9 @@ SUBDIRS := \
 app \
 app/cwsw_lib_prj \
 component/cwsw_sme/src \
+libs/cwsw_arch/inc/i386/peripheral/ports \
+libs/cwsw_arch/src/i386 \
+libs/cwsw_board/bd_gtk/src \
 libs/cwsw_clock_services/cwsw_clock/src \
 libs/cwsw_clock_services/cwsw_swtimer/src \
 libs/cwsw_eventqueue/cwsw_event/src \

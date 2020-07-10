@@ -14,6 +14,9 @@ RM := rm -rf
 -include libs/cwsw_eventqueue/cwsw_event/src/subdir.mk
 -include libs/cwsw_clock_services/cwsw_swtimer/src/subdir.mk
 -include libs/cwsw_clock_services/cwsw_clock/src/subdir.mk
+-include libs/cwsw_board/bd_gtk/src/subdir.mk
+-include libs/cwsw_arch/src/i386/subdir.mk
+-include libs/cwsw_arch/inc/i386/peripheral/ports/subdir.mk
 -include component/cwsw_sme/src/subdir.mk
 -include app/cwsw_lib_prj/subdir.mk
 -include app/subdir.mk
@@ -52,7 +55,7 @@ all: EventQueue.exe
 EventQueue.exe: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MinGW C++ Linker'
-	g++  -o "EventQueue.exe" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ `pkg-config --libs gtk+-3.0` -o "EventQueue.exe" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

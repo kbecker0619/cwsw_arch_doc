@@ -1,6 +1,12 @@
 /** @file
  *	@brief	Implementation of a very simple event dispatcher.
  *
+ *	in design intent, the OS scheduler should use the resources of the BSP to realize its scheduling.
+ *	in contrast, the BSP should be able to support multiple OS / schedulers.
+ *
+ *	we'll have a project-specific configuration that connects the "realization" functions found in
+ *	the BSP to the scheduler.
+ *
  *	Copyright (c) 2020 Kevin L. Becker. All rights reserved.
  *
  *	Created on: Jun 18, 2020
@@ -15,6 +21,7 @@
 #include <stdbool.h>		/* true */
 
 // ----	Project Headers -------------------------
+#include "cwsw_board.h"		/* todo: remove this dependency - OS shouldn't be tied to the board on which it runs */
 
 // ----	Module Headers --------------------------
 #include "tedlos.h"
@@ -66,7 +73,7 @@ static bool quit_requested = false;
 // ----	Private Functions -----------------------------------------------------
 // ============================================================================
 
-static void
+void
 tedlos_idle(void)
 {
 	++idlecounts;
@@ -102,49 +109,66 @@ tedlos__Init(void)
 /**	TEDLOS scheduler.
  *	Don't give me no crap about this not being a real scheduler. i know that. i envision this
  *	evolving into something more than it is now, but for now, it's an event dispatcher.
- *
+ */
+void
+tedlos_schedule(ptEvQ_QueueCtrlEx tedlos_evqx)
+{
+	tErrorCodes_EvQ rc;
+	/* posting vs dispatching:
+	 * the clock service task will post (at most) one event each time called.
+	 * this will cause the OS' tic handler to be called; inside that function, there will be an
+	 * event posted for each timer that matures, and possibly some other postings as well.
+	 *
+	 * because i envision this function as the main "scheduler", i kinda-sorta want all events
+	 * to be dispatched from here. we'll see how this scales, it might not scale well (written
+	 * 14-apr-2020, at the very beginning of "playing" with tedlos).
+	 *
+	 * in one of my previous jobs, we had a message pump that limited itself to no more than <x>
+	 * calls to the event dispatcher (i think in that context <x> was 5).
+	 */
+	Task(Cwsw_ClockSvc);	// Cwsw_ClockSvc__Task()
+	do {
+		/* WARNING ABOUT TASKS:
+		 * because this is a COOPERATIVE tasking system, it is IMPERATIVE that everything that
+		 * is done in any particular time slot, must be completed with a bit of headroom to
+		 * spare. for that reason, the following points:
+		 * - generally, we recommend that each task should have its own alarm and should not
+		 *   spawn sub-tasks; however, of course, there's a balance with the number of events
+		 *   defined in the system, and it may make sense for the slower tasks to spawn their
+		 *   own sub-tasks.
+		 * - it is important to monitor the idle time and load balance if the idle time drops
+		 *   too low. at the time of this writing, i would say there is no or little harm in
+		 *   having one or two "loops" where there's no idle time but it will highly depend on
+		 *   the specific application. for really important systems, it might be safest to
+		 *   never get lower than some safety margin.
+		 */
+		rc = Cwsw_EvQX__HandleNextEvent(tedlos_evqx, 0);
+	} while(0 != tedlos_evqx->EvQ_Ctrl.Queue_Count);
+	if( (rc == kErr_EvQ_NoAssociation) || (rc == kErr_EvQ_QueueEmpty) )
+	{
+		tedlos_idle();
+	}
+}
+
+/** Start the tedlos scheduler.
+ *	If tedlos is configured to be interrupt driven, defer to the "start scheduler" from the BSP.
+ *	@param tedlos_evqx [in,out]	Event queue to be used by the OS.
  */
 void
 tedlos__do(ptEvQ_QueueCtrlEx tedlos_evqx)
 {
-	tErrorCodes_EvQ rc;
-	// this loop is executed as quickly as possible
-	do {
-		/* posting vs dispatching:
-		 * the clock service task will post (at most) one event each time called.
-		 * this will cause the OS' tic handler to be called; inside that function, there will be an
-		 * event posted for each timer that matures, and possibly some other postings as well.
-		 *
-		 * because i envision this function as the main "scheduler", i kinda-sorta want all events
-		 * to be dispatched from here. we'll see how this scales, it might not scale well (written
-		 * 14-apr-2020, at the very beginning of "playing" with tedlos).
-		 *
-		 * in one of my previous jobs, we had a message pump that limited itself to no more than <x>
-		 * calls to the event dispatcher (i think in that context <x> was 5).
-		 */
-		Task(Cwsw_ClockSvc);
+	if(TEDLOS_INTERRUPT_DRIVEN)
+	{
+		Cwsw_Board__StartScheduler(tedlos_evqx);
+		gtk_main();
+	}
+	else
+	{
+		// this loop is executed as quickly as possible
 		do {
-			/* WARNING ABOUT TASKS:
-			 * because this is a COOPERATIVE tasking system, it is IMPERATIVE that everything that
-			 * is done in any particular time slot, must be completed with a bit of headroom to
-			 * spare. for that reason, the following points:
-			 * - generally, we recommend that each task should have its own alarm and should not
-			 *   spawn sub-tasks; however, of course, there's a balance with the number of events
-			 *   defined in the system, and it may make sense for the slower tasks to spawn their
-			 *   own sub-tasks.
-			 * - it is important to monitor the idle time and load balance if the idle time drops
-			 *   too low. at the time of this writing, i would say there is no or little harm in
-			 *   having one or two "loops" where there's no idle time but it will highly depend on
-			 *   the specific application. for really important systems, it might be safest to
-			 *   never get lower than some safety margin.
-			 */
-			rc = Cwsw_EvQX__HandleNextEvent(tedlos_evqx, 0);
-		} while(0 != tedlos_evqx->EvQ_Ctrl.Queue_Count);
-		if( (rc == kErr_EvQ_NoAssociation) || (rc == kErr_EvQ_QueueEmpty) )
-		{
-			tedlos_idle();
-		}
-	} while(!quit_requested);
+			tedlos_schedule(tedlos_evqx);
+		} while(!quit_requested);
+	}
 }
 
 

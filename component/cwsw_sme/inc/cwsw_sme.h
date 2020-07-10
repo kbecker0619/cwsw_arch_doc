@@ -41,11 +41,17 @@ extern "C" {
  */
 typedef enum eStateReturnCodes {
 	kStateUninit,	//!< initialization phase for each state. It is an error if the state function returns this value.
-	kStateNormal, 	//!< the lion's portion of the time, this is the expected return value from each state.
+	kStateOperational, 	//!< the lion's portion of the time, this is the expected return value from each state.
 	kStateExit,		//!< the state has executed its exit action and has relinquished "current state" status.
 	kStateAbort		//!< abnormal exit
 } tStateReturnCodes;
 
+/** Button Identifiers.
+ *	This board
+ * @param ev
+ * @param extra
+ * @return
+ */
 
 /** Prototype for the various State Machine handlers.
  *	The individual states in a CWSW SME are embodied by a function that looks similar to a CWSW event
@@ -94,7 +100,7 @@ typedef struct sTransitionTable {
 	 * contextual information, not the parameters normal to event usage.
 	 */
 	ptEvQ_EvHandlerFunc	pfTransition;
-} tTransitionTable;
+} tTransitionTable, *ptTransitionTable;
 
 
 // ============================================================================
@@ -107,6 +113,13 @@ extern tCwswSwAlarm	StopLite_tmr_SME;
 // ============================================================================
 // ----	Public API ------------------------------------------------------------
 // ============================================================================
+
+extern pfStateHandler Cwsw_Sme_FindNextState(
+	ptTransitionTable	pTblTransition,		// pointer to 1st row of transition table
+	uint32_t			szTblTransition,	// size in rows of the transition table
+	pfStateHandler		currentstate,
+	tEvQ_Event			ev, 				// mis-appropriating an event because it happens to be a container suitable for the 1st two exit reason types
+	uint32_t 			extra);				// mis-appropriating the "extra" field for the same reason - 3rd exit reason
 
 /// All SMEs are normal event handlers and should be prototyped within their respective components.
 extern void Stoplite_tsk_StopliteSme(tEvQ_Event ev, uint32_t extra);

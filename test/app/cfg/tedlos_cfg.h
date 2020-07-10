@@ -1,4 +1,4 @@
-/** @file console_keyin.h
+/** @file tedlos_cfg.h
  *	@brief	One-sentence short description of file.
  *
  *	Description:
@@ -6,12 +6,12 @@
  *	Copyright (c) 2020 Kevin L. Becker. All rights reserved.
  *
  *	Original:
- *	Created on: Jun 24, 2020
+ *	Created on: Jun 28, 2020
  *	Author: kevin
  */
 
-#ifndef APP_CONSOLE_KEYIN_H_
-#define APP_CONSOLE_KEYIN_H_
+#ifndef APP_CFG_TEDLOS_CFG_H_
+#define APP_CFG_TEDLOS_CFG_H_
 
 // ============================================================================
 // ----	Include Files ---------------------------------------------------------
@@ -20,7 +20,6 @@
 // ----	System Headers --------------------------
 
 // ----	Project Headers -------------------------
-#include "cwsw_swtimer.h"		/* tCwswSwAlarm */
 
 // ----	Module Headers --------------------------
 
@@ -33,6 +32,13 @@ extern "C" {
 // ============================================================================
 // ----	Constants -------------------------------------------------------------
 // ============================================================================
+
+/** Determine if tedlos is polled, or interrupt driven.
+ *	Legal options are "true" (from stdbool.h) or a non-zero literal, or
+ *	"false" (from stdbool.h) or `0`.
+ */
+#define TEDLOS_INTERRUPT_DRIVEN		true
+
 
 // ============================================================================
 // ----	Type Definitions ------------------------------------------------------
@@ -47,9 +53,8 @@ extern "C" {
 // ============================================================================
 
 
-
 #ifdef	__cplusplus
 }
 #endif
 
-#endif /* APP_CONSOLE_KEYIN_H_ */
+#endif /* APP_CFG_TEDLOS_CFG_H_ */
