@@ -106,7 +106,7 @@ StateRed(ptEvQ_Event pev, uint32_t *pextra)
 		break;
 
 	case kStateUninit:	/* on 1st entry, execute on-entry action */
-	case kStateAbort:	/* upon return to this state after previous normal exit, execute on-entry action */
+	case kStateFinished:	/* upon return to this state after previous normal exit, execute on-entry action */
 	default:			/* for any unexpected value, restart this state. */
 		// unilaterally set statephase to normal. this is a nop for the premiere run, but necessary all other use cases
 		statephase = kStateOperational;
@@ -174,7 +174,7 @@ StateGreen(ptEvQ_Event pev, uint32_t *pextra)
 		break;
 
 	case kStateUninit:	/* on 1st entry, execute on-entry action */
-	case kStateAbort:	/* upon return to this state after previous normal exit, execute on-entry action */
+	case kStateFinished:	/* upon return to this state after previous normal exit, execute on-entry action */
 	default:			/* for any unexpected value, restart this state. */
 		// generic state management, common to all states
 		statephase = kStateOperational;
@@ -223,7 +223,7 @@ StateYellow(ptEvQ_Event pev, uint32_t *pextra)
 		break;
 
 	case kStateUninit:	/* on 1st entry, execute on-entry action */
-	case kStateAbort:	/* upon return to this state after previous normal exit, execute on-entry action */
+	case kStateFinished:	/* upon return to this state after previous normal exit, execute on-entry action */
 	default:			/* for any unexpected value, restart this state. */
 		// generic state management, common to all states
 		statephase = kStateOperational;
@@ -322,39 +322,6 @@ static tTransitionTable tblTransitions[] = {
 	{ StateYellow,	evStoplite_StopTask,	0,	kStateYellow,	NULL,			TransitionLampOff	},
 };
 
-/** Search for the next state.
- *	If found, execute transition function, if any specified.
- */
-static pfStateHandler
-statefind(pfStateHandler currentstate, tEvQ_Event ev, uint32_t extra)
-{
-	pfStateHandler nextstate = currentstate;
-	uint32_t tblidx = TABLE_SIZE(tblTransitions);
-	while(tblidx--)
-	{
-		if(tblTransitions[tblidx].pfCurrent == currentstate)
-		{
-			if(tblTransitions[tblidx].reason1 == ev.evId)
-			{
-				if(tblTransitions[tblidx].reason2 == ev.evData)
-				{
-					if(tblTransitions[tblidx].reason3 == extra)
-					{
-						nextstate = tblTransitions[tblidx].pfNext;
-						if(tblTransitions[tblidx].pfTransition)
-						{
-							tblTransitions[tblidx].pfTransition(ev, extra);
-						}
-						break;
-					}
-				}
-			}
-		}
-	}
-
-	return nextstate;
-}
-
 
 // ============================================================================
 // ----	Public Functions ------------------------------------------------------
@@ -367,39 +334,25 @@ statefind(pfStateHandler currentstate, tEvQ_Event ev, uint32_t extra)
 void
 Stoplite_tsk_StopliteSme(tEvQ_Event ev, uint32_t extra)
 {
-	static pfStateHandler currentstate = NULL, nextstate = NULL;
-	tStateReturnCodes rc = kStateUninit;
+	static pfStateHandler currentstate = StateGreen;
+	pfStateHandler nextstate = Cwsw_Sme__SME(tblTransitions, TABLE_SIZE(tblTransitions), currentstate, ev, extra);
 
-	if(!currentstate)	{ currentstate = 0; }
-	if(currentstate) 	{ rc = currentstate(&ev, &extra); }
-
-	/* the SME needs to know which state to advance to, given the current state.
-	 * in order for it to know that, it has to know which event & guard combination led to the end
-	 * of the current state.
-	 */
-	if(rc > kStateExit)
+	if(nextstate)
 	{
-		nextstate = statefind(currentstate, ev, extra);
-		if(nextstate)
-		{
-			currentstate = nextstate;
-		}
-		else
-		{
-			// disable alarm that launches this SME via its event.
-			//	if restarted, we'll resume in the current state
-			//	need a way to restart w/ the init state.
-			pMyTimer->tmrstate = kTmrState_Disabled;
-		}
+		currentstate = nextstate;
 	}
-
-	// todo: handle abort (SME exit), etc.
-	// maybe transition my alarm status to something not active.
+	else
+	{
+		// disable alarm that launches this SME via its event.
+		//	if restarted, we'll resume in the current state
+		//	need a way to restart w/ the init state.
+		pMyTimer->tmrstate = kTmrState_Disabled;
+	}
 }
 
 
 uint16_t
-Cwsw_Board__Init(void)
+Stoplite__Init(void)
 {
 	tErrorCodes_EvQ err = 0;
 	struct {

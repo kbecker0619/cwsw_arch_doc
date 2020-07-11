@@ -87,3 +87,33 @@ Cwsw_Sme_FindNextState(
 
 	return nextstate;
 }
+
+
+/** CWSW State Machine Engine task.
+ *	This is the core SM Engine. It is intended to be called from the SME of a specific state machine.
+ *
+ *	@param pTblTransitions [in]	The transition table of the calling SM.
+ *	@param sztbl [in]			Size of the caller's transition table.
+ *	@param pfState [in]			The current state.
+ *	@param ev [in]				Event parameter passed to the calling SME by the event dispatcher.
+ *	@param extra [in]			Extra parameter passed to the calling SME by the event dispatcher.
+ *
+ *	@returns The next state. If NULL, there is no next state and the caller should take appropriate action.
+ */
+pfStateHandler
+Cwsw_Sme__SME(
+	ptTransitionTable pTblTransitions, uint32_t sztbl,	// individual component's transition table
+	pfStateHandler CurrentState,
+	tEvQ_Event ev, uint32_t extra)
+{
+	pfStateHandler nextstate = CurrentState;
+	tStateReturnCodes rc = kStateUninit;
+
+	if(CurrentState) 	{ rc = CurrentState(&ev, &extra); }
+
+	if(rc > kStateExit)
+	{
+		nextstate = Cwsw_Sme_FindNextState(pTblTransitions, sztbl, CurrentState, ev, extra);
+	}
+	return nextstate;
+}

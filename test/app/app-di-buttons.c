@@ -99,6 +99,7 @@ AppButtonCommit(tEvQ_Event ev, uint32_t extra)
 	switch(ev.evData)
 	{
 	case kBoardButton1:		// Pause button pushed and committed.
+		puts("Emitting Pause event");
 		Cwsw_EvQX__PostEventId(&tedlos_evqx, evStopLite_Pause);
 		break;
 

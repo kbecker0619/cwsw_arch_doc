@@ -49,9 +49,12 @@ extern tCwswSwAlarm	StopLite_tmr_SME;
 // ----	Public API ------------------------------------------------------------
 // ============================================================================
 
-/// All SMEs are normal event handlers and should be prototyped within their respective components.
+extern uint16_t Stoplite__Init(void);
+
+///	SMEs for the demo app, a single-sided stop lamp.
+/// Recall, all SMEs are normal event handlers, intended to be called in reaction to the posting of
+/// a timer maturation.
 extern void Stoplite_tsk_StopliteSme(tEvQ_Event ev, uint32_t extra);
-extern uint16_t Cwsw_Board__Init(void);
 
 
 #ifdef	__cplusplus

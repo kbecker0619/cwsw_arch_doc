@@ -25,7 +25,7 @@ extern "C" {
 #include "cwsw_swtimer.h"
 
 // ----	Module Headers --------------------------
-#include "cwsw_sme.h"		/* StopLite_tmr_SME */
+#include "stoplite.h"		/* StopLite_tmr_SME */
 #include "cwsw_board.h"		/* Btn_tmr_ButtonRead */
 
 

@@ -40,10 +40,10 @@ extern "C" {
  *	the SME.
  */
 typedef enum eStateReturnCodes {
-	kStateUninit,	//!< initialization phase for each state. It is an error if the state function returns this value.
+	kStateUninit,		//!< initialization step for each state. It is an error if the state function returns this value.
 	kStateOperational, 	//!< the lion's portion of the time, this is the expected return value from each state.
-	kStateExit,		//!< the state has executed its exit action and has relinquished "current state" status.
-	kStateAbort		//!< abnormal exit
+	kStateExit,			//!< the state is going to execute its exit action at the next invocation.
+	kStateFinished		//!< The state has finished executing its exit action and has relinquished "current state" status.
 } tStateReturnCodes;
 
 /** Button Identifiers.
@@ -118,6 +118,11 @@ extern pfStateHandler Cwsw_Sme_FindNextState(
 	tEvQ_Event			ev, 				// mis-appropriating an event because it happens to be a container suitable for the 1st two exit reason types
 	uint32_t 			extra);				// mis-appropriating the "extra" field for the same reason - 3rd exit reason
 
+extern pfStateHandler
+Cwsw_Sme__SME(
+	ptTransitionTable pTblTransitions, uint32_t sztbl,	// individual component's transition table
+	pfStateHandler CurrentState,
+	tEvQ_Event ev, uint32_t extra);
 
 #ifdef	__cplusplus
 }
