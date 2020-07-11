@@ -104,6 +104,7 @@ AppButtonCommit(tEvQ_Event ev, uint32_t extra)
 		break;
 
 	case kBoardButton3:
+		puts("Emitting Go To Yellow event");
 		Cwsw_EvQX__PostEventId(&tedlos_evqx, evStoplite_ForceYellow);
 		break;
 

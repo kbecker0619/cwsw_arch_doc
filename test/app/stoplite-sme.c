@@ -335,13 +335,9 @@ void
 Stoplite_tsk_StopliteSme(tEvQ_Event ev, uint32_t extra)
 {
 	static pfStateHandler currentstate = StateGreen;
-	pfStateHandler nextstate = Cwsw_Sme__SME(tblTransitions, TABLE_SIZE(tblTransitions), currentstate, ev, extra);
+	currentstate = Cwsw_Sme__SME(tblTransitions, TABLE_SIZE(tblTransitions), currentstate, ev, extra);
 
-	if(nextstate)
-	{
-		currentstate = nextstate;
-	}
-	else
+	if(!currentstate)
 	{
 		// disable alarm that launches this SME via its event.
 		//	if restarted, we'll resume in the current state
