@@ -65,7 +65,11 @@ Cwsw_Sme_FindNextState(
 		{
 			if(pTblTransition[tblidx].reason1 == ev.evId)
 			{
-//				if(pTblTransition[tblidx].reason2 == ev.evData)
+				// this might a domain-specific edit; in the button-reading component, we're using
+				//	the evData field (reason2) to represent the button being acted upon, and we have
+				//	enough resolution available in the reason3 field, so we don't need to use the
+				//	`reason2` comparison.
+			//	if(pTblTransition[tblidx].reason2 == ev.evData)
 				{
 					if(pTblTransition[tblidx].reason3 == extra)
 					{

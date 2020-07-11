@@ -50,7 +50,6 @@ tCwswSwAlarm	StopLite_tmr_SME = {
 };
 
 
-
 // ============================================================================
 // ----	Module-level Variables ------------------------------------------------
 // ============================================================================
@@ -250,92 +249,6 @@ StateYellow(ptEvQ_Event pev, uint32_t *pextra)
 	return statephase;
 }
 
-#if 0
-static tStateReturnCodes
-template_StateHandler(ptEvQ_Event pev, uint32_t *pextra)
-{
-	// this var is part of the template and this definition + initialization line should not be touched.
-	static tStateReturnCodes statephase = kStateUninit;
-
-	/* it is quite common for timer maturation to provoke an exit transition. if you define a simple
-	 *	timer like this, you can poll it for expiration. the other alternative would be to define an
-	 *	alarm, and use Cwsw_SwAlarm__Init() to arm it. then, you'd also have the option of having
-	 *	the alarm post an event upon maturation; the tradeoff is that you need to call
-	 *	Cwsw_SwAlarm__ManageTimer() in your default action, if you don't add the timer to the list
-	 *	of alarms managed by the OS, or if your SME doesn't manage the timers - but remember, if you
-	 *	define a local-to-this-function alarm, it's not available externally for anyone else to
-	 *	manage.
-	 */
-	static tCwswClockTics tmrMyStateTimer = 0;
-
-	/* save the incoming event ID so we can return a default exit reason1. */
-	static tEvQ_EventID evId;
-
-	switch(statephase)
-	{
-	case kStateUninit:	/* on 1st entry, execute on-entry action */
-	case kStateAbort:	/* upon return to this state after previous normal exit, execute on-entry action */
-	default:			/* for any unexpected value, restart this state. */
-		/* the on-entry action could be
-		 * - a separate function, or as we've done here,
-		 * - a list of actions within the case.
-		 */
-		/* the on-entry behavior does not care about what event was passed to this function. while
-		 * nothing prevents you from inspecting the incoming data, i believe this would deviate from
-		 * standard UML state machine behavior. and having just said that, we're saving the incoming
-		 * event ID as the default for exit reason 1.
-		 */
-		evId = pev->evId;	// save exit Reason1
-		/* start my state timer. if your state doesn't need a timeout exit, you can kill this line.
-		 * note: the period of the state alarm, must be larger than the periodicity of the SM engine;
-		 * if the timeout of the state alarm is less than the rate at which the SME is called, it
-		 * will always mature with every call to the SME.
-		 */
-		Set(Cwsw_Clock, tmrMyStateTimer, tmr1000ms);
-
-		/* advance to the next phase, now that the on-entry action is complete. */
-		++statephase;
-		break;
-
-	case kStateOperational:
-		// it is normal for the default action to inspect the event passed to this function.
-		//	in this template, we'll just ignore them.
-		UNUSED(pev);
-		UNUSED(pextra);
-
-		/* normal state behavior here, including handling in-state reactions to events
-		 *	if there is a guard condition, evaluate that here.
-		 */
-
-		// add here, any other exit reasons not covered by in-state reactions above.
-		// 	IF you need to override the default event that provokes the exit from this state, update
-		//	`evId` here.
-		//	be sure to increment statephase so as to execute the exit action.
-
-		// if your state doesn't have a timer, you can eliminate this if() clause.
-		if( Cwsw_GetTimeLeft(tmrMyStateTimer) <= 0 )
-		{
-			++statephase;	// if the timer's expired, execute the exit action the next time we're called.
-		}
-		break;
-
-	case kStateExit:
-		// for this edition of this state, no state-specific exit action is required.
-		//	let the caller (normally the SME) know what event and what guard provoked the change.
-		pev->evId = evId;	// save exit reason 1 (event that provoked the exit)
-		pev->evData = 0;	// save exit reason 2 (no assigned purpose, use for your own purposes)
-		*pextra = 0;		// save exit reason 3 (no assigned purpose, use for your own purposes)
-//		++statephase;		// normally, the caller should know that a return code of kStateExit denotes the normal
-							//	completion of this state. if you invalidate statephase, the caller should interpret
-							//	that as a non-normal exit.
-		break;
-	}
-
-	// the next line is part of the template and should not be touched.
-	return statephase;
-}
-#endif
-
 
 // ============================================================================
 // ----	Transition Functions --------------------------------------------------
@@ -485,12 +398,22 @@ Stoplite_tsk_StopliteSme(tEvQ_Event ev, uint32_t extra)
 }
 
 
-/* this state machine is going to be a simple stop light.
- * - not coordinated with any other stop light in the neighborhood
- * - knows a default sequence of transitions
- * - each light (state) has its own internal timing
- * - by virtue of a specific event, any light can instantly transition to any other
- * - by virtue of a specific event, the timing for any light can be paused
- * - all lights know how to exit, so that the SME can also terminate the SM
- */
+uint16_t
+Cwsw_Board__Init(void)
+{
+	tErrorCodes_EvQ err = 0;
+	struct {
+		tEvQ_EventID		evId;
+		ptEvQ_EvHandlerFunc	pfHandler;
+	} tblAssoc[] = {
+		{ evStopLite_Pause,	Stoplite_tsk_StopliteSme },
+	};
+	uint32_t idx = TABLE_SIZE(tblAssoc);
 
+	while(!err && idx--)
+	{
+		err = Cwsw_EvQX__SetEvHandler(&tedlos_evqx, tblAssoc[idx].evId, tblAssoc[idx].pfHandler);
+	}
+
+	return err;
+}

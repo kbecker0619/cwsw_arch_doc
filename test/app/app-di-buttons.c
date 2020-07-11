@@ -96,9 +96,20 @@ void
 AppButtonCommit(tEvQ_Event ev, uint32_t extra)
 {
 	(void)printf("Button Commit: Event: %i, Button: %i, Extra: %i\n", ev.evId, ev.evData, extra);
-	if(ev.evData == kBoardButton3)
+	switch(ev.evData)
 	{
-		Cwsw_EvQX__PostEventId(&tedlos_evqx, evStoplite_ForceYellow);	// todo: move this to app-level swc
+	case kBoardButton1:		// Pause button pushed and committed.
+		Cwsw_EvQX__PostEventId(&tedlos_evqx, evStopLite_Pause);
+		break;
+
+	case kBoardButton3:
+		Cwsw_EvQX__PostEventId(&tedlos_evqx, evStoplite_ForceYellow);
+		break;
+
+	//evButton_StopTask
+
+	default:
+		break;
 	}
 }
 

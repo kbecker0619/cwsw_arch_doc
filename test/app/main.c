@@ -28,6 +28,7 @@
 #include "cwsw_sme.h"		/* stoplight demo of SME */
 #include "console_keyin.h"	/* DI task */
 #include "app-di-buttons.h"
+#include "stoplite.h"
 
 
 // ============================================================================
@@ -144,7 +145,6 @@ tTedlosTaskDescriptor tblInitTasks[] = {
 
 	// DI task
 	{	NULL, 		    	0,			0,			&tedlos_evqx,	evButton_Task,			Btn_tsk_ButtonRead			},
-	//evButton_StopTask
 
 	// End of Table
 	{0}	/* termination row */
@@ -162,11 +162,19 @@ main(void)
 	uint32_t counted_avg = 0, running_avg = 0;
 	tCwswClockTics starttic;
 
+	// services layer
 	(void)Init(Cwsw_Lib);
 	(void)Init(Cwsw_EvQ);
 	(void)Init(tedlos);
+
+	// driver layer
 	(void)Init(Cwsw_Arch);		// Cwsw_Arch__Init()
 	(void)Init(buttons);		// buttons__Init()
+
+	// app layer
+	(void)Init(Stoplite);
+
+	// this board-level init function doesn't return untl the [QUIT] button is pushed, so it's gotta be last.
 	if(!Init(Cwsw_Board))		// Cwsw_Board__Init()
 	{
 		tedlos__InitTaskList(tblInitTasks);

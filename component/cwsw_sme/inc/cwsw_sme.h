@@ -107,9 +107,6 @@ typedef struct sTransitionTable {
 // ----	Public Variables ------------------------------------------------------
 // ============================================================================
 
-extern tCwswSwAlarm	StopLite_tmr_SME;
-
-
 // ============================================================================
 // ----	Public API ------------------------------------------------------------
 // ============================================================================
@@ -120,9 +117,6 @@ extern pfStateHandler Cwsw_Sme_FindNextState(
 	pfStateHandler		currentstate,
 	tEvQ_Event			ev, 				// mis-appropriating an event because it happens to be a container suitable for the 1st two exit reason types
 	uint32_t 			extra);				// mis-appropriating the "extra" field for the same reason - 3rd exit reason
-
-/// All SMEs are normal event handlers and should be prototyped within their respective components.
-extern void Stoplite_tsk_StopliteSme(tEvQ_Event ev, uint32_t extra);
 
 
 #ifdef	__cplusplus
