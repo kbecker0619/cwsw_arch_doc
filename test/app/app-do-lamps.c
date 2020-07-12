@@ -30,7 +30,7 @@
 // ============================================================================
 
 enum eDoBitAssignments {
-	kDoRed
+	kDoGreen, kDoYellow, kDoRed
 };
 
 
@@ -73,6 +73,14 @@ AppDO__Task(void)
 	//	place to do that is in the SET() API.
 	if(do_map != do_last_map)
 	{
+		if(BIT_TEST(do_map, kDoGreen) != BIT_TEST(do_last_map, kDoGreen))
+		{
+			Set(Cwsw_Board, kBoardLed1, BIT_TEST(do_map, kDoGreen));
+		}
+		if(BIT_TEST(do_map, kDoYellow) != BIT_TEST(do_last_map, kDoYellow))
+		{
+			Set(Cwsw_Board, kBoardLed2, BIT_TEST(do_map, kDoYellow));
+		}
 		if(BIT_TEST(do_map, kDoRed) != BIT_TEST(do_last_map, kDoRed))
 		{
 			Set(Cwsw_Board, kBoardLed3, BIT_TEST(do_map, kDoRed));
@@ -81,6 +89,22 @@ AppDO__Task(void)
 	}
 }
 
+
+void
+SET_LampGreen(bool value)
+{
+	printf("Green %s\t", value ? "On" : "Off");
+	if(value)	{ BIT_SET(do_map, kDoGreen); }
+	else		{ BIT_CLR(do_map, kDoGreen); }
+}
+
+void
+SET_LampYellow(bool value)
+{
+	printf("Yellow %s\t", value ? "On" : "Off");
+	if(value)	{ BIT_SET(do_map, kDoYellow); }
+	else		{ BIT_CLR(do_map, kDoYellow); }
+}
 
 void
 SET_LampRed(bool value)

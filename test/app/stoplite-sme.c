@@ -89,7 +89,6 @@ StateRed(ptEvQ_Event pev, uint32_t *pextra)
 		evId = pev->evId;
 		Set(Cwsw_Clock, tmrRedState, tmr1000ms);
 
-		// state-specific behavior
 		puts("RED on");
 		SET(LampRed, true);	// this API is safe for an entry action - atomic, cannot fail.
 		break;
@@ -128,11 +127,20 @@ StateGreen(ptEvQ_Event pev, uint32_t *pextra)
 
 	switch(statephase++)
 	{
+	case kStateUninit:
+	case kStateFinished:
+	default:
+		statephase = kStateOperational;
+		evId = pev->evId;
+		Set(Cwsw_Clock, tmrGreenState, tmr1000ms);
+
+		puts("GREEN on");
+		SET(LampGreen, true);
+		break;
+
 	case kStateOperational:
 		if(pev->evId != evStoplite_Task)
 		{
-			// event only, no guard, for this transition.
-			// update the exit reason1
 			evId = pev->evId;
 		}
 		else if( Cwsw_GetTimeLeft(tmrGreenState) > 0 )
@@ -141,30 +149,14 @@ StateGreen(ptEvQ_Event pev, uint32_t *pextra)
 		}
 		break;
 
-	case kStateUninit:	/* on 1st entry, execute on-entry action */
-	case kStateFinished:	/* upon return to this state after previous normal exit, execute on-entry action */
-	default:			/* for any unexpected value, restart this state. */
-		// generic state management, common to all states
-		statephase = kStateOperational;
-		evId = pev->evId;
-		Set(Cwsw_Clock, tmrGreenState, tmr1000ms);
-
-		// state-specific behavior
-		puts("GREEN on");
-		break;
-
 	case kStateExit:
-		// manage the state machine: set exit reasons
 		pev->evId = evId;
 		pev->evData = 0;
 		*pextra = kStateGreen;	// update transition function, if any
 
-		// state-specific behavior
-		/* (no state-specific exit actions here) */
 		break;
 	}
 
-	// the next line is part of the template and should not be touched.
 	return statephase;
 }
 
@@ -177,11 +169,20 @@ StateYellow(ptEvQ_Event pev, uint32_t *pextra)
 
 	switch(statephase++)
 	{
+	case kStateUninit:
+	case kStateFinished:
+	default:
+		statephase = kStateOperational;
+		evId = pev->evId;
+		Set(Cwsw_Clock, tmrStateOn, tmr100ms + tmr100ms);
+
+		puts("YELLOW on");
+		SET(LampYellow, true);
+		break;
+
 	case kStateOperational:
 		if(pev->evId != evStoplite_Task)
 		{
-			// event only, no guard, for this transition.
-			// update the exit reason1
 			evId = pev->evId;
 		}
 		else if( Cwsw_GetTimeLeft(tmrStateOn) > 0 )
@@ -190,30 +191,14 @@ StateYellow(ptEvQ_Event pev, uint32_t *pextra)
 		}
 		break;
 
-	case kStateUninit:	/* on 1st entry, execute on-entry action */
-	case kStateFinished:	/* upon return to this state after previous normal exit, execute on-entry action */
-	default:			/* for any unexpected value, restart this state. */
-		// generic state management, common to all states
-		statephase = kStateOperational;
-		evId = pev->evId;
-		Set(Cwsw_Clock, tmrStateOn, tmr100ms + tmr100ms);
-
-		// state-specific behavior
-		puts("YELLOW on");
-		break;
-
 	case kStateExit:
-		// manage the state machine: set exit reasons
 		pev->evId = evId;
 		pev->evData = 0;
 		*pextra = kStateYellow;	// update transition function, if any
 
-		// state-specific behavior
-		/* (no state-specific exit actions here) */
 		break;
 	}
 
-	// the next line is part of the template and should not be touched.
 	return statephase;
 }
 
@@ -250,10 +235,12 @@ TransitionLampOff(tEvQ_Event ev, uint32_t extra)
 
 	case kStateGreen:
 		puts("GREEN off");
+		SET(LampGreen, false);
 		break;
 
 	case kStateYellow:
 		puts("YELLOW off");
+		SET(LampYellow, false);
 		break;
 
 	default:
