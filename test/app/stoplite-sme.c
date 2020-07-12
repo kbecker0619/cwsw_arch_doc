@@ -347,6 +347,10 @@ Stoplite_tsk_StopliteSme(tEvQ_Event ev, uint32_t extra)
 		pMyTimer->tmrstate = kTmrState_Disabled;
 		break;
 
+	case evStopLite_Go:
+		pMyTimer->tmrstate = kTmrState_Enabled;
+		break;
+
 	default:
 		currentstate = Cwsw_Sme__SME(tblTransitions, TABLE_SIZE(tblTransitions), currentstate, ev, extra);
 		break;
@@ -371,6 +375,7 @@ Stoplite__Init(void)
 		ptEvQ_EvHandlerFunc	pfHandler;
 	} tblAssoc[] = {
 		{ evStopLite_Pause,	Stoplite_tsk_StopliteSme },
+		{ evStopLite_Go,  	Stoplite_tsk_StopliteSme },
 	};
 	uint32_t idx = TABLE_SIZE(tblAssoc);
 
