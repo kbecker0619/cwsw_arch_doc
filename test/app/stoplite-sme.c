@@ -294,6 +294,10 @@ Stoplite_tsk_StopliteSme(tEvQ_Event ev, uint32_t extra)
 
 	switch(ev.evId)
 	{
+	case evStoplite_StopTask:
+		currentstate = NULL;
+		break;
+
 	case evStopLite_Pause:
 		// this will have the effect of preventing this function again, until called specifically
 		//	(such as by receiving a Go command), or the timer is re-enabled. Note that in today's
@@ -303,10 +307,13 @@ Stoplite_tsk_StopliteSme(tEvQ_Event ev, uint32_t extra)
 		pMyTimer->tmrstate = kTmrState_Disabled;
 		break;
 
-	case evStopLite_Go:
+	case evStopLite_Go:			// go counteracts both pause and stop
 		pMyTimer->tmrstate = kTmrState_Enabled;
+		if(!currentstate)	{ currentstate = StateGreen; }
 		break;
 
+	case evStoplite_ForceYellow:
+ 	case evStopLite_Reenter:
 	default:
 		currentstate = Cwsw_Sme__SME(tblTransitions, TABLE_SIZE(tblTransitions), currentstate, ev, extra);
 		break;
@@ -330,8 +337,14 @@ Stoplite__Init(void)
 		tEvQ_EventID		evId;
 		ptEvQ_EvHandlerFunc	pfHandler;
 	} tblAssoc[] = {
-		{ evStopLite_Pause,	Stoplite_tsk_StopliteSme },
-		{ evStopLite_Go,  	Stoplite_tsk_StopliteSme },
+		// primary association - alarm maturation event drives this SME
+		{ evStoplite_Task,			Stoplite_tsk_StopliteSme },
+
+		{ evStopLite_Go,			Stoplite_tsk_StopliteSme },
+		{ evStoplite_ForceYellow,	Stoplite_tsk_StopliteSme },
+		{ evStopLite_Pause,			Stoplite_tsk_StopliteSme },
+		{ evStopLite_Reenter,		Stoplite_tsk_StopliteSme },
+		{ evStoplite_StopTask,		Stoplite_tsk_StopliteSme },
 	};
 	uint32_t idx = TABLE_SIZE(tblAssoc);
 
@@ -342,3 +355,4 @@ Stoplite__Init(void)
 
 	return err;
 }
+
