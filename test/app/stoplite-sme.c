@@ -335,7 +335,22 @@ void
 Stoplite_tsk_StopliteSme(tEvQ_Event ev, uint32_t extra)
 {
 	static pfStateHandler currentstate = StateGreen;
-	currentstate = Cwsw_Sme__SME(tblTransitions, TABLE_SIZE(tblTransitions), currentstate, ev, extra);
+
+	switch(ev.evId)
+	{
+	case evStopLite_Pause:
+		// this will have the effect of preventing this function again, until called specifically
+		//	(such as by receiving a Go command), or the timer is re-enabled. Note that in today's
+		//	edition of the sw timer component, the timer will almost assuredly expire during the
+		//	pause, which will provoke a rather immediate transition to the next state as soon as
+		//	the unpause happens.
+		pMyTimer->tmrstate = kTmrState_Disabled;
+		break;
+
+	default:
+		currentstate = Cwsw_Sme__SME(tblTransitions, TABLE_SIZE(tblTransitions), currentstate, ev, extra);
+		break;
+	}
 
 	if(!currentstate)
 	{
