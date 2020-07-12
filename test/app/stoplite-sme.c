@@ -16,6 +16,7 @@
 
 // ----	Project Headers -------------------------
 #include "tedlos.h"				/* event queue used by this SME */
+#include "app-do-lamps.h"		// SET() API for this component
 
 // ----	Module Headers --------------------------
 #include "cwsw_sme.h"
@@ -133,6 +134,7 @@ StateRed(ptEvQ_Event pev, uint32_t *pextra)
 
 		// state-specific behavior
 		puts("RED on");
+		SET(LampRed, true);
 		break;
 
 	case kStateExit:

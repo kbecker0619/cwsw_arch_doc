@@ -28,6 +28,7 @@
 #include "cwsw_sme.h"		/* stoplight demo of SME */
 #include "console_keyin.h"	/* DI task */
 #include "app-di-buttons.h"
+#include "app-do-lamps.h"
 #include "stoplite.h"
 
 
@@ -173,6 +174,7 @@ main(void)
 
 	// app layer
 	(void)Init(Stoplite);
+	(void)Init(AppDO);
 
 	// this board-level init function doesn't return untl the [QUIT] button is pushed, so it's gotta be last.
 	if(!Init(Cwsw_Board))		// Cwsw_Board__Init()
