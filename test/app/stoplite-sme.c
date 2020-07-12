@@ -245,6 +245,7 @@ TransitionLampOff(tEvQ_Event ev, uint32_t extra)
 	{
 	case kStateRed:
 		puts("RED off");
+		SET(LampRed, false);	// this API is safe for an entry action - atomic, cannot fail.
 		break;
 
 	case kStateGreen:

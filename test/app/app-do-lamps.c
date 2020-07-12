@@ -86,6 +86,7 @@ void
 SET_LampRed(bool value)
 {
 	printf("Red %s\t", value ? "On" : "Off");
-	BIT_SET(do_map, kDoRed);
+	if(value)	{ BIT_SET(do_map, kDoRed); }
+	else		{ BIT_CLR(do_map, kDoRed); }
 }
 

@@ -17,7 +17,9 @@
           <object class="GtkCheckButton" id="ind0">
             <property name="label" translatable="yes">GRN</property>
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
+            <property name="sensitive">False</property>
+            <property name="can_focus">False</property>
+            <property name="focus_on_click">False</property>
             <property name="receives_default">False</property>
             <property name="draw_indicator">True</property>
           </object>
@@ -30,7 +32,9 @@
           <object class="GtkCheckButton" id="ind1">
             <property name="label" translatable="yes">YEL</property>
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
+            <property name="sensitive">False</property>
+            <property name="can_focus">False</property>
+            <property name="focus_on_click">False</property>
             <property name="receives_default">False</property>
             <property name="draw_indicator">True</property>
           </object>
@@ -43,7 +47,9 @@
           <object class="GtkCheckButton" id="ind2">
             <property name="label" translatable="yes">RED</property>
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
+            <property name="sensitive">False</property>
+            <property name="can_focus">False</property>
+            <property name="focus_on_click">False</property>
             <property name="receives_default">False</property>
             <property name="draw_indicator">True</property>
           </object>
@@ -56,7 +62,9 @@
           <object class="GtkCheckButton" id="ind3">
             <property name="label" translatable="yes">3</property>
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
+            <property name="sensitive">False</property>
+            <property name="can_focus">False</property>
+            <property name="focus_on_click">False</property>
             <property name="receives_default">False</property>
             <property name="inconsistent">True</property>
             <property name="draw_indicator">True</property>
@@ -70,7 +78,9 @@
           <object class="GtkCheckButton" id="ind4">
             <property name="label" translatable="yes">4</property>
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
+            <property name="sensitive">False</property>
+            <property name="can_focus">False</property>
+            <property name="focus_on_click">False</property>
             <property name="receives_default">False</property>
             <property name="inconsistent">True</property>
             <property name="draw_indicator">True</property>
@@ -84,7 +94,9 @@
           <object class="GtkCheckButton" id="ind5">
             <property name="label" translatable="yes">5</property>
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
+            <property name="sensitive">False</property>
+            <property name="can_focus">False</property>
+            <property name="focus_on_click">False</property>
             <property name="receives_default">False</property>
             <property name="inconsistent">True</property>
             <property name="draw_indicator">True</property>
@@ -98,7 +110,9 @@
           <object class="GtkCheckButton" id="ind6">
             <property name="label" translatable="yes">6</property>
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
+            <property name="sensitive">False</property>
+            <property name="can_focus">False</property>
+            <property name="focus_on_click">False</property>
             <property name="receives_default">False</property>
             <property name="inconsistent">True</property>
             <property name="draw_indicator">True</property>
@@ -112,7 +126,9 @@
           <object class="GtkCheckButton" id="ind7">
             <property name="label" translatable="yes">shift</property>
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
+            <property name="sensitive">False</property>
+            <property name="can_focus">False</property>
+            <property name="focus_on_click">False</property>
             <property name="receives_default">False</property>
             <property name="image_position">bottom</property>
             <property name="inconsistent">True</property>
