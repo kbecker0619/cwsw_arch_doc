@@ -97,9 +97,7 @@ Os_tsk_1000ms(tEvQ_Event ev, uint32_t extra)
 	case 1:
 		Cwsw_EvQX__PostEventId(&tedlos_evqx, evStopLite_Reenter);
 		break;
-	case 2:
-		Cwsw_EvQX__PostEventId(&tedlos_evqx, evStoplite_ForceYellow);
-		break;
+
 	case 55:
 		Cwsw_EvQX__PostEventId(&tedlos_evqx, evStoplite_StopTask);
 		break;
@@ -135,13 +133,8 @@ tTedlosTaskDescriptor tblInitTasks[] = {
 	{ &Os_tmr_1000ms,	tmr1000ms,	tmr1000ms,		&tedlos_evqx,	evOs_Task1000ms, 		Os_tsk_1000ms				},
 
 	// stoplight task
-	//	Note: the stoplight lines have null parameters for the alarm, because we are doing compile-
-	//	time initialization within the SME module itself, but the alarm doesn't have an event
-	//	callback field, so we still need to associate the event and the event handler.
-	{	NULL, 		    	0,			0,			&tedlos_evqx,	evStoplite_Task,		Stoplite_tsk_StopliteSme	},
-	{	NULL, 		   		0,			0,			&tedlos_evqx,	evStoplite_ForceYellow,	Stoplite_tsk_StopliteSme	},
-	{	NULL, 		    	0,			0,			&tedlos_evqx,	evStopLite_Reenter,		Stoplite_tsk_StopliteSme	},
-	{	NULL, 		    	0,			0,			&tedlos_evqx,	evStoplite_StopTask,	Stoplite_tsk_StopliteSme	},
+	//	Note: the stoplight task alarm is initialized via compile-time means.
+	//	that component does its own event association.
 
 	// DI task
 	{	NULL, 		    	0,			0,			&tedlos_evqx,	evButton_Task,			Btn_tsk_ButtonRead			},

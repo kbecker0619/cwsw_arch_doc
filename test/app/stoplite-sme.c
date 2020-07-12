@@ -94,17 +94,24 @@ StateRed(ptEvQ_Event pev, uint32_t *pextra)
 		break;
 
 	case kStateOperational:
-		if(pev->evId != evStoplite_Task)
+		evId = pev->evId;
+		switch(pev->evId)
 		{
+		case evStoplite_ForceYellow:
+			// allow exit
 			// event only, no guard, for this transition.
 			// update the exit reason1
-			evId = pev->evId;
-		}
-		else if( Cwsw_GetTimeLeft(tmrRedState) > 0 )
-		{
-			// at least one of the transition inhibitors is actively inhibiting;
-			//	do the default action here, including any in-state reactions.
-			statephase--;
+			break;
+
+		case evStoplite_Task:	// normal, cyclic call
+		default:				// other non-recognized event. ignore.
+			if( Cwsw_GetTimeLeft(tmrRedState) > 0 )
+			{
+				// at least one of the transition inhibitors is actively inhibiting;
+				//	do the default action here, including any in-state reactions.
+				--statephase;
+			}
+			break;
 		}
 		break;
 
@@ -139,13 +146,24 @@ StateGreen(ptEvQ_Event pev, uint32_t *pextra)
 		break;
 
 	case kStateOperational:
-		if(pev->evId != evStoplite_Task)
+		evId = pev->evId;
+		switch(pev->evId)
 		{
-			evId = pev->evId;
-		}
-		else if( Cwsw_GetTimeLeft(tmrGreenState) > 0 )
-		{
-			statephase--;
+		case evStoplite_ForceYellow:
+			// allow exit
+			// event only, no guard, for this transition.
+			// update the exit reason1
+			break;
+
+		case evStoplite_Task:	// normal, cyclic call
+		default:				// other non-recognized event. ignore.
+			if( Cwsw_GetTimeLeft(tmrGreenState) > 0 )
+			{
+				// at least one of the transition inhibitors is actively inhibiting;
+				//	do the default action here, including any in-state reactions.
+				--statephase;
+			}
+			break;
 		}
 		break;
 
@@ -153,7 +171,6 @@ StateGreen(ptEvQ_Event pev, uint32_t *pextra)
 		pev->evId = evId;
 		pev->evData = 0;
 		*pextra = kStateGreen;	// update transition function, if any
-
 		break;
 	}
 
@@ -181,13 +198,19 @@ StateYellow(ptEvQ_Event pev, uint32_t *pextra)
 		break;
 
 	case kStateOperational:
-		if(pev->evId != evStoplite_Task)
+		evId = pev->evId;
+		switch(pev->evId)
 		{
-			evId = pev->evId;
-		}
-		else if( Cwsw_GetTimeLeft(tmrStateOn) > 0 )
-		{
-			statephase--;
+		case evStoplite_ForceYellow:
+			break;
+
+		case evStoplite_Task:	// normal, cyclic call
+		default:				// other non-recognized event. ignore.
+			if(Cwsw_GetTimeLeft(tmrStateOn) > 0)
+			{
+				--statephase;
+			}
+			break;
 		}
 		break;
 
@@ -195,7 +218,47 @@ StateYellow(ptEvQ_Event pev, uint32_t *pextra)
 		pev->evId = evId;
 		pev->evData = 0;
 		*pextra = kStateYellow;	// update transition function, if any
+		break;
+	}
 
+	return statephase;
+}
+
+static tStateReturnCodes
+StateYellowHold(ptEvQ_Event pev, uint32_t *pextra)
+{
+	static tStateReturnCodes statephase = kStateUninit;
+	static tEvQ_EventID evId;
+
+	switch(statephase++)
+	{
+	case kStateUninit:
+	case kStateFinished:
+	default:
+		statephase = kStateOperational;
+		evId = pev->evId;
+		puts("YELLOW on");
+		SET(LampYellow, true);
+		break;
+
+	case kStateOperational:
+		evId = pev->evId;
+		switch(pev->evId)
+		{
+		case evStopLite_Go:
+			break;
+
+		case evStoplite_Task:	// normal, cyclic call
+		default:				// other non-recognized event. ignore.
+			--statephase;
+			break;
+		}
+		break;
+
+	case kStateExit:
+		pev->evId = evId;
+		pev->evData = 0;
+		*pextra = kStateYellow;
 		break;
 	}
 
@@ -268,9 +331,10 @@ static tTransitionTable tblTransitions[] = {
 	{ StateYellow,	evStopLite_Reenter,		0,	kStateYellow,	StateYellow,	NULL				},	// transition to self
 
 	// force-to-another-state transitions
-	{ StateRed,		evStoplite_ForceYellow,	0,	kStateRed,		StateYellow,	TransitionLampOff	},	// commanded override
-	{ StateGreen,	evStoplite_ForceYellow,	0,	kStateGreen,	StateYellow,	TransitionLampOff	},	// commanded override
-	{ StateYellow,	evStoplite_ForceYellow,	0,	kStateYellow,	StateYellow,	TransitionLampOff	},	// commanded override
+	{ StateRed,		evStoplite_ForceYellow,	0,	kStateRed,		StateYellowHold, TransitionLampOff	},	// commanded override
+	{ StateGreen,	evStoplite_ForceYellow,	0,	kStateGreen,	StateYellowHold, TransitionLampOff	},	// commanded override
+	{ StateYellow,	evStoplite_ForceYellow,	0,	kStateYellow,	StateYellowHold, NULL				},	// commanded override
+	{ StateYellowHold,	evStopLite_Go,		0,	kStateYellow,	StateGreen,		 TransitionLampOff	},
 
 	// e-stop transitions
 	{ StateRed,		evStoplite_StopTask,	0,	kStateRed,		NULL,			TransitionLampOff	},
@@ -294,6 +358,10 @@ Stoplite_tsk_StopliteSme(tEvQ_Event ev, uint32_t extra)
 
 	switch(ev.evId)
 	{
+	case evStoplite_StopTask:
+		currentstate = NULL;
+		break;
+
 	case evStopLite_Pause:
 		// this will have the effect of preventing this function again, until called specifically
 		//	(such as by receiving a Go command), or the timer is re-enabled. Note that in today's
@@ -303,10 +371,13 @@ Stoplite_tsk_StopliteSme(tEvQ_Event ev, uint32_t extra)
 		pMyTimer->tmrstate = kTmrState_Disabled;
 		break;
 
-	case evStopLite_Go:
+	case evStopLite_Go:			// go counteracts pause, stop, yellow-hold
 		pMyTimer->tmrstate = kTmrState_Enabled;
-		break;
+		if(!currentstate)	{ currentstate = StateGreen; }
+		/* no break *//* GCC */
 
+	case evStoplite_ForceYellow:
+ 	case evStopLite_Reenter:
 	default:
 		currentstate = Cwsw_Sme__SME(tblTransitions, TABLE_SIZE(tblTransitions), currentstate, ev, extra);
 		break;
@@ -330,8 +401,14 @@ Stoplite__Init(void)
 		tEvQ_EventID		evId;
 		ptEvQ_EvHandlerFunc	pfHandler;
 	} tblAssoc[] = {
-		{ evStopLite_Pause,	Stoplite_tsk_StopliteSme },
-		{ evStopLite_Go,  	Stoplite_tsk_StopliteSme },
+		// primary association - alarm maturation event drives this SME
+		{ evStoplite_Task,			Stoplite_tsk_StopliteSme },
+
+		{ evStopLite_Go,			Stoplite_tsk_StopliteSme },
+		{ evStoplite_ForceYellow,	Stoplite_tsk_StopliteSme },
+		{ evStopLite_Pause,			Stoplite_tsk_StopliteSme },
+		{ evStopLite_Reenter,		Stoplite_tsk_StopliteSme },
+		{ evStoplite_StopTask,		Stoplite_tsk_StopliteSme },
 	};
 	uint32_t idx = TABLE_SIZE(tblAssoc);
 
@@ -342,3 +419,4 @@ Stoplite__Init(void)
 
 	return err;
 }
+
