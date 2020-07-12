@@ -17,7 +17,6 @@
 #include <stdlib.h>			/* EXIT_SUCCESS */
 
 // ----	Project Headers -------------------------
-//#include "ptypes.h"
 #include "cwsw_evqueue_ex.h"
 #include "cwsw_swtimer.h"
 #include "cwsw_arch.h"
@@ -79,16 +78,16 @@ tCwswSwAlarm	Os_tmr_1000ms = {
 //static tU32 ct10ms = 0;					// counts ("ct") the number of activations of the task
 static char progressbar[1024] = {0};
 static void
-taskOs10ms(tEvQ_Event ev, uint32_t extra)
+Os_tsk_10ms(tEvQ_Event ev, uint32_t extra)
 {
 	UNUSED(ev);
 	UNUSED(extra);
-//	progressbar[ct10ms++] = '+';
+	Task(AppDO);
 }
 
 
 static void
-taskOs1000ms(tEvQ_Event ev, uint32_t extra)
+Os_tsk_1000ms(tEvQ_Event ev, uint32_t extra)
 {
 	static uint32_t ctActivations = 0;
 	UNUSED(ev);
@@ -132,8 +131,8 @@ tTedlosTaskDescriptor tblInitTasks[] = {
 	{	 NULL,				0,		    0,			&tedlos_evqx,	evOs_QuitRqst,			OsTimerTic					},
 
 	// the following couple of functions are do-nothings for testing purposes
-	{  &Os_tmr_10ms,	tmr10ms,	tmr10ms,		&tedlos_evqx,	evOs_Task10ms,			taskOs10ms					},
-	{ &Os_tmr_1000ms,	tmr1000ms,	tmr1000ms,		&tedlos_evqx,	evOs_Task1000ms, 		taskOs1000ms				},
+	{  &Os_tmr_10ms,	tmr10ms,	tmr10ms,		&tedlos_evqx,	evOs_Task10ms,			Os_tsk_10ms					},
+	{ &Os_tmr_1000ms,	tmr1000ms,	tmr1000ms,		&tedlos_evqx,	evOs_Task1000ms, 		Os_tsk_1000ms				},
 
 	// stoplight task
 	//	Note: the stoplight lines have null parameters for the alarm, because we are doing compile-

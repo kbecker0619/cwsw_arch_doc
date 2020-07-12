@@ -76,21 +76,24 @@ static ptCwswSwAlarm const pMyTimer = &StopLite_tmr_SME;
 static tStateReturnCodes
 StateRed(ptEvQ_Event pev, uint32_t *pextra)
 {
-	// this var is part of the template and this definition + initialization line should not be touched.
 	static tStateReturnCodes statephase = kStateUninit;
 	static tCwswClockTics tmrRedState = 0;
-
 	static tEvQ_EventID evId;
 
-
-	/* this statephase management differs from that of the template version, for the following:
-	 * - i prefer to have the default behavior assertively act to keep itself in the same state;
-	 *   this would be similar to an "inhibitor" for a state that wants to change;
-	 * - it seems simpler to me to adjust the statephase var in only one place, than the multiple
-	 *   places where it's done in the template.
-	 */
 	switch(statephase++)
 	{
+	case kStateUninit:
+	case kStateFinished:
+	default:
+		statephase = kStateOperational;
+		evId = pev->evId;
+		Set(Cwsw_Clock, tmrRedState, tmr1000ms);
+
+		// state-specific behavior
+		puts("RED on");
+		SET(LampRed, true);	// this API is safe for an entry action - atomic, cannot fail.
+		break;
+
 	case kStateOperational:
 		if(pev->evId != evStoplite_Task)
 		{
@@ -100,56 +103,19 @@ StateRed(ptEvQ_Event pev, uint32_t *pextra)
 		}
 		else if( Cwsw_GetTimeLeft(tmrRedState) > 0 )
 		{
-			// not all transition inhibitors are actively inhibiting; do the default action here,
-			//	including any in-state reactions.
+			// at least one of the transition inhibitors is actively inhibiting;
+			//	do the default action here, including any in-state reactions.
 			statephase--;
 		}
 		break;
 
-	case kStateUninit:	/* on 1st entry, execute on-entry action */
-	case kStateFinished:	/* upon return to this state after previous normal exit, execute on-entry action */
-	default:			/* for any unexpected value, restart this state. */
-		// unilaterally set statephase to normal. this is a nop for the premiere run, but necessary all other use cases
-		statephase = kStateOperational;
-		/* the on-entry action could be
-		 * - a separate function, or as we've done here,
-		 * - a list of actions within the case.
-		 */
-		/* the on-entry behavior does not care about what event was passed to this function;
-		 * however, in this implementation, we use the launching event as the default exit reason.
-		 */
-		/* the on-entry behavior CAN NOT fail. it must be an atomic action that is failsafe; the
-		 * purpose is to prepare / initialize the state for normal operation.
-		 */
-		evId = pev->evId;
-		/* start my state timer.
-		 * for this implementation, i'm choosing to poll a simple timer in the operational phase.
-		 * we could, if we wanted, let an alarm post an event at maturation.
-		 */
-		/* note: the period of the state alarm, must be larger than the periodicity of the SM engine;
-		 * if the timeout of the state alarm is less than the rate at which the SME is called, it
-		 * will always mature with every call to the SME.
-		 */
-		Set(Cwsw_Clock, tmrRedState, tmr1000ms);
-
-		// state-specific behavior
-		puts("RED on");
-		SET(LampRed, true);
-		break;
-
 	case kStateExit:
-		/* the at-exit behavior CAN NOT fail. it must be an atomic action that is failsafe. */
-		// manage the state machine: set exit reasons (statephase needs to be > exit state, which it already is)
 		pev->evId = evId;
 		pev->evData = 0;
 		*pextra = kStateRed;	// update argument to transition function
-
-		// perform state-specific actions
-		/* (no state-specific exit actions here) */
 		break;
 	}
 
-	// the next line is part of the template and should not be touched.
 	return statephase;
 }
 

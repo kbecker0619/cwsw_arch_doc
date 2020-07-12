@@ -19,7 +19,7 @@
 #include <stdio.h>		// printf
 
 // ----	Project Headers -------------------------
-#include "cwsw_lib.h"
+#include "cwsw_board.h"
 
 // ----	Module Headers --------------------------
 #include "app-do-lamps.h"
@@ -46,7 +46,7 @@ enum eDoBitAssignments {
 // ----	Module-level Variables ------------------------------------------------
 // ============================================================================
 
-static uint32_t do_map;
+static uint32_t do_map = 0, do_last_map = 0;
 
 
 // ============================================================================
@@ -60,20 +60,32 @@ static uint32_t do_map;
 uint16_t
 AppDO__Init(void)
 {
+	// set up timers
+	// set up event handlers
+	do_map = do_last_map = 0;
 	return 0;
 }
 
 void
 AppDO__Task(void)
 {
-
+	// not clear yet that an event needs to be posted. if one is needed, then probably the right
+	//	place to do that is in the SET() API.
+	if(do_map != do_last_map)
+	{
+		if(BIT_TEST(do_map, kDoRed) != BIT_TEST(do_last_map, kDoRed))
+		{
+			Set(Cwsw_Board, kBoardLed3, BIT_TEST(do_map, kDoRed));
+		}
+		do_last_map = do_map;
+	}
 }
 
 
 void
 SET_LampRed(bool value)
 {
-	printf("Red %i", value);
+	printf("Red %s\t", value ? "On" : "Off");
 	BIT_SET(do_map, kDoRed);
 }
 

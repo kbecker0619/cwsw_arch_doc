@@ -53,7 +53,8 @@
 // ============================================================================
 
 // we want to intercept button events. set those up here.
-uint16_t buttons__Init(void)
+uint16_t
+buttons__Init(void)
 {
 	tErrorCodes_EvQ err = 0;
 	struct {
