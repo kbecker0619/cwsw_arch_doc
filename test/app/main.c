@@ -97,9 +97,7 @@ Os_tsk_1000ms(tEvQ_Event ev, uint32_t extra)
 	case 1:
 		Cwsw_EvQX__PostEventId(&tedlos_evqx, evStopLite_Reenter);
 		break;
-	case 2:
-		Cwsw_EvQX__PostEventId(&tedlos_evqx, evStoplite_ForceYellow);
-		break;
+
 	case 55:
 		Cwsw_EvQX__PostEventId(&tedlos_evqx, evStoplite_StopTask);
 		break;
