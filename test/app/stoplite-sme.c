@@ -29,6 +29,15 @@
 /** States for this State Machine. */
 typedef enum eSmStates { kStateNone, kStateRed, kStateGreen, kStateYellow } tSmStates;
 
+/** default times for each state */
+enum eSmStateTimes {
+	kStateTimeGreen 	= 30 * tmr1000ms,		//!< total default time for the GREEN lamp
+	kStateTimeYellow	= 15 * tmr1000ms,		//!< default time for the YELLOW lamp
+	kStateTimeRed 		= 30 * tmr1000ms,			//!< default time for the RED lamp
+	kStateTimeFlashWalk	= 20 * tmr1000ms,	//!< time for the WALK sign flashing. This overlaps the tail end of the GREEN time.
+	kStateTimeWalkFlash	= tmr500ms,			//!< Time for each flashing segment of the WALK sign.
+};
+
 
 // ============================================================================
 // ----	Global Variables ------------------------------------------------------
@@ -62,6 +71,82 @@ static ptCwswSwAlarm const pMyTimer = &StopLite_tmr_SME;
 // ============================================================================
 // ----	State Functions -------------------------------------------------------
 // ============================================================================
+static void WalkSign__SME(tEvQ_Event ev, uint32_t extra);
+
+static tStateReturnCodes
+StateWalkOn(ptEvQ_Event pev, uint32_t *pextra)
+{
+	static tStateReturnCodes statephase = kStateUninit;
+	static tCwswClockTics tmrStateOn = 0;
+	switch(statephase++)
+	{
+	case kStateUninit:
+	case kStateFinished:
+	default:
+		statephase = kStateOperational;
+		Set(Cwsw_Clock, tmrStateOn, kStateTimeWalkFlash);
+		SET(LampWalk, kLogicalOn);
+		break;
+
+	case kStateOperational:
+		if(!pev->evId)
+		{
+			--statephase;
+			break;
+		}
+		if(Cwsw_GetTimeLeft(tmrStateOn) > 0)
+		{
+			--statephase;
+		}
+		break;
+
+	case kStateExit:
+		SET(LampWalk, kLogicalOff);	// this cause a flicker if we immediately reenter; might not be noticeable (1 call cycles until turned backa on)
+		pev->evId = 0;
+		pev->evData = 0;
+		*pextra = 0;
+		break;
+	}
+	return statephase;
+}
+
+static tStateReturnCodes
+StateWalkOff(ptEvQ_Event pev, uint32_t *pextra)
+{
+	static tStateReturnCodes statephase = kStateUninit;
+	static tCwswClockTics tmrStateOff = 0;
+	switch(statephase++)
+	{
+	case kStateUninit:
+	case kStateFinished:
+	default:
+		statephase = kStateOperational;
+		Set(Cwsw_Clock, tmrStateOff, kStateTimeFlashWalk);
+		SET(LampWalk, kLogicalOff);
+		break;
+
+	case kStateOperational:
+//		if(!pev->evId)
+//		{
+//			--statephase;
+//			break;
+//		}
+		if(Cwsw_GetTimeLeft(tmrStateOff) > 0)
+		{
+			--statephase;
+		}
+		break;
+
+	case kStateExit:
+		SET(LampWalk, kLogicalOff);
+		pev->evId = 0;
+		pev->evData = 0;
+		*pextra = 0;
+		break;
+	}
+	return statephase;
+}
+
 
 /* the individual states are similar to a normal event handler, but return a value.
  * - each state is responsible for maintaining its own internal state.
@@ -89,8 +174,7 @@ StateRed(ptEvQ_Event pev, uint32_t *pextra)
 		evId = pev->evId;
 		Set(Cwsw_Clock, tmrRedState, tmr1000ms);
 
-		puts("RED on");
-		SET(LampRed, true);	// this API is safe for an entry action - atomic, cannot fail.
+		SET(LampRed, kLogicalOn);	// this API is safe for an entry action - atomic, cannot fail.
 		break;
 
 	case kStateOperational:
@@ -110,6 +194,7 @@ StateRed(ptEvQ_Event pev, uint32_t *pextra)
 				// at least one of the transition inhibitors is actively inhibiting;
 				//	do the default action here, including any in-state reactions.
 				--statephase;
+				break;
 			}
 			break;
 		}
@@ -129,7 +214,8 @@ static tStateReturnCodes
 StateGreen(ptEvQ_Event pev, uint32_t *pextra)
 {
 	static tStateReturnCodes statephase = kStateUninit;
-	static tCwswClockTics tmrGreenState = 0;
+	static tCwswClockTics tmrClearWalk = 0;
+	static tCwswClockTics tmrFlashWalk = 0;
 	static tEvQ_EventID evId;
 
 	switch(statephase++)
@@ -139,10 +225,9 @@ StateGreen(ptEvQ_Event pev, uint32_t *pextra)
 	default:
 		statephase = kStateOperational;
 		evId = pev->evId;
-		Set(Cwsw_Clock, tmrGreenState, tmr1000ms);
+		Set(Cwsw_Clock, tmrClearWalk, kStateTimeGreen - kStateTimeFlashWalk);
 
-		puts("GREEN on");
-		SET(LampGreen, true);
+		SET(LampGreen, kLogicalOn);
 		break;
 
 	case kStateOperational:
@@ -157,12 +242,27 @@ StateGreen(ptEvQ_Event pev, uint32_t *pextra)
 
 		case evStoplite_Task:	// normal, cyclic call
 		default:				// other non-recognized event. ignore.
-			if( Cwsw_GetTimeLeft(tmrGreenState) > 0 )
-			{
-				// at least one of the transition inhibitors is actively inhibiting;
-				//	do the default action here, including any in-state reactions.
-				--statephase;
-			}
+			do {
+				tEvQ_Event ev = {0, 0};
+				// within this little micro-ecosystem, i'm using the Event ID field to comm w/ the
+				//	walk sign - a '0' means steady on, a '1' means flashing.
+				if( Cwsw_GetTimeLeft(tmrClearWalk) > 0 )
+				{
+					// for now, keep bumping along the flash-walk timer, as the easiest way to manage
+					//	both timers. could launch with flash-walk set to a very high value so it doesn't
+					//	expire during the clear-walk time, then reset the time, but, ... nah.
+					Set(Cwsw_Clock, tmrFlashWalk, kStateTimeFlashWalk);
+				}
+				else
+				{
+					ev.evId = 1;
+				}
+				if(Cwsw_GetTimeLeft(tmrFlashWalk) > 0)
+				{
+					WalkSign__SME(ev, *pextra);
+					--statephase;
+				}
+			} while(0);
 			break;
 		}
 		break;
@@ -193,8 +293,7 @@ StateYellow(ptEvQ_Event pev, uint32_t *pextra)
 		evId = pev->evId;
 		Set(Cwsw_Clock, tmrStateOn, tmr100ms + tmr100ms);
 
-		puts("YELLOW on");
-		SET(LampYellow, true);
+		SET(LampYellow, kLogicalOn);
 		break;
 
 	case kStateOperational:
@@ -237,8 +336,8 @@ StateYellowHold(ptEvQ_Event pev, uint32_t *pextra)
 	default:
 		statephase = kStateOperational;
 		evId = pev->evId;
-		puts("YELLOW on");
-		SET(LampYellow, true);
+
+		SET(LampYellow, kLogicalOn);
 		break;
 
 	case kStateOperational:
@@ -292,18 +391,15 @@ TransitionLampOff(tEvQ_Event ev, uint32_t extra)
 	switch(extra)
 	{
 	case kStateRed:
-		puts("RED off");
-		SET(LampRed, false);	// this API is safe for an entry action - atomic, cannot fail.
+		SET(LampRed, kLogicalOff);	// this API is safe for an entry action - atomic, cannot fail.
 		break;
 
 	case kStateGreen:
-		puts("GREEN off");
-		SET(LampGreen, false);
+		SET(LampGreen, kLogicalOff);
 		break;
 
 	case kStateYellow:
-		puts("YELLOW off");
-		SET(LampYellow, false);
+		SET(LampYellow, kLogicalOff);
 		break;
 
 	default:
@@ -340,12 +436,26 @@ static tTransitionTable tblTransitions[] = {
 	{ StateRed,		evStoplite_StopTask,	0,	kStateRed,		NULL,			TransitionLampOff	},
 	{ StateGreen,	evStoplite_StopTask,	0,	kStateGreen,	NULL,			TransitionLampOff	},
 	{ StateYellow,	evStoplite_StopTask,	0,	kStateYellow,	NULL,			TransitionLampOff	},
+
+	// walk sign transitions
+	{ StateWalkOn,			0, 				0,		0,			StateWalkOff,	NULL				},
+	{ StateWalkOff,			0,		 		0,		0,			StateWalkOn,	NULL				},
 };
 
 
 // ============================================================================
 // ----	Public Functions ------------------------------------------------------
 // ============================================================================
+
+static void
+WalkSign__SME(tEvQ_Event ev, uint32_t extra)
+{
+	static pfStateHandler currentstate = StateWalkOn;
+	if(currentstate)
+	{
+		currentstate = Cwsw_Sme__SME(tblTransitions, TABLE_SIZE(tblTransitions), currentstate, ev, extra);
+	}
+}
 
 /** This component's State Machine Engine pump.
  * 	the concept this embodies, is that all of the SME tasks are associated at the OS level with
@@ -359,22 +469,24 @@ Stoplite_tsk_StopliteSme(tEvQ_Event ev, uint32_t extra)
 	switch(ev.evId)
 	{
 	case evStoplite_StopTask:
+		puts("Stopping Stoplite Task");
 		currentstate = NULL;
 		break;
 
 	case evStopLite_Pause:
-		// this will have the effect of preventing this function again, until called specifically
-		//	(such as by receiving a Go command), or the timer is re-enabled. Note that in today's
-		//	edition of the sw timer component, the timer will almost assuredly expire during the
-		//	pause, which will provoke a rather immediate transition to the next state as soon as
-		//	the unpause happens.
+		// this will have the effect of preventing this function from being called again, until
+		//	either called directly (such as by receiving a Go command), or the timer is re-enabled.
+		//	Note that in today's edition of the sw timer component, the timer will almost assuredly
+		//	expire during the pause, which will provoke an immediate transition to the next state as
+		//	soon as the unpause happens.
 		pMyTimer->tmrstate = kTmrState_Disabled;
 		break;
 
 	case evStopLite_Go:			// go counteracts pause, stop, yellow-hold
 		pMyTimer->tmrstate = kTmrState_Enabled;
 		if(!currentstate)	{ currentstate = StateGreen; }
-		/* no break *//* GCC */
+		/* suppress GCC warning: 		*//* fallthrough */
+		/* suppress Eclipse CDT warning:*//* no break */
 
 	case evStoplite_ForceYellow:
  	case evStopLite_Reenter:

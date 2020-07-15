@@ -30,7 +30,7 @@
 // ============================================================================
 
 enum eDoBitAssignments {
-	kDoGreen, kDoYellow, kDoRed
+	kDoGreen, kDoYellow, kDoRed, kDoWalk,
 };
 
 
@@ -85,32 +85,49 @@ AppDO__Task(void)
 		{
 			Set(Cwsw_Board, kBoardLed3, BIT_TEST(do_map, kDoRed));
 		}
+		if(BIT_TEST(do_map, kDoWalk) != BIT_TEST(do_last_map, kDoWalk))
+		{
+			Set(Cwsw_Board, kBoardLed4, BIT_TEST(do_map, kDoWalk));
+		}
+
 		do_last_map = do_map;
 	}
 }
 
 
 void
-SET_LampGreen(bool value)
+SET_LampGreen(tOnOffLogical value)
 {
+	value = !!value;	// normalize on chance value is not a member of enumeration
 	printf("Green %s\t", value ? "On" : "Off");
 	if(value)	{ BIT_SET(do_map, kDoGreen); }
 	else		{ BIT_CLR(do_map, kDoGreen); }
 }
 
 void
-SET_LampYellow(bool value)
+SET_LampYellow(tOnOffLogical value)
 {
+	value = !!value;	// normalize on chance value is not a member of enumeration
 	printf("Yellow %s\t", value ? "On" : "Off");
 	if(value)	{ BIT_SET(do_map, kDoYellow); }
 	else		{ BIT_CLR(do_map, kDoYellow); }
 }
 
 void
-SET_LampRed(bool value)
+SET_LampRed(tOnOffLogical value)
 {
+	value = !!value;	// normalize on chance value is not a member of enumeration
 	printf("Red %s\t", value ? "On" : "Off");
 	if(value)	{ BIT_SET(do_map, kDoRed); }
 	else		{ BIT_CLR(do_map, kDoRed); }
+}
+
+void
+SET_LampWalk(tOnOffLogical value)
+{
+	value = !!value;	// normalize on chance value is not a member of enumeration
+	printf("Walk %s\t", value ? "On" : "Off");
+	if(value)	{ BIT_SET(do_map, kDoWalk); }
+	else		{ BIT_CLR(do_map, kDoWalk); }
 }
 
