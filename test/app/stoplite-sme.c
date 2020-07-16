@@ -31,11 +31,11 @@ typedef enum eSmStates { kStateNone, kStateRed, kStateGreen, kStateYellow } tSmS
 
 /** default times for each state */
 enum eSmStateTimes {
-	kStateTimeGreen 	= 30 * tmr1000ms,		//!< total default time for the GREEN lamp
-	kStateTimeYellow	= 15 * tmr1000ms,		//!< default time for the YELLOW lamp
-	kStateTimeRed 		= 30 * tmr1000ms,			//!< default time for the RED lamp
+	kStateTimeGreen 	= 30 * tmr1000ms,	//!< total default time for the GREEN lamp
+	kStateTimeYellow	= 15 * tmr1000ms,	//!< default time for the YELLOW lamp
+	kStateTimeRed 		= 30 * tmr1000ms,	//!< default time for the RED lamp
 	kStateTimeFlashWalk	= 20 * tmr1000ms,	//!< time for the WALK sign flashing. This overlaps the tail end of the GREEN time.
-	kStateTimeWalkFlash	= tmr500ms,			//!< Time for each flashing segment of the WALK sign.
+	kStateTimeWalkSegment	= tmr500ms,		//!< Time for each flashing segment of the WALK sign.
 };
 
 
@@ -84,7 +84,7 @@ StateWalkOn(ptEvQ_Event pev, uint32_t *pextra)
 	case kStateFinished:
 	default:
 		statephase = kStateOperational;
-		Set(Cwsw_Clock, tmrStateOn, kStateTimeWalkFlash);
+		Set(Cwsw_Clock, tmrStateOn, kStateTimeWalkSegment);
 		SET(LampWalk, kLogicalOn);
 		break;
 
@@ -121,7 +121,7 @@ StateWalkOff(ptEvQ_Event pev, uint32_t *pextra)
 	case kStateFinished:
 	default:
 		statephase = kStateOperational;
-		Set(Cwsw_Clock, tmrStateOff, kStateTimeFlashWalk);
+		Set(Cwsw_Clock, tmrStateOff, kStateTimeWalkSegment);
 		SET(LampWalk, kLogicalOff);
 		break;
 
@@ -172,7 +172,7 @@ StateRed(ptEvQ_Event pev, uint32_t *pextra)
 	default:
 		statephase = kStateOperational;
 		evId = pev->evId;
-		Set(Cwsw_Clock, tmrRedState, tmr1000ms);
+		Set(Cwsw_Clock, tmrRedState, kStateTimeRed);
 
 		SET(LampRed, kLogicalOn);	// this API is safe for an entry action - atomic, cannot fail.
 		break;
@@ -243,7 +243,7 @@ StateGreen(ptEvQ_Event pev, uint32_t *pextra)
 		case evStoplite_Task:	// normal, cyclic call
 		default:				// other non-recognized event. ignore.
 			do {
-				tEvQ_Event ev = {0, 0};
+				tEvQ_Event ev = {0, 0};	// default to steady walk on
 				// within this little micro-ecosystem, i'm using the Event ID field to comm w/ the
 				//	walk sign - a '0' means steady on, a '1' means flashing.
 				if( Cwsw_GetTimeLeft(tmrClearWalk) > 0 )
@@ -255,13 +255,19 @@ StateGreen(ptEvQ_Event pev, uint32_t *pextra)
 				}
 				else
 				{
-					ev.evId = 1;
+					ev.evId = 1;	// activate timing
 				}
+
 				if(Cwsw_GetTimeLeft(tmrFlashWalk) > 0)
 				{
-					WalkSign__SME(ev, *pextra);
-					--statephase;
+					--statephase;	// stay in this state
 				}
+				else
+				{
+					ev.evId = 2;	// ensure walk is extinguished
+				}
+
+				WalkSign__SME(ev, *pextra);
 			} while(0);
 			break;
 		}
@@ -451,6 +457,13 @@ static void
 WalkSign__SME(tEvQ_Event ev, uint32_t extra)
 {
 	static pfStateHandler currentstate = StateWalkOn;
+	/* MVP to ensure that walk sign is off: private-to-this-SME event ID of 2, resets current state
+	 * to 'off'; however, only the entry action will be executed before the parent state "moves on".
+	 * while it's not in focus, the off timer will expire, which will result in a 2-call-cycle delay
+	 * before the walk lite is turned on (the "normal" action to detect its time is up, and another
+	 * call to execute the exit action).
+	 */
+	if(ev.evId == 2)	{ currentstate = StateWalkOff; }
 	if(currentstate)
 	{
 		currentstate = Cwsw_Sme__SME(tblTransitions, TABLE_SIZE(tblTransitions), currentstate, ev, extra);

@@ -60,13 +60,12 @@
         </child>
         <child>
           <object class="GtkCheckButton" id="ind3">
-            <property name="label" translatable="yes">3</property>
+            <property name="label" translatable="yes">Walk</property>
             <property name="visible">True</property>
             <property name="sensitive">False</property>
             <property name="can_focus">False</property>
             <property name="focus_on_click">False</property>
             <property name="receives_default">False</property>
-            <property name="inconsistent">True</property>
             <property name="draw_indicator">True</property>
           </object>
           <packing>

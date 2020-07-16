@@ -101,7 +101,7 @@ Os_tsk_1000ms(tEvQ_Event ev, uint32_t extra)
 	case 355:
 		Cwsw_EvQX__PostEventId(&tedlos_evqx, evStoplite_StopTask);
 		break;
-	case 60:
+	case 360:
 		(void)Cwsw_EvQX__PostEventId(&tedlos_evqx, evOs_QuitRqst);
 		break;
 	default:

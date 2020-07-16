@@ -60,8 +60,10 @@ static uint32_t do_map = 0, do_last_map = 0;
 uint16_t
 AppDO__Init(void)
 {
-	// set up timers
-	// set up event handlers
+	// set up timers required to manage DO
+	// set up event handlers associated w/ DO (e.g., callbacks)
+
+	// and finally, set up what's left.
 	do_map = do_last_map = 0;
 	return 0;
 }
