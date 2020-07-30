@@ -1,0 +1,279 @@
+[Workspace Header]
+Version = 710
+Pathname = "/c/_Projects/cwsw_evqueue_test/test/lwcviproject/demoapp.cws"
+CVI Dir = "/d/_programs/national instruments/cvi71"
+IVI Standard Root Dir = "/C/Program Files (x86)/IVI"
+VXIplug&play Framework Dir = "/c/vxipnp/winnt"
+Number of Projects = 1
+Active Project = 1
+Project 0001 = "demoapp.prj"
+Drag Bar Left = 210
+Window Top = 64
+Window Left = 26
+Window Bottom = 902
+Window Right = 1202
+Maximized = False
+Maximized Children = True
+Max Number Of Errors = 20
+Track Include File Dependencies = True
+Prompt For Missing Includes = True
+Stop On First Error File = False
+Bring Up Err Win For Warnings = True
+Show Build Dialog = False
+Save Changes Before Running = "Always"
+Hide Windows = False
+Global Hot Key = False
+Break At First Statement = False
+Sort Type = "File Name"
+Number of Opened Files = 2
+Window Confinement Region Enabled = True
+MainColumnWidth = 191
+FileDateColumnWidth = 70
+FileSizeColumnWidth = 70
+StatusColumnWidth = 70
+
+[Project Header 0001]
+Version = 710
+Platform Code = 4
+Build Configuration = "Debug"
+Warn User If Debugging Release = 1
+Batch Build Release = False
+Batch Build Debug = False
+
+[File 0001]
+Path = "/c/_Projects/cwsw_evqueue_test/test/app/stoplite-sme.c"
+File Type = "CSource"
+Disk Date = 3677739253
+In Projects = ""
+Window Top = 33
+Window Left = 10
+Window Z-Order = 2
+Source Window State = "1,0,0,0,0,0,0,0,0,92,0,0,0,0,0,21,0,0,0,0,349,676,1,0,"
+
+[File 0002]
+Path = "/c/_Projects/cwsw_evqueue_test/test/app/main.c"
+File Type = "CSource"
+Disk Date = 3677703453
+In Projects = "1,"
+Window Top = 95
+Window Left = 42
+Window Z-Order = 1
+Source Window State = "1,0,0,0,0,0,0,0,0,133,0,0,0,0,0,40,0,0,22,46,349,676,1,0,"
+
+[File 0003]
+Path = "/c/_Projects/cwsw_evqueue_test/test/app/stoplite.h"
+File Type = "Include"
+Disk Date = 3677337113
+In Projects = "1,"
+Window Top = 312
+Window Left = 154
+Source Window State = "1,0,0,0,0,0,0,0,0,92,0,0,0,0,0,21,0,0,11,44,349,676,1,0,"
+
+[File 0004]
+Path = "/c/_Projects/cwsw_evqueue_test/test/app/tedlos_scheduler.c"
+File Type = "CSource"
+Disk Date = 3677214771
+In Projects = "1,"
+Window Top = 374
+Window Left = 186
+Source Window State = "1,0,0,0,0,0,0,0,0,92,0,0,0,0,0,21,46,0,66,54,349,676,1,0,"
+
+[File 0005]
+Path = "/c/_Projects/cwsw_evqueue_test/test/app/tedlos.h"
+File Type = "Include"
+Disk Date = 3677214771
+In Projects = "1,"
+Window Top = 405
+Window Left = 202
+Source Window State = "1,0,0,0,0,0,0,0,0,92,0,0,0,0,0,21,0,0,0,0,349,676,1,0,"
+
+[File 0006]
+Path = "/c/_Projects/cwsw_evqueue_test/test/app/tedlos.c"
+File Type = "CSource"
+Disk Date = 3675923690
+In Projects = "1,"
+Window Top = 157
+Window Left = 74
+Source Window State = "1,0,0,0,0,0,0,0,0,92,0,0,0,0,0,21,0,0,20,55,349,676,1,0,"
+
+[File 0007]
+Path = "/c/_Projects/cwsw_evqueue_test/test/app/cfg/tedlosevents.h"
+File Type = "Include"
+Disk Date = 3677365142
+In Projects = "1,"
+Window Top = 188
+Window Left = 90
+Source Window State = "1,0,0,0,0,0,0,0,0,92,0,0,0,0,0,21,0,0,0,0,349,676,1,0,"
+
+[File 0008]
+Path = "/c/_Projects/cwsw_evqueue_test/test/app/cfg/ManagedAlarms.h"
+File Type = "Include"
+Disk Date = 3677333800
+In Projects = "1,"
+Window Top = 219
+Window Left = 106
+Source Window State = "1,0,0,0,0,0,0,0,0,92,0,0,0,0,0,21,0,0,0,0,349,676,1,0,"
+
+[File 0009]
+Path = "/c/_Projects/cwsw_evqueue_test/test/app/cfg/tedlos_cfg.h"
+File Type = "Include"
+Disk Date = 3677214771
+In Projects = "1,"
+Window Top = 250
+Window Left = 122
+Source Window State = "1,0,0,0,0,0,0,0,0,92,0,0,0,0,0,21,0,0,0,0,349,676,1,0,"
+
+[File 0010]
+Path = "/c/_Projects/cwsw_evqueue_test/test/app/cfg/cwsw_event_proj.h"
+File Type = "Include"
+Disk Date = 3675751618
+In Projects = "1,"
+Window Top = 281
+Window Left = 138
+Source Window State = "1,0,0,0,0,0,0,0,0,92,0,0,0,0,0,21,0,0,5,71,349,676,1,0,"
+
+[File 0011]
+Path = "/c/_Projects/cwsw_evqueue_test/test/app/cfg/projcfg.h"
+File Type = "Include"
+Disk Date = 3678952104
+In Projects = "1,"
+Window Top = 343
+Window Left = 170
+Source Window State = "1,150,151,150,0,0,0,0,0,92,0,0,0,0,0,21,138,0,150,0,349,676,1,0,"
+
+[File 0012]
+Path = "/c/_Projects/cwsw_evqueue_test/test/app/cwsw_lib_prj/CritSect.c"
+File Type = "CSource"
+Disk Date = 3668109220
+In Projects = "1,"
+Window Top = 374
+Window Left = 186
+Source Window State = "1,0,0,0,0,0,0,0,0,92,0,0,0,0,0,21,58,0,17,55,349,676,1,0,"
+
+[File 0013]
+Path = "/c/_Projects/cwsw_evqueue_test/test/app/cfg/vs2010/stdbool.h"
+File Type = "Include"
+Disk Date = 3678953245
+In Projects = "1,"
+Source Window State = "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"
+
+[File 0014]
+Path = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_lib/inc/ctassert.h"
+File Type = "Include"
+Disk Date = 3669554226
+In Projects = "1,"
+Source Window State = "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"
+
+[File 0015]
+Path = "/c/_Projects/cwsw_evqueue_test/test/app/cfg/projevtnames.h"
+File Type = "Include"
+Disk Date = 3668109220
+In Projects = "1,"
+Window Top = 33
+Window Left = 10
+Source Window State = "1,0,0,0,0,0,0,0,0,80,0,0,0,0,0,25,0,0,11,43,401,595,1,0,"
+
+[File 0016]
+Path Line0001 = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_clock_services/cwsw_clock/inc/cwsw"
+Path Line0002 = "_clock.h"
+File Type = "Include"
+Disk Date = 3677214779
+In Projects = "1,"
+Window Top = 64
+Window Left = 26
+Source Window State = "1,0,0,0,0,0,0,0,0,80,0,0,0,0,0,25,83,0,95,57,401,595,1,0,"
+
+[File 0017]
+Path = "/c/_Projects/cwsw_evqueue_test/test/app/cfg/vs2010/stdint.h"
+File Type = "Include"
+Disk Date = 3678953725
+In Projects = "1,"
+Window Top = 126
+Window Left = 58
+Source Window State = "1,43,43,43,22,23,23,0,0,80,0,0,0,0,0,25,12,0,43,32,401,595,1,0,"
+
+[File 0018]
+Path Line0001 = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_eventqueue/cwsw_evqueue_ex/inc/cws"
+Path Line0002 = "w_evqueue_ex.h"
+File Type = "Include"
+Disk Date = 3675554539
+In Projects = "1,"
+Source Window State = "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"
+
+[File 0019]
+Path Line0001 = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_eventqueue/cwsw_event/inc/cwsw_eve"
+Path Line0002 = "nttable.h"
+File Type = "Include"
+Disk Date = 3675554539
+In Projects = "1,"
+Window Top = 188
+Window Left = 90
+Source Window State = "1,0,0,0,0,0,0,0,0,80,0,0,0,0,0,25,52,0,64,4,401,595,1,0,"
+
+[File 0020]
+Path Line0001 = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_eventqueue/cwsw_evqueue/inc/cwsw_e"
+Path Line0002 = "vqueue.h"
+File Type = "Include"
+Disk Date = 3675554539
+In Projects = "1,"
+Source Window State = "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"
+
+[File 0021]
+Path Line0001 = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_clock_services/cwsw_swtimer/inc/cw"
+Path Line0002 = "sw_swtimer.h"
+File Type = "Include"
+Disk Date = 3677739470
+In Projects = "1,"
+Source Window State = "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"
+
+[File 0022]
+Path = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_board/bd_lwcvi/cwsw_board.h"
+File Type = "Include"
+Disk Date = 3678954039
+In Projects = "1,"
+Source Window State = "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"
+
+[File 0023]
+Path = "/c/_Projects/cwsw_evqueue_test/component/cwsw_sme/inc/cwsw_sme.h"
+File Type = "Include"
+Disk Date = 3677318492
+In Projects = "1,"
+Source Window State = "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"
+
+[File 0024]
+Path = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_arch/inc/i386/cwsw_arch.h"
+File Type = "Include"
+Disk Date = 3676209676
+In Projects = "1,"
+Source Window State = "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"
+
+[Build Options 0001]
+Generate Browse Info = True
+Enable Uninitialized Locals Runtime Warning = True
+Debugging Level = "Standard"
+Break On Library Errors = True
+Break On First Chance Exceptions = False
+Enable Remote Debugging = False
+Remote Debugger Address = "localhost"
+Remote Target Address = ""
+Remote Debugging Port = 3291
+
+[SCC Options 0001]
+Use global settings = True
+SCC Provider = ""
+SCC Project = ""
+Local Path = ""
+Auxiliary Path = ""
+Perform Same Action For .h File As For .uir File = "Ask"
+Username = ""
+Comment = ""
+Use Default Username = False
+Use Default Comment = True
+Suppress CVI Error Messages = False
+
+[DLL Debugging Support 0001]
+External Process Path = ""
+
+[Command Line Args 0001]
+Command Line Args = ""
+

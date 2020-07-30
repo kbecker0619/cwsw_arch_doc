@@ -1,0 +1,372 @@
+[Project Header]
+Version = 710
+Pathname = "/c/_Projects/cwsw_evqueue_test/test/lwcviproject/demoapp.prj"
+CVI Dir = "/d/_programs/national instruments/cvi71"
+IVI Standard Root Dir = "/C/Program Files (x86)/IVI"
+VXIplug&play Framework Dir = "/c/vxipnp/winnt"
+Number of Files = 23
+Target Type = "Executable"
+Flags = 16
+
+[File 0001]
+File Type = "CSource"
+Res Id = 1
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "../app/cwsw_lib_prj/CritSect.c"
+Path = "/c/_Projects/cwsw_evqueue_test/test/app/cwsw_lib_prj/CritSect.c"
+Exclude = False
+Compile Into Object File = False
+Project Flags = 0
+Folder = "Source Files"
+
+[File 0002]
+File Type = "Include"
+Res Id = 2
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "../libs/cwsw_lib/inc/ctassert.h"
+Path = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_lib/inc/ctassert.h"
+Exclude = False
+Project Flags = 0
+Folder = "Include Files"
+
+[File 0003]
+File Type = "Include"
+Res Id = 3
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "../libs/cwsw_board/bd_lwcvi/cwsw_board.h"
+Path = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_board/bd_lwcvi/cwsw_board.h"
+Exclude = False
+Project Flags = 0
+Folder = "Include Files"
+
+[File 0004]
+File Type = "Include"
+Res Id = 4
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "../libs/cwsw_clock_services/cwsw_clock/inc/cwsw_clock.h"
+Path Line0001 = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_clock_services/cwsw_clock/inc/cwsw"
+Path Line0002 = "_clock.h"
+Exclude = False
+Project Flags = 0
+Folder = "Include Files"
+
+[File 0005]
+File Type = "Include"
+Res Id = 5
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "../app/cfg/cwsw_event_proj.h"
+Path = "/c/_Projects/cwsw_evqueue_test/test/app/cfg/cwsw_event_proj.h"
+Exclude = False
+Project Flags = 0
+Folder = "Include Files"
+
+[File 0006]
+File Type = "Include"
+Res Id = 6
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "../libs/cwsw_eventqueue/cwsw_event/inc/cwsw_eventtable.h"
+Path Line0001 = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_eventqueue/cwsw_event/inc/cwsw_eve"
+Path Line0002 = "nttable.h"
+Exclude = False
+Project Flags = 0
+Folder = "Include Files"
+
+[File 0007]
+File Type = "Include"
+Res Id = 7
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "../libs/cwsw_eventqueue/cwsw_evqueue/inc/cwsw_evqueue.h"
+Path Line0001 = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_eventqueue/cwsw_evqueue/inc/cwsw_e"
+Path Line0002 = "vqueue.h"
+Exclude = False
+Project Flags = 0
+Folder = "Include Files"
+
+[File 0008]
+File Type = "Include"
+Res Id = 8
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "../libs/cwsw_eventqueue/cwsw_evqueue_ex/inc/cwsw_evqueue_ex.h"
+Path Line0001 = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_eventqueue/cwsw_evqueue_ex/inc/cws"
+Path Line0002 = "w_evqueue_ex.h"
+Exclude = False
+Project Flags = 0
+Folder = "Include Files"
+
+[File 0009]
+File Type = "Include"
+Res Id = 9
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "../../component/cwsw_sme/inc/cwsw_sme.h"
+Path = "/c/_Projects/cwsw_evqueue_test/component/cwsw_sme/inc/cwsw_sme.h"
+Exclude = False
+Project Flags = 0
+Folder = "Include Files"
+
+[File 0010]
+File Type = "Include"
+Res Id = 10
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "../libs/cwsw_clock_services/cwsw_swtimer/inc/cwsw_swtimer.h"
+Path Line0001 = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_clock_services/cwsw_swtimer/inc/cw"
+Path Line0002 = "sw_swtimer.h"
+Exclude = False
+Project Flags = 0
+Folder = "Include Files"
+
+[File 0011]
+File Type = "CSource"
+Res Id = 11
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "../app/main.c"
+Path = "/c/_Projects/cwsw_evqueue_test/test/app/main.c"
+Exclude = False
+Compile Into Object File = False
+Project Flags = 0
+Folder = "Source Files"
+
+[File 0012]
+File Type = "Include"
+Res Id = 12
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "../app/cfg/ManagedAlarms.h"
+Path = "/c/_Projects/cwsw_evqueue_test/test/app/cfg/ManagedAlarms.h"
+Exclude = False
+Project Flags = 0
+Folder = "Include Files"
+
+[File 0013]
+File Type = "Include"
+Res Id = 13
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "../app/cfg/projcfg.h"
+Path = "/c/_Projects/cwsw_evqueue_test/test/app/cfg/projcfg.h"
+Exclude = False
+Project Flags = 0
+Folder = "Include Files"
+
+[File 0014]
+File Type = "Include"
+Res Id = 14
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "../app/cfg/projevtnames.h"
+Path = "/c/_Projects/cwsw_evqueue_test/test/app/cfg/projevtnames.h"
+Exclude = False
+Project Flags = 0
+Folder = "Include Files"
+
+[File 0015]
+File Type = "Include"
+Res Id = 15
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "../app/cfg/vs2010/stdbool.h"
+Path = "/c/_Projects/cwsw_evqueue_test/test/app/cfg/vs2010/stdbool.h"
+Exclude = False
+Project Flags = 0
+Folder = "Include Files"
+
+[File 0016]
+File Type = "Include"
+Res Id = 16
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "../app/cfg/vs2010/stdint.h"
+Path = "/c/_Projects/cwsw_evqueue_test/test/app/cfg/vs2010/stdint.h"
+Exclude = False
+Project Flags = 0
+Folder = "Include Files"
+
+[File 0017]
+File Type = "Include"
+Res Id = 17
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "../app/stoplite.h"
+Path = "/c/_Projects/cwsw_evqueue_test/test/app/stoplite.h"
+Exclude = False
+Project Flags = 0
+Folder = "Include Files"
+
+[File 0018]
+File Type = "CSource"
+Res Id = 18
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "../app/tedlos.c"
+Path = "/c/_Projects/cwsw_evqueue_test/test/app/tedlos.c"
+Exclude = False
+Compile Into Object File = False
+Project Flags = 0
+Folder = "Source Files"
+
+[File 0019]
+File Type = "Include"
+Res Id = 19
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "../app/tedlos.h"
+Path = "/c/_Projects/cwsw_evqueue_test/test/app/tedlos.h"
+Exclude = False
+Project Flags = 0
+Folder = "Include Files"
+
+[File 0020]
+File Type = "Include"
+Res Id = 20
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "../app/cfg/tedlos_cfg.h"
+Path = "/c/_Projects/cwsw_evqueue_test/test/app/cfg/tedlos_cfg.h"
+Exclude = False
+Project Flags = 0
+Folder = "Include Files"
+
+[File 0021]
+File Type = "CSource"
+Res Id = 21
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "../app/tedlos_scheduler.c"
+Path = "/c/_Projects/cwsw_evqueue_test/test/app/tedlos_scheduler.c"
+Exclude = False
+Compile Into Object File = False
+Project Flags = 0
+Folder = "Source Files"
+
+[File 0022]
+File Type = "Include"
+Res Id = 22
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "../app/cfg/tedlosevents.h"
+Path = "/c/_Projects/cwsw_evqueue_test/test/app/cfg/tedlosevents.h"
+Exclude = False
+Project Flags = 0
+Folder = "Include Files"
+
+[File 0023]
+File Type = "Include"
+Res Id = 23
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "../libs/cwsw_arch/inc/i386/cwsw_arch.h"
+Path = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_arch/inc/i386/cwsw_arch.h"
+Exclude = False
+Project Flags = 0
+Folder = "Not In A Folder"
+
+[Folders]
+User Interface Files Folder Not Added Yet = True
+Instrument Files Folder Not Added Yet = True
+Folder 0 = "Include Files"
+Folder 1 = "Source Files"
+
+[Compiler Options]
+Default Calling Convention = "cdecl"
+Require Prototypes = True
+Require Return Values = True
+Enable Pointer Mismatch Warning = True
+Enable Unreachable Code Warning = True
+Enable Unreferenced Identifiers Warning = False
+Enable Assignment In Conditional Warning = True
+O Option Compatible With 5.0 = False
+Uninitialized Locals Compile Warning = "Conservative"
+
+[Run Options]
+Stack Size = 250000
+Image Base Address = 4194304
+
+[Compiler Defines]
+Compiler Defines = "/DWIN32_LEAN_AND_MEAN /DXPRJ_CVI_Debug=1"
+
+[Include Paths]
+Include Path 1 Is Rel = False
+Include Path 1 = "/c/_Projects/cwsw_evqueue_test/test/app/cfg"
+Include Path 2 Is Rel = False
+Include Path 2 = "/c/_Projects/cwsw_evqueue_test/test/app/cfg/vs2010"
+Include Path 3 Is Rel = False
+Include Path 3 = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_lib/inc"
+Include Path 4 Is Rel = False
+Include Path 4 = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_clock_services/cwsw_clock/inc"
+Include Path 5 Is Rel = False
+Include Path 5 = "/c/_Projects/cwsw_evqueue_test/test/app/cfg/vs2010"
+Include Path 6 Is Rel = False
+Include Path 6 = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_eventqueue/cwsw_evqueue_ex/inc"
+Include Path 7 Is Rel = False
+Include Path 7 = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_eventqueue/cwsw_event/inc"
+Include Path 8 Is Rel = False
+Include Path 8 = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_eventqueue/cwsw_evqueue/inc"
+Include Path 9 Is Rel = False
+Include Path 9 = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_clock_services/cwsw_swtimer/inc"
+Include Path 10 Is Rel = False
+Include Path 10 = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_board/bd_lwcvi"
+Include Path 11 Is Rel = False
+Include Path 11 = "/c/_Projects/cwsw_evqueue_test/component/cwsw_sme/inc"
+Include Path 12 Is Rel = False
+Include Path 12 = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_arch/inc/i386"
+
+[Create Executable]
+Executable File_Debug Is Rel = True
+Executable File_Debug Rel To = "Project"
+Executable File_Debug Rel Path = "demoapp_dbg.exe"
+Executable File_Debug = "/c/_Projects/cwsw_evqueue_test/test/lwcviproject/demoapp_dbg.exe"
+Executable File_Release Is Rel = True
+Executable File_Release Rel To = "Project"
+Executable File_Release Rel Path = "demoapp.exe"
+Executable File_Release = "/c/_Projects/cwsw_evqueue_test/test/lwcviproject/demoapp.exe"
+Icon File Is Rel = False
+Icon File = ""
+Application Title = ""
+DLL Exports = "Include File Symbols"
+DLL Import Library Choice = "Gen Lib For Current Mode"
+Use IVI Subdirectories for Import Libraries = False
+Use VXIPNP Subdirectories for Import Libraries = False
+Use Dflt Import Lib Base Name = True
+Where to Copy DLL = "Do not copy"
+Add Type Lib To DLL = False
+Include Type Lib Help Links = False
+Type Lib FP File Is Rel = False
+Type Lib FP File = ""
+Type Lib Guid = ""
+Runtime Support = "Full Runtime Support"
+Instrument Driver Support Only = False
+Embed Project .UIRs = False
+Generate Map File = False
+
+[External Compiler Support]
+UIR Callbacks File Option = 0
+Using LoadExternalModule = False
+Create Project Symbols File = True
+UIR Callbacks Obj File Is Rel = False
+UIR Callbacks Obj File = ""
+Project Symbols H File Is Rel = False
+Project Symbols H File = ""
+Project Symbols Obj File Is Rel = False
+Project Symbols Obj File = ""
+
+[ActiveX Server Options]
+Specification File Is Rel = False
+Specification File = ""
+Source File Is Rel = False
+Source File = ""
+Include File Is Rel = False
+Include File = ""
+IDL File Is Rel = False
+IDL File = ""
+Register ActiveX Server = False
+

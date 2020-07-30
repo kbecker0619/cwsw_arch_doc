@@ -148,7 +148,6 @@ extern "C" {
 	#define	XPRJ_CVI_Debug				0
 
 #elif defined(XPRJ_CVI_Debug)
-#error
 	#define	XPRJ_Win_MinGW_Debug 		0
 	#define XPRJ_Win_Cygwin_Debug_UT	0
 	#define XPRJ_Debug_Linux_GCC		0
