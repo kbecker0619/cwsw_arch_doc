@@ -34,50 +34,19 @@ extern "C" {
 // ============================================================================
 
 // ==== PROJECT-INVARIANT CONSTANTS ========================================= {
-/* ==== A WORD ABOUT BUILD TARGETS ============================================
- *	Within Eclipse, the configuration is available as an IDE variable named
- *		"${ConfigName}"
- *	This can be put into a command-line define, for use in the code itself;
- *	within this project's settings, this is done by defining
- *		"XPRJ_${ConfigName}"
+/* ==== Section Notes =========================================================
+ * This section is intended to be small and unchanged for all projects.
+ * Here, we detect the current build environment and disable all other supported
+ * environments. Configuration-specific defines (aka options specific to one of
+ * these Build Targets) should be done in a follow-up section below.
  *
- *	Use by preprocessor code such as
- *		"#if defined(XPRJ_Debug)"
- *
- *	Note the name of this define is specifically chosen for cross-platform
- *	Compatibility, for example with MPLAB X.
- *
- *	Within the NetBeans IDE used by MPLAB X, the equivalent mechanism is to
- *	detect off the command-line define "XPRJ_NB_${CONF}",
- *		"#if defined(XPRJ_Debug)"
- *
- *	Note the name of the default configuration created by MPLAB X' New Project
- *	wizard is "default" - if you want a configuration named "Debug", you need to
- *	create it.
- *
- *	Within my development environment, I let Eclipse' New Project Wizard create
- *	its standard Debug and Release configurations, then create new ones for on-
- *	target debugging, as required. I assume my Windows/Linux Debug configuration
- *	is also intended for unit tests, so I rather indiscriminately print things
- *	to the console.
- * ========================================================================= */
-
-/* ==== A FOLLOW-UP WORD ABOUT BUILD TARGETS ==================================
- * ANSI/ISO C says that the preprocessor evaluates an undefined symbol as having
- * the value '0' - however, many of the environments i'm targeting, and also many
- * of the static analysis tools, emit warnings about usage of undefined symbols
- * in normal C code - and even though i do it when necessary, i have a rather
- * strong aversion to using #if defined(x) mechanisms in normal code.
- * therefore, i'll here define all of the non-active build targets.
- * ========================================================================= */
-
-/* ==== One final word ========================================================
- * This section is intended to be pristine and unchanged for all projects.
- * Configuration-specific defines (aka options specific to one of these Build
- * Targets) should be done in a followup section below.
+ * This section exists only because this is a demonstration project; I would
+ * anticipate that most projects will only need to support one platform. In that
+ * case, this whole section goes away, and you can simplify the sections that
+ * follow.
  * ========================================================================= */
 /* Configuration Check */
-/* XPRJ (Cross-Compile Project) _ Platform _ Tool _ Config */
+/* Format: XPRJ (Cross-Compile Project) _ Platform _ Tool _ Config */
 #if defined(XPRJ_Debug)
 	/* This configuration is created by Eclipse; we do not want it used, unless ... */
 	#if (XPRJ_Debug == 99)

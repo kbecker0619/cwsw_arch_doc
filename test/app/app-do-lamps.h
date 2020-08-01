@@ -53,6 +53,9 @@ extern "C" {
 extern uint16_t AppDO__Init(void);
 extern void AppDO__Task(void);
 
+enum { AppDO };
+
+
 /** Target for `SET(Lamp, on_off)`
  *	@{
  */
