@@ -98,6 +98,10 @@ StateWalkOn(ptEvQ_Event pev, uint32_t *pextra)
 		{
 			--statephase;
 		}
+		else
+		{
+			pev->evId = 0;	// only to provide a place to hang a breakpoint
+		}
 		break;
 
 	case kStateExit:
@@ -243,10 +247,11 @@ StateGreen(ptEvQ_Event pev, uint32_t *pextra)
 		case evStoplite_Task:	// normal, cyclic call
 		default:				// other non-recognized event. ignore.
 			do {
-				tEvQ_Event ev = {0, 0};	// default to steady walk on
 				// within this little micro-ecosystem, i'm using the Event ID field to comm w/ the
-				//	walk sign - a '0' means steady on, a '1' means flashing.
-				if( Cwsw_GetTimeLeft(tmrClearWalk) > 0 )
+				//	walk sign - a '0' means steady on, a '1' means flashing, 2 means force-off/end.
+				tEvQ_Event ev = {0, 0};	// default to steady walk on
+				tCwswClockTics tmlft = Cwsw_GetTimeLeft(tmrClearWalk);
+				if( tmlft > 0 )
 				{
 					// for now, keep bumping along the flash-walk timer, as the easiest way to manage
 					//	both timers. could launch with flash-walk set to a very high value so it doesn't
@@ -255,10 +260,11 @@ StateGreen(ptEvQ_Event pev, uint32_t *pextra)
 				}
 				else
 				{
-					ev.evId = 1;	// activate timing
+					ev.evId = 1;	// activate timing. the point here is that we're no longer bumping along the walk flash timer
 				}
 
-				if(Cwsw_GetTimeLeft(tmrFlashWalk) > 0)
+				tmlft = Cwsw_GetTimeLeft(tmrFlashWalk);
+				if(tmlft > 0)
 				{
 					--statephase;	// stay in this state
 				}
