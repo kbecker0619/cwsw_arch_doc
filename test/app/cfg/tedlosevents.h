@@ -61,6 +61,7 @@ enum eOsEvqEvents {
 	evStopLite_Pause,
 	evStopLite_Go,
 	evStoplite_ForceYellow,
+	evStopLite_WalkPressed,
 	evStopLite_Reenter,
 
 	evButton_Task,
