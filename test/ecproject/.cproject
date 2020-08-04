@@ -128,11 +128,18 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<fileInfo id="cdt.managedbuild.config.gnu.mingw.exe.debug.1736302436.230908721" name="cwsw_sme.template.c" rcbsApplicability="disable" resourcePath="component/cwsw_sme/src/cwsw_sme.template.c" toolsToInvoke="cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.debug.1489450762.480627612">
-						<tool id="cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.debug.1489450762.480627612" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.debug.1489450762"/>
-					</fileInfo>
+					<folderInfo id="cdt.managedbuild.config.gnu.mingw.exe.debug.1736302436.1719052586" name="/" resourcePath="libs/cwsw_board/bd_lwcvi">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.mingw.exe.debug.1258671008" name="MinGW GCC" superClass="cdt.managedbuild.toolchain.gnu.mingw.exe.debug" unusedChildren="">
+							<tool id="cdt.managedbuild.tool.gnu.assembler.mingw.exe.debug.401705857" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.mingw.exe.debug.955745680"/>
+							<tool id="cdt.managedbuild.tool.gnu.archiver.mingw.base.1311893084" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.mingw.base.1004530742"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.exe.debug.1087421218" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.exe.debug.1050297134"/>
+							<tool id="cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.debug.1059431864" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.debug.1489450762"/>
+							<tool id="cdt.managedbuild.tool.gnu.c.linker.mingw.exe.debug.1436050691" name="MinGW C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.mingw.exe.debug.1268148108"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.mingw.exe.debug.840913924" name="MinGW C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.mingw.exe.debug.1051958027"/>
+						</toolChain>
+					</folderInfo>
 					<sourceEntries>
-						<entry excluding="component/cwsw_sme/src/cwsw_sme.template.c|libs/cwsw_board/none|libs/cwsw_eventqueue/test|component/cwsw_event/test|libs/cwsw_arch/test|bsw/svc/cwsw_event/test/ecproject|bsw/svc/cwsw_swtimer/src/cwsw_swtimer.c|libs/cwsw_arch_old|component/cwsw_event/test/cwsw_lib/test|bsw/svc/cwsw_event/test/cwsw_lib/test/ut|bsw/svc/cwsw_clock/src/cwsw_clock_svc.c|src|bsw/ecu/cwsw_arch/test|libs/cwsw_clock|bsw/svc/cwsw_event/test|libs/cwsw_swtimer|bsw/svc/cwsw_evq/test|libs/cwsw_lib/test|bsw/svc/cwsw_event/test/nbproject|bsw/evq/src/cwsw_evhandler.c|bsw/svc/cwsw_event/test/app|bsw/svc/cwsw_event/test/vsproject|bsw/svc/cwsw_lib/test|libs/cwsw_board_old|component/test" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="libs/cwsw_board/bd_lwcvi|component/cwsw_sme/src/cwsw_sme.template.c|libs/cwsw_board/none|libs/cwsw_eventqueue/test|component/cwsw_event/test|libs/cwsw_arch/test|bsw/svc/cwsw_event/test/ecproject|bsw/svc/cwsw_swtimer/src/cwsw_swtimer.c|libs/cwsw_arch_old|component/cwsw_event/test/cwsw_lib/test|bsw/svc/cwsw_event/test/cwsw_lib/test/ut|bsw/svc/cwsw_clock/src/cwsw_clock_svc.c|src|bsw/ecu/cwsw_arch/test|libs/cwsw_clock|bsw/svc/cwsw_event/test|libs/cwsw_swtimer|bsw/svc/cwsw_evq/test|libs/cwsw_lib/test|bsw/svc/cwsw_event/test/nbproject|bsw/evq/src/cwsw_evhandler.c|bsw/svc/cwsw_event/test/app|bsw/svc/cwsw_event/test/vsproject|bsw/svc/cwsw_lib/test|libs/cwsw_board_old|component/test" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

@@ -1,9 +1,9 @@
-/** @file stdbool.h
+/** @file stdint.h
  *	@brief	Substitute header for VS, LW-CVI environments.
  *
  *	Description:
- *	This file is NOT intended to provide fully tested ANSI definitions of the boolean integer
- *	types; rather, it is here to supply "good enough" definitions of C99 types for the two
+ *	This file is NOT intended to provide fully tested ANSI definitions of the standard integer
+ *	types; rather, it is here to supply "good enough" definitions of C99 integer types for the two
  *	environments I use that don't know about them natively - namely, Visual Studio 2010, and
  *	LabWindows/CVI v7.1 (both very ancient at the time of this writing).
  *
@@ -14,10 +14,8 @@
  *	Author: kevin
  */
 
-#pragma once
-
-#ifndef STDBOOL_H
-#define STDBOOL_H
+#ifndef STDINT_H
+#define STDINT_H
 
 // ============================================================================
 // ----	Include Files ---------------------------------------------------------
@@ -39,15 +37,17 @@ extern "C" {
 // ----	Constants -------------------------------------------------------------
 // ============================================================================
 
-#define false	0
-#define true	1
-
-
 // ============================================================================
 // ----	Type Definitions ------------------------------------------------------
 // ============================================================================
 
-typedef char bool;
+typedef unsigned char	uint8_t;
+
+typedef   signed short  int16_t;
+typedef unsigned short	uint16_t;
+
+typedef   signed long	int32_t;
+typedef unsigned long	uint32_t;
 
 
 // ============================================================================
@@ -63,4 +63,4 @@ typedef char bool;
 }
 #endif
 
-#endif /* STDBOOL_H */
+#endif /* STDINT_H */

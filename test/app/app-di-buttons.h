@@ -10,8 +10,8 @@
  *	Author: kevin
  */
 
-#ifndef APP_APP_DI_BUTTONS_H_
-#define APP_APP_DI_BUTTONS_H_
+#ifndef APP_DI_BUTTONS_H
+#define APP_DI_BUTTONS_H
 
 // ============================================================================
 // ----	Include Files ---------------------------------------------------------
@@ -64,4 +64,4 @@ extern void AppButtonUnstuck(tEvQ_Event ev, uint32_t extra);
 }
 #endif
 
-#endif /* APP_APP_DI_BUTTONS_H_ */
+#endif /* APP_DI_BUTTONS_H */

@@ -1,2 +1,5 @@
 *#
 
+# Ignore header file written from LabWindows/CFI's UI editor. 
+#	Instead, copy this to file `cwsw_board_ui.h` in the Board / CVI component.
+board.h

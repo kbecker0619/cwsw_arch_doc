@@ -160,7 +160,6 @@ tedlos__do(ptEvQ_QueueCtrlEx tedlos_evqx)
 	if(TEDLOS_INTERRUPT_DRIVEN)
 	{
 		Cwsw_Board__StartScheduler(tedlos_evqx);
-		gtk_main();
 	}
 	else
 	{

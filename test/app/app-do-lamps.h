@@ -53,9 +53,17 @@ extern "C" {
 extern uint16_t AppDO__Init(void);
 extern void AppDO__Task(void);
 
-extern void SET_LampRed(bool value);
-extern void SET_LampYellow(bool value);
-extern void SET_LampGreen(bool value);
+enum { AppDO };
+
+
+/** Target for `SET(Lamp, on_off)`
+ *	@{
+ */
+extern void SET_LampRed(tOnOffLogical value);
+extern void SET_LampYellow(tOnOffLogical value);
+extern void SET_LampGreen(tOnOffLogical value);
+extern void SET_LampWalk(tOnOffLogical value);
+/** @} */
 
 #ifdef	__cplusplus
 }

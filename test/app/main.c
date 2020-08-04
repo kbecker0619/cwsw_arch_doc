@@ -98,10 +98,10 @@ Os_tsk_1000ms(tEvQ_Event ev, uint32_t extra)
 		Cwsw_EvQX__PostEventId(&tedlos_evqx, evStopLite_Reenter);
 		break;
 
-	case 55:
+	case 355:
 		Cwsw_EvQX__PostEventId(&tedlos_evqx, evStoplite_StopTask);
 		break;
-	case 60:
+	case 360:
 		(void)Cwsw_EvQX__PostEventId(&tedlos_evqx, evOs_QuitRqst);
 		break;
 	default:
@@ -162,11 +162,11 @@ main(void)
 
 	// driver layer
 	(void)Init(Cwsw_Arch);		// Cwsw_Arch__Init()
-	(void)Init(buttons);		// buttons__Init()
+	(void)Init(buttons);		// app-level sensor component - buttons__Init()
 
 	// app layer
 	(void)Init(Stoplite);
-	(void)Init(AppDO);
+	(void)Init(AppDO);			// app-level actuator component (DO = Digital Output)	AppDO__Init()
 
 	// this board-level init function doesn't return untl the [QUIT] button is pushed, so it's gotta be last.
 	if(!Init(Cwsw_Board))		// Cwsw_Board__Init()

@@ -76,6 +76,7 @@ Cwsw_Sme_FindNextState(
 						nextstate = pTblTransition[tblidx].pfNext;
 						if(pTblTransition[tblidx].pfTransition)
 						{
+							(void)printf("Transition %i selected\n", tblidx);
 							pTblTransition[tblidx].pfTransition(ev, extra);
 						}
 						break;
