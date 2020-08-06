@@ -244,13 +244,19 @@ StateGreen(ptEvQ_Event pev, uint32_t *pextra)
 			// update the exit reason1
 			break;
 
-		case evStoplite_Task:	// normal, cyclic call
-		default:				// other non-recognized event. ignore.
+		case evStoplite_Task:			// normal, cyclic call
+		case evStopLite_WalkPressed:	// other direction wants to walk.
+		default:						// other non-recognized event. ignore.
 			do {
 				// within this little micro-ecosystem, i'm using the Event ID field to comm w/ the
 				//	walk sign - a '0' means steady on, a '1' means flashing, 2 means force-off/end.
 				tEvQ_Event ev = {0, 0};	// default to steady walk on
 				tCwswClockTics tmlft = Cwsw_GetTimeLeft(tmrClearWalk);
+				if(pev->evId == evStopLite_WalkPressed)	{
+					// if walk button was pressed, terminate CLearWalk phase and begin FlashWalk phase
+					tmrClearWalk = 0;
+					tmlft = 0;
+				}
 				if( tmlft > 0 )
 				{
 					// for now, keep bumping along the flash-walk timer, as the easiest way to manage
@@ -303,8 +309,7 @@ StateYellow(ptEvQ_Event pev, uint32_t *pextra)
 	default:
 		statephase = kStateOperational;
 		evId = pev->evId;
-		Set(Cwsw_Clock, tmrStateOn, tmr100ms + tmr100ms);
-
+		Set(Cwsw_Clock, tmrStateOn, kStateTimeYellow);
 		SET(LampYellow, kLogicalOn);
 		break;
 
@@ -535,10 +540,12 @@ Stoplite__Init(void)
 		// primary association - alarm maturation event drives this SME
 		{ evStoplite_Task,			Stoplite_tsk_StopliteSme },
 
+		// other events handled by various states in this SM.
 		{ evStopLite_Go,			Stoplite_tsk_StopliteSme },
 		{ evStoplite_ForceYellow,	Stoplite_tsk_StopliteSme },
 		{ evStopLite_Pause,			Stoplite_tsk_StopliteSme },
 		{ evStopLite_Reenter,		Stoplite_tsk_StopliteSme },
+		{ evStopLite_WalkPressed,	Stoplite_tsk_StopliteSme },
 		{ evStoplite_StopTask,		Stoplite_tsk_StopliteSme },
 	};
 	uint32_t idx = TABLE_SIZE(tblAssoc);

@@ -113,6 +113,9 @@ AppButtonCommit(tEvQ_Event ev, uint32_t extra)
 		Cwsw_EvQX__PostEventId(&tedlos_evqx, evStoplite_ForceYellow);
 		break;
 
+	case kBoardButton2:		// walk button pushed
+		puts("Emitting Walk event");
+		Cwsw_EvQX__PostEventId(&tedlos_evqx, evStopLite_WalkPressed);
 	//evButton_StopTask
 
 	default:
