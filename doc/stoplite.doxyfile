@@ -1,0 +1,39 @@
+# Doxyfile for Stoplite demo application.
+
+# include the actual component doxy project
+@INCLUDE		 = ../test/libs/cwsw_lib/doc/doc_core/cwsw.doxyfile
+
+PROJECT_NAME	 = "CWSW Stoplite Demo App"
+PROJECT_BRIEF	 = "Demonstration application for the CWSW family of components for embedded software."
+
+DOT_PATH         = 
+# override default values for graph generation (to address Doxy warning in logfile)
+DOT_GRAPH_MAX_NODES    = 150
+
+# pick one of the supported IDEs to enable the appropriate code macros
+PREDEFINED		+=  XPRJ_NB_Debug=1
+
+# ==================================
+
+# specify front page for Doxy output
+#	note this makes another assumption about this file's location in the project tree
+INPUT            = ../README.md
+
+# component input files
+## core library
+INPUT           += ../test/libs/cwsw_lib/src
+INPUT			+= ../test/libs/cwsw_lib/inc
+INPUT			+= ../test/libs/cwsw_lib/doc
+INCLUDE_PATH    += ../test/libs/cwsw_lib/inc
+EXCLUDE 		+= ../test/libs/cwsw_lib/README.md
+EXCLUDE         += ../test/libs/cwsw_lib/src/README.md
+EXCLUDE			+= ../test/libs/cwsw_lib/doc/README.md
+EXCLUDE 		+= ../test/libs/cwsw_lib/doc/doc_core/README.md
+
+## arch library
+INPUT           += ../test/libs/cwsw_arch/src
+INPUT           += ../test/libs/cwsw_arch/inc
+INPUT           += ../test/libs/cwsw_arch/doc
+INCLUDE_PATH    += ../test/libs/cwsw_arch/inc
+EXCLUDE         += ../test/libs/cwsw_arch/src/README.md
+EXCLUDE			+= ../test/libs/cwsw_arch/doc/design/images/README.md
