@@ -46,18 +46,35 @@ EXCLUDE         += ../test/libs/cwsw_board/bd_gtk
 EXCLUDE			+= ../test/libs/cwsw_board/bd_lwcvi
 # BSP doesn't (yet) have `doc` folder
 
-## Clock Services component
+## Clock Services package
 #### This package has 2 components in it: clock, and timers
-### Clock
+### Clock component
 INPUT           += ../test/libs/cwsw_clock_services/cwsw_clock
 INCLUDE_PATH    += ../test/libs/cwsw_clock_services/cwsw_clock/inc
 EXCLUDE 		+= ../test/libs/cwsw_clock_services/cwsw_clock/README.md
 EXCLUDE			+= ../test/libs/cwsw_clock_services/cwsw_clock/test
 EXCLUDE 		+= ../test/libs/cwsw_clock_services/cwsw_clock/doc/README.md
 
-### SW Timers
+### SW Timers component
 INPUT           += ../test/libs/cwsw_clock_services/cwsw_swtimer
 INCLUDE_PATH    += ../test/libs/cwsw_clock_services/cwsw_swtimer/inc
 EXCLUDE 		+= ../test/libs/cwsw_clock_services/cwsw_swtimer/README.md
 EXCLUDE			+= ../test/libs/cwsw_clock_services/cwsw_swtimer/test
 EXCLUDE 		+= ../test/libs/cwsw_clock_services/cwsw_swtimer/doc/README.md
+
+## Event Queue package
+### Event component
+INPUT           += ../test/libs/cwsw_eventqueue/cwsw_event
+INCLUDE_PATH    += ../test/libs/cwsw_eventqueue/cwsw_event/inc
+EXCLUDE 		+= ../test/libs/cwsw_eventqueue/cwsw_event/readme.md
+
+### Event Queue component
+INPUT           += ../test/libs/cwsw_eventqueue/cwsw_evqueue
+INCLUDE_PATH    += ../test/libs/cwsw_eventqueue/cwsw_evqueue/inc
+EXCLUDE 		+= ../test/libs/cwsw_eventqueue/cwsw_evqueue/readme.md
+
+### Event Queue Extended component
+INPUT           += ../test/libs/cwsw_eventqueue/cwsw_evqueue_ex
+INCLUDE_PATH    += ../test/libs/cwsw_eventqueue/cwsw_evqueue_ex/inc
+EXCLUDE 		+= ../test/libs/cwsw_eventqueue/cwsw_evqueue_ex/readme.md
+
