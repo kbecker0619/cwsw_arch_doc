@@ -20,7 +20,7 @@ PREDEFINED		+=  XPRJ_NB_Debug=1
 INPUT            = ../README.md
 
 # component input files
-## core library
+## core library component
 INPUT           += ../test/libs/cwsw_lib/src
 INPUT			+= ../test/libs/cwsw_lib/inc
 INPUT			+= ../test/libs/cwsw_lib/doc
@@ -30,10 +30,18 @@ EXCLUDE         += ../test/libs/cwsw_lib/src/README.md
 EXCLUDE			+= ../test/libs/cwsw_lib/doc/README.md
 EXCLUDE 		+= ../test/libs/cwsw_lib/doc/doc_core/README.md
 
-## arch library
+## arch component
 INPUT           += ../test/libs/cwsw_arch/src
 INPUT           += ../test/libs/cwsw_arch/inc
 INPUT           += ../test/libs/cwsw_arch/doc
 INCLUDE_PATH    += ../test/libs/cwsw_arch/inc
 EXCLUDE         += ../test/libs/cwsw_arch/src/README.md
 EXCLUDE			+= ../test/libs/cwsw_arch/doc/design/images/README.md
+
+## Board Support component
+### Note for this Doxy output, I'll use the None board (MSVC project)
+INPUT           += ../test/libs/cwsw_board
+INCLUDE_PATH    += ../test/libs/cwsw_board/none
+EXCLUDE         += ../test/libs/cwsw_board/bd_gtk
+EXCLUDE			+= ../test/libs/cwsw_board/bd_lwcvi
+# BSP doesn't (yet) have `doc` folder
