@@ -45,3 +45,19 @@ INCLUDE_PATH    += ../test/libs/cwsw_board/none
 EXCLUDE         += ../test/libs/cwsw_board/bd_gtk
 EXCLUDE			+= ../test/libs/cwsw_board/bd_lwcvi
 # BSP doesn't (yet) have `doc` folder
+
+## Clock Services component
+#### This package has 2 components in it: clock, and timers
+### Clock
+INPUT           += ../test/libs/cwsw_clock_services/cwsw_clock
+INCLUDE_PATH    += ../test/libs/cwsw_clock_services/cwsw_clock/inc
+EXCLUDE 		+= ../test/libs/cwsw_clock_services/cwsw_clock/README.md
+EXCLUDE			+= ../test/libs/cwsw_clock_services/cwsw_clock/test
+EXCLUDE 		+= ../test/libs/cwsw_clock_services/cwsw_clock/doc/README.md
+
+### SW Timers
+INPUT           += ../test/libs/cwsw_clock_services/cwsw_swtimer
+INCLUDE_PATH    += ../test/libs/cwsw_clock_services/cwsw_swtimer/inc
+EXCLUDE 		+= ../test/libs/cwsw_clock_services/cwsw_swtimer/README.md
+EXCLUDE			+= ../test/libs/cwsw_clock_services/cwsw_swtimer/test
+EXCLUDE 		+= ../test/libs/cwsw_clock_services/cwsw_swtimer/doc/README.md
