@@ -10,11 +10,11 @@
  *	vision we put into play was to control a stoplight, and/or read and debounce hardware buttons.
  *	Larger / nested state machines can easily be accommodated by using SMEs that control sub-SMEs.
  *
+ *	\copyright
  *	Copyright (c) 2020 Kevin L. Becker. All rights reserved.
  *
- *	Original:
  *	Created on: Jun 23, 2020
- *	Author: kevin
+ *	@author Kevin L. Becker
  */
 
 // ============================================================================

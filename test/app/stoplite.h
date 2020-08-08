@@ -1,17 +1,15 @@
-/** @file stoplite.h
+/** @file
  *	@brief	One-sentence short description of file.
  *
- *	Description:
- *
+ *	\copyright
  *	Copyright (c) 2020 Kevin L. Becker. All rights reserved.
  *
- *	Original:
  *	Created on: Jul 10, 2020
- *	Author: kevin
+ *	@author Kevin L. Becker
  */
 
-#ifndef APP_STOPLITE_H_
-#define APP_STOPLITE_H_
+#ifndef APP_STOPLITE_H
+#define APP_STOPLITE_H
 
 // ============================================================================
 // ----	Include Files ---------------------------------------------------------
@@ -61,4 +59,4 @@ extern void Stoplite_tsk_StopliteSme(tEvQ_Event ev, uint32_t extra);
 }
 #endif
 
-#endif /* APP_STOPLITE_H_ */
+#endif /* APP_STOPLITE_H */

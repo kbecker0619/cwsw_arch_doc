@@ -5,11 +5,11 @@
  *	Copyright (c) 2020 Kevin L. Becker. All rights reserved.
  *
  *	Created on: Jan 20, 2018
- *	@author kbecker
+ *	@author Kevin L. Becker
  */
 
-#ifndef UT_PROJEVTNAMES_H_
-#define UT_PROJEVTNAMES_H_
+#ifndef PROJEVTNAMES_H
+#define PROJEVTNAMES_H
 
 // ============================================================================
 // ----	Include Files ---------------------------------------------------------
@@ -77,4 +77,4 @@ extern void EventHandler__evButtonReleased		(tEventPayload EventData);
 }
 #endif
 
-#endif /* UT_PROJEVTNAMES_H_ */
+#endif /* PROJEVTNAMES_H */

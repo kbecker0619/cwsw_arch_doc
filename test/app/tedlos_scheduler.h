@@ -1,17 +1,15 @@
-/** @file tedlos_scheduler.h
+/** @file
  *	@brief	One-sentence short description of file.
  *
- *	Description:
- *
+ *	\copyright
  *	Copyright (c) 2020 Kevin L. Becker. All rights reserved.
  *
- *	Original:
  *	Created on: Jun 18, 2020
- *	Author: kevin
+ *	@author Kevin L. Becker
  */
 
-#ifndef TEDLOS_SCHEDULER_H_
-#define TEDLOS_SCHEDULER_H_
+#ifndef TEDLOS_SCHEDULER_H
+#define TEDLOS_SCHEDULER_H
 
 #ifdef	__cplusplus
 extern "C" {
@@ -57,4 +55,4 @@ extern void tedlos_schedule(ptEvQ_QueueCtrlEx tedlos_evqx);
 }
 #endif
 
-#endif /* TEDLOS_SCHEDULER_H_ */
+#endif /* TEDLOS_SCHEDULER_H */

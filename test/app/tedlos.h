@@ -1,11 +1,11 @@
-/** @file tedlos.h
+/** @file
  *	@brief	The Event-Dispatching Loop OS.
  *
  *	\copyright
  *	Copyright (c) 2020 Kevin L. Becker. All rights reserved.
  *
  *	Created on: Feb 19, 2020
- *	@author: kbecker
+ *	@author Kevin L. Becker
  */
 
 #ifndef APP_TEDLOS_H_

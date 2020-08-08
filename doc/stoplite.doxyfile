@@ -1,0 +1,93 @@
+# Doxyfile for Stoplite demo application.
+
+# include the actual component doxy project
+@INCLUDE		 = ../test/libs/cwsw_lib/doc/doc_core/cwsw.doxyfile
+
+PROJECT_NAME	 = "CWSW Stoplite Demo App"
+PROJECT_BRIEF	 = "Demonstration application for the CWSW family of components for embedded software."
+
+DOT_PATH         = 
+# override default values for graph generation (to address Doxy warning in logfile)
+DOT_GRAPH_MAX_NODES    = 150
+
+# pick one of the supported IDEs to enable the appropriate code macros
+PREDEFINED		+=  XPRJ_NB_Debug=1
+
+# ==================================
+
+# specify front page for Doxy output
+#	note this makes another assumption about this file's location in the project tree
+INPUT            = ../README.md
+
+# component input files
+## core library component
+INPUT           += ../test/libs/cwsw_lib/src
+INPUT			+= ../test/libs/cwsw_lib/inc
+INPUT			+= ../test/libs/cwsw_lib/doc
+INCLUDE_PATH    += ../test/libs/cwsw_lib/inc
+EXCLUDE 		+= ../test/libs/cwsw_lib/README.md
+EXCLUDE         += ../test/libs/cwsw_lib/src/README.md
+EXCLUDE			+= ../test/libs/cwsw_lib/doc/README.md
+EXCLUDE 		+= ../test/libs/cwsw_lib/doc/doc_core/README.md
+
+## arch component
+INPUT           += ../test/libs/cwsw_arch/src
+INPUT           += ../test/libs/cwsw_arch/inc
+INPUT           += ../test/libs/cwsw_arch/doc
+INCLUDE_PATH    += ../test/libs/cwsw_arch/inc
+EXCLUDE         += ../test/libs/cwsw_arch/src/README.md
+EXCLUDE			+= ../test/libs/cwsw_arch/doc/design/images/README.md
+
+## Board Support component
+### Note for this Doxy output, I'll use the None board (MSVC project)
+INPUT           += ../test/libs/cwsw_board
+INCLUDE_PATH    += ../test/libs/cwsw_board/none
+EXCLUDE         += ../test/libs/cwsw_board/bd_gtk
+EXCLUDE			+= ../test/libs/cwsw_board/bd_lwcvi
+# BSP doesn't (yet) have `doc` folder
+
+## Clock Services package
+#### This package has 2 components in it: clock, and timers
+### Clock component
+INPUT           += ../test/libs/cwsw_clock_services/cwsw_clock
+INCLUDE_PATH    += ../test/libs/cwsw_clock_services/cwsw_clock/inc
+EXCLUDE 		+= ../test/libs/cwsw_clock_services/cwsw_clock/README.md
+EXCLUDE			+= ../test/libs/cwsw_clock_services/cwsw_clock/test
+EXCLUDE 		+= ../test/libs/cwsw_clock_services/cwsw_clock/doc/README.md
+
+### SW Timers component
+INPUT           += ../test/libs/cwsw_clock_services/cwsw_swtimer
+INCLUDE_PATH    += ../test/libs/cwsw_clock_services/cwsw_swtimer/inc
+EXCLUDE 		+= ../test/libs/cwsw_clock_services/cwsw_swtimer/README.md
+EXCLUDE			+= ../test/libs/cwsw_clock_services/cwsw_swtimer/test
+EXCLUDE 		+= ../test/libs/cwsw_clock_services/cwsw_swtimer/doc/README.md
+
+## Event Queue package
+### Event component
+INPUT           += ../test/libs/cwsw_eventqueue/cwsw_event
+INCLUDE_PATH    += ../test/libs/cwsw_eventqueue/cwsw_event/inc
+EXCLUDE 		+= ../test/libs/cwsw_eventqueue/cwsw_event/readme.md
+
+### Event Queue component
+INPUT           += ../test/libs/cwsw_eventqueue/cwsw_evqueue
+INCLUDE_PATH    += ../test/libs/cwsw_eventqueue/cwsw_evqueue/inc
+EXCLUDE 		+= ../test/libs/cwsw_eventqueue/cwsw_evqueue/readme.md
+
+### Event Queue Extended component
+INPUT           += ../test/libs/cwsw_eventqueue/cwsw_evqueue_ex
+INCLUDE_PATH    += ../test/libs/cwsw_eventqueue/cwsw_evqueue_ex/inc
+EXCLUDE 		+= ../test/libs/cwsw_eventqueue/cwsw_evqueue_ex/readme.md
+
+## State Machine Engine package / component
+### Note that at the time of creation of this Doxy project, this is still a development
+###	folder within the Demo App repo. Issue #30 instructs to move it to a submodule, at
+###	which point this project will also need to be updated.
+INPUT           += ../component/cwsw_sme
+INCLUDE_PATH    += ../component/cwsw_sme/inc
+EXCLUDE 		+= ../component/cwsw_sme/readme.md
+EXCLUDE 		+= ../component/cwsw_sme/test
+
+## Application
+INPUT           += ../test/app
+INCLUDE_PATH    += ../test/app
+#EXCLUDE 		+= ../component/cwsw_sme/readme.md

@@ -7,11 +7,11 @@
  *
  *	If an AUTOSAR SWC, this would be roughly equivalent to a button sensor component.
  *
+ *	\copyright
  *	Copyright (c) 2020 Kevin L. Becker. All rights reserved.
  *
- *	Original:
  *	Created on: Jul 10, 2020
- *	Author: kevin
+ *	@author Kevin L. Becker
  */
 
 // ============================================================================

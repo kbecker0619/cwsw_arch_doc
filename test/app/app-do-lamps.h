@@ -7,11 +7,11 @@
  *	  the context of the calling code. That API simply sets flags to work on later.
  *	- This component needs to be called regularly to effect the outputs written by the `SET()` API.
  *
+ *	\copyright
  *	Copyright (c) 2020 Kevin L. Becker. All rights reserved.
  *
- *	Original:
  *	Created on: Jul 11, 2020
- *	Author: kevin
+ *	@author Kevin L. Becker
  */
 
 #ifndef APP_DO_LAMPS_H

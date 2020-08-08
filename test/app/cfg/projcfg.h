@@ -5,11 +5,11 @@
  *	Copyright (c) 2020 Kevin L. Becker. All rights reserved.
  *
  *	Created on: Sep 4, 2016
- *	@author kbecker
+ *	@author Kevin L. Becker
  */
 
-#ifndef PROJCFG_H_
-#define PROJCFG_H_
+#ifndef PROJCFG_H
+#define PROJCFG_H
 
 // ============================================================================
 // ----	Include Files ---------------------------------------------------------
@@ -278,4 +278,4 @@ extern void cb_lib_demo_cs_leave(int protlvl, char const * const filename, int c
 }
 #endif
 
-#endif /* PROJCFG_H_ */
+#endif /* PROJCFG_H */
