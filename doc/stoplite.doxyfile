@@ -78,3 +78,16 @@ INPUT           += ../test/libs/cwsw_eventqueue/cwsw_evqueue_ex
 INCLUDE_PATH    += ../test/libs/cwsw_eventqueue/cwsw_evqueue_ex/inc
 EXCLUDE 		+= ../test/libs/cwsw_eventqueue/cwsw_evqueue_ex/readme.md
 
+## State Machine Engine package / component
+### Note that at the time of creation of this Doxy project, this is still a development
+###	folder within the Demo App repo. Issue #30 instructs to move it to a submodule, at
+###	which point this project will also need to be updated.
+INPUT           += ../component/cwsw_sme
+INCLUDE_PATH    += ../component/cwsw_sme/inc
+EXCLUDE 		+= ../component/cwsw_sme/readme.md
+EXCLUDE 		+= ../component/cwsw_sme/test
+
+## Application
+INPUT           += ../test/app
+INCLUDE_PATH    += ../test/app
+#EXCLUDE 		+= ../component/cwsw_sme/readme.md

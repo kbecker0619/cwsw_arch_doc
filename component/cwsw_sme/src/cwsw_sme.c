@@ -1,13 +1,11 @@
-/** @file cwsw_sme_transition.c
+/** @file
  *	@brief	One-sentence short description of file.
  *
- *	Description:
- *
+ *	\copyright
  *	Copyright (c) 2020 Kevin L. Becker. All rights reserved.
  *
- *	Original:
  *	Created on: Jun 28, 2020
- *	Author: kevin
+ *	@author Kevin L. Becker
  */
 
 // ============================================================================
@@ -93,11 +91,11 @@ Cwsw_Sme_FindNextState(
 /** CWSW State Machine Engine task.
  *	This is the core SM Engine. It is intended to be called from the SME of a specific state machine.
  *
- *	@param pTblTransitions [in]	The transition table of the calling SM.
- *	@param sztbl [in]			Size of the caller's transition table.
- *	@param pfState [in]			The current state.
- *	@param ev [in]				Event parameter passed to the calling SME by the event dispatcher.
- *	@param extra [in]			Extra parameter passed to the calling SME by the event dispatcher.
+ *	@param[in] pTblTransitions 	The transition table of the calling SM.
+ *	@param[in] sztbl 			Size of the caller's transition table.
+ *	@param[in] CurrentState 	The current state.
+ *	@param[in] ev 				Event parameter passed to the calling SME by the event dispatcher.
+ *	@param[in] extra 			Extra parameter passed to the calling SME by the event dispatcher.
  *
  *	@returns The next state. If NULL, there is no next state and the caller should take appropriate action.
  */

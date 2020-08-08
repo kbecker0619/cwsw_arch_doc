@@ -1,17 +1,17 @@
-/** @file stdbool.h
+/** @file
  *	@brief	Substitute header for VS, LW-CVI environments.
  *
  *	Description:
  *	This file is NOT intended to provide fully tested ANSI definitions of the boolean integer
- *	types; rather, it is here to supply "good enough" definitions of C99 types for the two
+ *	type; rather, it is here to supply "good enough" definitions of C99 types for the two
  *	environments I use that don't know about them natively - namely, Visual Studio 2010, and
  *	LabWindows/CVI v7.1 (both very ancient at the time of this writing).
  *
+ *	\copyright
  *	Copyright (c) 2020 Kevin L. Becker. All rights reserved.
  *
- *	Original:
  *	Created on: Jul 30, 2020
- *	Author: kevin
+ *	@author Kevin L. Becker
  */
 
 #pragma once

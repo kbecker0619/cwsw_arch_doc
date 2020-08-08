@@ -1,15 +1,15 @@
-/** @file ManagedAlarms.h
+/** @file
  *	@brief	Project-specific configuration to specify which alarms will be managed by TEDLOS.
  *
+ *	\copyright
  *	Copyright (c) 2020 Kevin L. Becker. All rights reserved.
  *
- *	Original:
  *	Created on: Apr 14, 2020
- *	Author: kevin
+ *	@author Kevin L. Becker
  */
 
-#ifndef APP_CFG_MANAGEDALARMS_H_
-#define APP_CFG_MANAGEDALARMS_H_
+#ifndef MANAGEDALARMS_H
+#define MANAGEDALARMS_H
 
 #ifdef	__cplusplus
 extern "C" {
@@ -75,4 +75,4 @@ extern tCwswSwAlarm	Os_tmr_1000ms;
 }
 #endif
 
-#endif /* APP_CFG_MANAGEDALARMS_H_ */
+#endif /* MANAGEDALARMS_H */

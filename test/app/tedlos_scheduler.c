@@ -7,10 +7,11 @@
  *	we'll have a project-specific configuration that connects the "realization" functions found in
  *	the BSP to the scheduler.
  *
+ *	\copyright
  *	Copyright (c) 2020 Kevin L. Becker. All rights reserved.
  *
  *	Created on: Jun 18, 2020
- *	Author: kevin
+ *	@author Kevin L. Becker
  */
 
 // ============================================================================
@@ -56,7 +57,7 @@ static uint32_t maxcounts = 0;
 /** Running average headroom. Calculated without binning a sampling of idle counts. */
 static uint32_t ctIdleRunningAvg = 0;
 
-/** Running count of last <n> idle counts. Used for sample-based averaging.
+/** Running count of last (n) idle counts. Used for sample-based averaging.
  * 	@{
  */
 static uint32_t IdleCountBins[32] = {0};

@@ -5,7 +5,7 @@
  *	Copyright (c) 2020 Kevin L. Becker. All rights reserved.
  *
  *	Created on: Feb 8, 2020
- *	@author: kbecker
+ *	@author Kevin L. Becker
  */
 
 #ifndef PRJ_EVQ_EVENTS_H

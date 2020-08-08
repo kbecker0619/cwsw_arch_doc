@@ -1,4 +1,4 @@
-/** @file stdint.h
+/** @file
  *	@brief	Substitute header for VS, LW-CVI environments.
  *
  *	Description:
@@ -7,11 +7,11 @@
  *	environments I use that don't know about them natively - namely, Visual Studio 2010, and
  *	LabWindows/CVI v7.1 (both very ancient at the time of this writing).
  *
+ *	\copyright
  *	Copyright (c) 2020 Kevin L. Becker. All rights reserved.
  *
- *	Original:
  *	Created on: Jul 30, 2020
- *	Author: kevin
+ *	@author Kevin L. Becker
  */
 
 #ifndef STDINT_H

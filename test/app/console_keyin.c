@@ -1,13 +1,11 @@
-/** @file console_keyin.c
+/** @file
  *	@brief	One-sentence short description of file.
  *
- *	Description:
- *
+ *	\copyright
  *	Copyright (c) 2020 Kevin L. Becker. All rights reserved.
  *
- *	Original:
  *	Created on: Jun 24, 2020
- *	Author: kevin
+ *	@author Kevin L. Becker
  */
 
 // ============================================================================

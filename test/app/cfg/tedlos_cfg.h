@@ -1,17 +1,17 @@
-/** @file tedlos_cfg.h
+/** @file
  *	@brief	One-sentence short description of file.
  *
  *	Description:
  *
+ *	\copyright
  *	Copyright (c) 2020 Kevin L. Becker. All rights reserved.
  *
- *	Original:
  *	Created on: Jun 28, 2020
- *	Author: kevin
+ *	@author Kevin L. Becker
  */
 
-#ifndef APP_CFG_TEDLOS_CFG_H_
-#define APP_CFG_TEDLOS_CFG_H_
+#ifndef TEDLOS_CFG_H
+#define TEDLOS_CFG_H
 
 // ============================================================================
 // ----	Include Files ---------------------------------------------------------
@@ -57,4 +57,4 @@ extern "C" {
 }
 #endif
 
-#endif /* APP_CFG_TEDLOS_CFG_H_ */
+#endif /* TEDLOS_CFG_H */

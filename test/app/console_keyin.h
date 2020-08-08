@@ -1,17 +1,15 @@
-/** @file console_keyin.h
+/** @file
  *	@brief	One-sentence short description of file.
  *
- *	Description:
- *
+ *	\copyright
  *	Copyright (c) 2020 Kevin L. Becker. All rights reserved.
  *
- *	Original:
  *	Created on: Jun 24, 2020
- *	Author: kevin
+ *	@author Kevin L. Becker
  */
 
-#ifndef APP_CONSOLE_KEYIN_H_
-#define APP_CONSOLE_KEYIN_H_
+#ifndef APP_CONSOLE_KEYIN_H
+#define APP_CONSOLE_KEYIN_H
 
 // ============================================================================
 // ----	Include Files ---------------------------------------------------------
@@ -52,4 +50,4 @@ extern "C" {
 }
 #endif
 
-#endif /* APP_CONSOLE_KEYIN_H_ */
+#endif /* APP_CONSOLE_KEYIN_H */

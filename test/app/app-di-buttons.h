@@ -1,13 +1,11 @@
-/** @file app-di-buttons.h
+/** @file
  *	@brief	One-sentence short description of file.
  *
- *	Description:
- *
+ *	\copyright
  *	Copyright (c) 2020 Kevin L. Becker. All rights reserved.
  *
- *	Original:
  *	Created on: Jul 10, 2020
- *	Author: kevin
+ *	@author Kevin L. Becker
  */
 
 #ifndef APP_DI_BUTTONS_H
