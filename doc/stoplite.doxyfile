@@ -13,6 +13,15 @@ DOT_GRAPH_MAX_NODES    = 150
 # pick one of the supported IDEs to enable the appropriate code macros
 PREDEFINED		+=  XPRJ_NB_Debug=1
 
+# Note for each section below:
+# the "STRIP_FROM_PATH" configuration is a PROJECT-SPECIFIC formatting option that applies to
+#	includes and included-by graphs. this is necessarily a project-specific configuration:
+#	we want "DIRECTORY_GRAPH" to be enabled, so that we can see a graph for folder relationships
+#	if we disable "DIRECTORY_GRAPH", the File List section of the menu pane lists only files - no
+#	directories are shown.
+#	by specifying the appropriate paths here, we can strip the "noise" introduced by the paths
+#	from the includes and included-by graphs.
+
 # ==================================
 
 # specify front page for Doxy output
@@ -29,6 +38,8 @@ EXCLUDE 		+= ../test/libs/cwsw_lib/README.md
 EXCLUDE         += ../test/libs/cwsw_lib/src/README.md
 EXCLUDE			+= ../test/libs/cwsw_lib/doc/README.md
 EXCLUDE 		+= ../test/libs/cwsw_lib/doc/doc_core/README.md
+#STRIP_FROM_PATH	+= ../test/libs/cwsw_lib/src
+#STRIP_FROM_PATH	+= ../test/libs/cwsw_lib/inc
 
 ## arch component
 INPUT           += ../test/libs/cwsw_arch/src
@@ -37,22 +48,26 @@ INPUT           += ../test/libs/cwsw_arch/doc
 INCLUDE_PATH    += ../test/libs/cwsw_arch/inc
 EXCLUDE         += ../test/libs/cwsw_arch/src/README.md
 EXCLUDE			+= ../test/libs/cwsw_arch/doc/design/images/README.md
+#STRIP_FROM_PATH	+= ../test/libs/cwsw_arch/src
+#STRIP_FROM_PATH	+= ../test/libs/cwsw_arch/inc
 
 ## Board Support component
 ### Note for this Doxy output, I'll use the None board (MSVC project)
-INPUT           += ../test/libs/cwsw_board
-INCLUDE_PATH    += ../test/libs/cwsw_board/none
-EXCLUDE         += ../test/libs/cwsw_board/bd_gtk
-EXCLUDE			+= ../test/libs/cwsw_board/bd_lwcvi
+INPUT			+= ../test/libs/cwsw_board
+INCLUDE_PATH	+= ../test/libs/cwsw_board/none
+EXCLUDE 		+= ../test/libs/cwsw_board/bd_gtk
+EXCLUDE 		+= ../test/libs/cwsw_board/bd_lwcvi
+#STRIP_FROM_PATH	+= ../test/libs/cwsw_board
+#STRIP_FROM_PATH	+= ../test/libs/cwsw_board/none
 # BSP doesn't (yet) have `doc` folder
 
 ## Clock Services package
 #### This package has 2 components in it: clock, and timers
 ### Clock component
-INPUT           += ../test/libs/cwsw_clock_services/cwsw_clock
-INCLUDE_PATH    += ../test/libs/cwsw_clock_services/cwsw_clock/inc
+INPUT			+= ../test/libs/cwsw_clock_services/cwsw_clock
+INCLUDE_PATH	+= ../test/libs/cwsw_clock_services/cwsw_clock/inc
 EXCLUDE 		+= ../test/libs/cwsw_clock_services/cwsw_clock/README.md
-EXCLUDE			+= ../test/libs/cwsw_clock_services/cwsw_clock/test
+EXCLUDE 		+= ../test/libs/cwsw_clock_services/cwsw_clock/test
 EXCLUDE 		+= ../test/libs/cwsw_clock_services/cwsw_clock/doc/README.md
 
 ### SW Timers component
