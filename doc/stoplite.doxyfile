@@ -103,6 +103,6 @@ EXCLUDE 		+= ../component/cwsw_sme/readme.md
 EXCLUDE 		+= ../component/cwsw_sme/test
 
 ## Application
-INPUT           += ../test/app
-INCLUDE_PATH    += ../test/app
+INPUT           += ../app
+INCLUDE_PATH    += ../app
 #EXCLUDE 		+= ../component/cwsw_sme/readme.md
