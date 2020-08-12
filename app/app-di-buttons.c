@@ -108,6 +108,11 @@ AppButtonCommit(tEvQ_Event ev, uint32_t extra)
 		Cwsw_EvQX__PostEventId(&tedlos_evqx, evStopLite_Pause);
 		break;
 
+	case kBoardButton2:		// Pause button pushed and committed.
+		puts("Emitting Walk event");
+		Cwsw_EvQX__PostEventId(&tedlos_evqx, evStoplite_WalkPressed);
+		break;
+
 	case kBoardButton3:
 		puts("Emitting Go To Yellow event");
 		Cwsw_EvQX__PostEventId(&tedlos_evqx, evStoplite_ForceYellow);

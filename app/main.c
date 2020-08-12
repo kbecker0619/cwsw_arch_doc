@@ -21,6 +21,7 @@
 #include "cwsw_swtimer.h"
 #include "cwsw_arch.h"
 #include "cwsw_board.h"
+#include "cwsw_buttons.h"
 
 // ----	Module Headers --------------------------
 #include "tedlos.h"			/* events and initializer for managed alarms array, indirectly */

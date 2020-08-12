@@ -4,7 +4,7 @@ Pathname = "/c/_Projects/cwsw_evqueue_test/test/lwcviproject/demoapp.prj"
 CVI Dir = "/d/_programs/national instruments/cvi71"
 IVI Standard Root Dir = "/C/Program Files (x86)/IVI"
 VXIplug&play Framework Dir = "/c/vxipnp/winnt"
-Number of Files = 50
+Number of Files = 51
 Target Type = "Executable"
 Flags = 16
 
@@ -13,8 +13,8 @@ File Type = "CSource"
 Res Id = 1
 Path Is Rel = True
 Path Rel To = "Project"
-Path Rel Path = "../app/app-di-buttons.c"
-Path = "/c/_Projects/cwsw_evqueue_test/test/app/app-di-buttons.c"
+Path Rel Path = "../../app/app-di-buttons.c"
+Path = "/c/_Projects/cwsw_evqueue_test/app/app-di-buttons.c"
 Exclude = False
 Compile Into Object File = False
 Project Flags = 0
@@ -25,8 +25,8 @@ File Type = "CSource"
 Res Id = 2
 Path Is Rel = True
 Path Rel To = "Project"
-Path Rel Path = "../app/app-do-lamps.c"
-Path = "/c/_Projects/cwsw_evqueue_test/test/app/app-do-lamps.c"
+Path Rel Path = "../../app/app-do-lamps.c"
+Path = "/c/_Projects/cwsw_evqueue_test/app/app-do-lamps.c"
 Exclude = False
 Compile Into Object File = False
 Project Flags = 0
@@ -37,8 +37,8 @@ File Type = "Include"
 Res Id = 3
 Path Is Rel = True
 Path Rel To = "Project"
-Path Rel Path = "../app/app-do-lamps.h"
-Path = "/c/_Projects/cwsw_evqueue_test/test/app/app-do-lamps.h"
+Path Rel Path = "../../app/app-do-lamps.h"
+Path = "/c/_Projects/cwsw_evqueue_test/app/app-do-lamps.h"
 Exclude = False
 Project Flags = 0
 Folder = "Include Files"
@@ -57,43 +57,31 @@ Project Flags = 0
 Folder = "Source Files"
 
 [File 0005]
-File Type = "CSource"
+File Type = "User Interface Resource"
 Res Id = 5
 Path Is Rel = True
 Path Rel To = "Project"
-Path Rel Path = "../libs/cwsw_board/common/src/bd-di-buttons.c"
-Path = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_board/common/src/bd-di-buttons.c"
-Exclude = False
-Compile Into Object File = False
-Project Flags = 0
-Folder = "Source Files"
-
-[File 0006]
-File Type = "User Interface Resource"
-Res Id = 6
-Path Is Rel = True
-Path Rel To = "Project"
-Path Rel Path = "../app/board.uir"
-Path = "/c/_Projects/cwsw_evqueue_test/test/app/board.uir"
+Path Rel Path = "../../app/board.uir"
+Path = "/c/_Projects/cwsw_evqueue_test/app/board.uir"
 Exclude = False
 Project Flags = 0
 Folder = "User Interface Files"
 
-[File 0007]
+[File 0006]
 File Type = "CSource"
-Res Id = 7
+Res Id = 6
 Path Is Rel = True
 Path Rel To = "Project"
-Path Rel Path = "../app/cwsw_lib_prj/CritSect.c"
-Path = "/c/_Projects/cwsw_evqueue_test/test/app/cwsw_lib_prj/CritSect.c"
+Path Rel Path = "../../app/cwsw_lib_prj/CritSect.c"
+Path = "/c/_Projects/cwsw_evqueue_test/app/cwsw_lib_prj/CritSect.c"
 Exclude = False
 Compile Into Object File = False
 Project Flags = 0
 Folder = "Source Files"
 
-[File 0008]
+[File 0007]
 File Type = "Include"
-Res Id = 8
+Res Id = 7
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "../libs/cwsw_lib/inc/ctassert.h"
@@ -102,9 +90,9 @@ Exclude = False
 Project Flags = 0
 Folder = "Include Files"
 
-[File 0009]
+[File 0008]
 File Type = "CSource"
-Res Id = 9
+Res Id = 8
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "../libs/cwsw_arch/src/i386/cwsw_arch.c"
@@ -114,9 +102,9 @@ Compile Into Object File = False
 Project Flags = 0
 Folder = "Source Files"
 
-[File 0010]
+[File 0009]
 File Type = "Include"
-Res Id = 10
+Res Id = 9
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "../libs/cwsw_arch/inc/i386/cwsw_arch.h"
@@ -125,9 +113,9 @@ Exclude = False
 Project Flags = 0
 Folder = "Include Files"
 
-[File 0011]
+[File 0010]
 File Type = "CSource"
-Res Id = 11
+Res Id = 10
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "../libs/cwsw_board/bd_lwcvi/src/cwsw_board.c"
@@ -137,9 +125,9 @@ Compile Into Object File = False
 Project Flags = 0
 Folder = "Source Files"
 
-[File 0012]
+[File 0011]
 File Type = "Include"
-Res Id = 12
+Res Id = 11
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "../libs/cwsw_board/bd_lwcvi/cwsw_board.h"
@@ -148,9 +136,9 @@ Exclude = False
 Project Flags = 0
 Folder = "Include Files"
 
-[File 0013]
+[File 0012]
 File Type = "Include"
-Res Id = 13
+Res Id = 12
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "../libs/cwsw_board/cwsw_board_common.h"
@@ -159,9 +147,9 @@ Exclude = False
 Project Flags = 0
 Folder = "Include Files"
 
-[File 0014]
+[File 0013]
 File Type = "CSource"
-Res Id = 14
+Res Id = 13
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "../libs/cwsw_board/bd_lwcvi/src/cwsw_board_cvi_ui.c"
@@ -172,9 +160,9 @@ Compile Into Object File = False
 Project Flags = 0
 Folder = "Source Files"
 
-[File 0015]
+[File 0014]
 File Type = "Include"
-Res Id = 15
+Res Id = 14
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "../libs/cwsw_board/bd_lwcvi/src/cwsw_board_ui.h"
@@ -183,9 +171,32 @@ Exclude = False
 Project Flags = 0
 Folder = "Include Files"
 
+[File 0015]
+File Type = "CSource"
+Res Id = 15
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "../libs/cwsw_board/common/src/cwsw_buttons.c"
+Path = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_board/common/src/cwsw_buttons.c"
+Exclude = False
+Compile Into Object File = False
+Project Flags = 0
+Folder = "Source Files"
+
 [File 0016]
 File Type = "Include"
 Res Id = 16
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "../libs/cwsw_board/common/cwsw_buttons.h"
+Path = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_board/common/cwsw_buttons.h"
+Exclude = False
+Project Flags = 0
+Folder = "Include Files"
+
+[File 0017]
+File Type = "Include"
+Res Id = 17
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "../libs/cwsw_clock_services/cwsw_clock/inc/cwsw_clock.h"
@@ -195,9 +206,9 @@ Exclude = False
 Project Flags = 0
 Folder = "Include Files"
 
-[File 0017]
+[File 0018]
 File Type = "CSource"
-Res Id = 17
+Res Id = 18
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "../libs/cwsw_clock_services/cwsw_clock/src/cwsw_clock_svc.c"
@@ -208,9 +219,9 @@ Compile Into Object File = False
 Project Flags = 0
 Folder = "Source Files"
 
-[File 0018]
+[File 0019]
 File Type = "CSource"
-Res Id = 18
+Res Id = 19
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "../libs/cwsw_eventqueue/cwsw_event/src/cwsw_event.c"
@@ -221,9 +232,9 @@ Compile Into Object File = False
 Project Flags = 0
 Folder = "Source Files"
 
-[File 0019]
+[File 0020]
 File Type = "Include"
-Res Id = 19
+Res Id = 20
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "../libs/cwsw_eventqueue/cwsw_event/inc/cwsw_event.h"
@@ -233,20 +244,20 @@ Exclude = False
 Project Flags = 0
 Folder = "Include Files"
 
-[File 0020]
+[File 0021]
 File Type = "Include"
-Res Id = 20
+Res Id = 21
 Path Is Rel = True
 Path Rel To = "Project"
-Path Rel Path = "../app/cfg/cwsw_event_proj.h"
-Path = "/c/_Projects/cwsw_evqueue_test/test/app/cfg/cwsw_event_proj.h"
+Path Rel Path = "../../app/cfg/cwsw_event_proj.h"
+Path = "/c/_Projects/cwsw_evqueue_test/app/cfg/cwsw_event_proj.h"
 Exclude = False
 Project Flags = 0
 Folder = "Include Files"
 
-[File 0021]
+[File 0022]
 File Type = "CSource"
-Res Id = 21
+Res Id = 22
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "../libs/cwsw_eventqueue/cwsw_event/src/cwsw_eventtable.c"
@@ -257,9 +268,9 @@ Compile Into Object File = False
 Project Flags = 0
 Folder = "Source Files"
 
-[File 0022]
+[File 0023]
 File Type = "Include"
-Res Id = 22
+Res Id = 23
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "../libs/cwsw_eventqueue/cwsw_event/inc/cwsw_eventtable.h"
@@ -269,9 +280,9 @@ Exclude = False
 Project Flags = 0
 Folder = "Include Files"
 
-[File 0023]
+[File 0024]
 File Type = "CSource"
-Res Id = 23
+Res Id = 24
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "../libs/cwsw_eventqueue/cwsw_evqueue_ex/src/cwsw_evhandler.c"
@@ -282,9 +293,9 @@ Compile Into Object File = False
 Project Flags = 0
 Folder = "Source Files"
 
-[File 0024]
+[File 0025]
 File Type = "Include"
-Res Id = 24
+Res Id = 25
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "../libs/cwsw_eventqueue/cwsw_evqueue_ex/inc/cwsw_evhandler.h"
@@ -294,9 +305,9 @@ Exclude = False
 Project Flags = 0
 Folder = "Include Files"
 
-[File 0025]
+[File 0026]
 File Type = "CSource"
-Res Id = 25
+Res Id = 26
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "../libs/cwsw_eventqueue/cwsw_evqueue/src/cwsw_evqueue.c"
@@ -307,9 +318,9 @@ Compile Into Object File = False
 Project Flags = 0
 Folder = "Source Files"
 
-[File 0026]
+[File 0027]
 File Type = "Include"
-Res Id = 26
+Res Id = 27
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "../libs/cwsw_eventqueue/cwsw_evqueue/inc/cwsw_evqueue.h"
@@ -319,9 +330,9 @@ Exclude = False
 Project Flags = 0
 Folder = "Include Files"
 
-[File 0027]
+[File 0028]
 File Type = "CSource"
-Res Id = 27
+Res Id = 28
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "../libs/cwsw_eventqueue/cwsw_evqueue_ex/src/cwsw_evqueue_ex.c"
@@ -332,9 +343,9 @@ Compile Into Object File = False
 Project Flags = 0
 Folder = "Source Files"
 
-[File 0028]
+[File 0029]
 File Type = "Include"
-Res Id = 28
+Res Id = 29
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "../libs/cwsw_eventqueue/cwsw_evqueue_ex/inc/cwsw_evqueue_ex.h"
@@ -344,9 +355,9 @@ Exclude = False
 Project Flags = 0
 Folder = "Include Files"
 
-[File 0029]
+[File 0030]
 File Type = "CSource"
-Res Id = 29
+Res Id = 30
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "../libs/cwsw_eventqueue/cwsw_evqueue_ex/src/cwsw_evthndlrassoc.c"
@@ -357,9 +368,9 @@ Compile Into Object File = False
 Project Flags = 0
 Folder = "Source Files"
 
-[File 0030]
+[File 0031]
 File Type = "Include"
-Res Id = 30
+Res Id = 31
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "../libs/cwsw_eventqueue/cwsw_evqueue_ex/inc/cwsw_evthndlrassoc.h"
@@ -369,9 +380,9 @@ Exclude = False
 Project Flags = 0
 Folder = "Include Files"
 
-[File 0031]
+[File 0032]
 File Type = "CSource"
-Res Id = 31
+Res Id = 32
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "../libs/cwsw_lib/src/cwsw_lib.c"
@@ -381,9 +392,9 @@ Compile Into Object File = False
 Project Flags = 0
 Folder = "Source Files"
 
-[File 0032]
+[File 0033]
 File Type = "Include"
-Res Id = 32
+Res Id = 33
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "../libs/cwsw_lib/inc/cwsw_lib.h"
@@ -392,9 +403,9 @@ Exclude = False
 Project Flags = 0
 Folder = "Include Files"
 
-[File 0033]
+[File 0034]
 File Type = "CSource"
-Res Id = 33
+Res Id = 34
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "../../component/cwsw_sme/src/cwsw_sme.c"
@@ -404,9 +415,9 @@ Compile Into Object File = False
 Project Flags = 0
 Folder = "Source Files"
 
-[File 0034]
+[File 0035]
 File Type = "Include"
-Res Id = 34
+Res Id = 35
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "../../component/cwsw_sme/inc/cwsw_sme.h"
@@ -415,9 +426,9 @@ Exclude = False
 Project Flags = 0
 Folder = "Include Files"
 
-[File 0035]
+[File 0036]
 File Type = "CSource"
-Res Id = 35
+Res Id = 36
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "../libs/cwsw_clock_services/cwsw_swtimer/src/cwsw_swtimer.c"
@@ -428,9 +439,9 @@ Compile Into Object File = False
 Project Flags = 0
 Folder = "Source Files"
 
-[File 0036]
+[File 0037]
 File Type = "Include"
-Res Id = 36
+Res Id = 37
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "../libs/cwsw_clock_services/cwsw_swtimer/inc/cwsw_swtimer.h"
@@ -440,9 +451,9 @@ Exclude = False
 Project Flags = 0
 Folder = "Include Files"
 
-[File 0037]
+[File 0038]
 File Type = "CSource"
-Res Id = 37
+Res Id = 38
 Path Is Rel = True
 Path Rel To = "Project"
 Path Rel Path = "../libs/cwsw_board/bd_lwcvi/src/di_button_callbacks.c"
@@ -453,36 +464,25 @@ Compile Into Object File = False
 Project Flags = 0
 Folder = "Source Files"
 
-[File 0038]
+[File 0039]
 File Type = "CSource"
-Res Id = 38
+Res Id = 39
 Path Is Rel = True
 Path Rel To = "Project"
-Path Rel Path = "../app/main.c"
-Path = "/c/_Projects/cwsw_evqueue_test/test/app/main.c"
+Path Rel Path = "../../app/main.c"
+Path = "/c/_Projects/cwsw_evqueue_test/app/main.c"
 Exclude = False
 Compile Into Object File = False
 Project Flags = 0
 Folder = "Source Files"
-
-[File 0039]
-File Type = "Include"
-Res Id = 39
-Path Is Rel = True
-Path Rel To = "Project"
-Path Rel Path = "../app/cfg/ManagedAlarms.h"
-Path = "/c/_Projects/cwsw_evqueue_test/test/app/cfg/ManagedAlarms.h"
-Exclude = False
-Project Flags = 0
-Folder = "Include Files"
 
 [File 0040]
 File Type = "Include"
 Res Id = 40
 Path Is Rel = True
 Path Rel To = "Project"
-Path Rel Path = "../app/cfg/projcfg.h"
-Path = "/c/_Projects/cwsw_evqueue_test/test/app/cfg/projcfg.h"
+Path Rel Path = "../../app/cfg/ManagedAlarms.h"
+Path = "/c/_Projects/cwsw_evqueue_test/app/cfg/ManagedAlarms.h"
 Exclude = False
 Project Flags = 0
 Folder = "Include Files"
@@ -492,8 +492,8 @@ File Type = "Include"
 Res Id = 41
 Path Is Rel = True
 Path Rel To = "Project"
-Path Rel Path = "../app/cfg/projevtnames.h"
-Path = "/c/_Projects/cwsw_evqueue_test/test/app/cfg/projevtnames.h"
+Path Rel Path = "../../app/cfg/projcfg.h"
+Path = "/c/_Projects/cwsw_evqueue_test/app/cfg/projcfg.h"
 Exclude = False
 Project Flags = 0
 Folder = "Include Files"
@@ -503,8 +503,8 @@ File Type = "Include"
 Res Id = 42
 Path Is Rel = True
 Path Rel To = "Project"
-Path Rel Path = "../app/cfg/vs2010/stdbool.h"
-Path = "/c/_Projects/cwsw_evqueue_test/test/app/cfg/vs2010/stdbool.h"
+Path Rel Path = "../../app/cfg/projevtnames.h"
+Path = "/c/_Projects/cwsw_evqueue_test/app/cfg/projevtnames.h"
 Exclude = False
 Project Flags = 0
 Folder = "Include Files"
@@ -514,88 +514,99 @@ File Type = "Include"
 Res Id = 43
 Path Is Rel = True
 Path Rel To = "Project"
-Path Rel Path = "../app/cfg/vs2010/stdint.h"
-Path = "/c/_Projects/cwsw_evqueue_test/test/app/cfg/vs2010/stdint.h"
+Path Rel Path = "../../app/cfg/vs2010/stdbool.h"
+Path = "/c/_Projects/cwsw_evqueue_test/app/cfg/vs2010/stdbool.h"
 Exclude = False
 Project Flags = 0
 Folder = "Include Files"
 
 [File 0044]
-File Type = "CSource"
+File Type = "Include"
 Res Id = 44
 Path Is Rel = True
 Path Rel To = "Project"
-Path Rel Path = "../app/stoplite-sme.c"
-Path = "/c/_Projects/cwsw_evqueue_test/test/app/stoplite-sme.c"
+Path Rel Path = "../../app/cfg/vs2010/stdint.h"
+Path = "/c/_Projects/cwsw_evqueue_test/app/cfg/vs2010/stdint.h"
 Exclude = False
-Compile Into Object File = False
 Project Flags = 0
-Folder = "Source Files"
+Folder = "Include Files"
 
 [File 0045]
-File Type = "Include"
+File Type = "CSource"
 Res Id = 45
 Path Is Rel = True
 Path Rel To = "Project"
-Path Rel Path = "../app/stoplite.h"
-Path = "/c/_Projects/cwsw_evqueue_test/test/app/stoplite.h"
-Exclude = False
-Project Flags = 0
-Folder = "Include Files"
-
-[File 0046]
-File Type = "CSource"
-Res Id = 46
-Path Is Rel = True
-Path Rel To = "Project"
-Path Rel Path = "../app/tedlos.c"
-Path = "/c/_Projects/cwsw_evqueue_test/test/app/tedlos.c"
+Path Rel Path = "../../app/stoplite-sme.c"
+Path = "/c/_Projects/cwsw_evqueue_test/app/stoplite-sme.c"
 Exclude = False
 Compile Into Object File = False
 Project Flags = 0
 Folder = "Source Files"
 
-[File 0047]
+[File 0046]
 File Type = "Include"
-Res Id = 47
+Res Id = 46
 Path Is Rel = True
 Path Rel To = "Project"
-Path Rel Path = "../app/tedlos.h"
-Path = "/c/_Projects/cwsw_evqueue_test/test/app/tedlos.h"
+Path Rel Path = "../../app/stoplite.h"
+Path = "/c/_Projects/cwsw_evqueue_test/app/stoplite.h"
 Exclude = False
 Project Flags = 0
 Folder = "Include Files"
+
+[File 0047]
+File Type = "CSource"
+Res Id = 47
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "../../app/tedlos.c"
+Path = "/c/_Projects/cwsw_evqueue_test/app/tedlos.c"
+Exclude = False
+Compile Into Object File = False
+Project Flags = 0
+Folder = "Source Files"
 
 [File 0048]
 File Type = "Include"
 Res Id = 48
 Path Is Rel = True
 Path Rel To = "Project"
-Path Rel Path = "../app/cfg/tedlos_cfg.h"
-Path = "/c/_Projects/cwsw_evqueue_test/test/app/cfg/tedlos_cfg.h"
+Path Rel Path = "../../app/tedlos.h"
+Path = "/c/_Projects/cwsw_evqueue_test/app/tedlos.h"
 Exclude = False
 Project Flags = 0
 Folder = "Include Files"
 
 [File 0049]
-File Type = "CSource"
+File Type = "Include"
 Res Id = 49
 Path Is Rel = True
 Path Rel To = "Project"
-Path Rel Path = "../app/tedlos_scheduler.c"
-Path = "/c/_Projects/cwsw_evqueue_test/test/app/tedlos_scheduler.c"
+Path Rel Path = "../../app/cfg/tedlos_cfg.h"
+Path = "/c/_Projects/cwsw_evqueue_test/app/cfg/tedlos_cfg.h"
+Exclude = False
+Project Flags = 0
+Folder = "Include Files"
+
+[File 0050]
+File Type = "CSource"
+Res Id = 50
+Path Is Rel = True
+Path Rel To = "Project"
+Path Rel Path = "../../app/tedlos_scheduler.c"
+Path = "/c/_Projects/cwsw_evqueue_test/app/tedlos_scheduler.c"
 Exclude = False
 Compile Into Object File = False
 Project Flags = 0
 Folder = "Source Files"
 
-[File 0050]
+[File 0051]
 File Type = "Include"
-Res Id = 50
+Res Id = 51
 Path Is Rel = True
 Path Rel To = "Project"
-Path Rel Path = "../app/cfg/tedlosevents.h"
-Path = "/c/_Projects/cwsw_evqueue_test/test/app/cfg/tedlosevents.h"
+Path Rel Path = "../../app/cfg/tedlosevents.h"
+Path = "/c/_Projects/cwsw_evqueue_test/app/cfg/tedlosevents.h"
 Exclude = False
 Project Flags = 0
 Folder = "Include Files"
@@ -628,15 +639,15 @@ Compiler Defines = "/DWIN32_LEAN_AND_MEAN /DXPRJ_CVI_Debug=1"
 Include Path 1 Is Rel = False
 Include Path 1 = "/C/_Projects/cwsw_evqueue_test/component/cwsw_sme/inc"
 Include Path 2 Is Rel = False
-Include Path 2 = "/c/_Projects/cwsw_evqueue_test/test/app/cfg"
+Include Path 2 = "/c/_Projects/cwsw_evqueue_test/app/cfg"
 Include Path 3 Is Rel = False
-Include Path 3 = "/c/_Projects/cwsw_evqueue_test/test/app/cfg/vs2010"
+Include Path 3 = "/c/_Projects/cwsw_evqueue_test/app/cfg/vs2010"
 Include Path 4 Is Rel = False
 Include Path 4 = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_lib/inc"
 Include Path 5 Is Rel = False
 Include Path 5 = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_clock_services/cwsw_clock/inc"
 Include Path 6 Is Rel = False
-Include Path 6 = "/c/_Projects/cwsw_evqueue_test/test/app/cfg/vs2010"
+Include Path 6 = "/c/_Projects/cwsw_evqueue_test/app/cfg/vs2010"
 Include Path 7 Is Rel = False
 Include Path 7 = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_eventqueue/cwsw_evqueue_ex/inc"
 Include Path 8 Is Rel = False
@@ -653,6 +664,8 @@ Include Path 13 Is Rel = False
 Include Path 13 = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_arch/inc/i386"
 Include Path 14 Is Rel = False
 Include Path 14 = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_board/bd_lwcvi/src"
+Include Path 15 Is Rel = False
+Include Path 15 = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_board/common"
 
 [Create Executable]
 Executable File_Debug Is Rel = True
