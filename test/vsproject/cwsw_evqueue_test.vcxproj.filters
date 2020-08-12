@@ -39,6 +39,9 @@
     <Filter Include="Libraries\Buttons">
       <UniqueIdentifier>{5f8354e3-6a48-4ae3-b4c8-699acb461e13}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Libraries\SME">
+      <UniqueIdentifier>{06115c5f-72ff-4be2-8b83-f23701297c16}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\libs\cwsw_eventqueue\cwsw_evqueue_ex\src\cwsw_evq_proj.h.template">
@@ -102,6 +105,9 @@
     </ClCompile>
     <ClCompile Include="..\libs\cwsw_board\common\src\cwsw_buttons.c">
       <Filter>Libraries\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\cwsw_sme\src\cwsw_sme.c">
+      <Filter>Libraries\SME</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -203,6 +209,9 @@
     </ClInclude>
     <ClInclude Include="..\libs\cwsw_board\common\cwsw_buttons.h">
       <Filter>Libraries\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\cwsw_sme\inc\cwsw_sme.h">
+      <Filter>Libraries\SME</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
