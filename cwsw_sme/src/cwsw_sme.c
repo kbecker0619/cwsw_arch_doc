@@ -1,5 +1,5 @@
 /** @file
- *	@brief	One-sentence short description of file.
+ *	@brief	Core behavior for State Machine Engine.
  *
  *	\copyright
  *	Copyright (c) 2020 Kevin L. Becker. All rights reserved.

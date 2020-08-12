@@ -25,7 +25,7 @@ C_DEPS :=
 SUBDIRS := \
 app \
 app/cwsw_lib_prj \
-component/cwsw_sme/src \
+cwsw_sme/src \
 libs/cwsw_arch/inc/i386/peripheral/ports \
 libs/cwsw_arch/src/i386 \
 libs/cwsw_board/bd_gtk/src \

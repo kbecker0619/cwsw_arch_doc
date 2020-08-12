@@ -408,8 +408,8 @@ File Type = "CSource"
 Res Id = 34
 Path Is Rel = True
 Path Rel To = "Project"
-Path Rel Path = "../../component/cwsw_sme/src/cwsw_sme.c"
-Path = "/c/_Projects/cwsw_evqueue_test/component/cwsw_sme/src/cwsw_sme.c"
+Path Rel Path = "../../cwsw_sme/src/cwsw_sme.c"
+Path = "/c/_Projects/cwsw_evqueue_test/cwsw_sme/src/cwsw_sme.c"
 Exclude = False
 Compile Into Object File = False
 Project Flags = 0
@@ -420,8 +420,8 @@ File Type = "Include"
 Res Id = 35
 Path Is Rel = True
 Path Rel To = "Project"
-Path Rel Path = "../../component/cwsw_sme/inc/cwsw_sme.h"
-Path = "/c/_Projects/cwsw_evqueue_test/component/cwsw_sme/inc/cwsw_sme.h"
+Path Rel Path = "../../cwsw_sme/inc/cwsw_sme.h"
+Path = "/c/_Projects/cwsw_evqueue_test/cwsw_sme/inc/cwsw_sme.h"
 Exclude = False
 Project Flags = 0
 Folder = "Include Files"
@@ -637,7 +637,7 @@ Compiler Defines = "/DWIN32_LEAN_AND_MEAN /DXPRJ_CVI_Debug=1"
 
 [Include Paths]
 Include Path 1 Is Rel = False
-Include Path 1 = "/C/_Projects/cwsw_evqueue_test/component/cwsw_sme/inc"
+Include Path 1 = "/C/_Projects/cwsw_evqueue_test/cwsw_sme/inc"
 Include Path 2 Is Rel = False
 Include Path 2 = "/c/_Projects/cwsw_evqueue_test/app/cfg"
 Include Path 3 Is Rel = False

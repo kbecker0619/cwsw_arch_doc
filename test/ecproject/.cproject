@@ -147,8 +147,6 @@
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs/cwsw_lib/inc&quot;"/>
                                     									
-                                    <listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../component/cwsw_sme/inc&quot;"/>
-                                    									
                                     <listOptionValue builtIn="false" value="&quot;${MINGW_HOME}/include/gtk-3.0&quot;"/>
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${MINGW_HOME}/include/glib-2.0&quot;"/>
@@ -166,6 +164,8 @@
                                     <listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../app&quot;"/>
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../app/cfg&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../cwsw_sme/inc&quot;"/>
                                     								
                                 </option>
                                 								
@@ -261,9 +261,19 @@
                         					
                     </folderInfo>
                     					
+                    <fileInfo id="cdt.managedbuild.config.gnu.mingw.exe.debug.1736302436.20438748" name="cwsw_sme.template.c" rcbsApplicability="disable" resourcePath="cwsw_sme/src/cwsw_sme.template.c" toolsToInvoke="cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.debug.1489450762.865311357">
+                        						
+                        <tool id="cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.debug.1489450762.865311357" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.debug.1489450762">
+                            							
+                            <inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.166710231" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+                            						
+                        </tool>
+                        					
+                    </fileInfo>
+                    					
                     <sourceEntries>
                         						
-                        <entry excluding="libs/cwsw_board/bd_lwcvi|component/cwsw_sme/src/cwsw_sme.template.c|libs/cwsw_board/none|libs/cwsw_eventqueue/test|component/cwsw_event/test|libs/cwsw_arch/test|bsw/svc/cwsw_event/test/ecproject|bsw/svc/cwsw_swtimer/src/cwsw_swtimer.c|libs/cwsw_arch_old|component/cwsw_event/test/cwsw_lib/test|bsw/svc/cwsw_event/test/cwsw_lib/test/ut|bsw/svc/cwsw_clock/src/cwsw_clock_svc.c|src|bsw/ecu/cwsw_arch/test|libs/cwsw_clock|bsw/svc/cwsw_event/test|libs/cwsw_swtimer|bsw/svc/cwsw_evq/test|libs/cwsw_lib/test|bsw/svc/cwsw_event/test/nbproject|bsw/evq/src/cwsw_evhandler.c|bsw/svc/cwsw_event/test/app|bsw/svc/cwsw_event/test/vsproject|bsw/svc/cwsw_lib/test|libs/cwsw_board_old|component/test" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        <entry excluding="cwsw_sme/src/cwsw_sme.template.c|libs/cwsw_board/bd_lwcvi|component/cwsw_sme/src/cwsw_sme.template.c|libs/cwsw_board/none|libs/cwsw_eventqueue/test|component/cwsw_event/test|libs/cwsw_arch/test|bsw/svc/cwsw_event/test/ecproject|bsw/svc/cwsw_swtimer/src/cwsw_swtimer.c|libs/cwsw_arch_old|component/cwsw_event/test/cwsw_lib/test|bsw/svc/cwsw_event/test/cwsw_lib/test/ut|bsw/svc/cwsw_clock/src/cwsw_clock_svc.c|src|bsw/ecu/cwsw_arch/test|libs/cwsw_clock|bsw/svc/cwsw_event/test|libs/cwsw_swtimer|bsw/svc/cwsw_evq/test|libs/cwsw_lib/test|bsw/svc/cwsw_event/test/nbproject|bsw/evq/src/cwsw_evhandler.c|bsw/svc/cwsw_event/test/app|bsw/svc/cwsw_event/test/vsproject|bsw/svc/cwsw_lib/test|libs/cwsw_board_old|component/test" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
                         					
                     </sourceEntries>
                     				
