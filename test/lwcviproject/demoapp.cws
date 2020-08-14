@@ -120,7 +120,7 @@ Window Left = 186
 Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,74,0,84,4,349,676,1,0,"
 
 [File 0009]
-Path = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_lib/inc/ctassert.h"
+Path = "/c/_Projects/cwsw_evqueue_test/cwsw_lib/inc/ctassert.h"
 File Type = "Include"
 Disk Date = 3669554226
 In Projects = "1,"
@@ -129,7 +129,7 @@ Window Left = 58
 Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,401,623,1,0,"
 
 [File 0010]
-Path = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_arch/src/i386/cwsw_arch.c"
+Path = "/c/_Projects/cwsw_evqueue_test/cwsw_arch/src/i386/cwsw_arch.c"
 File Type = "CSource"
 Disk Date = 3679695903
 In Projects = "1,"
@@ -138,7 +138,7 @@ Window Left = 34
 Source Window State = "1,100,100,100,8,31,31,0,0,0,0,0,0,0,0,0,80,0,117,40,401,623,1,0,"
 
 [File 0011]
-Path = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_arch/inc/i386/cwsw_arch.h"
+Path = "/c/_Projects/cwsw_evqueue_test/cwsw_arch/inc/i386/cwsw_arch.h"
 File Type = "Include"
 Disk Date = 3676209676
 In Projects = "1,"
@@ -351,7 +351,7 @@ Window Left = 26
 Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,23,0,401,623,1,0,"
 
 [File 0033]
-Path = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_lib/src/cwsw_lib.c"
+Path = "/c/_Projects/cwsw_evqueue_test/cwsw_lib/src/cwsw_lib.c"
 File Type = "CSource"
 Disk Date = 3669554226
 In Projects = "1,"
@@ -360,7 +360,7 @@ Window Left = 34
 Source Window State = "1,110,110,110,4,23,23,0,0,80,0,0,0,0,0,25,244,0,256,4,401,623,1,0,"
 
 [File 0034]
-Path = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_lib/inc/cwsw_lib.h"
+Path = "/c/_Projects/cwsw_evqueue_test/cwsw_lib/inc/cwsw_lib.h"
 File Type = "Include"
 Disk Date = 3679161665
 In Projects = "1,"

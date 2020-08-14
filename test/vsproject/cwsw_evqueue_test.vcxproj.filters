@@ -65,7 +65,7 @@
     <None Include="..\libs\cwsw_eventqueue\cwsw_evqueue\src\readme.md">
       <Filter>Libraries\Event Queue</Filter>
     </None>
-    <None Include="..\libs\cwsw_lib\inc\README.md">
+    <None Include="..\..\cwsw_lib\inc\README.md">
       <Filter>Libraries\Cwsw Lib</Filter>
     </None>
   </ItemGroup>
@@ -100,7 +100,7 @@
     <ClCompile Include="..\libs\cwsw_clock_services\cwsw_clock\src\cwsw_clock_svc.c">
       <Filter>Libraries\SW Timers</Filter>
     </ClCompile>
-    <ClCompile Include="..\libs\cwsw_lib\src\cwsw_lib.c">
+    <ClCompile Include="..\..\cwsw_lib\src\cwsw_lib.c">
       <Filter>Libraries\Cwsw Lib</Filter>
     </ClCompile>
     <ClCompile Include="..\libs\cwsw_board\common\src\cwsw_buttons.c">
@@ -132,22 +132,22 @@
     <ClInclude Include="..\libs\cwsw_clock_services\cwsw_swtimer\inc\cwsw_swtimer.h">
       <Filter>Libraries\SW Timers</Filter>
     </ClInclude>
-    <ClInclude Include="..\libs\cwsw_lib\inc\ctassert.h">
+    <ClInclude Include="..\..\cwsw_lib\inc\ctassert.h">
       <Filter>Libraries\Cwsw Lib</Filter>
     </ClInclude>
-    <ClInclude Include="..\libs\cwsw_lib\inc\cwsw_eventsim.h">
+    <ClInclude Include="..\..\cwsw_lib\inc\cwsw_eventsim.h">
       <Filter>Libraries\Cwsw Lib</Filter>
     </ClInclude>
-    <ClInclude Include="..\libs\cwsw_lib\inc\cwsw_lib.h">
+    <ClInclude Include="..\..\cwsw_lib\inc\cwsw_lib.h">
       <Filter>Libraries\Cwsw Lib</Filter>
     </ClInclude>
-    <ClInclude Include="..\libs\cwsw_lib\inc\ptypes.h">
+    <ClInclude Include="..\..\cwsw_lib\inc\ptypes.h">
       <Filter>Libraries\Cwsw Lib</Filter>
     </ClInclude>
-    <ClInclude Include="..\libs\cwsw_arch\inc\cwsw_arch_common.h">
+    <ClInclude Include="..\..\cwsw_arch\inc\cwsw_arch_common.h">
       <Filter>Libraries\Arch</Filter>
     </ClInclude>
-    <ClInclude Include="..\libs\cwsw_arch\inc\i386\cwsw_arch.h">
+    <ClInclude Include="..\..\cwsw_arch\inc\i386\cwsw_arch.h">
       <Filter>Libraries\Arch</Filter>
     </ClInclude>
     <ClInclude Include="..\libs\cwsw_clock_services\cwsw_clock\inc\cwsw_clock.h">
@@ -195,16 +195,16 @@
     <ClInclude Include="..\..\app\cfg\tedlosevents.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\libs\cwsw_lib\inc\cwsw_lib_cvi.h">
+    <ClInclude Include="..\..\cwsw_lib\inc\cwsw_lib_cvi.h">
       <Filter>Libraries\Cwsw Lib</Filter>
     </ClInclude>
-    <ClInclude Include="..\libs\cwsw_lib\inc\cwsw_lib_msvc.h">
+    <ClInclude Include="..\..\cwsw_lib\inc\cwsw_lib_msvc.h">
       <Filter>Libraries\Cwsw Lib</Filter>
     </ClInclude>
-    <ClInclude Include="..\libs\cwsw_lib\inc\cwsw_lib_gnuc.h">
+    <ClInclude Include="..\..\cwsw_lib\inc\cwsw_lib_gnuc.h">
       <Filter>Libraries\Cwsw Lib</Filter>
     </ClInclude>
-    <ClInclude Include="..\libs\cwsw_arch\inc\i386\peripheral\ports\ports_api.h">
+    <ClInclude Include="..\..\cwsw_arch\inc\i386\peripheral\ports\ports_api.h">
       <Filter>Libraries\Board</Filter>
     </ClInclude>
     <ClInclude Include="..\libs\cwsw_board\common\cwsw_buttons.h">

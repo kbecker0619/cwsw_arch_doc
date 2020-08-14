@@ -8,7 +8,6 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include libs/cwsw_lib/src/subdir.mk
 -include libs/cwsw_eventqueue/cwsw_evqueue_ex/src/subdir.mk
 -include libs/cwsw_eventqueue/cwsw_evqueue/src/subdir.mk
 -include libs/cwsw_eventqueue/cwsw_event/src/subdir.mk
@@ -16,9 +15,10 @@ RM := rm -rf
 -include libs/cwsw_clock_services/cwsw_clock/src/subdir.mk
 -include libs/cwsw_board/common/src/subdir.mk
 -include libs/cwsw_board/bd_gtk/src/subdir.mk
--include libs/cwsw_arch/src/i386/subdir.mk
--include libs/cwsw_arch/inc/i386/peripheral/ports/subdir.mk
 -include cwsw_sme/src/subdir.mk
+-include cwsw_lib/src/subdir.mk
+-include cwsw_arch/src/i386/subdir.mk
+-include cwsw_arch/inc/i386/peripheral/ports/subdir.mk
 -include app/cwsw_lib_prj/subdir.mk
 -include app/subdir.mk
 -include subdir.mk
