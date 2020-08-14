@@ -1,9 +1,6 @@
-[submodule "test/libs/cwsw_lib"]
-	path = test/libs/cwsw_lib
+[submodule "cwsw_lib"]
+	path = cwsw_lib
 	url = git@github.com:kbecker0619/cwsw_lib.git
-[submodule "component"]
-	path = test/libs/cwsw_clock_services
-	url = git@github.com:kbecker0619/cwsw_clock_services.git
 [submodule "test/libs/cwsw_eventqueue"]
 	path = test/libs/cwsw_eventqueue
 	url = git@github.com:kbecker0619/cwsw_eventqueue.git
