@@ -1,7 +1,7 @@
 # Doxyfile for Stoplite demo application.
 
 # include the actual component doxy project
-@INCLUDE		 = ../test/libs/cwsw_lib/doc/doc_core/cwsw.doxyfile
+@INCLUDE		 = ../cwsw_lib/doc/doc_core/cwsw.doxyfile
 
 PROJECT_NAME	 = "CWSW Stoplite Demo App"
 PROJECT_BRIEF	 = "Demonstration application for the CWSW family of components for embedded software."
@@ -30,26 +30,26 @@ INPUT            = ../README.md
 
 # component input files
 ## core library component
-INPUT           += ../test/libs/cwsw_lib/src
-INPUT			+= ../test/libs/cwsw_lib/inc
-INPUT			+= ../test/libs/cwsw_lib/doc
-INCLUDE_PATH    += ../test/libs/cwsw_lib/inc
-EXCLUDE 		+= ../test/libs/cwsw_lib/README.md
-EXCLUDE         += ../test/libs/cwsw_lib/src/README.md
-EXCLUDE			+= ../test/libs/cwsw_lib/doc/README.md
-EXCLUDE 		+= ../test/libs/cwsw_lib/doc/doc_core/README.md
-#STRIP_FROM_PATH	+= ../test/libs/cwsw_lib/src
-#STRIP_FROM_PATH	+= ../test/libs/cwsw_lib/inc
+INPUT           += ../cwsw_lib/src
+INPUT			+= ../cwsw_lib/inc
+INPUT			+= ../cwsw_lib/doc
+INCLUDE_PATH    += ../cwsw_lib/inc
+EXCLUDE 		+= ../cwsw_lib/README.md
+EXCLUDE         += ../cwsw_lib/src/README.md
+EXCLUDE			+= ../cwsw_lib/doc/README.md
+EXCLUDE 		+= ../cwsw_lib/doc/doc_core/README.md
+#STRIP_FROM_PATH	+= ../cwsw_lib/src
+#STRIP_FROM_PATH	+= ../cwsw_lib/inc
 
 ## arch component
-INPUT           += ../test/libs/cwsw_arch/src
-INPUT           += ../test/libs/cwsw_arch/inc
-INPUT           += ../test/libs/cwsw_arch/doc
-INCLUDE_PATH    += ../test/libs/cwsw_arch/inc
-EXCLUDE         += ../test/libs/cwsw_arch/src/README.md
-EXCLUDE			+= ../test/libs/cwsw_arch/doc/design/images/README.md
-#STRIP_FROM_PATH	+= ../test/libs/cwsw_arch/src
-#STRIP_FROM_PATH	+= ../test/libs/cwsw_arch/inc
+INPUT           += ../cwsw_arch/src
+INPUT           += ../cwsw_arch/inc
+INPUT           += ../cwsw_arch/doc
+INCLUDE_PATH    += ../cwsw_arch/inc
+EXCLUDE         += ../cwsw_arch/src/README.md
+EXCLUDE			+= ../cwsw_arch/doc/design/images/README.md
+#STRIP_FROM_PATH	+= ../cwsw_arch/src
+#STRIP_FROM_PATH	+= ../cwsw_arch/inc
 
 ## Board Support component
 ### Note for this Doxy output, I'll use the None board (MSVC project)
