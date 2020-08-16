@@ -109,6 +109,12 @@
     <ClCompile Include="..\..\cwsw_sme\src\cwsw_sme.c">
       <Filter>Libraries\SME</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\cwsw_arch\src\i386\cwsw_arch.c">
+      <Filter>Libraries\Arch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\cwsw_board\none\src\cwsw_board.c">
+      <Filter>Libraries\Board</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\libs\cwsw_eventqueue\cwsw_evqueue_ex\inc\cwsw_evhandler.h">

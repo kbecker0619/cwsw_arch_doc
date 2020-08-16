@@ -43,7 +43,7 @@
 		<link>
 			<name>cwsw_lib</name>
 			<type>2</type>
-			<location>D:/_Projects/cwsw_evqueue_test/cwsw_lib</location>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/cwsw_lib</locationURI>
 		</link>
 		<link>
 			<name>cwsw_sme</name>
