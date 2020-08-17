@@ -64,18 +64,18 @@ EXCLUDE 		+= ../cwsw_board/bd_lwcvi
 ## Clock Services package
 #### This package has 2 components in it: clock, and timers
 ### Clock component
-INPUT			+= ../test/libs/cwsw_clock_services/cwsw_clock
-INCLUDE_PATH	+= ../test/libs/cwsw_clock_services/cwsw_clock/inc
-EXCLUDE 		+= ../test/libs/cwsw_clock_services/cwsw_clock/README.md
-EXCLUDE 		+= ../test/libs/cwsw_clock_services/cwsw_clock/test
-EXCLUDE 		+= ../test/libs/cwsw_clock_services/cwsw_clock/doc/README.md
+INPUT			+= ../cwsw_clock_services/cwsw_clock
+INCLUDE_PATH	+= ../cwsw_clock_services/cwsw_clock/inc
+EXCLUDE 		+= ../cwsw_clock_services/cwsw_clock/README.md
+EXCLUDE 		+= ../cwsw_clock_services/cwsw_clock/test
+EXCLUDE 		+= ../cwsw_clock_services/cwsw_clock/doc/README.md
 
 ### SW Timers component
-INPUT           += ../test/libs/cwsw_clock_services/cwsw_swtimer
-INCLUDE_PATH    += ../test/libs/cwsw_clock_services/cwsw_swtimer/inc
-EXCLUDE 		+= ../test/libs/cwsw_clock_services/cwsw_swtimer/README.md
-EXCLUDE			+= ../test/libs/cwsw_clock_services/cwsw_swtimer/test
-EXCLUDE 		+= ../test/libs/cwsw_clock_services/cwsw_swtimer/doc/README.md
+INPUT           += ../cwsw_clock_services/cwsw_swtimer
+INCLUDE_PATH    += ../cwsw_clock_services/cwsw_swtimer/inc
+EXCLUDE 		+= ../cwsw_clock_services/cwsw_swtimer/README.md
+EXCLUDE			+= ../cwsw_clock_services/cwsw_swtimer/test
+EXCLUDE 		+= ../cwsw_clock_services/cwsw_swtimer/doc/README.md
 
 ## Event Queue package
 ### Event component
