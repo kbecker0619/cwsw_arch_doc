@@ -1,7 +1,7 @@
 # Doxyfile for Stoplite demo application.
 
 # include the actual component doxy project
-@INCLUDE		 = ../test/libs/cwsw_lib/doc/doc_core/cwsw.doxyfile
+@INCLUDE		 = ../cwsw_lib/doc/doc_core/cwsw.doxyfile
 
 PROJECT_NAME	 = "CWSW Stoplite Demo App"
 PROJECT_BRIEF	 = "Demonstration application for the CWSW family of components for embedded software."
@@ -13,6 +13,15 @@ DOT_GRAPH_MAX_NODES    = 150
 # pick one of the supported IDEs to enable the appropriate code macros
 PREDEFINED		+=  XPRJ_NB_Debug=1
 
+# Note for each section below:
+# the "STRIP_FROM_PATH" configuration is a PROJECT-SPECIFIC formatting option that applies to
+#	includes and included-by graphs. this is necessarily a project-specific configuration:
+#	we want "DIRECTORY_GRAPH" to be enabled, so that we can see a graph for folder relationships
+#	if we disable "DIRECTORY_GRAPH", the File List section of the menu pane lists only files - no
+#	directories are shown.
+#	by specifying the appropriate paths here, we can strip the "noise" introduced by the paths
+#	from the includes and included-by graphs.
+
 # ==================================
 
 # specify front page for Doxy output
@@ -21,38 +30,44 @@ INPUT            = ../README.md
 
 # component input files
 ## core library component
-INPUT           += ../test/libs/cwsw_lib/src
-INPUT			+= ../test/libs/cwsw_lib/inc
-INPUT			+= ../test/libs/cwsw_lib/doc
-INCLUDE_PATH    += ../test/libs/cwsw_lib/inc
-EXCLUDE 		+= ../test/libs/cwsw_lib/README.md
-EXCLUDE         += ../test/libs/cwsw_lib/src/README.md
-EXCLUDE			+= ../test/libs/cwsw_lib/doc/README.md
-EXCLUDE 		+= ../test/libs/cwsw_lib/doc/doc_core/README.md
+INPUT           += ../cwsw_lib/src
+INPUT			+= ../cwsw_lib/inc
+INPUT			+= ../cwsw_lib/doc
+INCLUDE_PATH    += ../cwsw_lib/inc
+EXCLUDE 		+= ../cwsw_lib/README.md
+EXCLUDE         += ../cwsw_lib/src/README.md
+EXCLUDE			+= ../cwsw_lib/doc/README.md
+EXCLUDE 		+= ../cwsw_lib/doc/doc_core/README.md
+#STRIP_FROM_PATH	+= ../cwsw_lib/src
+#STRIP_FROM_PATH	+= ../cwsw_lib/inc
 
 ## arch component
-INPUT           += ../test/libs/cwsw_arch/src
-INPUT           += ../test/libs/cwsw_arch/inc
-INPUT           += ../test/libs/cwsw_arch/doc
-INCLUDE_PATH    += ../test/libs/cwsw_arch/inc
-EXCLUDE         += ../test/libs/cwsw_arch/src/README.md
-EXCLUDE			+= ../test/libs/cwsw_arch/doc/design/images/README.md
+INPUT           += ../cwsw_arch/src
+INPUT           += ../cwsw_arch/inc
+INPUT           += ../cwsw_arch/doc
+INCLUDE_PATH    += ../cwsw_arch/inc
+EXCLUDE         += ../cwsw_arch/src/README.md
+EXCLUDE			+= ../cwsw_arch/doc/design/images/README.md
+#STRIP_FROM_PATH	+= ../cwsw_arch/src
+#STRIP_FROM_PATH	+= ../cwsw_arch/inc
 
 ## Board Support component
 ### Note for this Doxy output, I'll use the None board (MSVC project)
-INPUT           += ../test/libs/cwsw_board
-INCLUDE_PATH    += ../test/libs/cwsw_board/none
-EXCLUDE         += ../test/libs/cwsw_board/bd_gtk
-EXCLUDE			+= ../test/libs/cwsw_board/bd_lwcvi
+INPUT			+= ../test/libs/cwsw_board
+INCLUDE_PATH	+= ../test/libs/cwsw_board/none
+EXCLUDE 		+= ../test/libs/cwsw_board/bd_gtk
+EXCLUDE 		+= ../test/libs/cwsw_board/bd_lwcvi
+#STRIP_FROM_PATH	+= ../test/libs/cwsw_board
+#STRIP_FROM_PATH	+= ../test/libs/cwsw_board/none
 # BSP doesn't (yet) have `doc` folder
 
 ## Clock Services package
 #### This package has 2 components in it: clock, and timers
 ### Clock component
-INPUT           += ../test/libs/cwsw_clock_services/cwsw_clock
-INCLUDE_PATH    += ../test/libs/cwsw_clock_services/cwsw_clock/inc
+INPUT			+= ../test/libs/cwsw_clock_services/cwsw_clock
+INCLUDE_PATH	+= ../test/libs/cwsw_clock_services/cwsw_clock/inc
 EXCLUDE 		+= ../test/libs/cwsw_clock_services/cwsw_clock/README.md
-EXCLUDE			+= ../test/libs/cwsw_clock_services/cwsw_clock/test
+EXCLUDE 		+= ../test/libs/cwsw_clock_services/cwsw_clock/test
 EXCLUDE 		+= ../test/libs/cwsw_clock_services/cwsw_clock/doc/README.md
 
 ### SW Timers component
@@ -82,12 +97,12 @@ EXCLUDE 		+= ../test/libs/cwsw_eventqueue/cwsw_evqueue_ex/readme.md
 ### Note that at the time of creation of this Doxy project, this is still a development
 ###	folder within the Demo App repo. Issue #30 instructs to move it to a submodule, at
 ###	which point this project will also need to be updated.
-INPUT           += ../component/cwsw_sme
-INCLUDE_PATH    += ../component/cwsw_sme/inc
-EXCLUDE 		+= ../component/cwsw_sme/readme.md
-EXCLUDE 		+= ../component/cwsw_sme/test
+INPUT           += ../cwsw_sme
+INCLUDE_PATH    += ../cwsw_sme/inc
+EXCLUDE 		+= ../cwsw_sme/readme.md
+EXCLUDE 		+= ../cwsw_sme/test
 
 ## Application
-INPUT           += ../test/app
-INCLUDE_PATH    += ../test/app
+INPUT           += ../app
+INCLUDE_PATH    += ../app
 #EXCLUDE 		+= ../component/cwsw_sme/readme.md

@@ -12,122 +12,212 @@
     <Filter Include="Demo App">
       <UniqueIdentifier>{a9085cbe-125b-4254-b96d-1ee55179967c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Support Libraries">
+    <Filter Include="Libraries">
       <UniqueIdentifier>{52677f88-26ac-46a8-ae58-97a2d5fbd18d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Support Libraries\EV Queue Extended">
+    <Filter Include="Libraries\EV Queue Extended">
       <UniqueIdentifier>{1b544467-6335-4948-aa42-02e95dd24cd6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Support Libraries\Event">
+    <Filter Include="Libraries\Event">
       <UniqueIdentifier>{f03568fd-5b22-46f2-810b-da744ee26fbe}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Support Libraries\Event Queue">
+    <Filter Include="Libraries\Event Queue">
       <UniqueIdentifier>{85eb19c8-8ffa-426f-9b9b-7d7f1ff74321}</UniqueIdentifier>
     </Filter>
-    <Filter Include="SW Timers">
-      <UniqueIdentifier>{838f8e77-eba2-4be6-b0f9-515f7211126a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Support Libraries\Cwsw Lib">
+    <Filter Include="Libraries\Cwsw Lib">
       <UniqueIdentifier>{104836d2-8696-4295-b3e6-2948e59c0c7f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Libraries\SW Timers">
+      <UniqueIdentifier>{838f8e77-eba2-4be6-b0f9-515f7211126a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libraries\Board">
+      <UniqueIdentifier>{4c31376f-b0a1-4ecd-947f-64fe15444c02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libraries\Arch">
+      <UniqueIdentifier>{3ec94598-03bd-4076-807b-bd35ae4a5ea8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libraries\Buttons">
+      <UniqueIdentifier>{5f8354e3-6a48-4ae3-b4c8-699acb461e13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libraries\SME">
+      <UniqueIdentifier>{06115c5f-72ff-4be2-8b83-f23701297c16}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\cwsw_eventqueue\cwsw_evqueue_ex\src\cwsw_evq_proj.h.template">
-      <Filter>Support Libraries\EV Queue Extended</Filter>
+    <None Include="..\libs\cwsw_eventqueue\cwsw_evqueue_ex\src\cwsw_evq_proj.h.template">
+      <Filter>Libraries\EV Queue Extended</Filter>
     </None>
-    <None Include="..\..\cwsw_eventqueue\cwsw_evqueue_ex\doc\readme.md">
-      <Filter>Support Libraries\EV Queue Extended</Filter>
+    <None Include="..\libs\cwsw_eventqueue\cwsw_evqueue_ex\doc\readme.md">
+      <Filter>Libraries\EV Queue Extended</Filter>
     </None>
-    <None Include="..\..\cwsw_eventqueue\cwsw_event\doc\readme.md">
-      <Filter>Support Libraries\Event</Filter>
+    <None Include="..\libs\cwsw_eventqueue\cwsw_event\doc\readme.md">
+      <Filter>Libraries\Event</Filter>
     </None>
-    <None Include="..\..\cwsw_eventqueue\cwsw_evqueue\doc\readme.md">
-      <Filter>Support Libraries\Event Queue</Filter>
+    <None Include="..\libs\cwsw_eventqueue\cwsw_evqueue\doc\readme.md">
+      <Filter>Libraries\Event Queue</Filter>
     </None>
-    <None Include="..\..\cwsw_eventqueue\cwsw_evqueue\readme.md">
-      <Filter>Support Libraries\Event Queue</Filter>
+    <None Include="..\libs\cwsw_eventqueue\cwsw_evqueue\readme.md">
+      <Filter>Libraries\Event Queue</Filter>
     </None>
-    <None Include="..\..\cwsw_eventqueue\cwsw_evqueue\inc\readme.md">
-      <Filter>Support Libraries\Event Queue</Filter>
+    <None Include="..\libs\cwsw_eventqueue\cwsw_evqueue\inc\readme.md">
+      <Filter>Libraries\Event Queue</Filter>
     </None>
-    <None Include="..\..\cwsw_eventqueue\cwsw_evqueue\src\readme.md">
-      <Filter>Support Libraries\Event Queue</Filter>
+    <None Include="..\libs\cwsw_eventqueue\cwsw_evqueue\src\readme.md">
+      <Filter>Libraries\Event Queue</Filter>
     </None>
-    <None Include="..\libs\cwsw_lib\inc\README.md">
-      <Filter>Support Libraries\Cwsw Lib</Filter>
+    <None Include="..\..\cwsw_lib\inc\README.md">
+      <Filter>Libraries\Cwsw Lib</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\app\main.c">
+    <ClCompile Include="..\..\app\main.c">
       <Filter>Demo App</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\cwsw_eventqueue\cwsw_evqueue_ex\src\cwsw_evhandler.c">
-      <Filter>Support Libraries\EV Queue Extended</Filter>
+    <ClCompile Include="..\libs\cwsw_eventqueue\cwsw_evqueue_ex\src\cwsw_evhandler.c">
+      <Filter>Libraries\EV Queue Extended</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\cwsw_eventqueue\cwsw_evqueue_ex\src\cwsw_evqueue_ex.c">
-      <Filter>Support Libraries\EV Queue Extended</Filter>
+    <ClCompile Include="..\libs\cwsw_eventqueue\cwsw_evqueue_ex\src\cwsw_evqueue_ex.c">
+      <Filter>Libraries\EV Queue Extended</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\cwsw_eventqueue\cwsw_evqueue_ex\src\cwsw_evthndlrassoc.c">
-      <Filter>Support Libraries\EV Queue Extended</Filter>
+    <ClCompile Include="..\libs\cwsw_eventqueue\cwsw_evqueue_ex\src\cwsw_evthndlrassoc.c">
+      <Filter>Libraries\EV Queue Extended</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\cwsw_eventqueue\cwsw_event\src\cwsw_event.c">
-      <Filter>Support Libraries\Event</Filter>
+    <ClCompile Include="..\libs\cwsw_eventqueue\cwsw_event\src\cwsw_event.c">
+      <Filter>Libraries\Event</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\cwsw_eventqueue\cwsw_event\src\cwsw_eventtable.c">
-      <Filter>Support Libraries\Event</Filter>
+    <ClCompile Include="..\libs\cwsw_eventqueue\cwsw_event\src\cwsw_eventtable.c">
+      <Filter>Libraries\Event</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\cwsw_eventqueue\cwsw_evqueue\src\cwsw_evqueue.c">
-      <Filter>Support Libraries\Event Queue</Filter>
+    <ClCompile Include="..\libs\cwsw_eventqueue\cwsw_evqueue\src\cwsw_evqueue.c">
+      <Filter>Libraries\Event Queue</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\component\cwsw_swtimer\src\cwsw_swtimer.c">
-      <Filter>SW Timers</Filter>
+    <ClCompile Include="..\libs\cwsw_clock_services\cwsw_swtimer\src\cwsw_swtimer.c">
+      <Filter>Libraries\SW Timers</Filter>
     </ClCompile>
-    <ClCompile Include="..\app\cwsw_lib_prj\CritSect.c">
+    <ClCompile Include="..\..\app\cwsw_lib_prj\CritSect.c">
       <Filter>Demo App</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\component\cwsw_clock\src\cwsw_clock_svc.c">
-      <Filter>SW Timers</Filter>
+    <ClCompile Include="..\libs\cwsw_clock_services\cwsw_clock\src\cwsw_clock_svc.c">
+      <Filter>Libraries\SW Timers</Filter>
     </ClCompile>
-    <ClCompile Include="..\libs\cwsw_lib\src\cwsw_lib.c">
-      <Filter>Support Libraries\Cwsw Lib</Filter>
+    <ClCompile Include="..\..\cwsw_lib\src\cwsw_lib.c">
+      <Filter>Libraries\Cwsw Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\cwsw_board\common\src\cwsw_buttons.c">
+      <Filter>Libraries\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\cwsw_sme\src\cwsw_sme.c">
+      <Filter>Libraries\SME</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\cwsw_arch\src\i386\cwsw_arch.c">
+      <Filter>Libraries\Arch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\cwsw_board\none\src\cwsw_board.c">
+      <Filter>Libraries\Board</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\cwsw_eventqueue\cwsw_evqueue_ex\inc\cwsw_evhandler.h">
-      <Filter>Support Libraries\EV Queue Extended</Filter>
+    <ClInclude Include="..\libs\cwsw_eventqueue\cwsw_evqueue_ex\inc\cwsw_evhandler.h">
+      <Filter>Libraries\EV Queue Extended</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\cwsw_eventqueue\cwsw_evqueue_ex\inc\cwsw_evqueue_ex.h">
-      <Filter>Support Libraries\EV Queue Extended</Filter>
+    <ClInclude Include="..\libs\cwsw_eventqueue\cwsw_evqueue_ex\inc\cwsw_evqueue_ex.h">
+      <Filter>Libraries\EV Queue Extended</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\cwsw_eventqueue\cwsw_evqueue_ex\inc\cwsw_evthndlrassoc.h">
-      <Filter>Support Libraries\EV Queue Extended</Filter>
+    <ClInclude Include="..\libs\cwsw_eventqueue\cwsw_evqueue_ex\inc\cwsw_evthndlrassoc.h">
+      <Filter>Libraries\EV Queue Extended</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\cwsw_eventqueue\cwsw_event\inc\cwsw_event.h">
-      <Filter>Support Libraries\Event</Filter>
+    <ClInclude Include="..\libs\cwsw_eventqueue\cwsw_event\inc\cwsw_event.h">
+      <Filter>Libraries\Event</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\cwsw_eventqueue\cwsw_event\inc\cwsw_eventtable.h">
-      <Filter>Support Libraries\Event</Filter>
+    <ClInclude Include="..\libs\cwsw_eventqueue\cwsw_event\inc\cwsw_eventtable.h">
+      <Filter>Libraries\Event</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\cwsw_eventqueue\cwsw_evqueue\inc\cwsw_evqueue.h">
-      <Filter>Support Libraries\Event Queue</Filter>
+    <ClInclude Include="..\libs\cwsw_eventqueue\cwsw_evqueue\inc\cwsw_evqueue.h">
+      <Filter>Libraries\Event Queue</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\component\cwsw_swtimer\inc\cwsw_swtimer.h">
-      <Filter>SW Timers</Filter>
+    <ClInclude Include="..\libs\cwsw_clock_services\cwsw_swtimer\inc\cwsw_swtimer.h">
+      <Filter>Libraries\SW Timers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\component\cwsw_clock\inc\cwsw_clock.h">
-      <Filter>SW Timers</Filter>
+    <ClInclude Include="..\..\cwsw_lib\inc\ctassert.h">
+      <Filter>Libraries\Cwsw Lib</Filter>
     </ClInclude>
-    <ClInclude Include="..\libs\cwsw_lib\inc\ctassert.h">
-      <Filter>Support Libraries\Cwsw Lib</Filter>
+    <ClInclude Include="..\..\cwsw_lib\inc\cwsw_eventsim.h">
+      <Filter>Libraries\Cwsw Lib</Filter>
     </ClInclude>
-    <ClInclude Include="..\libs\cwsw_lib\inc\cwsw_eventsim.h">
-      <Filter>Support Libraries\Cwsw Lib</Filter>
+    <ClInclude Include="..\..\cwsw_lib\inc\cwsw_lib.h">
+      <Filter>Libraries\Cwsw Lib</Filter>
     </ClInclude>
-    <ClInclude Include="..\libs\cwsw_lib\inc\cwsw_lib.h">
-      <Filter>Support Libraries\Cwsw Lib</Filter>
+    <ClInclude Include="..\..\cwsw_lib\inc\ptypes.h">
+      <Filter>Libraries\Cwsw Lib</Filter>
     </ClInclude>
-    <ClInclude Include="..\libs\cwsw_lib\inc\ptypes.h">
-      <Filter>Support Libraries\Cwsw Lib</Filter>
+    <ClInclude Include="..\..\cwsw_arch\inc\cwsw_arch_common.h">
+      <Filter>Libraries\Arch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\cwsw_arch\inc\i386\cwsw_arch.h">
+      <Filter>Libraries\Arch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\cwsw_clock_services\cwsw_clock\inc\cwsw_clock.h">
+      <Filter>Libraries\SW Timers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\cwsw_board\none\cwsw_board.h">
+      <Filter>Libraries\Board</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\cwsw_board\cwsw_board_common.h">
+      <Filter>Libraries\Board</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\app\cfg\vs2010\stdbool.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\app\cfg\vs2010\stdint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\app\cfg\cwsw_event_proj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\app\app-do-lamps.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\app\app-di-buttons.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\app\cfg\projcfg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\app\cfg\projevtnames.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\app\stoplite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\app\tedlos.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\app\cfg\tedlos_cfg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\app\tedlos_scheduler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\app\cfg\tedlosevents.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\cwsw_lib\inc\cwsw_lib_cvi.h">
+      <Filter>Libraries\Cwsw Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\cwsw_lib\inc\cwsw_lib_msvc.h">
+      <Filter>Libraries\Cwsw Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\cwsw_lib\inc\cwsw_lib_gnuc.h">
+      <Filter>Libraries\Cwsw Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\cwsw_arch\inc\i386\peripheral\ports\ports_api.h">
+      <Filter>Libraries\Board</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\cwsw_board\common\cwsw_buttons.h">
+      <Filter>Libraries\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\cwsw_sme\inc\cwsw_sme.h">
+      <Filter>Libraries\SME</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

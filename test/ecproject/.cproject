@@ -20,20 +20,7 @@
 							<targetPlatform id="cdt.managedbuild.target.gnu.platform.mingw.exe.debug.1349841940" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.mingw.exe.debug"/>
 							<builder buildPath="${workspace_loc:/EventQueue}/Debug" id="cdt.managedbuild.target.gnu.builder.base.1611531393" keepEnvironmentInBuildfile="false" name="Gnu Make Builder" superClass="cdt.managedbuild.target.gnu.builder.base"/>
 							<tool id="cdt.managedbuild.tool.gnu.assembler.mingw.exe.debug.955745680" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.mingw.exe.debug">
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.both.asm.option.include.paths.697203087" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs/cwsw_lib/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../app/cfg&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs/cwsw_evqueue_ex/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/..//libs/cwsw_eventqueue/cwsw_evqueue_ex/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs/cwsw_eventqueue/cwsw_event/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs/cwsw_eventqueue/cwsw_evqueue/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs/cwsw_clock_services/cwsw_swtimer/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs/cwsw_clock_services/cwsw_clock/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../component/cwsw_sme/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs/cwsw_board/none&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs/cwsw_arch/inc/i386&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../app&quot;"/>
-								</option>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="true" id="gnu.both.asm.option.include.paths.697203087" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" useByScannerDiscovery="false" valueType="includePath"/>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1072749620" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.archiver.mingw.base.1004530742" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.mingw.base"/>
@@ -41,18 +28,7 @@
 								<option id="gnu.cpp.compiler.mingw.exe.debug.option.optimization.level.171840968" name="Optimization Level" superClass="gnu.cpp.compiler.mingw.exe.debug.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.mingw.exe.debug.option.debugging.level.446287234" name="Debug Level" superClass="gnu.cpp.compiler.mingw.exe.debug.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.include.paths.1447331829" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs/cwsw_lib/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../app/cfg&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs/cwsw_evqueue_ex/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/..//libs/cwsw_eventqueue/cwsw_evqueue_ex/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs/cwsw_eventqueue/cwsw_event/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs/cwsw_eventqueue/cwsw_evqueue/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs/cwsw_clock_services/cwsw_swtimer/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs/cwsw_clock_services/cwsw_clock/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../component/cwsw_sme/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs/cwsw_board/none&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs/cwsw_arch/inc/i386&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../app&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../cwsw_arch/inc/i386&quot;"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.preprocessor.def.1797760866" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="&quot;XPRJ_Win_MinGW_${ConfigName}=1&quot;"/>
@@ -70,18 +46,13 @@
 								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.mingw.exe.debug.option.optimization.level.884229705" name="Optimization Level" superClass="gnu.c.compiler.mingw.exe.debug.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
 								<option id="gnu.c.compiler.mingw.exe.debug.option.debugging.level.966820115" name="Debug Level" superClass="gnu.c.compiler.mingw.exe.debug.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.include.paths.2128645034" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../app&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../app/cfg&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs/cwsw_board/common&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs/cwsw_eventqueue/cwsw_evqueue_ex/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs/cwsw_eventqueue/cwsw_event/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs/cwsw_eventqueue/cwsw_evqueue/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs/cwsw_clock_services/cwsw_swtimer/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs/cwsw_eventqueue/cwsw_evqueue_ex/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs/cwsw_clock_services/cwsw_clock/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs/cwsw_lib/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../component/cwsw_sme/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs/cwsw_clock_services/cwsw_swtimer/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs/cwsw_board/bd_gtk&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs/cwsw_arch/inc/i386&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs/cwsw_board/common&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${MINGW_HOME}/include/gtk-3.0&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${MINGW_HOME}/include/glib-2.0&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${MINGW_HOME}/lib/glib-2.0/include&quot;"/>
@@ -89,6 +60,11 @@
 									<listOptionValue builtIn="false" value="&quot;${MINGW_HOME}/include/cairo&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${MINGW_HOME}/include/gdk-pixbuf-2.0&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${MINGW_HOME}/include/atk-1.0&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../app&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../app/cfg&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../cwsw_lib/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../cwsw_arch/inc/i386&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../cwsw_sme/inc&quot;"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.preprocessor.def.symbols.841831710" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="&quot;XPRJ_Win_MinGW_${ConfigName}=1&quot;"/>
@@ -136,13 +112,69 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
+					<folderInfo id="cdt.managedbuild.config.gnu.mingw.exe.debug.1736302436.19627903" name="/" resourcePath="cwsw_lib/test">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.mingw.exe.debug.2139033452" name="MinGW GCC" superClass="cdt.managedbuild.toolchain.gnu.mingw.exe.debug" unusedChildren="">
+							<tool id="cdt.managedbuild.tool.gnu.assembler.mingw.exe.debug.1457799774" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.mingw.exe.debug.955745680"/>
+							<tool id="cdt.managedbuild.tool.gnu.archiver.mingw.base.379620234" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.mingw.base.1004530742"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.exe.debug.1690672125" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.exe.debug.1050297134"/>
+							<tool id="cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.debug.1225677089" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.debug.1489450762"/>
+							<tool id="cdt.managedbuild.tool.gnu.c.linker.mingw.exe.debug.882943934" name="MinGW C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.mingw.exe.debug.1268148108"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.mingw.exe.debug.620006837" name="MinGW C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.mingw.exe.debug.1051958027"/>
+						</toolChain>
+					</folderInfo>
 					<sourceEntries>
-						<entry excluding="libs/cwsw_board/bd_lwcvi|component/cwsw_sme/src/cwsw_sme.template.c|libs/cwsw_board/none|libs/cwsw_eventqueue/test|component/cwsw_event/test|libs/cwsw_arch/test|bsw/svc/cwsw_event/test/ecproject|bsw/svc/cwsw_swtimer/src/cwsw_swtimer.c|libs/cwsw_arch_old|component/cwsw_event/test/cwsw_lib/test|bsw/svc/cwsw_event/test/cwsw_lib/test/ut|bsw/svc/cwsw_clock/src/cwsw_clock_svc.c|src|bsw/ecu/cwsw_arch/test|libs/cwsw_clock|bsw/svc/cwsw_event/test|libs/cwsw_swtimer|bsw/svc/cwsw_evq/test|libs/cwsw_lib/test|bsw/svc/cwsw_event/test/nbproject|bsw/evq/src/cwsw_evhandler.c|bsw/svc/cwsw_event/test/app|bsw/svc/cwsw_event/test/vsproject|bsw/svc/cwsw_lib/test|libs/cwsw_board_old|component/test" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="cwsw_lib/test|cwsw_arch/test|cwsw_sme/src/cwsw_sme.template.c|libs/cwsw_board/bd_lwcvi|component/cwsw_sme/src/cwsw_sme.template.c|libs/cwsw_board/none|libs/cwsw_eventqueue/test|component/cwsw_event/test|libs/cwsw_arch/test|bsw/svc/cwsw_event/test/ecproject|bsw/svc/cwsw_swtimer/src/cwsw_swtimer.c|libs/cwsw_arch_old|component/cwsw_event/test/cwsw_lib/test|bsw/svc/cwsw_event/test/cwsw_lib/test/ut|bsw/svc/cwsw_clock/src/cwsw_clock_svc.c|src|bsw/ecu/cwsw_arch/test|libs/cwsw_clock|bsw/svc/cwsw_event/test|libs/cwsw_swtimer|bsw/svc/cwsw_evq/test|libs/cwsw_lib/test|bsw/svc/cwsw_event/test/nbproject|bsw/evq/src/cwsw_evhandler.c|bsw/svc/cwsw_event/test/app|bsw/svc/cwsw_event/test/vsproject|bsw/svc/cwsw_lib/test|libs/cwsw_board_old|component/test" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings">
-				<externalSettings containerId="org.eclipse.cdt.managedbuilder.pkgconfig.extSettings" factoryId="org.eclipse.cdt.core.extension.container.factory"/>
+				<externalSettings containerId="org.eclipse.cdt.managedbuilder.pkgconfig.extSettings" factoryId="org.eclipse.cdt.core.extension.container.factory">
+					<externalSetting contentTypes="org.eclipse.cdt.managedbuilder.core.compiledObjectFile">
+						<entry flags="UNDEFINED" kind="libraryFile" name="gtk-3" srcPrefixMapping="" srcRootPath=""/>
+						<entry flags="UNDEFINED" kind="libraryFile" name="gdk-3" srcPrefixMapping="" srcRootPath=""/>
+						<entry flags="UNDEFINED" kind="libraryFile" name="z" srcPrefixMapping="" srcRootPath=""/>
+						<entry flags="UNDEFINED" kind="libraryFile" name="gdi32" srcPrefixMapping="" srcRootPath=""/>
+						<entry flags="UNDEFINED" kind="libraryFile" name="imm32" srcPrefixMapping="" srcRootPath=""/>
+						<entry flags="UNDEFINED" kind="libraryFile" name="shell32" srcPrefixMapping="" srcRootPath=""/>
+						<entry flags="UNDEFINED" kind="libraryFile" name="ole32" srcPrefixMapping="" srcRootPath=""/>
+						<entry flags="UNDEFINED" kind="libraryFile" name="winmm" srcPrefixMapping="" srcRootPath=""/>
+						<entry flags="UNDEFINED" kind="libraryFile" name="dwmapi" srcPrefixMapping="" srcRootPath=""/>
+						<entry flags="UNDEFINED" kind="libraryFile" name="setupapi" srcPrefixMapping="" srcRootPath=""/>
+						<entry flags="UNDEFINED" kind="libraryFile" name="cfgmgr32" srcPrefixMapping="" srcRootPath=""/>
+						<entry flags="UNDEFINED" kind="libraryFile" name="pangowin32-1.0" srcPrefixMapping="" srcRootPath=""/>
+						<entry flags="UNDEFINED" kind="libraryFile" name="pangocairo-1.0" srcPrefixMapping="" srcRootPath=""/>
+						<entry flags="UNDEFINED" kind="libraryFile" name="pango-1.0" srcPrefixMapping="" srcRootPath=""/>
+						<entry flags="UNDEFINED" kind="libraryFile" name="atk-1.0" srcPrefixMapping="" srcRootPath=""/>
+						<entry flags="UNDEFINED" kind="libraryFile" name="cairo-gobject" srcPrefixMapping="" srcRootPath=""/>
+						<entry flags="UNDEFINED" kind="libraryFile" name="cairo" srcPrefixMapping="" srcRootPath=""/>
+						<entry flags="UNDEFINED" kind="libraryFile" name="gdk_pixbuf-2.0" srcPrefixMapping="" srcRootPath=""/>
+						<entry flags="UNDEFINED" kind="libraryFile" name="gio-2.0" srcPrefixMapping="" srcRootPath=""/>
+						<entry flags="UNDEFINED" kind="libraryFile" name="gobject-2.0" srcPrefixMapping="" srcRootPath=""/>
+						<entry flags="UNDEFINED" kind="libraryFile" name="glib-2.0" srcPrefixMapping="" srcRootPath=""/>
+						<entry flags="UNDEFINED" kind="libraryFile" name="intl" srcPrefixMapping="" srcRootPath=""/>
+					</externalSetting>
+					<externalSetting contentTypes="org.eclipse.cdt.core.cSource:org.eclipse.cdt.core.cxxSource">
+						<entry flags="NONE" kind="includePath" name="${ProjDirPath}/../libs/cwsw_eventqueue/cwsw_event/inc"/>
+						<entry flags="NONE" kind="includePath" name="${ProjDirPath}/../libs/cwsw_eventqueue/cwsw_evqueue/inc"/>
+						<entry flags="NONE" kind="includePath" name="${ProjDirPath}/../libs/cwsw_eventqueue/cwsw_evqueue_ex/inc"/>
+						<entry flags="NONE" kind="includePath" name="${ProjDirPath}/../libs/cwsw_clock_services/cwsw_clock/inc"/>
+						<entry flags="NONE" kind="includePath" name="${ProjDirPath}/../libs/cwsw_clock_services/cwsw_swtimer/inc"/>
+						<entry flags="NONE" kind="includePath" name="${ProjDirPath}/../libs/cwsw_board/bd_gtk"/>
+						<entry flags="NONE" kind="includePath" name="${ProjDirPath}/../libs/cwsw_board/common"/>
+						<entry flags="NONE" kind="includePath" name="${MINGW_HOME}/include/gtk-3.0"/>
+						<entry flags="NONE" kind="includePath" name="${MINGW_HOME}/include/glib-2.0"/>
+						<entry flags="NONE" kind="includePath" name="${MINGW_HOME}/lib/glib-2.0/include"/>
+						<entry flags="NONE" kind="includePath" name="${MINGW_HOME}/include/pango-1.0"/>
+						<entry flags="NONE" kind="includePath" name="${MINGW_HOME}/include/cairo"/>
+						<entry flags="NONE" kind="includePath" name="${MINGW_HOME}/include/gdk-pixbuf-2.0"/>
+						<entry flags="NONE" kind="includePath" name="${MINGW_HOME}/include/atk-1.0"/>
+						<entry flags="NONE" kind="includePath" name="${ProjDirPath}/../../app"/>
+						<entry flags="NONE" kind="includePath" name="${ProjDirPath}/../../app/cfg"/>
+						<entry flags="NONE" kind="includePath" name="${ProjDirPath}/../../cwsw_lib/inc"/>
+						<entry flags="NONE" kind="includePath" name="${ProjDirPath}/../../cwsw_arch/inc/i386"/>
+						<entry flags="NONE" kind="includePath" name="${ProjDirPath}/../../cwsw_sme/inc"/>
+					</externalSetting>
+				</externalSettings>
 			</storageModule>
 			<storageModule adwaita-icon-theme="false" atk="false" bcunit="false" bzip2="false" cairo="false" cairo-fc="false" cairo-ft="false" cairo-gobject="false" cairo-pdf="false" cairo-png="false" cairo-ps="false" cairo-script="false" cairo-svg="false" cairo-tee="false" cairo-win32="false" cairo-win32-font="false" datrie-0.2="false" epoxy="false" expat="false" fontconfig="false" formw="false" freeglut="false" freetype2="false" fribidi="false" gail-3.0="false" gdk-3.0="false" gdk-broadway-3.0="false" gdk-pixbuf-2.0="false" gdk-win32-3.0="false" gio-2.0="false" gio-windows-2.0="false" gladeui-2.0="false" glib-2.0="false" gmodule-2.0="false" gmodule-export-2.0="false" gmodule-no-export-2.0="false" gmp="false" gmpxx="false" gnurx="false" gnutls="false" gobject-2.0="false" graphite2="false" gthread-2.0="false" gtkplus-3.0="true" gtkplus-broadway-3.0="false" gtkplus-win32-3.0="false" harfbuzz="false" harfbuzz-gobject="false" harfbuzz-icu="false" harfbuzz-subset="false" hogweed="false" iconv="false" icu-i18n="false" icu-io="false" icu-uc="false" isl="false" jansson="false" jasper="false" jemalloc="false" json-glib-1.0="false" libbrotlicommon="false" libbrotlidec="false" libbrotlienc="false" libcares="false" libcares-static="false" libcrypto="false" libcurl="false" libffi="false" libgsf-1="false" libgsf-win32-1="false" libidn="false" libidn2="false" libjpeg="false" liblzma="false" libmetalink="false" libnghttp2="false" libpcre="false" libpcre16="false" libpcre2-16="false" libpcre2-32="false" libpcre2-8="false" libpcre2-posix="false" libpcre32="false" libpcrecpp="false" libpcreposix="false" libpng="false" libpng16="false" librsvg-2.0="false" librtmp="false" libspdylay="false" libssh2="false" libssl="false" libtasn1="false" libthai="false" libtiff-4="false" libturbojpeg="false" libxml-2.0="false" libzip="false" libzstd="false" lzo2="false" menuw="false" moduleId="packages" mpfr="false" ncursesplusplusw="false" ncursesw="false" nettle="false" openssl="false" p11-kit-1="false" panelw="false" pango="false" pangocairo="false" pangoft2="false" pangowin32="false" pixman-1="false" python="false" python-2.7="false" python-3.8="false" python-3.8-embed="false" python2="false" python3="false" python3-embed="false" readline="false" regex="false" ruby-2.7="false" shared-mime-info="false" source-highlight="false" sqlite3="false" termcap="false" tre="false" wineditline="false" yaml-0.1="false" zlib="false"/>
 		</cconfiguration>
