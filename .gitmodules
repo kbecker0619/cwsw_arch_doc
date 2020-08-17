@@ -1,8 +1,8 @@
 [submodule "cwsw_lib"]
 	path = cwsw_lib
 	url = git@github.com:kbecker0619/cwsw_lib.git
-[submodule "test/libs/cwsw_eventqueue"]
-	path = test/libs/cwsw_eventqueue
+[submodule "cwsw_eventqueue"]
+	path = cwsw_eventqueue
 	url = git@github.com:kbecker0619/cwsw_eventqueue.git
 [submodule "cwsw_board"]
 	path = cwsw_board

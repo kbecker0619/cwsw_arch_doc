@@ -79,19 +79,19 @@ EXCLUDE 		+= ../test/libs/cwsw_clock_services/cwsw_swtimer/doc/README.md
 
 ## Event Queue package
 ### Event component
-INPUT           += ../test/libs/cwsw_eventqueue/cwsw_event
-INCLUDE_PATH    += ../test/libs/cwsw_eventqueue/cwsw_event/inc
-EXCLUDE 		+= ../test/libs/cwsw_eventqueue/cwsw_event/readme.md
+INPUT           += ../cwsw_eventqueue/cwsw_event
+INCLUDE_PATH    += ../cwsw_eventqueue/cwsw_event/inc
+EXCLUDE 		+= ../cwsw_eventqueue/cwsw_event/readme.md
 
 ### Event Queue component
-INPUT           += ../test/libs/cwsw_eventqueue/cwsw_evqueue
-INCLUDE_PATH    += ../test/libs/cwsw_eventqueue/cwsw_evqueue/inc
-EXCLUDE 		+= ../test/libs/cwsw_eventqueue/cwsw_evqueue/readme.md
+INPUT           += ../cwsw_eventqueue/cwsw_evqueue
+INCLUDE_PATH    += ../cwsw_eventqueue/cwsw_evqueue/inc
+EXCLUDE 		+= ../cwsw_eventqueue/cwsw_evqueue/readme.md
 
 ### Event Queue Extended component
-INPUT           += ../test/libs/cwsw_eventqueue/cwsw_evqueue_ex
-INCLUDE_PATH    += ../test/libs/cwsw_eventqueue/cwsw_evqueue_ex/inc
-EXCLUDE 		+= ../test/libs/cwsw_eventqueue/cwsw_evqueue_ex/readme.md
+INPUT           += ../cwsw_eventqueue/cwsw_evqueue_ex
+INCLUDE_PATH    += ../cwsw_eventqueue/cwsw_evqueue_ex/inc
+EXCLUDE 		+= ../cwsw_eventqueue/cwsw_evqueue_ex/readme.md
 
 ## State Machine Engine package / component
 ### Note that at the time of creation of this Doxy project, this is still a development

@@ -29,11 +29,11 @@ cwsw_arch/inc/i386/peripheral/ports \
 cwsw_arch/src/i386 \
 cwsw_board/bd_gtk/src \
 cwsw_board/common/src \
+cwsw_eventqueue/cwsw_event/src \
+cwsw_eventqueue/cwsw_evqueue/src \
+cwsw_eventqueue/cwsw_evqueue_ex/src \
 cwsw_lib/src \
 cwsw_sme/src \
 libs/cwsw_clock_services/cwsw_clock/src \
 libs/cwsw_clock_services/cwsw_swtimer/src \
-libs/cwsw_eventqueue/cwsw_event/src \
-libs/cwsw_eventqueue/cwsw_evqueue/src \
-libs/cwsw_eventqueue/cwsw_evqueue_ex/src \
 
