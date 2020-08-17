@@ -54,12 +54,11 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>..\..\cwsw_lib\inc;..\..\app\cfg;..\..\app\cfg\vs2010;..\libs\cwsw_eventqueue\cwsw_event\inc;..\libs\cwsw_eventqueue\cwsw_evqueue\inc;..\libs\cwsw_eventqueue\cwsw_evqueue_ex\inc;..\libs\cwsw_evqueue_test\cwsw_clock\inc;..\libs\cwsw_evqueue_test\cwsw_swtimer\inc;..\libs\cwsw_clock_services\cwsw_clock\inc;..\libs\cwsw_clock_services\cwsw_swtimer\inc;..\..\cwsw_arch\inc\i386;..\..\cwsw_board\none\;..\..\cwsw_board\common\;..\..\cwsw_sme\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\cwsw_lib\inc;..\..\app\cfg;..\..\app\cfg\vs2010;..\..\cwsw_eventqueue\cwsw_event\inc;..\..\cwsw_eventqueue\cwsw_evqueue\inc;..\..\cwsw_eventqueue\cwsw_evqueue_ex\inc;..\libs\cwsw_evqueue_test\cwsw_clock\inc;..\libs\cwsw_evqueue_test\cwsw_swtimer\inc;..\libs\cwsw_clock_services\cwsw_clock\inc;..\libs\cwsw_clock_services\cwsw_swtimer\inc;..\..\cwsw_arch\inc\i386;..\..\cwsw_board\none\;..\..\cwsw_board\common\;..\..\cwsw_sme\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAsManaged>false</CompileAsManaged>
       <ExceptionHandling>false</ExceptionHandling>
       <DisableSpecificWarnings>4127</DisableSpecificWarnings>
       <BrowseInformation>true</BrowseInformation>
-      <CallingConvention>FastCall</CallingConvention>
       <ShowIncludes>false</ShowIncludes>
     </ClCompile>
     <Link>
@@ -86,14 +85,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\libs\cwsw_eventqueue\cwsw_event\doc\readme.md" />
-    <None Include="..\libs\cwsw_eventqueue\cwsw_evqueue\doc\readme.md" />
-    <None Include="..\libs\cwsw_eventqueue\cwsw_evqueue\inc\readme.md" />
-    <None Include="..\libs\cwsw_eventqueue\cwsw_evqueue\readme.md" />
-    <None Include="..\libs\cwsw_eventqueue\cwsw_evqueue\src\readme.md" />
-    <None Include="..\libs\cwsw_eventqueue\cwsw_evqueue_ex\doc\readme.md" />
-    <None Include="..\libs\cwsw_eventqueue\cwsw_evqueue_ex\src\cwsw_evq_proj.h.template" />
-    <None Include="..\..\cwsw_lib\inc\README.md" />
+    <None Include="..\..\cwsw_eventqueue\cwsw_event\doc\readme.md" />
+    <None Include="..\..\cwsw_eventqueue\cwsw_evqueue\doc\readme.md" />
+    <None Include="..\..\cwsw_eventqueue\cwsw_evqueue\inc\readme.md" />
+    <None Include="..\..\cwsw_eventqueue\cwsw_evqueue\readme.md" />
+    <None Include="..\..\cwsw_eventqueue\cwsw_evqueue\src\readme.md" />
+    <None Include="..\..\cwsw_eventqueue\cwsw_evqueue_ex\doc\readme.md" />
+    <None Include="..\..\cwsw_eventqueue\cwsw_evqueue_ex\src\cwsw_evq_proj.h.template" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\cwsw_arch\src\i386\cwsw_arch.c" />
@@ -102,12 +100,12 @@
     <ClCompile Include="..\..\cwsw_board\none\src\cwsw_board.c" />
     <ClCompile Include="..\libs\cwsw_clock_services\cwsw_clock\src\cwsw_clock_svc.c" />
     <ClCompile Include="..\libs\cwsw_clock_services\cwsw_swtimer\src\cwsw_swtimer.c" />
-    <ClCompile Include="..\libs\cwsw_eventqueue\cwsw_event\src\cwsw_event.c" />
-    <ClCompile Include="..\libs\cwsw_eventqueue\cwsw_event\src\cwsw_eventtable.c" />
-    <ClCompile Include="..\libs\cwsw_eventqueue\cwsw_evqueue\src\cwsw_evqueue.c" />
-    <ClCompile Include="..\libs\cwsw_eventqueue\cwsw_evqueue_ex\src\cwsw_evhandler.c" />
-    <ClCompile Include="..\libs\cwsw_eventqueue\cwsw_evqueue_ex\src\cwsw_evqueue_ex.c" />
-    <ClCompile Include="..\libs\cwsw_eventqueue\cwsw_evqueue_ex\src\cwsw_evthndlrassoc.c" />
+    <ClCompile Include="..\..\cwsw_eventqueue\cwsw_event\src\cwsw_event.c" />
+    <ClCompile Include="..\..\cwsw_eventqueue\cwsw_event\src\cwsw_eventtable.c" />
+    <ClCompile Include="..\..\cwsw_eventqueue\cwsw_evqueue\src\cwsw_evqueue.c" />
+    <ClCompile Include="..\..\cwsw_eventqueue\cwsw_evqueue_ex\src\cwsw_evhandler.c" />
+    <ClCompile Include="..\..\cwsw_eventqueue\cwsw_evqueue_ex\src\cwsw_evqueue_ex.c" />
+    <ClCompile Include="..\..\cwsw_eventqueue\cwsw_evqueue_ex\src\cwsw_evthndlrassoc.c" />
     <ClCompile Include="..\..\app\cwsw_lib_prj\CritSect.c" />
     <ClCompile Include="..\..\app\main.c" />
     <ClCompile Include="..\..\cwsw_lib\src\cwsw_lib.c" />
@@ -134,12 +132,12 @@
     <ClInclude Include="..\..\cwsw_board\none\cwsw_board.h" />
     <ClInclude Include="..\libs\cwsw_clock_services\cwsw_clock\inc\cwsw_clock.h" />
     <ClInclude Include="..\libs\cwsw_clock_services\cwsw_swtimer\inc\cwsw_swtimer.h" />
-    <ClInclude Include="..\libs\cwsw_eventqueue\cwsw_event\inc\cwsw_event.h" />
-    <ClInclude Include="..\libs\cwsw_eventqueue\cwsw_event\inc\cwsw_eventtable.h" />
-    <ClInclude Include="..\libs\cwsw_eventqueue\cwsw_evqueue\inc\cwsw_evqueue.h" />
-    <ClInclude Include="..\libs\cwsw_eventqueue\cwsw_evqueue_ex\inc\cwsw_evhandler.h" />
-    <ClInclude Include="..\libs\cwsw_eventqueue\cwsw_evqueue_ex\inc\cwsw_evqueue_ex.h" />
-    <ClInclude Include="..\libs\cwsw_eventqueue\cwsw_evqueue_ex\inc\cwsw_evthndlrassoc.h" />
+    <ClInclude Include="..\..\cwsw_eventqueue\cwsw_event\inc\cwsw_event.h" />
+    <ClInclude Include="..\..\cwsw_eventqueue\cwsw_event\inc\cwsw_eventtable.h" />
+    <ClInclude Include="..\..\cwsw_eventqueue\cwsw_evqueue\inc\cwsw_evqueue.h" />
+    <ClInclude Include="..\..\cwsw_eventqueue\cwsw_evqueue_ex\inc\cwsw_evhandler.h" />
+    <ClInclude Include="..\..\cwsw_eventqueue\cwsw_evqueue_ex\inc\cwsw_evqueue_ex.h" />
+    <ClInclude Include="..\..\cwsw_eventqueue\cwsw_evqueue_ex\inc\cwsw_evthndlrassoc.h" />
     <ClInclude Include="..\..\cwsw_lib\inc\ctassert.h" />
     <ClInclude Include="..\..\cwsw_lib\inc\cwsw_eventsim.h" />
     <ClInclude Include="..\..\cwsw_lib\inc\cwsw_lib.h" />

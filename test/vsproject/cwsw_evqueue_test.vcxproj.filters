@@ -44,51 +44,48 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\libs\cwsw_eventqueue\cwsw_evqueue_ex\src\cwsw_evq_proj.h.template">
+    <None Include="..\..\cwsw_eventqueue\cwsw_evqueue_ex\src\cwsw_evq_proj.h.template">
       <Filter>Libraries\EV Queue Extended</Filter>
     </None>
-    <None Include="..\libs\cwsw_eventqueue\cwsw_evqueue_ex\doc\readme.md">
+    <None Include="..\..\cwsw_eventqueue\cwsw_evqueue_ex\doc\readme.md">
       <Filter>Libraries\EV Queue Extended</Filter>
     </None>
-    <None Include="..\libs\cwsw_eventqueue\cwsw_event\doc\readme.md">
+    <None Include="..\..\cwsw_eventqueue\cwsw_event\doc\readme.md">
       <Filter>Libraries\Event</Filter>
     </None>
-    <None Include="..\libs\cwsw_eventqueue\cwsw_evqueue\doc\readme.md">
+    <None Include="..\..\cwsw_eventqueue\cwsw_evqueue\doc\readme.md">
       <Filter>Libraries\Event Queue</Filter>
     </None>
-    <None Include="..\libs\cwsw_eventqueue\cwsw_evqueue\readme.md">
+    <None Include="..\..\cwsw_eventqueue\cwsw_evqueue\readme.md">
       <Filter>Libraries\Event Queue</Filter>
     </None>
-    <None Include="..\libs\cwsw_eventqueue\cwsw_evqueue\inc\readme.md">
+    <None Include="..\..\cwsw_eventqueue\cwsw_evqueue\inc\readme.md">
       <Filter>Libraries\Event Queue</Filter>
     </None>
-    <None Include="..\libs\cwsw_eventqueue\cwsw_evqueue\src\readme.md">
+    <None Include="..\..\cwsw_eventqueue\cwsw_evqueue\src\readme.md">
       <Filter>Libraries\Event Queue</Filter>
-    </None>
-    <None Include="..\..\cwsw_lib\inc\README.md">
-      <Filter>Libraries\Cwsw Lib</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\app\main.c">
       <Filter>Demo App</Filter>
     </ClCompile>
-    <ClCompile Include="..\libs\cwsw_eventqueue\cwsw_evqueue_ex\src\cwsw_evhandler.c">
+    <ClCompile Include="..\..\cwsw_eventqueue\cwsw_evqueue_ex\src\cwsw_evhandler.c">
       <Filter>Libraries\EV Queue Extended</Filter>
     </ClCompile>
-    <ClCompile Include="..\libs\cwsw_eventqueue\cwsw_evqueue_ex\src\cwsw_evqueue_ex.c">
+    <ClCompile Include="..\..\cwsw_eventqueue\cwsw_evqueue_ex\src\cwsw_evqueue_ex.c">
       <Filter>Libraries\EV Queue Extended</Filter>
     </ClCompile>
-    <ClCompile Include="..\libs\cwsw_eventqueue\cwsw_evqueue_ex\src\cwsw_evthndlrassoc.c">
+    <ClCompile Include="..\..\cwsw_eventqueue\cwsw_evqueue_ex\src\cwsw_evthndlrassoc.c">
       <Filter>Libraries\EV Queue Extended</Filter>
     </ClCompile>
-    <ClCompile Include="..\libs\cwsw_eventqueue\cwsw_event\src\cwsw_event.c">
+    <ClCompile Include="..\..\cwsw_eventqueue\cwsw_event\src\cwsw_event.c">
       <Filter>Libraries\Event</Filter>
     </ClCompile>
-    <ClCompile Include="..\libs\cwsw_eventqueue\cwsw_event\src\cwsw_eventtable.c">
+    <ClCompile Include="..\..\cwsw_eventqueue\cwsw_event\src\cwsw_eventtable.c">
       <Filter>Libraries\Event</Filter>
     </ClCompile>
-    <ClCompile Include="..\libs\cwsw_eventqueue\cwsw_evqueue\src\cwsw_evqueue.c">
+    <ClCompile Include="..\..\cwsw_eventqueue\cwsw_evqueue\src\cwsw_evqueue.c">
       <Filter>Libraries\Event Queue</Filter>
     </ClCompile>
     <ClCompile Include="..\libs\cwsw_clock_services\cwsw_swtimer\src\cwsw_swtimer.c">
@@ -117,22 +114,22 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\libs\cwsw_eventqueue\cwsw_evqueue_ex\inc\cwsw_evhandler.h">
+    <ClInclude Include="..\..\cwsw_eventqueue\cwsw_evqueue_ex\inc\cwsw_evhandler.h">
       <Filter>Libraries\EV Queue Extended</Filter>
     </ClInclude>
-    <ClInclude Include="..\libs\cwsw_eventqueue\cwsw_evqueue_ex\inc\cwsw_evqueue_ex.h">
+    <ClInclude Include="..\..\cwsw_eventqueue\cwsw_evqueue_ex\inc\cwsw_evqueue_ex.h">
       <Filter>Libraries\EV Queue Extended</Filter>
     </ClInclude>
-    <ClInclude Include="..\libs\cwsw_eventqueue\cwsw_evqueue_ex\inc\cwsw_evthndlrassoc.h">
+    <ClInclude Include="..\..\cwsw_eventqueue\cwsw_evqueue_ex\inc\cwsw_evthndlrassoc.h">
       <Filter>Libraries\EV Queue Extended</Filter>
     </ClInclude>
-    <ClInclude Include="..\libs\cwsw_eventqueue\cwsw_event\inc\cwsw_event.h">
+    <ClInclude Include="..\..\cwsw_eventqueue\cwsw_event\inc\cwsw_event.h">
       <Filter>Libraries\Event</Filter>
     </ClInclude>
-    <ClInclude Include="..\libs\cwsw_eventqueue\cwsw_event\inc\cwsw_eventtable.h">
+    <ClInclude Include="..\..\cwsw_eventqueue\cwsw_event\inc\cwsw_eventtable.h">
       <Filter>Libraries\Event</Filter>
     </ClInclude>
-    <ClInclude Include="..\libs\cwsw_eventqueue\cwsw_evqueue\inc\cwsw_evqueue.h">
+    <ClInclude Include="..\..\cwsw_eventqueue\cwsw_evqueue\inc\cwsw_evqueue.h">
       <Filter>Libraries\Event Queue</Filter>
     </ClInclude>
     <ClInclude Include="..\libs\cwsw_clock_services\cwsw_swtimer\inc\cwsw_swtimer.h">
