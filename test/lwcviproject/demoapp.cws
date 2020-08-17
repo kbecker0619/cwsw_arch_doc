@@ -201,8 +201,7 @@ Window Left = 20
 Source Window State = "1,19,19,19,10,18,18,0,0,0,0,0,0,0,0,0,0,0,19,13,401,623,1,0,"
 
 [File 0018]
-Path Line0001 = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_clock_services/cwsw_clock/inc/cwsw"
-Path Line0002 = "_clock.h"
+Path = "/c/_Projects/cwsw_evqueue_test/cwsw_clock_services/cwsw_clock/inc/cwsw_clock.h"
 File Type = "Include"
 Disk Date = 3680506437
 In Projects = "1,"
@@ -211,8 +210,8 @@ Window Left = 26
 Source Window State = "1,63,64,63,0,0,0,0,0,0,0,0,0,0,0,0,43,0,64,0,401,595,1,0,"
 
 [File 0019]
-Path Line0001 = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_clock_services/cwsw_clock/src/cwsw"
-Path Line0002 = "_clock_svc.c"
+Path Line0001 = "/c/_Projects/cwsw_evqueue_test/cwsw_clock_services/cwsw_clock/src/cwsw_clock_svc"
+Path Line0002 = ".c"
 File Type = "CSource"
 Disk Date = 3680506437
 In Projects = "1,"
@@ -380,8 +379,8 @@ Window Left = 6
 Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,401,623,1,0,"
 
 [File 0037]
-Path Line0001 = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_clock_services/cwsw_swtimer/src/cw"
-Path Line0002 = "sw_swtimer.c"
+Path Line0001 = "/c/_Projects/cwsw_evqueue_test/cwsw_clock_services/cwsw_swtimer/src/cwsw_swtimer"
+Path Line0002 = ".c"
 File Type = "CSource"
 Disk Date = 3680506437
 In Projects = "1,"
@@ -390,8 +389,8 @@ Window Left = 6
 Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,78,0,106,41,401,623,1,0,"
 
 [File 0038]
-Path Line0001 = "/c/_Projects/cwsw_evqueue_test/test/libs/cwsw_clock_services/cwsw_swtimer/inc/cw"
-Path Line0002 = "sw_swtimer.h"
+Path Line0001 = "/c/_Projects/cwsw_evqueue_test/cwsw_clock_services/cwsw_swtimer/inc/cwsw_swtimer"
+Path Line0002 = ".h"
 File Type = "Include"
 Disk Date = 3680506437
 In Projects = "1,"
@@ -411,7 +410,7 @@ Source Window State = "1,160,160,160,43,51,51,0,0,0,0,0,0,0,0,0,143,0,160,8,401,
 [File 0040]
 Path = "/c/_Projects/cwsw_evqueue_test/app/main.c"
 File Type = "CSource"
-Disk Date = 3680506422
+Disk Date = 3680552870
 In Projects = "1,"
 Window Top = 95
 Window Left = 42

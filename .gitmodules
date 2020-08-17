@@ -10,6 +10,6 @@
 [submodule "cwsw_arch"]
 	path = cwsw_arch
 	url = git@github.com:kbecker0619/cwsw_arch.git
-[submodule "test/libs/cwsw_clock_services"]
-	path = test/libs/cwsw_clock_services
+[submodule "cwsw_clock_services"]
+	path = cwsw_clock_services
 	url = git@github.com:kbecker0619/cwsw_clock_services.git

@@ -169,7 +169,7 @@ main(void)
 	(void)Init(Stoplite);
 	(void)Init(AppDO);			// app-level actuator component (DO = Digital Output)	AppDO__Init()
 
-	// this board-level init function doesn't return untl the [QUIT] button is pushed, so it's gotta be last.
+	// this board-level init function doesn't return until the [QUIT] button is pushed, so it's gotta be last.
 	if(!Init(Cwsw_Board))		// Cwsw_Board__Init()
 	{
 		tedlos__InitTaskList(tblInitTasks);

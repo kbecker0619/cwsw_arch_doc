@@ -88,13 +88,13 @@
     <ClCompile Include="..\..\cwsw_eventqueue\cwsw_evqueue\src\cwsw_evqueue.c">
       <Filter>Libraries\Event Queue</Filter>
     </ClCompile>
-    <ClCompile Include="..\libs\cwsw_clock_services\cwsw_swtimer\src\cwsw_swtimer.c">
+    <ClCompile Include="..\..\cwsw_clock_services\cwsw_swtimer\src\cwsw_swtimer.c">
       <Filter>Libraries\SW Timers</Filter>
     </ClCompile>
     <ClCompile Include="..\..\app\cwsw_lib_prj\CritSect.c">
       <Filter>Demo App</Filter>
     </ClCompile>
-    <ClCompile Include="..\libs\cwsw_clock_services\cwsw_clock\src\cwsw_clock_svc.c">
+    <ClCompile Include="..\..\cwsw_clock_services\cwsw_clock\src\cwsw_clock_svc.c">
       <Filter>Libraries\SW Timers</Filter>
     </ClCompile>
     <ClCompile Include="..\..\cwsw_lib\src\cwsw_lib.c">
@@ -132,7 +132,7 @@
     <ClInclude Include="..\..\cwsw_eventqueue\cwsw_evqueue\inc\cwsw_evqueue.h">
       <Filter>Libraries\Event Queue</Filter>
     </ClInclude>
-    <ClInclude Include="..\libs\cwsw_clock_services\cwsw_swtimer\inc\cwsw_swtimer.h">
+    <ClInclude Include="..\..\cwsw_clock_services\cwsw_swtimer\inc\cwsw_swtimer.h">
       <Filter>Libraries\SW Timers</Filter>
     </ClInclude>
     <ClInclude Include="..\..\cwsw_lib\inc\ctassert.h">
@@ -153,7 +153,7 @@
     <ClInclude Include="..\..\cwsw_arch\inc\i386\cwsw_arch.h">
       <Filter>Libraries\Arch</Filter>
     </ClInclude>
-    <ClInclude Include="..\libs\cwsw_clock_services\cwsw_clock\inc\cwsw_clock.h">
+    <ClInclude Include="..\..\cwsw_clock_services\cwsw_clock\inc\cwsw_clock.h">
       <Filter>Libraries\SW Timers</Filter>
     </ClInclude>
     <ClInclude Include="..\..\cwsw_board\none\cwsw_board.h">
