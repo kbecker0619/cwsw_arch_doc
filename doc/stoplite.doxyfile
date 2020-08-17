@@ -53,12 +53,12 @@ EXCLUDE			+= ../cwsw_arch/doc/design/images/README.md
 
 ## Board Support component
 ### Note for this Doxy output, I'll use the None board (MSVC project)
-INPUT			+= ../test/libs/cwsw_board
-INCLUDE_PATH	+= ../test/libs/cwsw_board/none
-EXCLUDE 		+= ../test/libs/cwsw_board/bd_gtk
-EXCLUDE 		+= ../test/libs/cwsw_board/bd_lwcvi
-#STRIP_FROM_PATH	+= ../test/libs/cwsw_board
-#STRIP_FROM_PATH	+= ../test/libs/cwsw_board/none
+INPUT			+= ../cwsw_board
+INCLUDE_PATH	+= ../cwsw_board/none
+EXCLUDE 		+= ../cwsw_board/bd_gtk
+EXCLUDE 		+= ../cwsw_board/bd_lwcvi
+#STRIP_FROM_PATH	+= ../cwsw_board
+#STRIP_FROM_PATH	+= ../cwsw_board/none
 # BSP doesn't (yet) have `doc` folder
 
 ## Clock Services package

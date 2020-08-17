@@ -103,7 +103,7 @@
     <ClCompile Include="..\..\cwsw_lib\src\cwsw_lib.c">
       <Filter>Libraries\Cwsw Lib</Filter>
     </ClCompile>
-    <ClCompile Include="..\libs\cwsw_board\common\src\cwsw_buttons.c">
+    <ClCompile Include="..\..\cwsw_board\common\src\cwsw_buttons.c">
       <Filter>Libraries\Buttons</Filter>
     </ClCompile>
     <ClCompile Include="..\..\cwsw_sme\src\cwsw_sme.c">
@@ -112,7 +112,7 @@
     <ClCompile Include="..\..\cwsw_arch\src\i386\cwsw_arch.c">
       <Filter>Libraries\Arch</Filter>
     </ClCompile>
-    <ClCompile Include="..\libs\cwsw_board\none\src\cwsw_board.c">
+    <ClCompile Include="..\..\cwsw_board\none\src\cwsw_board.c">
       <Filter>Libraries\Board</Filter>
     </ClCompile>
   </ItemGroup>
@@ -159,10 +159,10 @@
     <ClInclude Include="..\libs\cwsw_clock_services\cwsw_clock\inc\cwsw_clock.h">
       <Filter>Libraries\SW Timers</Filter>
     </ClInclude>
-    <ClInclude Include="..\libs\cwsw_board\none\cwsw_board.h">
+    <ClInclude Include="..\..\cwsw_board\none\cwsw_board.h">
       <Filter>Libraries\Board</Filter>
     </ClInclude>
-    <ClInclude Include="..\libs\cwsw_board\cwsw_board_common.h">
+    <ClInclude Include="..\..\cwsw_board\cwsw_board_common.h">
       <Filter>Libraries\Board</Filter>
     </ClInclude>
     <ClInclude Include="..\..\app\cfg\vs2010\stdbool.h">
@@ -213,7 +213,7 @@
     <ClInclude Include="..\..\cwsw_arch\inc\i386\peripheral\ports\ports_api.h">
       <Filter>Libraries\Board</Filter>
     </ClInclude>
-    <ClInclude Include="..\libs\cwsw_board\common\cwsw_buttons.h">
+    <ClInclude Include="..\..\cwsw_board\common\cwsw_buttons.h">
       <Filter>Libraries\Buttons</Filter>
     </ClInclude>
     <ClInclude Include="..\..\cwsw_sme\inc\cwsw_sme.h">
