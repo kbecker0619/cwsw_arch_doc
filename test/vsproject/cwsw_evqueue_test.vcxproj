@@ -54,7 +54,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>..\..\cwsw_lib\inc;..\..\app\cfg;..\..\app\cfg\vs2010;..\..\cwsw_eventqueue\cwsw_event\inc;..\..\cwsw_eventqueue\cwsw_evqueue\inc;..\..\cwsw_eventqueue\cwsw_evqueue_ex\inc;..\libs\cwsw_evqueue_test\cwsw_clock\inc;..\libs\cwsw_evqueue_test\cwsw_swtimer\inc;..\..\cwsw_clock_services\cwsw_clock\inc;..\..\cwsw_clock_services\cwsw_swtimer\inc;..\..\cwsw_arch\inc\i386;..\..\cwsw_board\none\;..\..\cwsw_board\common\;..\..\cwsw_sme\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\cfg_cwsw;..\..\cfg_cwsw\vs2010;..\..\cfg_tedlos;..\..\cwsw_lib\inc;..\..\cwsw_arch\inc\i386;..\..\cwsw_board\none\;..\..\cwsw_board\common\;..\..\cwsw_eventqueue\cwsw_event\inc;..\..\cwsw_eventqueue\cwsw_evqueue\inc;..\..\cwsw_eventqueue\cwsw_evqueue_ex\inc;..\..\cwsw_evqueue_test\cwsw_clock\inc;..\..\cwsw_evqueue_test\cwsw_swtimer\inc;..\..\cwsw_clock_services\cwsw_clock\inc;..\..\cwsw_clock_services\cwsw_swtimer\inc;..\..\cwsw_sme\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAsManaged>false</CompileAsManaged>
       <ExceptionHandling>false</ExceptionHandling>
       <DisableSpecificWarnings>4127</DisableSpecificWarnings>
@@ -85,15 +85,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\cwsw_eventqueue\cwsw_event\doc\readme.md" />
-    <None Include="..\..\cwsw_eventqueue\cwsw_evqueue\doc\readme.md" />
-    <None Include="..\..\cwsw_eventqueue\cwsw_evqueue\inc\readme.md" />
-    <None Include="..\..\cwsw_eventqueue\cwsw_evqueue\readme.md" />
-    <None Include="..\..\cwsw_eventqueue\cwsw_evqueue\src\readme.md" />
-    <None Include="..\..\cwsw_eventqueue\cwsw_evqueue_ex\doc\readme.md" />
     <None Include="..\..\cwsw_eventqueue\cwsw_evqueue_ex\src\cwsw_evq_proj.h.template" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\app\app-di-buttons.c" />
+    <ClCompile Include="..\..\app\app-do-lamps.c" />
+    <ClCompile Include="..\..\app\console_keyin.c" />
+    <ClCompile Include="..\..\app\stoplite-sme.c" />
+    <ClCompile Include="..\..\app\tedlos.c" />
+    <ClCompile Include="..\..\app\tedlos_scheduler.c" />
     <ClCompile Include="..\..\cwsw_arch\src\i386\cwsw_arch.c" />
     <ClCompile Include="..\..\cwsw_sme\src\cwsw_sme.c" />
     <ClCompile Include="..\..\cwsw_board\common\src\cwsw_buttons.c" />
@@ -113,16 +113,13 @@
   <ItemGroup>
     <ClInclude Include="..\..\app\app-di-buttons.h" />
     <ClInclude Include="..\..\app\app-do-lamps.h" />
-    <ClInclude Include="..\..\app\cfg\cwsw_event_proj.h" />
-    <ClInclude Include="..\..\app\cfg\projcfg.h" />
-    <ClInclude Include="..\..\app\cfg\projevtnames.h" />
-    <ClInclude Include="..\..\app\cfg\tedlosevents.h" />
-    <ClInclude Include="..\..\app\cfg\tedlos_cfg.h" />
-    <ClInclude Include="..\..\app\cfg\vs2010\stdbool.h" />
-    <ClInclude Include="..\..\app\cfg\vs2010\stdint.h" />
+    <ClInclude Include="..\..\app\console_keyin.h" />
     <ClInclude Include="..\..\app\stoplite.h" />
     <ClInclude Include="..\..\app\tedlos.h" />
     <ClInclude Include="..\..\app\tedlos_scheduler.h" />
+    <ClInclude Include="..\..\cfg_tedlos\ManagedAlarms.h" />
+    <ClInclude Include="..\..\cfg_tedlos\tedlosevents.h" />
+    <ClInclude Include="..\..\cfg_tedlos\tedlos_cfg.h" />
     <ClInclude Include="..\..\cwsw_sme\inc\cwsw_sme.h" />
     <ClInclude Include="..\..\cwsw_arch\inc\cwsw_arch_common.h" />
     <ClInclude Include="..\..\cwsw_arch\inc\i386\cwsw_arch.h" />

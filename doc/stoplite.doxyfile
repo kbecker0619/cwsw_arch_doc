@@ -104,7 +104,9 @@ EXCLUDE 		+= ../cwsw_sme/test
 
 ## Application
 INPUT           += ../app
-INPUT			+= ../cfg
+INPUT			+= ../cfg_cwsw
+INPUT			+= ../cfg_tedlos
 INCLUDE_PATH    += ../app
-INCLUDE_PATH	+= ../cfg
+INCLUDE_PATH	+= ../cfg_cwsw
+INCLUDE_PATH	+= ../cfg_tedlos
 #EXCLUDE 		+= ../component/cwsw_sme/readme.md

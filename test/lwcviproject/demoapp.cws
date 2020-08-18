@@ -8,10 +8,10 @@ Number of Projects = 1
 Active Project = 1
 Project 0001 = "demoapp.prj"
 Drag Bar Left = 212
-Window Top = 85
-Window Left = 58
-Window Bottom = 1018
-Window Right = 1234
+Window Top = 215
+Window Left = 732
+Window Bottom = 1148
+Window Right = 1908
 Maximized = False
 Maximized Children = True
 Max Number Of Errors = 20
@@ -48,7 +48,6 @@ In Projects = "1,"
 Window Top = 33
 Window Left = 10
 Source Window State = "1,305,305,305,36,55,36,0,0,0,0,0,0,0,0,0,227,0,316,8,349,676,1,0,"
-Breakpoint 0001 = "512,0,disabled,"
 
 [File 0002]
 Path = "/c/_Projects/cwsw_evqueue_test/cwsw_board/bd_lwcvi/src/cwsw_board.c"
@@ -58,9 +57,6 @@ In Projects = "1,"
 Window Top = 188
 Window Left = 90
 Source Window State = "1,89,89,89,4,20,20,0,0,0,0,0,0,0,0,0,69,0,99,29,401,623,1,0,"
-Breakpoint 0001 = "65,0,disabled,"
-Breakpoint 0002 = "77,0,disabled,"
-Breakpoint 0003 = "114,0,enabled,"
 
 [File 0003]
 Path = "/c/_Projects/cwsw_evqueue_test/app/app-do-lamps.c"
@@ -70,7 +66,6 @@ In Projects = "1,"
 Window Top = 164
 Window Left = 76
 Source Window State = "1,129,129,129,13,14,13,0,0,0,0,0,0,0,0,0,72,0,87,12,401,623,1,0,"
-Breakpoint 0001 = "103,0,disabled,"
 
 [File 0004]
 Path = "/c/_Projects/cwsw_evqueue_test/app/app-di-buttons.c"
@@ -79,7 +74,7 @@ Disk Date = 3680554957
 In Projects = "1,"
 Window Top = 110
 Window Left = 48
-Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,14,401,623,1,0,"
+Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,30,36,401,623,1,0,"
 
 [File 0005]
 Path = "/c/_Projects/cwsw_evqueue_test/app/app-do-lamps.h"
@@ -189,7 +184,7 @@ Disk Date = 3680554971
 In Projects = "1,"
 Window Top = 56
 Window Left = 20
-Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,255,0,0,0,401,623,1,0,"
+Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,270,0,0,0,401,623,1,0,"
 
 [File 0017]
 Path = "/c/_Projects/cwsw_evqueue_test/cwsw_board/common/cwsw_buttons.h"
@@ -235,16 +230,16 @@ Disk Date = 3680554974
 In Projects = "1,"
 Window Top = 157
 Window Left = 74
-Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,28,0,401,595,1,0,"
+Source Window State = "1,27,27,27,10,25,25,0,0,0,0,0,0,0,0,0,30,0,30,28,401,595,1,0,"
 
 [File 0022]
-Path = "/c/_Projects/cwsw_evqueue_test/cfg/cwsw_event_proj.h"
+Path = "/c/_Projects/cwsw_evqueue_test/cfg_cwsw/cwsw_event_proj.h"
 File Type = "Include"
 Disk Date = 3680554957
 In Projects = "1,"
-Window Top = 281
-Window Left = 138
-Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,71,349,676,1,0,"
+Window Top = 137
+Window Left = 62
+Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,401,623,1,0,"
 
 [File 0023]
 Path = "/c/_Projects/cwsw_evqueue_test/cwsw_eventqueue/cwsw_event/src/cwsw_eventtable.c"
@@ -358,7 +353,7 @@ Disk Date = 3680554984
 In Projects = "1,"
 Window Top = 95
 Window Left = 42
-Source Window State = "1,71,71,71,7,15,15,0,0,0,0,0,0,0,0,0,91,0,122,28,401,595,1,0,"
+Source Window State = "1,71,71,71,7,15,15,0,0,0,0,0,0,0,0,0,6,0,18,9,401,595,1,0,"
 
 [File 0035]
 Path = "/c/_Projects/cwsw_evqueue_test/cwsw_sme/src/cwsw_sme.c"
@@ -417,49 +412,49 @@ Window Left = 42
 Source Window State = "1,85,85,85,18,19,18,0,3,0,0,0,0,0,0,0,75,0,85,19,349,676,1,0,"
 
 [File 0041]
-Path = "/c/_Projects/cwsw_evqueue_test/cfg/ManagedAlarms.h"
+Path = "/c/_Projects/cwsw_evqueue_test/cfg_tedlos/ManagedAlarms.h"
 File Type = "Include"
 Disk Date = 3680554957
 In Projects = "1,"
-Window Top = 219
-Window Left = 106
-Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,12,0,28,16,349,676,1,0,"
+Window Top = 164
+Window Left = 76
+Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,401,623,1,0,"
 
 [File 0042]
-Path = "/c/_Projects/cwsw_evqueue_test/cfg/projcfg.h"
+Path = "/c/_Projects/cwsw_evqueue_test/cfg_cwsw/projcfg.h"
 File Type = "Include"
 Disk Date = 3680554957
 In Projects = "1,"
-Window Top = 343
-Window Left = 170
-Source Window State = "1,150,151,150,0,0,0,0,0,0,0,0,0,0,0,0,78,0,21,0,349,676,1,0,"
+Window Top = 83
+Window Left = 34
+Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,401,623,1,0,"
 
 [File 0043]
-Path = "/c/_Projects/cwsw_evqueue_test/cfg/projevtnames.h"
+Path = "/c/_Projects/cwsw_evqueue_test/cfg_cwsw/projevtnames.h"
 File Type = "Include"
 Disk Date = 3680554957
 In Projects = "1,"
-Window Top = 33
-Window Left = 10
-Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,11,43,401,595,1,0,"
+Window Top = 110
+Window Left = 48
+Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,401,623,1,0,"
 
 [File 0044]
-Path = "/c/_Projects/cwsw_evqueue_test/cfg/vs2010/stdbool.h"
+Path = "/c/_Projects/cwsw_evqueue_test/cfg_cwsw/vs2010/stdbool.h"
 File Type = "Include"
 Disk Date = 3680554957
 In Projects = "1,"
-Window Top = 126
-Window Left = 58
-Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27,0,66,0,401,623,1,0,"
+Window Top = 191
+Window Left = 90
+Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,401,623,1,0,"
 
 [File 0045]
-Path = "/c/_Projects/cwsw_evqueue_test/cfg/vs2010/stdint.h"
+Path = "/c/_Projects/cwsw_evqueue_test/cfg_cwsw/vs2010/stdint.h"
 File Type = "Include"
 Disk Date = 3680554957
 In Projects = "1,"
-Window Top = 126
-Window Left = 58
-Source Window State = "1,47,47,47,24,32,32,0,0,0,0,0,0,0,0,0,35,0,44,0,401,595,1,0,"
+Window Top = 218
+Window Left = 104
+Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,401,623,1,0,"
 
 [File 0046]
 Path = "/c/_Projects/cwsw_evqueue_test/app/stoplite.h"
@@ -477,7 +472,7 @@ Disk Date = 3680554957
 In Projects = "1,"
 Window Top = 157
 Window Left = 74
-Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,109,0,119,0,349,676,1,0,"
+Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,109,0,141,20,349,676,1,0,"
 
 [File 0048]
 Path = "/c/_Projects/cwsw_evqueue_test/app/tedlos.h"
@@ -486,16 +481,16 @@ Disk Date = 3680554957
 In Projects = "1,"
 Window Top = 405
 Window Left = 202
-Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,349,676,1,0,"
+Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,30,18,349,676,1,0,"
 
 [File 0049]
-Path = "/c/_Projects/cwsw_evqueue_test/cfg/tedlos_cfg.h"
+Path = "/c/_Projects/cwsw_evqueue_test/cfg_tedlos/tedlos_cfg.h"
 File Type = "Include"
 Disk Date = 3680554957
 In Projects = "1,"
-Window Top = 250
-Window Left = 122
-Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,349,676,1,0,"
+Window Top = 29
+Window Left = 6
+Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,401,623,1,0,"
 
 [File 0050]
 Path = "/c/_Projects/cwsw_evqueue_test/app/tedlos_scheduler.c"
@@ -507,13 +502,13 @@ Window Left = 186
 Source Window State = "1,162,163,162,0,0,0,0,0,0,0,0,0,0,0,0,135,0,150,0,349,676,1,0,"
 
 [File 0051]
-Path = "/c/_Projects/cwsw_evqueue_test/cfg/tedlosevents.h"
+Path = "/c/_Projects/cwsw_evqueue_test/cfg_tedlos/tedlosevents.h"
 File Type = "Include"
-Disk Date = 3680554957
+Disk Date = 3680582758
 In Projects = "1,"
-Window Top = 188
-Window Left = 90
-Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,349,676,1,0,"
+Window Top = 56
+Window Left = 20
+Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,401,623,1,0,"
 
 [Build Options 0001]
 Generate Browse Info = True

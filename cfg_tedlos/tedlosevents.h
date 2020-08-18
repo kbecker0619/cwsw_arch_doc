@@ -18,7 +18,6 @@
 // ----	System Headers --------------------------
 
 // ----	Project Headers -------------------------
-#include "cwsw_event.h"		/* kEvQ_Ev_None */
 
 // ----	Module Headers --------------------------
 
@@ -46,10 +45,10 @@ enum { kTedlos_EvQueueSize = 16 };
  *	done in alarms, in the order of alarms listed in the ManageAlarms define elsewhere.
  */
 enum eOsEvqEvents {
-	evOsNullEvent = kEvQ_Ev_None,	//!< RESERVED NAME AND VALUE, used for initialization
-	evOs_NotInit,					//!< By CWSW convention, 1 is always "component not initialized"
-	evOs_AlreadyInit,				//!< BY CWSW convention, 2 is "already initialized"
-	evOs_QuitRqst,					//!< reserved name, used by scheduler to terminate its scheduling loop
+	evOsNullEvent,			//!< Reserved name and value, used for initialization.
+	evOs_NotInit,			//!< By CWSW convention, 1 is always "component not initialized"
+	evOs_AlreadyInit,		//!< BY CWSW convention, 2 is "already initialized"
+	evOs_QuitRqst,			//!< reserved name, used by scheduler to terminate its scheduling loop
 
 	evOs_TmrHeartbeat,
 	evOs_Task10ms,
