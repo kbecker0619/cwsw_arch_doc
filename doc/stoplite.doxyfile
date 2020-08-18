@@ -104,5 +104,7 @@ EXCLUDE 		+= ../cwsw_sme/test
 
 ## Application
 INPUT           += ../app
+INPUT			+= ../cfg
 INCLUDE_PATH    += ../app
+INCLUDE_PATH	+= ../cfg
 #EXCLUDE 		+= ../component/cwsw_sme/readme.md

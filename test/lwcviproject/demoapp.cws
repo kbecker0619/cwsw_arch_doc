@@ -43,7 +43,7 @@ Batch Build Debug = True
 [File 0001]
 Path = "/c/_Projects/cwsw_evqueue_test/app/stoplite-sme.c"
 File Type = "CSource"
-Disk Date = 3680506422
+Disk Date = 3680554957
 In Projects = "1,"
 Window Top = 33
 Window Left = 10
@@ -53,7 +53,7 @@ Breakpoint 0001 = "512,0,disabled,"
 [File 0002]
 Path = "/c/_Projects/cwsw_evqueue_test/cwsw_board/bd_lwcvi/src/cwsw_board.c"
 File Type = "CSource"
-Disk Date = 3680506432
+Disk Date = 3680554971
 In Projects = "1,"
 Window Top = 188
 Window Left = 90
@@ -65,7 +65,7 @@ Breakpoint 0003 = "114,0,enabled,"
 [File 0003]
 Path = "/c/_Projects/cwsw_evqueue_test/app/app-do-lamps.c"
 File Type = "CSource"
-Disk Date = 3680506422
+Disk Date = 3680554957
 In Projects = "1,"
 Window Top = 164
 Window Left = 76
@@ -75,7 +75,7 @@ Breakpoint 0001 = "103,0,disabled,"
 [File 0004]
 Path = "/c/_Projects/cwsw_evqueue_test/app/app-di-buttons.c"
 File Type = "CSource"
-Disk Date = 3680506422
+Disk Date = 3680554957
 In Projects = "1,"
 Window Top = 110
 Window Left = 48
@@ -84,7 +84,7 @@ Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,14,401,623,1,0,"
 [File 0005]
 Path = "/c/_Projects/cwsw_evqueue_test/app/app-do-lamps.h"
 File Type = "Include"
-Disk Date = 3680506422
+Disk Date = 3680554957
 In Projects = "1,"
 Window Top = 191
 Window Left = 90
@@ -93,7 +93,7 @@ Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33,0,33,0,401,623,1,0,"
 [File 0006]
 Path = "/c/_Projects/cwsw_evqueue_test/cwsw_board/bd_lwcvi/src/bd-di-buttons-cvi.c"
 File Type = "CSource"
-Disk Date = 3680506432
+Disk Date = 3680554971
 In Projects = "1,"
 Window Top = 64
 Window Left = 26
@@ -102,7 +102,7 @@ Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,0,18,9,401,623,1,0,"
 [File 0007]
 Path = "/c/_Projects/cwsw_evqueue_test/app/board.uir"
 File Type = "User Interface Resource"
-Disk Date = 3680506422
+Disk Date = 3680554957
 In Projects = "1,"
 Window Top = 56
 Window Left = 20
@@ -112,7 +112,7 @@ Window Width = 623
 [File 0008]
 Path = "/c/_Projects/cwsw_evqueue_test/app/cwsw_lib_prj/CritSect.c"
 File Type = "CSource"
-Disk Date = 3680506422
+Disk Date = 3680554957
 In Projects = "1,"
 Window Top = 374
 Window Left = 186
@@ -121,7 +121,7 @@ Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,74,0,84,4,349,676,1,0,"
 [File 0009]
 Path = "/c/_Projects/cwsw_evqueue_test/cwsw_lib/inc/ctassert.h"
 File Type = "Include"
-Disk Date = 3680506433
+Disk Date = 3680554984
 In Projects = "1,"
 Window Top = 126
 Window Left = 58
@@ -130,7 +130,7 @@ Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,401,623,1,0,"
 [File 0010]
 Path = "/c/_Projects/cwsw_evqueue_test/cwsw_arch/src/i386/cwsw_arch.c"
 File Type = "CSource"
-Disk Date = 3680506431
+Disk Date = 3680554969
 In Projects = "1,"
 Window Top = 83
 Window Left = 34
@@ -139,7 +139,7 @@ Source Window State = "1,100,100,100,8,31,31,0,0,0,0,0,0,0,0,0,80,0,117,40,401,6
 [File 0011]
 Path = "/c/_Projects/cwsw_evqueue_test/cwsw_arch/inc/i386/cwsw_arch.h"
 File Type = "Include"
-Disk Date = 3680506431
+Disk Date = 3680554969
 In Projects = "1,"
 Window Top = 56
 Window Left = 20
@@ -148,7 +148,7 @@ Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,401,623,1,0,"
 [File 0012]
 Path = "/c/_Projects/cwsw_evqueue_test/cwsw_board/bd_lwcvi/cwsw_board.h"
 File Type = "Include"
-Disk Date = 3680506432
+Disk Date = 3680554971
 In Projects = "1,"
 Window Top = 219
 Window Left = 106
@@ -157,7 +157,7 @@ Source Window State = "1,42,42,42,5,22,22,0,3,0,0,0,0,0,0,0,0,0,42,5,401,595,1,0
 [File 0013]
 Path = "/c/_Projects/cwsw_evqueue_test/cwsw_board/cwsw_board_common.h"
 File Type = "Include"
-Disk Date = 3680506432
+Disk Date = 3680554971
 In Projects = "1,"
 Window Top = 157
 Window Left = 74
@@ -166,7 +166,7 @@ Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,401,623,1,0,"
 [File 0014]
 Path = "/c/_Projects/cwsw_evqueue_test/cwsw_board/bd_lwcvi/src/cwsw_board_cvi_ui.c"
 File Type = "CSource"
-Disk Date = 3680506432
+Disk Date = 3680554971
 In Projects = "1,"
 Window Top = 27
 Window Left = 8
@@ -176,7 +176,7 @@ Source Window State = "1,17,18,18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,23,0,1009,854,0,0,
 [File 0015]
 Path = "/c/_Projects/cwsw_evqueue_test/cwsw_board/bd_lwcvi/src/cwsw_board_ui.h"
 File Type = "Include"
-Disk Date = 3680506432
+Disk Date = 3680554971
 In Projects = "1,"
 Window Top = 137
 Window Left = 62
@@ -185,7 +185,7 @@ Source Window State = "1,38,38,38,22,28,22,0,0,0,0,0,0,0,0,0,7,0,38,23,371,623,1
 [File 0016]
 Path = "/c/_Projects/cwsw_evqueue_test/cwsw_board/common/src/cwsw_buttons.c"
 File Type = "CSource"
-Disk Date = 3680506432
+Disk Date = 3680554971
 In Projects = "1,"
 Window Top = 56
 Window Left = 20
@@ -194,7 +194,7 @@ Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,255,0,0,0,401,623,1,0,"
 [File 0017]
 Path = "/c/_Projects/cwsw_evqueue_test/cwsw_board/common/cwsw_buttons.h"
 File Type = "Include"
-Disk Date = 3680506432
+Disk Date = 3680554971
 In Projects = "1,"
 Window Top = 56
 Window Left = 20
@@ -203,7 +203,7 @@ Source Window State = "1,19,19,19,10,18,18,0,0,0,0,0,0,0,0,0,0,0,19,13,401,623,1
 [File 0018]
 Path = "/c/_Projects/cwsw_evqueue_test/cwsw_clock_services/cwsw_clock/inc/cwsw_clock.h"
 File Type = "Include"
-Disk Date = 3680506437
+Disk Date = 3680554972
 In Projects = "1,"
 Window Top = 64
 Window Left = 26
@@ -213,7 +213,7 @@ Source Window State = "1,63,64,63,0,0,0,0,0,0,0,0,0,0,0,0,43,0,64,0,401,595,1,0,
 Path Line0001 = "/c/_Projects/cwsw_evqueue_test/cwsw_clock_services/cwsw_clock/src/cwsw_clock_svc"
 Path Line0002 = ".c"
 File Type = "CSource"
-Disk Date = 3680506437
+Disk Date = 3680554972
 In Projects = "1,"
 Window Top = 56
 Window Left = 20
@@ -222,7 +222,7 @@ Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,59,0,75,0,401,623,1,0,"
 [File 0020]
 Path = "/c/_Projects/cwsw_evqueue_test/cwsw_eventqueue/cwsw_event/src/cwsw_event.c"
 File Type = "CSource"
-Disk Date = 3680506438
+Disk Date = 3680554974
 In Projects = "1,"
 Window Top = 29
 Window Left = 6
@@ -231,16 +231,16 @@ Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,13,401,623,1,0,"
 [File 0021]
 Path = "/c/_Projects/cwsw_evqueue_test/cwsw_eventqueue/cwsw_event/inc/cwsw_event.h"
 File Type = "Include"
-Disk Date = 3680506438
+Disk Date = 3680554974
 In Projects = "1,"
 Window Top = 157
 Window Left = 74
 Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,28,0,401,595,1,0,"
 
 [File 0022]
-Path = "/c/_Projects/cwsw_evqueue_test/app/cfg/cwsw_event_proj.h"
+Path = "/c/_Projects/cwsw_evqueue_test/cfg/cwsw_event_proj.h"
 File Type = "Include"
-Disk Date = 3680506422
+Disk Date = 3680554957
 In Projects = "1,"
 Window Top = 281
 Window Left = 138
@@ -249,7 +249,7 @@ Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,71,349,676,1,0,"
 [File 0023]
 Path = "/c/_Projects/cwsw_evqueue_test/cwsw_eventqueue/cwsw_event/src/cwsw_eventtable.c"
 File Type = "CSource"
-Disk Date = 3680506438
+Disk Date = 3680554974
 In Projects = "1,"
 Window Top = 56
 Window Left = 20
@@ -258,7 +258,7 @@ Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,85,0,97,7,401,623,1,0,"
 [File 0024]
 Path = "/c/_Projects/cwsw_evqueue_test/cwsw_eventqueue/cwsw_event/inc/cwsw_eventtable.h"
 File Type = "Include"
-Disk Date = 3680506438
+Disk Date = 3680554974
 In Projects = "1,"
 Window Top = 188
 Window Left = 90
@@ -268,7 +268,7 @@ Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,24,0,401,595,1,0,"
 Path Line0001 = "/c/_Projects/cwsw_evqueue_test/cwsw_eventqueue/cwsw_evqueue_ex/src/cwsw_evhandle"
 Path Line0002 = "r.c"
 File Type = "CSource"
-Disk Date = 3680506438
+Disk Date = 3680554974
 In Projects = "1,"
 Window Top = 137
 Window Left = 62
@@ -278,7 +278,7 @@ Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,80,0,111,51,401,623,1,0,"
 Path Line0001 = "/c/_Projects/cwsw_evqueue_test/cwsw_eventqueue/cwsw_evqueue_ex/inc/cwsw_evhandle"
 Path Line0002 = "r.h"
 File Type = "Include"
-Disk Date = 3680506438
+Disk Date = 3680554974
 In Projects = "1,"
 Window Top = 95
 Window Left = 42
@@ -287,7 +287,7 @@ Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,21,0,401,623,1,0,"
 [File 0027]
 Path = "/c/_Projects/cwsw_evqueue_test/cwsw_eventqueue/cwsw_evqueue/src/cwsw_evqueue.c"
 File Type = "CSource"
-Disk Date = 3680506438
+Disk Date = 3680554974
 In Projects = "1,"
 Window Top = 218
 Window Left = 104
@@ -296,7 +296,7 @@ Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,238,0,256,0,401,623,1,0,"
 [File 0028]
 Path = "/c/_Projects/cwsw_evqueue_test/cwsw_eventqueue/cwsw_evqueue/inc/cwsw_evqueue.h"
 File Type = "Include"
-Disk Date = 3680506438
+Disk Date = 3680554974
 In Projects = "1,"
 Window Top = 157
 Window Left = 74
@@ -306,7 +306,7 @@ Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,25,0,401,623,1,0,"
 Path Line0001 = "/c/_Projects/cwsw_evqueue_test/cwsw_eventqueue/cwsw_evqueue_ex/src/cwsw_evqueue_"
 Path Line0002 = "ex.c"
 File Type = "CSource"
-Disk Date = 3680506438
+Disk Date = 3680554974
 In Projects = "1,"
 Window Top = 164
 Window Left = 76
@@ -316,7 +316,7 @@ Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,198,0,221,0,401,623,1,0,"
 Path Line0001 = "/c/_Projects/cwsw_evqueue_test/cwsw_eventqueue/cwsw_evqueue_ex/inc/cwsw_evqueue_"
 Path Line0002 = "ex.h"
 File Type = "Include"
-Disk Date = 3680506438
+Disk Date = 3680554974
 In Projects = "1,"
 Window Top = 33
 Window Left = 10
@@ -326,7 +326,7 @@ Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,24,0,401,623,1,0,"
 Path Line0001 = "/c/_Projects/cwsw_evqueue_test/cwsw_eventqueue/cwsw_evqueue_ex/src/cwsw_evthndlr"
 Path Line0002 = "assoc.c"
 File Type = "CSource"
-Disk Date = 3680506438
+Disk Date = 3680554974
 In Projects = "1,"
 Window Top = 191
 Window Left = 90
@@ -336,7 +336,7 @@ Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,32,51,401,623,1,0,"
 Path Line0001 = "/c/_Projects/cwsw_evqueue_test/cwsw_eventqueue/cwsw_evqueue_ex/inc/cwsw_evthndlr"
 Path Line0002 = "assoc.h"
 File Type = "Include"
-Disk Date = 3680506438
+Disk Date = 3680554974
 In Projects = "1,"
 Window Top = 64
 Window Left = 26
@@ -345,7 +345,7 @@ Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,23,0,401,623,1,0,"
 [File 0033]
 Path = "/c/_Projects/cwsw_evqueue_test/cwsw_lib/src/cwsw_lib.c"
 File Type = "CSource"
-Disk Date = 3680506433
+Disk Date = 3680554984
 In Projects = "1,"
 Window Top = 83
 Window Left = 34
@@ -354,7 +354,7 @@ Source Window State = "1,110,110,110,4,23,23,0,0,0,0,0,0,0,0,0,244,0,256,4,401,6
 [File 0034]
 Path = "/c/_Projects/cwsw_evqueue_test/cwsw_lib/inc/cwsw_lib.h"
 File Type = "Include"
-Disk Date = 3680506433
+Disk Date = 3680554984
 In Projects = "1,"
 Window Top = 95
 Window Left = 42
@@ -363,7 +363,7 @@ Source Window State = "1,71,71,71,7,15,15,0,0,0,0,0,0,0,0,0,91,0,122,28,401,595,
 [File 0035]
 Path = "/c/_Projects/cwsw_evqueue_test/cwsw_sme/src/cwsw_sme.c"
 File Type = "CSource"
-Disk Date = 3680506422
+Disk Date = 3680554957
 In Projects = "1,"
 Window Top = 29
 Window Left = 6
@@ -372,7 +372,7 @@ Source Window State = "1,1,1,1,12,51,12,0,0,0,0,0,0,0,0,0,0,0,1,55,401,623,1,0,"
 [File 0036]
 Path = "/c/_Projects/cwsw_evqueue_test/cwsw_sme/inc/cwsw_sme.h"
 File Type = "Include"
-Disk Date = 3680506422
+Disk Date = 3680554957
 In Projects = "1,"
 Window Top = 29
 Window Left = 6
@@ -382,7 +382,7 @@ Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,401,623,1,0,"
 Path Line0001 = "/c/_Projects/cwsw_evqueue_test/cwsw_clock_services/cwsw_swtimer/src/cwsw_swtimer"
 Path Line0002 = ".c"
 File Type = "CSource"
-Disk Date = 3680506437
+Disk Date = 3680554972
 In Projects = "1,"
 Window Top = 29
 Window Left = 6
@@ -392,7 +392,7 @@ Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,78,0,106,41,401,623,1,0,"
 Path Line0001 = "/c/_Projects/cwsw_evqueue_test/cwsw_clock_services/cwsw_swtimer/inc/cwsw_swtimer"
 Path Line0002 = ".h"
 File Type = "Include"
-Disk Date = 3680506437
+Disk Date = 3680554972
 In Projects = "1,"
 Window Top = 219
 Window Left = 106
@@ -401,7 +401,7 @@ Source Window State = "1,20,21,20,0,0,0,0,0,0,0,0,0,0,0,0,96,0,23,0,401,623,1,0,
 [File 0039]
 Path = "/c/_Projects/cwsw_evqueue_test/cwsw_board/bd_lwcvi/src/di_button_callbacks.c"
 File Type = "CSource"
-Disk Date = 3680506432
+Disk Date = 3680554971
 In Projects = "1,"
 Window Top = 29
 Window Left = 6
@@ -410,52 +410,52 @@ Source Window State = "1,160,160,160,43,51,51,0,0,0,0,0,0,0,0,0,143,0,160,8,401,
 [File 0040]
 Path = "/c/_Projects/cwsw_evqueue_test/app/main.c"
 File Type = "CSource"
-Disk Date = 3680552870
+Disk Date = 3680554957
 In Projects = "1,"
 Window Top = 95
 Window Left = 42
 Source Window State = "1,85,85,85,18,19,18,0,3,0,0,0,0,0,0,0,75,0,85,19,349,676,1,0,"
 
 [File 0041]
-Path = "/c/_Projects/cwsw_evqueue_test/app/cfg/ManagedAlarms.h"
+Path = "/c/_Projects/cwsw_evqueue_test/cfg/ManagedAlarms.h"
 File Type = "Include"
-Disk Date = 3680506422
+Disk Date = 3680554957
 In Projects = "1,"
 Window Top = 219
 Window Left = 106
 Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,12,0,28,16,349,676,1,0,"
 
 [File 0042]
-Path = "/c/_Projects/cwsw_evqueue_test/app/cfg/projcfg.h"
+Path = "/c/_Projects/cwsw_evqueue_test/cfg/projcfg.h"
 File Type = "Include"
-Disk Date = 3680506422
+Disk Date = 3680554957
 In Projects = "1,"
 Window Top = 343
 Window Left = 170
 Source Window State = "1,150,151,150,0,0,0,0,0,0,0,0,0,0,0,0,78,0,21,0,349,676,1,0,"
 
 [File 0043]
-Path = "/c/_Projects/cwsw_evqueue_test/app/cfg/projevtnames.h"
+Path = "/c/_Projects/cwsw_evqueue_test/cfg/projevtnames.h"
 File Type = "Include"
-Disk Date = 3680506422
+Disk Date = 3680554957
 In Projects = "1,"
 Window Top = 33
 Window Left = 10
 Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,11,43,401,595,1,0,"
 
 [File 0044]
-Path = "/c/_Projects/cwsw_evqueue_test/app/cfg/vs2010/stdbool.h"
+Path = "/c/_Projects/cwsw_evqueue_test/cfg/vs2010/stdbool.h"
 File Type = "Include"
-Disk Date = 3680506422
+Disk Date = 3680554957
 In Projects = "1,"
 Window Top = 126
 Window Left = 58
 Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27,0,66,0,401,623,1,0,"
 
 [File 0045]
-Path = "/c/_Projects/cwsw_evqueue_test/app/cfg/vs2010/stdint.h"
+Path = "/c/_Projects/cwsw_evqueue_test/cfg/vs2010/stdint.h"
 File Type = "Include"
-Disk Date = 3680506422
+Disk Date = 3680554957
 In Projects = "1,"
 Window Top = 126
 Window Left = 58
@@ -464,7 +464,7 @@ Source Window State = "1,47,47,47,24,32,32,0,0,0,0,0,0,0,0,0,35,0,44,0,401,595,1
 [File 0046]
 Path = "/c/_Projects/cwsw_evqueue_test/app/stoplite.h"
 File Type = "Include"
-Disk Date = 3680506422
+Disk Date = 3680554957
 In Projects = "1,"
 Window Top = 312
 Window Left = 154
@@ -473,7 +473,7 @@ Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,11,44,349,676,1,0,"
 [File 0047]
 Path = "/c/_Projects/cwsw_evqueue_test/app/tedlos.c"
 File Type = "CSource"
-Disk Date = 3680506422
+Disk Date = 3680554957
 In Projects = "1,"
 Window Top = 157
 Window Left = 74
@@ -482,16 +482,16 @@ Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,109,0,119,0,349,676,1,0,"
 [File 0048]
 Path = "/c/_Projects/cwsw_evqueue_test/app/tedlos.h"
 File Type = "Include"
-Disk Date = 3680506422
+Disk Date = 3680554957
 In Projects = "1,"
 Window Top = 405
 Window Left = 202
 Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,349,676,1,0,"
 
 [File 0049]
-Path = "/c/_Projects/cwsw_evqueue_test/app/cfg/tedlos_cfg.h"
+Path = "/c/_Projects/cwsw_evqueue_test/cfg/tedlos_cfg.h"
 File Type = "Include"
-Disk Date = 3680506422
+Disk Date = 3680554957
 In Projects = "1,"
 Window Top = 250
 Window Left = 122
@@ -500,16 +500,16 @@ Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,349,676,1,0,"
 [File 0050]
 Path = "/c/_Projects/cwsw_evqueue_test/app/tedlos_scheduler.c"
 File Type = "CSource"
-Disk Date = 3680506422
+Disk Date = 3680554957
 In Projects = "1,"
 Window Top = 374
 Window Left = 186
 Source Window State = "1,162,163,162,0,0,0,0,0,0,0,0,0,0,0,0,135,0,150,0,349,676,1,0,"
 
 [File 0051]
-Path = "/c/_Projects/cwsw_evqueue_test/app/cfg/tedlosevents.h"
+Path = "/c/_Projects/cwsw_evqueue_test/cfg/tedlosevents.h"
 File Type = "Include"
-Disk Date = 3680506422
+Disk Date = 3680554957
 In Projects = "1,"
 Window Top = 188
 Window Left = 90
