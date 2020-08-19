@@ -85,5 +85,10 @@
 			<type>2</type>
 			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/libs</locationURI>
 		</link>
+		<link>
+			<name>os-board-fusion</name>
+			<type>2</type>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/os-board-fusion</locationURI>
+		</link>
 	</linkedResources>
 </projectDescription>

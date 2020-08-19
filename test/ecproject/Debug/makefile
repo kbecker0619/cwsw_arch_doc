@@ -8,6 +8,7 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include os-board-fusion/bd_gtk/subdir.mk
 -include cwsw_sme/src/subdir.mk
 -include cwsw_lib/src/subdir.mk
 -include cwsw_eventqueue/cwsw_evqueue_ex/src/subdir.mk

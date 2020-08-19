@@ -125,6 +125,8 @@
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../cwsw_board/common&quot;"/>
                                     									
+                                    <listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../os-board-fusion&quot;"/>
+                                    									
                                     <listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../cwsw_eventqueue/cwsw_event/inc&quot;"/>
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../cwsw_eventqueue/cwsw_evqueue/inc&quot;"/>
@@ -522,6 +524,8 @@
                                     <listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../libs/cwsw_board/common&quot;"/>
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../cfg_tedlos&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../os-board-fusion&quot;"/>
                                     								
                                 </option>
                                 								

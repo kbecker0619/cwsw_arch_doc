@@ -155,6 +155,7 @@ tedlos_schedule(ptEvQ_QueueCtrlEx tedlos_evqx)
  *	If tedlos is configured to be interrupt driven, defer to the "start scheduler" from the BSP.
  *	@param tedlos_evqx [in,out]	Event queue to be used by the OS.
  */
+#include "bdsched.h"
 void
 tedlos__do(ptEvQ_QueueCtrlEx tedlos_evqx)
 {

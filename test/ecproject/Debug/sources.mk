@@ -36,4 +36,5 @@ cwsw_eventqueue/cwsw_evqueue/src \
 cwsw_eventqueue/cwsw_evqueue_ex/src \
 cwsw_lib/src \
 cwsw_sme/src \
+os-board-fusion/bd_gtk \
 
