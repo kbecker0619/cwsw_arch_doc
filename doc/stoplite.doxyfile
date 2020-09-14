@@ -13,6 +13,16 @@ DOT_GRAPH_MAX_NODES    = 150
 # pick one of the supported IDEs to enable the appropriate code macros
 PREDEFINED		+=  XPRJ_NB_Debug=1
 
+
+# ==================================
+
+GENERATE_XML           = YES
+XML_OUTPUT             = xml
+XML_PROGRAMLISTING     = NO
+
+
+# ==================================
+
 # Note for each section below:
 # the "STRIP_FROM_PATH" configuration is a PROJECT-SPECIFIC formatting option that applies to
 #	includes and included-by graphs. this is necessarily a project-specific configuration:
@@ -51,6 +61,7 @@ EXCLUDE			+= ../cwsw_arch/doc/design/images/README.md
 #STRIP_FROM_PATH	+= ../cwsw_arch/src
 #STRIP_FROM_PATH	+= ../cwsw_arch/inc
 
+
 ## Board Support component
 ### Note for this Doxy output, I'll use the None board (MSVC project)
 INPUT			+= ../cwsw_board
@@ -60,6 +71,7 @@ EXCLUDE 		+= ../cwsw_board/bd_lwcvi
 #STRIP_FROM_PATH	+= ../cwsw_board
 #STRIP_FROM_PATH	+= ../cwsw_board/none
 # BSP doesn't (yet) have `doc` folder
+
 
 ## Clock Services package
 #### This package has 2 components in it: clock, and timers
@@ -77,21 +89,27 @@ EXCLUDE 		+= ../cwsw_clock_services/cwsw_swtimer/README.md
 EXCLUDE			+= ../cwsw_clock_services/cwsw_swtimer/test
 EXCLUDE 		+= ../cwsw_clock_services/cwsw_swtimer/doc/README.md
 
+
 ## Event Queue package
+#### This package contains components Event, Event Queue, and Extended Ev Queue
 ### Event component
 INPUT           += ../cwsw_eventqueue/cwsw_event
 INCLUDE_PATH    += ../cwsw_eventqueue/cwsw_event/inc
 EXCLUDE 		+= ../cwsw_eventqueue/cwsw_event/readme.md
+EXCLUDE 		+= ../cwsw_eventqueue/cwsw_event/doc/readme.md
 
 ### Event Queue component
 INPUT           += ../cwsw_eventqueue/cwsw_evqueue
 INCLUDE_PATH    += ../cwsw_eventqueue/cwsw_evqueue/inc
 EXCLUDE 		+= ../cwsw_eventqueue/cwsw_evqueue/readme.md
+# in this component, the doc readme has a bunch of content. todo: move to its own page in output
 
 ### Event Queue Extended component
 INPUT           += ../cwsw_eventqueue/cwsw_evqueue_ex
 INCLUDE_PATH    += ../cwsw_eventqueue/cwsw_evqueue_ex/inc
 EXCLUDE 		+= ../cwsw_eventqueue/cwsw_evqueue_ex/readme.md
+EXCLUDE 		+= ../cwsw_eventqueue/cwsw_evqueue_ex/doc/readme.md
+
 
 ## State Machine Engine package / component
 ### Note that at the time of creation of this Doxy project, this is still a development
@@ -101,6 +119,7 @@ INPUT           += ../cwsw_sme
 INCLUDE_PATH    += ../cwsw_sme/inc
 EXCLUDE 		+= ../cwsw_sme/readme.md
 EXCLUDE 		+= ../cwsw_sme/test
+
 
 ## Application
 INPUT           += ../app

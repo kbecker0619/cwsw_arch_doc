@@ -57,7 +57,7 @@ all: EventQueue.exe
 EventQueue.exe: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MinGW C++ Linker'
-	g++ `pkg-config --libs gtk+-3.0` -o "EventQueue.exe" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ -Xlinker -Map="EventQueue.map" -Xlinker --cref `pkg-config --libs gtk+-3.0` -o "EventQueue.exe" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

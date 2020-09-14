@@ -1,7 +1,5 @@
-/** @file bdsched.h
+/** @file
  *	@brief	One-sentence short description of file.
- *
- *	Description:
  *
  *	Copyright (c) 2020 Kevin L. Becker. All rights reserved.
  *
@@ -10,9 +8,6 @@
  *	Author: kevin
  */
 
-#ifndef BDSCHED_H
-#define BDSCHED_H
-
 // ============================================================================
 // ----	Include Files ---------------------------------------------------------
 // ============================================================================
@@ -20,15 +15,9 @@
 // ----	System Headers --------------------------
 
 // ----	Project Headers -------------------------
-#include "cwsw_evqueue_ex.h"
 
 // ----	Module Headers --------------------------
-#include "cwsw_board.h"
-
-
-#ifdef	__cplusplus
-extern "C" {
-#endif
+#include "bdsched.h"
 
 
 // ============================================================================
@@ -40,21 +29,31 @@ extern "C" {
 // ============================================================================
 
 // ============================================================================
-// ----	Public Variables ------------------------------------------------------
+// ----	Global Variables ------------------------------------------------------
 // ============================================================================
 
-extern ptEvQ_QueueCtrlEx pOsEvqx;
+// ============================================================================
+// ----	Module-level Variables ------------------------------------------------
+// ============================================================================
+
+ptEvQ_QueueCtrlEx pOsEvqx = NULL;
 
 
 // ============================================================================
-// ----	Public API ------------------------------------------------------------
+// ----	Private Functions -----------------------------------------------------
 // ============================================================================
 
-extern void		Cwsw_Board__StartScheduler(ptEvQ_QueueCtrlEx pEvqx);
+// ============================================================================
+// ----	Public Functions ------------------------------------------------------
+// ============================================================================
 
-
-#ifdef	__cplusplus
+/// @todo Eliminate this dependency - buttons depend on the board; the board should not depend on the buttons.
+#include "cwsw_buttons.h"
+void
+Cwsw_Board__StartScheduler(ptEvQ_QueueCtrlEx pEvqx)
+{
+	pOsEvqx = pEvqx;		// save for heartbeat usage
+	Btn_SetQueue(evButton_Task, pEvqx);
+	gtk_main();
 }
-#endif
 
-#endif /* BDSCHED_H */

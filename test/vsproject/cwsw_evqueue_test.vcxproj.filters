@@ -112,6 +112,9 @@
     <ClCompile Include="..\..\cwsw_board\none\src\cwsw_board.c">
       <Filter>Libraries\Board</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\os-board-fusion\none\bdsched.c">
+      <Filter>Libraries\Board</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\cwsw_lib\inc\cwsw_eventsim.h">
@@ -206,6 +209,9 @@
     </ClInclude>
     <ClInclude Include="..\..\cfg_tedlos\tedlosevents.h">
       <Filter>tedlos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\os-board-fusion\bdsched.h">
+      <Filter>Libraries\Board</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

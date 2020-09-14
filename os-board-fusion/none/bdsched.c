@@ -1,10 +1,12 @@
-/** @file
+/** @file bdsched.c
  *	@brief	One-sentence short description of file.
+ *
+ *	Description:
  *
  *	Copyright (c) 2020 Kevin L. Becker. All rights reserved.
  *
  *	Original:
- *	Created on: Aug 18, 2020
+ *	Created on: Sep 12, 2020
  *	Author: kevin
  */
 
@@ -36,9 +38,6 @@
 // ----	Module-level Variables ------------------------------------------------
 // ============================================================================
 
-ptEvQ_QueueCtrlEx pOsEvqx = NULL;
-
-
 // ============================================================================
 // ----	Private Functions -----------------------------------------------------
 // ============================================================================
@@ -47,13 +46,7 @@ ptEvQ_QueueCtrlEx pOsEvqx = NULL;
 // ----	Public Functions ------------------------------------------------------
 // ============================================================================
 
-/// @todo Eliminate this dependency - buttons depend on the board; the board should not depend on the buttons.
-#include "cwsw_buttons.h"
 void
 Cwsw_Board__StartScheduler(ptEvQ_QueueCtrlEx pEvqx)
 {
-	pOsEvqx = pEvqx;		// save for heartbeat usage
-	Btn_SetQueue(pEvqx);
-	gtk_main();
 }
-

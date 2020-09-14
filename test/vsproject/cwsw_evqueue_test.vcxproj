@@ -54,7 +54,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>..\..\cfg_cwsw;..\..\cfg_cwsw\vs2010;..\..\cfg_tedlos;..\..\cwsw_lib\inc;..\..\cwsw_arch\inc\i386;..\..\cwsw_board\none\;..\..\cwsw_board\common\;..\..\cwsw_eventqueue\cwsw_event\inc;..\..\cwsw_eventqueue\cwsw_evqueue\inc;..\..\cwsw_eventqueue\cwsw_evqueue_ex\inc;..\..\cwsw_evqueue_test\cwsw_clock\inc;..\..\cwsw_evqueue_test\cwsw_swtimer\inc;..\..\cwsw_clock_services\cwsw_clock\inc;..\..\cwsw_clock_services\cwsw_swtimer\inc;..\..\cwsw_sme\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\cfg_cwsw;..\..\cfg_cwsw\vs2010;..\..\cfg_tedlos;..\..\cwsw_lib\inc;..\..\cwsw_arch\inc\i386;..\..\cwsw_board\none\;..\..\cwsw_board\common\;..\..\cwsw_eventqueue\cwsw_event\inc;..\..\cwsw_eventqueue\cwsw_evqueue\inc;..\..\cwsw_eventqueue\cwsw_evqueue_ex\inc;..\..\cwsw_evqueue_test\cwsw_clock\inc;..\..\cwsw_evqueue_test\cwsw_swtimer\inc;..\..\cwsw_clock_services\cwsw_clock\inc;..\..\cwsw_clock_services\cwsw_swtimer\inc;..\..\cwsw_sme\inc;..\..\os-board-fusion\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAsManaged>false</CompileAsManaged>
       <ExceptionHandling>false</ExceptionHandling>
       <DisableSpecificWarnings>4127</DisableSpecificWarnings>
@@ -109,6 +109,7 @@
     <ClCompile Include="..\..\app\cwsw_lib_prj\CritSect.c" />
     <ClCompile Include="..\..\app\main.c" />
     <ClCompile Include="..\..\cwsw_lib\src\cwsw_lib.c" />
+    <ClCompile Include="..\..\os-board-fusion\none\bdsched.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\app\app-di-buttons.h" />
@@ -142,6 +143,7 @@
     <ClInclude Include="..\..\cwsw_lib\inc\cwsw_lib_gnuc.h" />
     <ClInclude Include="..\..\cwsw_lib\inc\cwsw_lib_msvc.h" />
     <ClInclude Include="..\..\cwsw_lib\inc\ptypes.h" />
+    <ClInclude Include="..\..\os-board-fusion\bdsched.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
