@@ -49,4 +49,5 @@
 void
 Cwsw_Board__StartScheduler(ptEvQ_QueueCtrlEx pEvqx)
 {
+	UNUSED(pEvqx);
 }

@@ -13,6 +13,7 @@
 // ============================================================================
 
 // ----	System Headers --------------------------
+#include <cwsw_bsp_buttons.h>
 #include <stdio.h>
 #include <stdlib.h>			/* EXIT_SUCCESS */
 
@@ -21,9 +22,6 @@
 #include "cwsw_swtimer.h"
 #include "cwsw_arch.h"
 #include "cwsw_board.h"
-#include "cwsw_buttons.h"
-
-// ----	Module Headers --------------------------
 #include "tedlos.h"			/* events and initializer for managed alarms array, indirectly */
 #include "cwsw_sme.h"		/* stoplight demo of SME */
 #include "console_keyin.h"	/* DI task */

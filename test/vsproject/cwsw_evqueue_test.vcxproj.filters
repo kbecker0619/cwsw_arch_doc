@@ -55,37 +55,10 @@
     <ClCompile Include="..\..\app\cwsw_lib_prj\CritSect.c">
       <Filter>Demo App</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\cwsw_arch\src\i386\cwsw_arch.c">
-      <Filter>Demo App</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\cwsw_board\common\src\cwsw_buttons.c">
-      <Filter>Demo App</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\cwsw_lib\src\cwsw_lib.c">
-      <Filter>Demo App</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\cwsw_eventqueue\cwsw_evqueue_ex\src\cwsw_evhandler.c">
       <Filter>Demo App</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\cwsw_eventqueue\cwsw_evqueue_ex\src\cwsw_evqueue_ex.c">
-      <Filter>Demo App</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\cwsw_eventqueue\cwsw_evqueue_ex\src\cwsw_evthndlrassoc.c">
-      <Filter>Demo App</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\cwsw_eventqueue\cwsw_event\src\cwsw_event.c">
-      <Filter>Demo App</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\cwsw_eventqueue\cwsw_event\src\cwsw_eventtable.c">
-      <Filter>Demo App</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\cwsw_eventqueue\cwsw_evqueue\src\cwsw_evqueue.c">
-      <Filter>Demo App</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\cwsw_sme\src\cwsw_sme.c">
-      <Filter>Demo App</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\cwsw_clock_services\cwsw_clock\src\cwsw_clock_svc.c">
       <Filter>Demo App</Filter>
     </ClCompile>
     <ClCompile Include="..\..\cwsw_clock_services\cwsw_swtimer\src\cwsw_swtimer.c">
@@ -114,6 +87,33 @@
     </ClCompile>
     <ClCompile Include="..\..\os-board-fusion\none\bdsched.c">
       <Filter>Libraries\Board</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\cwsw_board\common\src\cwsw_bsp_buttons.c">
+      <Filter>Libraries\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\cwsw_arch\src\i386\cwsw_arch.c">
+      <Filter>Libraries\Arch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\cwsw_clock_services\cwsw_clock\src\cwsw_clock_svc.c">
+      <Filter>Libraries\Clock Services</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\cwsw_eventqueue\cwsw_event\src\cwsw_event.c">
+      <Filter>Libraries\Event Queue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\cwsw_eventqueue\cwsw_evqueue\src\cwsw_evqueue.c">
+      <Filter>Libraries\Event Queue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\cwsw_eventqueue\cwsw_evqueue_ex\src\cwsw_evqueue_ex.c">
+      <Filter>Libraries\Event Queue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\cwsw_eventqueue\cwsw_evqueue_ex\src\cwsw_evthndlrassoc.c">
+      <Filter>Libraries\Event Queue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\cwsw_lib\src\cwsw_lib.c">
+      <Filter>Libraries\Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\cwsw_sme\src\cwsw_sme.c">
+      <Filter>Libraries\SME</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -147,7 +147,7 @@
     <ClInclude Include="..\..\cwsw_board\cwsw_board_common.h">
       <Filter>Libraries\Board</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\cwsw_board\common\cwsw_buttons.h">
+    <ClInclude Include="..\..\cwsw_board\common\cwsw_bsp_buttons.h">
       <Filter>Libraries\Buttons</Filter>
     </ClInclude>
     <ClInclude Include="..\..\cwsw_clock_services\cwsw_clock\inc\cwsw_clock.h">
@@ -212,6 +212,9 @@
     </ClInclude>
     <ClInclude Include="..\..\os-board-fusion\bdsched.h">
       <Filter>Libraries\Board</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\app\cwsw_bsp_buttons_cfg.h">
+      <Filter>Libraries\Buttons</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

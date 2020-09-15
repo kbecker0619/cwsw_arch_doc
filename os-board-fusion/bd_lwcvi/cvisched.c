@@ -15,7 +15,7 @@
 // ----	System Headers --------------------------
 
 // ----	Project Headers -------------------------
-#include "cwsw_buttons.h"
+#include "cwsw_bsp_buttons.h"
 
 // ----	Module Headers --------------------------
 #include "bdsched.h"

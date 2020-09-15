@@ -1,12 +1,15 @@
 /** @file
- *	@brief	One-sentence short description of file.
+ *	@brief	Configuration options for the BSP Button handler.
  *
  *	Copyright (c) 2020 Kevin L. Becker. All rights reserved.
  *
  *	Original:
- *	Created on: Aug 18, 2020
+ *	Created on: Sep 15, 2020
  *	Author: kevin
  */
+
+#ifndef CWSW_BSP_BUTTONS_CFG_H
+#define CWSW_BSP_BUTTONS_CFG_H
 
 // ============================================================================
 // ----	Include Files ---------------------------------------------------------
@@ -15,45 +18,54 @@
 // ----	System Headers --------------------------
 
 // ----	Project Headers -------------------------
+// in this project, the button events are defined in the overall project event list.
+//	the events named below, are initialized from that global list.
+#include "tedlosevents.h"
 
 // ----	Module Headers --------------------------
-#include "bdsched.h"
+
+
+#ifdef	__cplusplus
+extern "C" {
+#endif
 
 
 // ============================================================================
 // ----	Constants -------------------------------------------------------------
 // ============================================================================
 
+/// Button events.
+enum {
+	/// Button release. In this implementation, equivalent to a Commit event.
+	evBntPressed = evButton_BtnPressed,
+
+	/// Button pressed / activated event.
+	evBtnReleased = evButton_BtnReleased,
+};
+
+
 // ============================================================================
 // ----	Type Definitions ------------------------------------------------------
 // ============================================================================
 
 // ============================================================================
-// ----	Global Variables ------------------------------------------------------
+// ----	Public Variables ------------------------------------------------------
 // ============================================================================
 
 // ============================================================================
-// ----	Module-level Variables ------------------------------------------------
+// ----	Public API ------------------------------------------------------------
 // ============================================================================
 
-ptEvQ_QueueCtrlEx pOsEvqx = NULL;
+// ---- Targets for Get/Set APIs -------------------------------------------- {
+/** Target 1 for TM(tmr) */
+#define GET_tmrdebounce()	Cwsw_GetTimeLeft(tmrdebounce)	/* timer local to one SM state */
+#define GET_tmrPressed()	Cwsw_GetTimeLeft(tmrPressed)	/* timer local to one SM state */
+
+// ---- /Targets for Get/Set APIs ------------------------------------------- }
 
 
-// ============================================================================
-// ----	Private Functions -----------------------------------------------------
-// ============================================================================
-
-// ============================================================================
-// ----	Public Functions ------------------------------------------------------
-// ============================================================================
-
-/// @todo Eliminate this dependency - buttons depend on the board; the board should not depend on the buttons.
-#include <cwsw_bsp_buttons.h>
-void
-Cwsw_Board__StartScheduler(ptEvQ_QueueCtrlEx pEvqx)
-{
-	pOsEvqx = pEvqx;		// save for heartbeat usage
-	Btn_SetQueue(evButton_Task, pEvqx);
-	gtk_main();
+#ifdef	__cplusplus
 }
+#endif
 
+#endif /* CWSW_BSP_BUTTONS_CFG_H */
