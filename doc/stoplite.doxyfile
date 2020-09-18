@@ -1,0 +1,131 @@
+# Doxyfile for Stoplite demo application.
+
+# include the actual component doxy project
+@INCLUDE		 = ../cwsw_lib/doc/doc_core/cwsw.doxyfile
+
+PROJECT_NAME	 = "CWSW Stoplite Demo App"
+PROJECT_BRIEF	 = "Demonstration application for the CWSW family of components for embedded software."
+
+DOT_PATH         = 
+# override default values for graph generation (to address Doxy warning in logfile)
+DOT_GRAPH_MAX_NODES    = 150
+
+# pick one of the supported IDEs to enable the appropriate code macros
+PREDEFINED		+=  XPRJ_NB_Debug=1
+
+
+# ==================================
+
+GENERATE_XML           = YES
+XML_OUTPUT             = xml
+XML_PROGRAMLISTING     = NO
+
+
+# ==================================
+
+# Note for each section below:
+# the "STRIP_FROM_PATH" configuration is a PROJECT-SPECIFIC formatting option that applies to
+#	includes and included-by graphs. this is necessarily a project-specific configuration:
+#	we want "DIRECTORY_GRAPH" to be enabled, so that we can see a graph for folder relationships
+#	if we disable "DIRECTORY_GRAPH", the File List section of the menu pane lists only files - no
+#	directories are shown.
+#	by specifying the appropriate paths here, we can strip the "noise" introduced by the paths
+#	from the includes and included-by graphs.
+
+# ==================================
+
+# specify front page for Doxy output
+#	note this makes another assumption about this file's location in the project tree
+INPUT            = ../README.md
+
+# component input files
+## core library component
+INPUT           += ../cwsw_lib/src
+INPUT			+= ../cwsw_lib/inc
+INPUT			+= ../cwsw_lib/doc
+INCLUDE_PATH    += ../cwsw_lib/inc
+EXCLUDE 		+= ../cwsw_lib/README.md
+EXCLUDE         += ../cwsw_lib/src/README.md
+EXCLUDE			+= ../cwsw_lib/doc/README.md
+EXCLUDE 		+= ../cwsw_lib/doc/doc_core/README.md
+#STRIP_FROM_PATH	+= ../cwsw_lib/src
+#STRIP_FROM_PATH	+= ../cwsw_lib/inc
+
+## arch component
+INPUT           += ../cwsw_arch/src
+INPUT           += ../cwsw_arch/inc
+INPUT           += ../cwsw_arch/doc
+INCLUDE_PATH    += ../cwsw_arch/inc
+EXCLUDE         += ../cwsw_arch/src/README.md
+EXCLUDE			+= ../cwsw_arch/doc/design/images/README.md
+#STRIP_FROM_PATH	+= ../cwsw_arch/src
+#STRIP_FROM_PATH	+= ../cwsw_arch/inc
+
+
+## Board Support component
+### Note for this Doxy output, I'll use the None board (MSVC project)
+INPUT			+= ../cwsw_board
+INCLUDE_PATH	+= ../cwsw_board/none
+EXCLUDE 		+= ../cwsw_board/bd_gtk
+EXCLUDE 		+= ../cwsw_board/bd_lwcvi
+#STRIP_FROM_PATH	+= ../cwsw_board
+#STRIP_FROM_PATH	+= ../cwsw_board/none
+# BSP doesn't (yet) have `doc` folder
+
+
+## Clock Services package
+#### This package has 2 components in it: clock, and timers
+### Clock component
+INPUT			+= ../cwsw_clock_services/cwsw_clock
+INCLUDE_PATH	+= ../cwsw_clock_services/cwsw_clock/inc
+EXCLUDE 		+= ../cwsw_clock_services/cwsw_clock/README.md
+EXCLUDE 		+= ../cwsw_clock_services/cwsw_clock/test
+EXCLUDE 		+= ../cwsw_clock_services/cwsw_clock/doc/README.md
+
+### SW Timers component
+INPUT           += ../cwsw_clock_services/cwsw_swtimer
+INCLUDE_PATH    += ../cwsw_clock_services/cwsw_swtimer/inc
+EXCLUDE 		+= ../cwsw_clock_services/cwsw_swtimer/README.md
+EXCLUDE			+= ../cwsw_clock_services/cwsw_swtimer/test
+EXCLUDE 		+= ../cwsw_clock_services/cwsw_swtimer/doc/README.md
+
+
+## Event Queue package
+#### This package contains components Event, Event Queue, and Extended Ev Queue
+### Event component
+INPUT           += ../cwsw_eventqueue/cwsw_event
+INCLUDE_PATH    += ../cwsw_eventqueue/cwsw_event/inc
+EXCLUDE 		+= ../cwsw_eventqueue/cwsw_event/readme.md
+EXCLUDE 		+= ../cwsw_eventqueue/cwsw_event/doc/readme.md
+
+### Event Queue component
+INPUT           += ../cwsw_eventqueue/cwsw_evqueue
+INCLUDE_PATH    += ../cwsw_eventqueue/cwsw_evqueue/inc
+EXCLUDE 		+= ../cwsw_eventqueue/cwsw_evqueue/readme.md
+# in this component, the doc readme has a bunch of content. todo: move to its own page in output
+
+### Event Queue Extended component
+INPUT           += ../cwsw_eventqueue/cwsw_evqueue_ex
+INCLUDE_PATH    += ../cwsw_eventqueue/cwsw_evqueue_ex/inc
+EXCLUDE 		+= ../cwsw_eventqueue/cwsw_evqueue_ex/readme.md
+EXCLUDE 		+= ../cwsw_eventqueue/cwsw_evqueue_ex/doc/readme.md
+
+
+## State Machine Engine package / component
+### Note that at the time of creation of this Doxy project, this is still a development
+###	folder within the Demo App repo. Issue #30 instructs to move it to a submodule, at
+###	which point this project will also need to be updated.
+INPUT           += ../cwsw_sme
+INCLUDE_PATH    += ../cwsw_sme/inc
+EXCLUDE 		+= ../cwsw_sme/readme.md
+EXCLUDE 		+= ../cwsw_sme/test
+
+
+## Application
+INPUT           += ../app
+INPUT			+= ../cfg_cwsw
+INPUT			+= ../cfg_tedlos
+INCLUDE_PATH    += ../app
+INCLUDE_PATH	+= ../cfg_cwsw
+INCLUDE_PATH	+= ../cfg_tedlos
+#EXCLUDE 		+= ../component/cwsw_sme/readme.md

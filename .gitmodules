@@ -1,15 +1,15 @@
-[submodule "test/libs/cwsw_lib"]
-	path = test/libs/cwsw_lib
+[submodule "cwsw_lib"]
+	path = cwsw_lib
 	url = git@github.com:kbecker0619/cwsw_lib.git
-[submodule "component"]
-	path = test/libs/cwsw_clock_services
-	url = git@github.com:kbecker0619/cwsw_clock_services.git
-[submodule "test/libs/cwsw_eventqueue"]
-	path = test/libs/cwsw_eventqueue
+[submodule "cwsw_eventqueue"]
+	path = cwsw_eventqueue
 	url = git@github.com:kbecker0619/cwsw_eventqueue.git
-[submodule "test/libs/cwsw_board"]
-	path = test/libs/cwsw_board
+[submodule "cwsw_board"]
+	path = cwsw_board
 	url = git@github.com:kbecker0619/cwsw_board.git
-[submodule "test/libs/cwsw_arch"]
-	path = test/libs/cwsw_arch
+[submodule "cwsw_arch"]
+	path = cwsw_arch
 	url = git@github.com:kbecker0619/cwsw_arch.git
+[submodule "cwsw_clock_services"]
+	path = cwsw_clock_services
+	url = git@github.com:kbecker0619/cwsw_clock_services.git

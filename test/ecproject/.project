@@ -28,7 +28,17 @@
 		<link>
 			<name>app</name>
 			<type>2</type>
-			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/app</locationURI>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/app</locationURI>
+		</link>
+		<link>
+			<name>cfg_cwsw</name>
+			<type>2</type>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/cfg_cwsw</locationURI>
+		</link>
+		<link>
+			<name>cfg_tedlos</name>
+			<type>2</type>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/cfg_tedlos</locationURI>
 		</link>
 		<link>
 			<name>component</name>
@@ -36,14 +46,44 @@
 			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/component</locationURI>
 		</link>
 		<link>
+			<name>cwsw_arch</name>
+			<type>2</type>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/cwsw_arch</locationURI>
+		</link>
+		<link>
+			<name>cwsw_board</name>
+			<type>2</type>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/cwsw_board</locationURI>
+		</link>
+		<link>
+			<name>cwsw_clock_services</name>
+			<type>2</type>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/cwsw_clock_services</locationURI>
+		</link>
+		<link>
+			<name>cwsw_eventqueue</name>
+			<type>2</type>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/cwsw_eventqueue</locationURI>
+		</link>
+		<link>
+			<name>cwsw_lib</name>
+			<type>2</type>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/cwsw_lib</locationURI>
+		</link>
+		<link>
+			<name>cwsw_sme</name>
+			<type>2</type>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/cwsw_sme</locationURI>
+		</link>
+		<link>
 			<name>doc</name>
 			<type>2</type>
 			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/doc</locationURI>
 		</link>
 		<link>
-			<name>libs</name>
+			<name>os-board-fusion</name>
 			<type>2</type>
-			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/libs</locationURI>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/os-board-fusion</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>

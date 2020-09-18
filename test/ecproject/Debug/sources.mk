@@ -25,15 +25,16 @@ C_DEPS :=
 SUBDIRS := \
 app \
 app/cwsw_lib_prj \
-component/cwsw_sme/src \
-libs/cwsw_arch/inc/i386/peripheral/ports \
-libs/cwsw_arch/src/i386 \
-libs/cwsw_board/bd_gtk/src \
-libs/cwsw_board/common/src \
-libs/cwsw_clock_services/cwsw_clock/src \
-libs/cwsw_clock_services/cwsw_swtimer/src \
-libs/cwsw_eventqueue/cwsw_event/src \
-libs/cwsw_eventqueue/cwsw_evqueue/src \
-libs/cwsw_eventqueue/cwsw_evqueue_ex/src \
-libs/cwsw_lib/src \
+cwsw_arch/inc/i386/peripheral/ports \
+cwsw_arch/src/i386 \
+cwsw_board/bd_gtk/src \
+cwsw_board/common/src \
+cwsw_clock_services/cwsw_clock/src \
+cwsw_clock_services/cwsw_swtimer/src \
+cwsw_eventqueue/cwsw_event/src \
+cwsw_eventqueue/cwsw_evqueue/src \
+cwsw_eventqueue/cwsw_evqueue_ex/src \
+cwsw_lib/src \
+cwsw_sme/src \
+os-board-fusion/bd_gtk \
 
