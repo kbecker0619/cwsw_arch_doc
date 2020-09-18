@@ -105,11 +105,6 @@ extern "C" {
 
 #elif defined(XPRJ_Win_MSVC_Debug)
 	/* Visual Studio 8, which is decidedly shy of C11 */
-	/* NOTE: VS8 does not ship w/ headers <stdint.h> or <stdbool.h>, so i found alternate versions
-	 * and copied them into my install directory. i happened to find some web sites w/ versions
-	 * that claimed to work w/ VS8 or VS10, but you could also probably pull them from any other
-	 * compiler you may have installed.
-	 */
 	#define XPRJ_Win_MinGW_Debug		0
 	#define XPRJ_Win_Cygwin_Debug_UT	0
 	#define XPRJ_Debug_Linux_GCC		0
@@ -215,13 +210,13 @@ extern "C" {
  *	that rely on this, you'll need to figure out a work-around.
  */
 #if !defined(WEAK)
-#if defined (__GNUC__)					/* GCC CS3 2009q3-68 */
+#if defined (__GNUC__)						/* GCC CS3 2009q3-68 */
 #define WEAK __attribute__ ((weak))
 
-#elif defined (__CC_ARM  )				/* Keil �Vision 4 */
+#elif defined (__CC_ARM  )					/* Keil �Vision 4 */
 #define WEAK __attribute__ ((weak))
 
-#elif defined (__ICCARM__)				/* IAR Ewarm 5.41+ */
+#elif defined (__ICCARM__)					/* IAR Ewarm 5.41+ */
 #define WEAK __weak
 
 #elif defined(_MSC_VER) || defined(_CVI_)	/* visual studio 8 and LabWindows/CVI v7.1 */

@@ -119,9 +119,14 @@
     <ClInclude Include="..\..\app\stoplite.h" />
     <ClInclude Include="..\..\app\tedlos.h" />
     <ClInclude Include="..\..\app\tedlos_scheduler.h" />
+    <ClInclude Include="..\..\cfg_cwsw\cwsw_event_proj.h" />
+    <ClInclude Include="..\..\cfg_cwsw\projcfg.h" />
+    <ClInclude Include="..\..\cfg_cwsw\projevtnames.h" />
     <ClInclude Include="..\..\cfg_tedlos\ManagedAlarms.h" />
     <ClInclude Include="..\..\cfg_tedlos\tedlosevents.h" />
     <ClInclude Include="..\..\cfg_tedlos\tedlos_cfg.h" />
+    <ClInclude Include="..\..\cwsw_arch\inc\i386\system\clk\sys_clk.h" />
+    <ClInclude Include="..\..\cwsw_arch\inc\i386\system\ports\sys_ports.h" />
     <ClInclude Include="..\..\cwsw_sme\inc\cwsw_sme.h" />
     <ClInclude Include="..\..\cwsw_arch\inc\cwsw_arch_common.h" />
     <ClInclude Include="..\..\cwsw_arch\inc\i386\cwsw_arch.h" />

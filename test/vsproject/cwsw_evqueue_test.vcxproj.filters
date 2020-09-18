@@ -216,5 +216,20 @@
     <ClInclude Include="..\..\app\cwsw_bsp_buttons_cfg.h">
       <Filter>Libraries\Buttons</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\cfg_cwsw\cwsw_event_proj.h">
+      <Filter>Libraries\Event Queue</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\cfg_cwsw\projcfg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\cfg_cwsw\projevtnames.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\cwsw_arch\inc\i386\system\ports\sys_ports.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\cwsw_arch\inc\i386\system\clk\sys_clk.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
