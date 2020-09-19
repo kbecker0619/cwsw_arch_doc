@@ -13,3 +13,6 @@
 [submodule "cwsw_clock_services"]
 	path = cwsw_clock_services
 	url = git@github.com:kbecker0619/cwsw_clock_services.git
+[submodule "cwsw_sme"]
+	path = cwsw_sme
+	url = git@github.com:kbecker0619/cwsw_sme.git
