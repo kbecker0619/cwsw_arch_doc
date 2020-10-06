@@ -58,6 +58,21 @@ Contributor(s):
                 <sourceRootElem>../../component/cwsw_clock</sourceRootElem>
                 <sourceRootElem>../../component/cwsw_swtimer</sourceRootElem>
                 <sourceRootElem>../libs/cwsw_lib</sourceRootElem>
+                <sourceRootElem>../app/cwsw_lib_prj</sourceRootElem>
+                <sourceRootElem>../libs/cwsw_eventqueue/cwsw_evqueue_ex</sourceRootElem>
+                <sourceRootElem>../../cwsw_eventqueue/cwsw_event</sourceRootElem>
+                <sourceRootElem>../../cwsw_eventqueue/cwsw_evqueue</sourceRootElem>
+                <sourceRootElem>../../cwsw_eventqueue/cwsw_evqueue_ex</sourceRootElem>
+                <sourceRootElem>../../component/cwsw_clock</sourceRootElem>
+                <sourceRootElem>../../component/cwsw_swtimer</sourceRootElem>
+                <sourceRootElem>../libs/cwsw_lib</sourceRootElem>
+                <sourceRootElem>../../app</sourceRootElem>
+                <sourceRootElem>../../cwsw_arch</sourceRootElem>
+                <sourceRootElem>../../cwsw_board</sourceRootElem>
+                <sourceRootElem>../../cfg_cwsw</sourceRootElem>
+                <sourceRootElem>../../cwsw_lib</sourceRootElem>
+                <sourceRootElem>../../cwsw_sme</sourceRootElem>
+                <sourceRootElem>../../cfg_tedlos</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

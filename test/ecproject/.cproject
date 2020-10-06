@@ -247,11 +247,25 @@
                         					
                     </folderInfo>
                     					
-                    <fileInfo id="cdt.managedbuild.config.gnu.mingw.exe.debug.1736302436.391989327" name="console_keyin.c" rcbsApplicability="disable" resourcePath="app/console_keyin.c" toolsToInvoke="cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.debug.1489450762.657519835">
+                    <folderInfo id="cdt.managedbuild.config.gnu.mingw.exe.debug.1736302436.1102236655" name="/" resourcePath="cwsw_eventqueue/test">
                         						
-                        <tool id="cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.debug.1489450762.657519835" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.debug.1489450762"/>
+                        <toolChain id="cdt.managedbuild.toolchain.gnu.mingw.exe.debug.681394710" name="MinGW GCC" superClass="cdt.managedbuild.toolchain.gnu.mingw.exe.debug" unusedChildren="">
+                            							
+                            <tool id="cdt.managedbuild.tool.gnu.assembler.mingw.exe.debug.1282582647" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.mingw.exe.debug.955745680"/>
+                            							
+                            <tool id="cdt.managedbuild.tool.gnu.archiver.mingw.base.1165208901" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.mingw.base.1004530742"/>
+                            							
+                            <tool id="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.exe.debug.1825045741" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.exe.debug.1050297134"/>
+                            							
+                            <tool id="cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.debug.1710682094" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.debug.1489450762"/>
+                            							
+                            <tool id="cdt.managedbuild.tool.gnu.c.linker.mingw.exe.debug.293552603" name="MinGW C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.mingw.exe.debug.1268148108"/>
+                            							
+                            <tool id="cdt.managedbuild.tool.gnu.cpp.linker.mingw.exe.debug.681947779" name="MinGW C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.mingw.exe.debug.1051958027"/>
+                            						
+                        </toolChain>
                         					
-                    </fileInfo>
+                    </folderInfo>
                     					
                     <sourceEntries>
                         						

@@ -13,22 +13,18 @@
 // ============================================================================
 
 // ----	System Headers --------------------------
-#include <cwsw_bsp_buttons.h>
 #include <stdio.h>
-#include <stdlib.h>			/* EXIT_SUCCESS */
+#include <stdlib.h>				/* EXIT_SUCCESS */
 
 // ----	Project Headers -------------------------
-#include "cwsw_evqueue_ex.h"
-#include "cwsw_swtimer.h"
 #include "cwsw_arch.h"
 #include "cwsw_board.h"
-#include "tedlos.h"			/* events and initializer for managed alarms array, indirectly */
-#include "cwsw_sme.h"		/* stoplight demo of SME */
-#include "console_keyin.h"	/* DI task */
+#include "cwsw_bsp_buttons.h"
 #include "app-di-buttons.h"
 #include "app-do-lamps.h"
 #include "stoplite.h"
 
+#include "tedlos.h"				/* tedlos_evqx */
 
 // ============================================================================
 // ----	Constants -------------------------------------------------------------
