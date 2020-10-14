@@ -45,10 +45,10 @@ enum { kTedlos_EvQueueSize = 16 };
  *	done in alarms, in the order of alarms listed in the ManageAlarms define elsewhere.
  */
 enum eOsEvqEvents {
-	evOsNullEvent,			//!< Reserved name and value, used for initialization.
-	evOs_NotInit,			//!< By CWSW convention, 1 is always "component not initialized"
-	evOs_AlreadyInit,		//!< BY CWSW convention, 2 is "already initialized"
-	evOs_QuitRqst,			//!< reserved name, used by scheduler to terminate its scheduling loop
+	evOsNullEvent,				//!< Reserved name and value, used for initialization.
+	evOs_NotInit,				//!< By CWSW convention, 1 is always "component not initialized"
+	evOs_AlreadyInit,			//!< BY CWSW convention, 2 is "already initialized"
+	evOs_QuitRqst,				//!< reserved name, used by scheduler to terminate its scheduling loop
 
 	evOs_TmrHeartbeat,
 	evOs_Task10ms,
@@ -65,12 +65,12 @@ enum eOsEvqEvents {
 
 	evButton_Task,
 	evButton_StopTask,
-	evButton_BtnPressed,			//!< Button pressed. Event data says which button.
-	evButton_BtnReleased,			//!< Button released. Event data says which button.
-	evButton_BtnStuck,				//!< Button stuck "on". Event data says which button.
+	evButton_BtnPressed,		//!< Button pressed. Event data says which button.
+	evButton_BtnReleased,		//!< Button released. Event data says which button.
+	evButton_BtnStuck,			//!< Button stuck "on". Event data says which button.
 	evButton_BtnUnstuck,
 
-	kNumOsEvqEvents					/**< RESERVED NAME, must be last name in list of events */
+	kNumOsEvqEvents				/**< RESERVED NAME, must be last name in list of events */
 };
 
 
