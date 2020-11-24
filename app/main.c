@@ -143,6 +143,12 @@ tTedlosTaskDescriptor tblInitTasks[] = {
 // ----	Public Functions ------------------------------------------------------
 // ============================================================================
 
+extern uint16_t BSP_Core__Init(void);
+extern uint16_t BSP_DI__Init(void);
+extern uint16_t BSP_DO__Init(void);
+extern uint16_t BSP_Timers__Init(void);
+extern uint16_t BSP_DI_Buttons__Init(ptEvQ_QueueCtrlEx pEvQX);
+
 int
 main(void)
 {
@@ -156,15 +162,21 @@ main(void)
 	(void)Init(tedlos);
 
 	// driver layer
-	(void)Init(Cwsw_Arch);		// Cwsw_Arch__Init()
-	(void)Init(buttons);		// app-level sensor component - buttons__Init()
+	(void)Init(Cwsw_Arch);					// Cwsw_Arch__Init()
+	(void)Init(buttons);					// app-level sensor component - buttons__Init()
 
 	// app layer
 	(void)Init(Stoplite);
-	(void)Init(AppDO);			// app-level actuator component (DO = Digital Output)	AppDO__Init()
+	(void)Init(AppDO);						// app-level actuator component (DO = Digital Output)	AppDO__Init()
 
 	// this board-level init function doesn't return until the [QUIT] button is pushed, so it's gotta be last.
-	if(!Init(Cwsw_Board))		// Cwsw_Board__Init()
+	Init(BSP_Core);
+	Init(BSP_DI);
+	Init(BSP_DO);
+	InitX(BSP_DI_Buttons, &tedlos_evqx);
+	Init(BSP_Timers);
+
+	if(!Init(Cwsw_Board))	// Cwsw_Board__Init()
 	{
 		tedlos__InitTaskList(tblInitTasks);
 		starttic = Get(Cwsw_ClockSvc, CurrentTime);

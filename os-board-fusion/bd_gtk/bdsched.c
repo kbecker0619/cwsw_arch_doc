@@ -15,6 +15,7 @@
 // ----	System Headers --------------------------
 
 // ----	Project Headers -------------------------
+#include "tedlos.h"		// KILL THIS
 
 // ----	Module Headers --------------------------
 #include "bdsched.h"

@@ -74,7 +74,7 @@ extern "C" {
 	#define XPRJ_Win_MSVC_Debug			0
 	#define XPRJ_NB_Debug				0
 	#define	XPRJ_CVI_Debug				0
-	#define XPRJ_Debug_Linux_GCC		0
+	#define XPRJ_Lin_GCC_Debug			0
 
 #elif defined(XPRJ_Win_MinGW_Release)
 	/* This is (at the time of this writing) intended to be a temporary configuration for Windows */
